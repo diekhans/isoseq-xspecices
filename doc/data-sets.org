@@ -1,19 +1,36 @@
 
 
-# Genome assemblies
+* Genome assemblies
 
-| organism | assembly | NCBI             | UCSC     |
-|----------+----------+------------------+----------|
-| Human    | GRCh38   | GCA_000001405.27 | hg38     |
-| Rhesus   | Mmul_10  | GCF_003339765.1  | rheMac10 |
-| Mouse    | GRCm39   | GCA_000001305.2  | mm39     |
-| Rat      | Rnor_6.0 | GCA_000001895.4  | rn6      |
+ | organism | assembly | NCBI             | UCSC     |
+ |----------+----------+------------------+----------|
+ | Human    | GRCh38   | GCA_000001405.27 | hg38     |
+ | Macaque  | Mmul_10  | GCF_003339765.1  | rheMac10 |
+ | Mouse    | GRCm39   | GCA_000001305.2  | mm39     |
+ | Rat      | Rnor_6.0 | GCA_000001895.4  | rn6      |
+ |----------+----------+------------------+----------|
 
-# Gene sets
+* Gene sets
 
-| organism | GENCODE    | Ensembl    | URL                                                                                                                   |
-|----------+------------+------------+-----------------------------------------------------------------------------------------------------------------------|
-| Human    | V35        | e102       |                                                                                                                       |
-| Rhesus   |            |            |                                                                                                                       |
-| Mouse    | VM26 (pre) | e103 (pre) | http://ftp.ebi.ac.uk/pub/databases/havana/gencode_pre/ensembl_ftp_files/ens_103_mouse_tmp/Mus_musculus.GRCm39.103.gtf |
-| Rat      |            |            |                                                                                                                       |
+ | organism | GENCODE    | Ensembl    | URL                                                                                                                   |
+ |----------+------------+------------+-----------------------------------------------------------------------------------------------------------------------|
+ | Human    | V35        | e101       | ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz                      |
+ | Macaque  |            | e101       | ftp://ftp.ensembl.org/pub/release-101/gtf/macaca_mulatta/Macaca_mulatta.Mmul_10.101.chr.gtf.gz                        |
+ | Mouse    | VM26 (pre) | e103 (pre) | http://ftp.ebi.ac.uk/pub/databases/havana/gencode_pre/ensembl_ftp_files/ens_103_mouse_tmp/Mus_musculus.GRCm39.103.gtf |
+ | Rat      |            | e101       | ftp://ftp.ensembl.org/pub/release-101/gtf/rattus_norvegicus/Rattus_norvegicus.Rnor_6.0.101.gtf.gz                     |
+ |----------+------------+------------+-----------------------------------------------------------------------------------------------------------------------|
+
+* UCSC Chains
+
+|----------+------+----------+------+-----|
+|          | hg38 | rheMac10 | mm39 | rn6 |
+| hg38     | .    | Y        | Y    | Y   |
+| rheMac10 | Y    | .        | N    | N   |
+| mm39     | Y    | N        | .    | N   |
+| rn6      | Y    | N        | N    | .   |
+|----------+------+----------+------+-----|
+
+** Need to build:
+- mm39 <-> rheMac10
+- mm39 <-> rn6
+- rn6  <-> rheMac10
