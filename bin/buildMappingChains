@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -beEu -o pipefail
+
+if [ $# != 3 ] ; then 
+    echo "buildMappingChains srcDb destDb synChains" >&2
+    exit 1
+fi 
+
+# destDb is chain target, srcDb is chain query
+srcDb=$1 ; shift
+destDb=$1 ; shift
+synChains=$1 ; shift
+
+synChainsTmp=${synChains}.$(hostname).$$.tmp
+
+chainDir=/hive/data/genomes/${destDb}/bed/lastz.${srcDb}/axtChain
+
+synNet=${TMPDIR}/${destDb}.${srcDb}.syn.net.$(hostname).$$.tmp
+
+netFilter -syn $chainDir/${destDb}.${srcDb}.net.gz > $synNet
+netChainSubset -wholeChains ${synNet} $chainDir/${destDb}.${srcDb}.all.chain.gz /dev/stdout \
+    | pigz -c >$synChainsTmp
+mv -f $synChainsTmp $synChains

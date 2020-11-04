@@ -1,0 +1,12 @@
+
+* map annotations between all genomes:
+** download below files to build/annot-map/data/${db}/
+
+ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz
+ftp://ftp.ensembl.org/pub/release-101/gtf/macaca_mulatta/Macaca_mulatta.Mmul_10.101.chr.gtf.gz
+http://ftp.ebi.ac.uk/pub/databases/havana/gencode_pre/ensembl_ftp_files/ens_103_mouse_tmp/Mus_musculus.GRCm39.103.gtf.gz
+ftp://ftp.ensembl.org/pub/release-101/gtf/rattus_norvegicus/Rattus_norvegicus.Rnor_6.0.101.gtf.gz        
+
+** build mappings
+cd build/annot-map
+make -j 32

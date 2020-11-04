@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -beEu -o pipefail
+
+if [ $# != 3 ] ; then 
+    echo "convertGtf inGtf srcGp srcMeta" >&2
+    exit 1
+fi
+export PATH=$(dirname $(which $0)):${PATH}
+inGtf="$1" ; shift
+srcGp="$1" ; shift
+srcMeta="$1" ; shift
+
+tmpExt=$(hostname).$$.tmp
+tmpGp=${srcGp}.${tmpExt}
+tmpMeta=${srcMeta}.${tmpExt}
+
+smtcat $inGtf | editEnsGtf \
+    | gtfToGenePred -genePredExt -includeVersion -infoOut=${tmpMeta} stdin stdout \
+    | pigz -c >${tmpGp}
+
+mv -f ${tmpMeta} ${srcMeta}
+mv -f ${tmpGp} ${srcGp}

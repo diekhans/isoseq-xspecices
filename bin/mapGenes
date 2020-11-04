@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -beEu -o pipefail
+
+if [ $# != 5 ] ; then 
+    echo "mapGenes srcPsl srcFa synChains destDb destRawPsl"
+    exit 1
+fi 
+
+# destDb is chain target, srcDb is chain query
+srcPsl=$1 ; shift
+srcFa=$1 ; shift
+synChains=$1 ; shift
+destDb=$1 ; shift
+destRawPsl=$1 ; shift
+
+destRawPslTmp=$destRawPsl.$$.tmp
+destSeqs=/hive/data/genomes/$destDb/$destDb.2bit
+
+pslMap -chainMapFile $srcPsl $synChains /dev/stdout \
+    | pslMapPostChain /dev/stdin /dev/stdout \
+    | pslRecalcMatch /dev/stdin $destSeqs $srcFa /dev/stdout \
+    | pslPosTarget /dev/stdin /dev/stdout \
+    | pigz -c >$destRawPslTmp
+
+mv $destRawPslTmp $destRawPsl
+
+
