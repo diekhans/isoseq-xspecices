@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+
+import argparse
+import re
+from pycbio.hgdata.psl import PslTbl
+from pycbio.sys import fileOps
+
+# GTF coords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
+
+def parseArgs():
+    usage = """Edit the GTF for a mapping adding exon_source and block_source, both as source coordinates"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('srcGenomeDb')
+    parser.add_argument('srcPsl')
+    parser.add_argument('mappedPsl')
+    parser.add_argument('inGtf')
+    parser.add_argument('outGtf')
+    return parser.parse_args()
+
+class GtfRec:
+    __slots__ = ("seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attributes")
+
+    def __init__(self, row):
+        self.seqname, self.source, self.feature, self.start, self.end, self.score, self.strand, self.frame, self.attributes = row
+        self.start = int(self.start)
+        self.end = int(self.end)
+
+    def getTransId(self):
+        # transcript_id "ENST00000327381.7
+        m = re.search('transcript_id "([A-Z0-9.]+)', self.attributes)
+        return m.group(1)
+
+    def __str__(self):
+        return "\t".join([str(getattr(self, c)) for c in self.__slots__])
+
+def findBlockByQuery(psl, qStart, qEnd):
+    "range should be is positive coordinates"
+    for blk in psl.blocks:
+        if (qStart < blk.qEndPlus) and (qEnd > blk.qStartPlus):
+            return blk
+    return None
+
+def findBlockByTarget(psl, tStart, tEnd):
+    "range should be is positive coordinates"
+    for blk in psl.blocks:
+        if (blk.tStartPlus < tEnd) and (blk.tEndPlus > tStart):
+            return blk
+    return None
+
+def getPslByTargetOverlap(psls, chrom, tStart, tEnd):
+    for psl in psls:
+        if (psl.tName == chrom) and (psl.tStart < tEnd) and (psl.tEnd > tStart):
+            return psl
+    raise Exception(f"PSL not found for {chrom}:{tStart}-{tEnd}")
+
+def gtfRecToMappingBlock(mappings, transId, gtfRec):
+    mappingPsl = getPslByTargetOverlap(mappings.getByQName(transId), gtfRec.seqname, gtfRec.start - 1, gtfRec.end)
+    blk = findBlockByTarget(mappingPsl, gtfRec.start - 1, gtfRec.end)
+    if blk is None:
+        raise Exception(f"transcript {transId} exon {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} overlapping mapping block not found")
+    # exons must match blocks exactly, CDS and UTR can be contained in blocks
+    if gtfRec.feature == "exon":
+        if (blk.tStartPlus != gtfRec.start - 1) or (blk.tEndPlus != gtfRec.end):
+            raise Exception(f"transcript {transId} exon {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} doesn't match mapping PSL block exactly {blk}")
+    else:
+        if (blk.tStartPlus > gtfRec.start - 1) or (blk.tEndPlus < gtfRec.end):
+            raise Exception(f"transcript {transId} {gtfRec.feature} {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} not contained in mapping PSL block {blk}")
+    return blk
+
+def mappingBlkToSrcExon(annots, transId, mappingBlk):
+    srcPsl = annots.getByQName(transId)[0]
+    srcExon = findBlockByQuery(srcPsl, mappingBlk.qStartPlus, mappingBlk.qEndPlus)
+    return srcExon
+
+def getBlkSourceRange(mappingBlk, srcExon):
+    blkOff = mappingBlk.qStartPlus - srcExon.qStartPlus
+    assert blkOff >= 0
+    if mappingBlk.psl.qStrand == '+':
+        start = srcExon.tStart + blkOff
+        end = start + len(mappingBlk)
+    else:
+        end = srcExon.tEnd - blkOff
+        start =  end - len(mappingBlk)
+    assert (start >= srcExon.tStartPlus) and (end <= srcExon.tEndPlus), f"not ({start} >= {srcExon.tStartPlus}) and ({end} <= {srcExon.tEndPlus})"
+    return start, end
+
+def gtfRecAddAttrs(srcGenomeDb, mappings, annots, gtfRec):
+    transId = gtfRec.getTransId()
+    mappingBlk = gtfRecToMappingBlock(mappings, transId, gtfRec)
+    srcExon = mappingBlkToSrcExon(annots, transId, mappingBlk)
+
+    srcBlkStart, srcBlkEnd = getBlkSourceRange(mappingBlk, srcExon)
+
+    exonAttr = 'exon_source "{}.{}:{}-{}"'.format(srcGenomeDb, srcExon.psl.tName,
+                                                  srcExon.tStartPlus, srcExon.tEndPlus)
+    blkAttr = 'block_source "{}.{}:{}-{}"'.format(srcGenomeDb, srcExon.psl.tName,
+                                                  srcBlkStart, srcBlkEnd)
+    gtfRec.attributes += " {}; {};".format(exonAttr, blkAttr)
+
+
+featuresToEdit = frozenset(["exon", "3UTR", "5UTR", "CDS", "start_codon", "stop_codon"])
+
+
+def processGtfRow(srcGenomeDb, mappings, annots, row, outGtfFh):
+    try:
+        gtfRec = GtfRec(row)
+        if gtfRec.feature in featuresToEdit:
+            gtfRecAddAttrs(srcGenomeDb, mappings, annots, gtfRec)
+    except Exception as ex:
+        raise Exception(f"Error processing {row}") from ex
+    print(str(gtfRec), file=outGtfFh)
+
+def processGtfLine(srcGenomeDb, mappings, annots, line, outGtfFh):
+    if line.startswith('#') or (line == ""):
+        print(line, file=outGtfFh)
+    else:
+        processGtfRow(srcGenomeDb, mappings, annots, line.split('\t'), outGtfFh)
+
+def processGtf(srcGenomeDb, mappings, annots, inGtf, outGtfFh):
+    for line in fileOps.iterLines(inGtf):
+        processGtfLine(srcGenomeDb, mappings, annots, line, outGtfFh)
+
+def main(opts):
+    annots = PslTbl(opts.srcPsl, qNameIdx=True)
+    mappings = PslTbl(opts.mappedPsl, qNameIdx=True)
+    with open(opts.outGtf, "w") as outGtfFh:
+        processGtf(opts.srcGenomeDb, mappings, annots, opts.inGtf, outGtfFh)
+
+main(parseArgs())

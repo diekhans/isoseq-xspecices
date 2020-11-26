@@ -32,3 +32,6 @@
 | rn6      | Y    | Y        | Y    | .   |
 |----------+------+----------+------+-----|
 
+* URLs:
+** downloads
+https://hgwdev.gi.ucsc.edu/~markd/gencode/xspace-sc/hub/downloads/annot/

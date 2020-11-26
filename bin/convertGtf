@@ -19,5 +19,7 @@ smtcat $inGtf | editEnsGtf \
     | gtfToGenePred -genePredExt -includeVersion -infoOut=${tmpMeta} stdin stdout \
     | pigz -c >${tmpGp}
 
-mv -f ${tmpMeta} ${srcMeta}
+pigz -c ${tmpMeta} >${tmpMeta}.gz
+rm -f ${tmpMeta}
+mv -f ${tmpMeta}.gz ${srcMeta}
 mv -f ${tmpGp} ${srcGp}

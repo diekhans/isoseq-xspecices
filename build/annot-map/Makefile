@@ -8,7 +8,7 @@ PPID = $(shell echo $${PPID})
 TMPEXT = ${HOSTNAME}.${PPID}.tmp
 
 DBS = hg38 mm39 rheMac10 rn6
-
+hubRootDir = ../hub
 
 hg38_gtf = data/hg38/gencode.v35.annotation.gtf.gz
 mm39_gtf = data/mm39/Mus_musculus.GRCm39.103.gtf.gz
@@ -75,6 +75,7 @@ destPsl = ${mappedDir}/${srcDb}-${destDb}.psl.gz
 filtStats = ${mappedDir}/${srcDb}-${destDb}.filtStats
 destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
 destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
+destGtfDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.gtf.gz
 
 ${destRawPsl}: ${srcPsl} ${srcFa} ${synChains} ${destRawPsl}
 	@mkdir -p $(dir $@)
@@ -88,7 +89,7 @@ ${destPsl}: ${destRawPsl}
 
 ${destGp}: ${destPsl}
 	@mkdir -p $(dir $@)
-	transMapPslToGenePred -codingGapFillMax=12 -nonCodingGapFillMax=15 ${srcGp} ${destPsl} /dev/stdout | pigz -c > ${destGp}.${TMPEXT}
+	transMapPslToGenePred -noBlockMerge ${srcGp} ${destPsl} /dev/stdout | pigz -c > ${destGp}.${TMPEXT}
 	mv -f ${destGp}.${TMPEXT} ${destGp}
 
 ${destGtf}: ${destGp}
@@ -96,10 +97,25 @@ ${destGtf}: ${destGp}
 	genePredToGtf -utr -source=transMap file ${destGp} /dev/stdout | pigz -c >${destGtf}.${TMPEXT}
 	mv -f ${destGtf}.${TMPEXT} ${destGtf}
 
+${destGtfDownload}: ${destGtf}
+	@mkdir -p $(dir $@)
+	ln -f $< $@
+
+##
+# hub files
+##
+destChromSizes = /hive/data/genomes/${destDb}/chrom.sizes
+hubBigPsl = ${hubRootDir}/${destDb}/${srcDb}-${destDb}.bigPsl
+
+${hubBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
+	@mkdir -p $(dir $@)
+	bigPslBuild ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes} ${hubBigPsl}
+
 
 ##
 # main target
 ##
-build_pair: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${synChains} ${destRawPsl} ${destPsl} ${destGp} ${destGtf}
+build_pair: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${synChains} \
+	${destRawPsl} ${destPsl} ${destGp} ${destGtf} ${hubBigPsl} ${destGtfDownload}
 
 endif
