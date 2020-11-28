@@ -77,7 +77,7 @@ destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
 destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
 destGtfDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.gtf.gz
 
-${destRawPsl}: ${srcPsl} ${srcFa} ${synChains} ${destRawPsl}
+${destRawPsl}: ${srcPsl} ${srcFa} ${synChains}
 	@mkdir -p $(dir $@)
 	mapGenes ${srcPsl} ${srcFa} ${synChains} ${destDb} $@
 
@@ -94,7 +94,9 @@ ${destGp}: ${destPsl}
 
 ${destGtf}: ${destGp}
 	@mkdir -p $(dir $@)
-	genePredToGtf -utr -source=transMap file ${destGp} /dev/stdout | pigz -c >${destGtf}.${TMPEXT}
+	genePredToGtf -utr -source=transMap file ${destGp} /dev/stdout \
+	    | addGtfExonSources ${srcDb} ${srcPsl} ${destPsl} /dev/stdin /dev/stdout \
+	    | pigz -c >${destGtf}.${TMPEXT}
 	mv -f ${destGtf}.${TMPEXT} ${destGtf}
 
 ${destGtfDownload}: ${destGtf}

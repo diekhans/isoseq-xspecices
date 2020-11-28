@@ -48,17 +48,16 @@ def findBlockByTarget(psl, tStart, tEnd):
     return None
 
 def getPslByTargetOverlap(psls, chrom, tStart, tEnd):
+    # exons must match blocks exactly, CDS and UTR can be contained in blocks
     for psl in psls:
         if (psl.tName == chrom) and (psl.tStart < tEnd) and (psl.tEnd > tStart):
-            return psl
-    raise Exception(f"PSL not found for {chrom}:{tStart}-{tEnd}")
+            blk = findBlockByTarget(psl, tStart, tEnd)
+            if blk is not None:
+                return blk
+    raise Exception(f"PSL with block overlapping {chrom}:{tStart}-{tEnd} not found")
 
 def gtfRecToMappingBlock(mappings, transId, gtfRec):
-    mappingPsl = getPslByTargetOverlap(mappings.getByQName(transId), gtfRec.seqname, gtfRec.start - 1, gtfRec.end)
-    blk = findBlockByTarget(mappingPsl, gtfRec.start - 1, gtfRec.end)
-    if blk is None:
-        raise Exception(f"transcript {transId} exon {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} overlapping mapping block not found")
-    # exons must match blocks exactly, CDS and UTR can be contained in blocks
+    blk = getPslByTargetOverlap(mappings.getByQName(transId), gtfRec.seqname, gtfRec.start - 1, gtfRec.end)
     if gtfRec.feature == "exon":
         if (blk.tStartPlus != gtfRec.start - 1) or (blk.tEndPlus != gtfRec.end):
             raise Exception(f"transcript {transId} exon {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} doesn't match mapping PSL block exactly {blk}")
