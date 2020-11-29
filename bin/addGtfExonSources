@@ -47,17 +47,28 @@ def findBlockByTarget(psl, tStart, tEnd):
             return blk
     return None
 
-def getPslByTargetOverlap(psls, chrom, tStart, tEnd):
-    # exons must match blocks exactly, CDS and UTR can be contained in blocks
+def getTargetMatchBlock(psl, chrom, strand, tStart, tEnd, exactMatch):
+    if not ((psl.tName == chrom) and (psl.qStrand == strand) and (psl.tStart < tEnd) and (psl.tEnd > tStart)):
+        return None
+    blk = findBlockByTarget(psl, tStart, tEnd)
+    if ((exactMatch and (blk.tStart == tStart) and (blk.tEnd == tEnd))
+        or ((not exactMatch) and (blk.tStart <= tStart) and (blk.tEnd >= tEnd))):
+        return blk
+    else:
+        return None
+
+def getPslByTargetContained(psls, chrom, strand, tStart, tEnd, exactMatch):
+    # Exons must match blocks exactly, CDS and UTR can be contained in blocks.  We look for contained here
     for psl in psls:
-        if (psl.tName == chrom) and (psl.tStart < tEnd) and (psl.tEnd > tStart):
-            blk = findBlockByTarget(psl, tStart, tEnd)
-            if blk is not None:
-                return blk
-    raise Exception(f"PSL with block overlapping {chrom}:{tStart}-{tEnd} not found")
+        blk = getTargetMatchBlock(psl, chrom, strand, tStart, tEnd, exactMatch=exactMatch)
+        if blk is not None:
+            return blk
+    raise Exception(f"PSL with block containing or matching {chrom}:{tStart}-{tEnd} not found")
 
 def gtfRecToMappingBlock(mappings, transId, gtfRec):
-    blk = getPslByTargetOverlap(mappings.getByQName(transId), gtfRec.seqname, gtfRec.start - 1, gtfRec.end)
+    blk = getPslByTargetContained(mappings.getByQName(transId),
+                                  gtfRec.seqname, gtfRec.strand, gtfRec.start - 1, gtfRec.end,
+                                  exactMatch=(gtfRec.feature == 'exon'))
     if gtfRec.feature == "exon":
         if (blk.tStartPlus != gtfRec.start - 1) or (blk.tEndPlus != gtfRec.end):
             raise Exception(f"transcript {transId} exon {gtfRec.seqname}:{gtfRec.start - 1}-{gtfRec.end} doesn't match mapping PSL block exactly {blk}")
@@ -79,7 +90,7 @@ def getBlkSourceRange(mappingBlk, srcExon):
         end = start + len(mappingBlk)
     else:
         end = srcExon.tEnd - blkOff
-        start =  end - len(mappingBlk)
+        start = end - len(mappingBlk)
     assert (start >= srcExon.tStartPlus) and (end <= srcExon.tEndPlus), f"not ({start} >= {srcExon.tStartPlus}) and ({end} <= {srcExon.tEndPlus})"
     return start, end
 
