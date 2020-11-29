@@ -26,9 +26,16 @@ class GtfRec:
         self.end = int(self.end)
 
     def getTransId(self):
-        # transcript_id "ENST00000327381.7
-        m = re.search('transcript_id "([A-Z0-9.]+)', self.attributes)
-        return m.group(1)
+        # transcript_id ENST00000327381.7 or ENST00000497752.7_PAR_Y
+        # ENST00000211314.5_2 with GTF modifier added
+        m = re.search('transcript_id "([^"]+)"', self.attributes)
+        if m is None:
+            raise Exception("can't get transcript id: " + str(self))
+        tid = m.group(1)
+        m = re.search('^(.+)_[0-9]+$', tid)  # drop modifier
+        if m is not None:
+            tid = m.group(1)
+        return tid
 
     def __str__(self):
         return "\t".join([str(getattr(self, c)) for c in self.__slots__])
