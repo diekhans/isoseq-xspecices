@@ -92,7 +92,7 @@ def mappingBlkToSrcExon(annots, transId, mappingBlk):
 def getBlkSourceRange(mappingBlk, srcExon):
     blkOff = mappingBlk.qStartPlus - srcExon.qStartPlus
     assert blkOff >= 0
-    if mappingBlk.psl.qStrand == '+':
+    if mappingBlk.psl.qStrand == srcExon.psl.qStrand:
         start = srcExon.tStart + blkOff
         end = start + len(mappingBlk)
     else:
