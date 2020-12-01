@@ -2,11 +2,10 @@
 
 input = input
 
-test: addGtfExonSourcesTests
+test: addGtfExonSourcesTests mappedAlignTests
 
 
 addGtfExonSourcesTests: addGtfHg38Mm39Test addGtfHg38RheMac10Test
-
 
 addGtfHg38Mm39Test: mkdirs
 	../bin/addGtfExonSources hg38 ${input}/hg38.src.psl ${input}/hg38-mm39.psl ${input}/hg38-mm39.gtf output/$@.gtf
@@ -15,6 +14,17 @@ addGtfHg38Mm39Test: mkdirs
 addGtfHg38RheMac10Test: mkdirs
 	../bin/addGtfExonSources hg38 ${input}/hg38.src.psl ${input}/hg38-rheMac10.psl ${input}/hg38-rheMac10.gtf output/$@.gtf
 	diff expected/$@.gtf output/$@.gtf
+
+
+mappedAlignTests: mappedAlnHg38Mm39Test mappedAlnHg38RheMac10Test
+
+mappedAlnHg38Mm39Test: mkdirs
+	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38-mm39.psl output/$@.json
+	diff expected/$@.json output/$@.json
+
+mappedAlnHg38RheMac10Test: mkdirs
+	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38-rheMac10.psl output/$@.json
+	diff expected/$@.json output/$@.json
 
 
 mkdirs:

@@ -1,0 +1,75 @@
+#!/usr/bin/env python3
+import sys
+from os import path as osp
+import argparse
+import json
+sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
+
+from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
+from pycbio.sys import fileOps
+from xspecies.data import Range, Coords, MappedTranscript, MappedExon
+
+# GTF coords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
+
+def parseArgs():
+    usage = """Edit the GTF for a mapping adding exon_source and block_source, both as source coordinates"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('srcGenome')
+    parser.add_argument('srcPsl')
+    parser.add_argument('mappedPsl')
+    parser.add_argument('annotJson')
+    return parser.parse_args()
+
+def pslFindBlocksByQuery(psl, qStart, qEnd):
+    "range should be is positive coordinates, return a blocks overlapping"
+    blks = []
+    for blk in psl.blocks:
+        if (qStart < blk.qEndPlus) and (qEnd > blk.qStartPlus):
+            blks.append(blk)
+    return blks
+
+def pslBlkToRange(blk):
+    return Range(blk.tStart, blk.tEnd)
+
+def pslToCoords(psl):
+    return Coords(psl.tName, psl.tStart, psl.tEnd, psl.qStrand)
+
+def mkSrcExonCoords(srcGenome, srcExon):
+    return "{}.{}:{}-{}".format(srcGenome, srcExon.psl.tName, srcExon.tStart, srcExon.tEnd)
+
+def buildMappedExon(srcGenome, srcExon, mappedBlks):
+    mStart = mappedBlks[0].tStart
+    mEnd = mappedBlks[-1].tEnd
+    mappedBases = sum([len(b) for b in mappedBlks])
+    return MappedExon(mkSrcExonCoords(srcGenome, srcExon),
+                      pslBlkToRange(srcExon),
+                      Range(mStart, mEnd), mappedBases)
+
+def processExon(srcGenome, srcExon, mappedAln):
+    mappedBlks = pslFindBlocksByQuery(mappedAln, srcExon.qStart, srcExon.qEnd)
+    if len(mappedBlks) == 0:
+        return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon))
+    else:
+        return buildMappedExon(srcGenome, srcExon, mappedBlks)
+
+def processMapping(srcGenome, srcAlns, mappedAln):
+    assert mappedAln.tStrand == '+'
+    srcAln = srcAlns.getByQName(dropQueryUniq(mappedAln.qName))[0]
+    exons = [processExon(srcGenome, srcExon, mappedAln) for srcExon in srcAln.blocks]
+    mappedTrans = MappedTranscript(srcAln.qName, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
+                                   exons)
+    return mappedTrans
+
+def processMappings(srcGenome, srcAlns, mappedPslFile):
+    return [processMapping(srcGenome, srcAlns, ma)
+            for ma in PslReader(mappedPslFile)]
+
+def main(opts):
+    srcAlns = PslTbl(opts.srcPsl, qNameIdx=True, qUniqDrop=True)
+    mappedAnnots = processMappings(opts.srcGenome, srcAlns, opts.mappedPsl)
+
+    with fileOps.opengz(opts.annotJson, "w") as fh:
+        json.dump(mappedAnnots, fh, indent=4)
+
+
+main(parseArgs())

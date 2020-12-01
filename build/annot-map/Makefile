@@ -75,6 +75,8 @@ destPsl = ${mappedDir}/${srcDb}-${destDb}.psl.gz
 filtStats = ${mappedDir}/${srcDb}-${destDb}.filtStats
 destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
 destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
+destJson = ${mappedDir}/${srcDb}-${destDb}.json.gz
+
 destGtfDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.gtf.gz
 
 ${destRawPsl}: ${srcPsl} ${srcFa} ${synChains}
@@ -103,6 +105,11 @@ ${destGtfDownload}: ${destGtf}
 	@mkdir -p $(dir $@)
 	ln -f $< $@
 
+${destJson}: ${srcPsl} ${destPsl}
+	@mkdir -p $(dir $@)
+	mappedAlignToAnnot ${srcDb} ${srcPsl} ${destPsl} /dev/stdout| pigz -c >${destJson}.${TMPEXT}
+	mv -f ${destJson}.${TMPEXT} ${destJson}
+
 ##
 # hub files
 ##
@@ -118,6 +125,6 @@ ${hubBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
 # main target
 ##
 build_pair: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${synChains} \
-	${destRawPsl} ${destPsl} ${destGp} ${destGtf} ${hubBigPsl} ${destGtfDownload}
+	${destRawPsl} ${destPsl} ${destGp} ${destGtf} ${hubBigPsl} ${destGtfDownload} ${destJson}
 
 endif

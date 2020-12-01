@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-
+import sys
+from os import path as osp
 import argparse
 import re
-from pycbio.hgdata.psl import PslTbl
+
+sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
+from pycbio.hgdata.psl import PslTbl, dropQueryUniq
 from pycbio.sys import fileOps
 
 # GTF coords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
@@ -40,14 +43,14 @@ class GtfRec:
     def __str__(self):
         return "\t".join([str(getattr(self, c)) for c in self.__slots__])
 
-def findBlockByQuery(psl, qStart, qEnd):
+def pslFindBlockByQuery(psl, qStart, qEnd):
     "range should be is positive coordinates"
     for blk in psl.blocks:
         if (qStart < blk.qEndPlus) and (qEnd > blk.qStartPlus):
             return blk
     return None
 
-def findBlockByTarget(psl, tStart, tEnd):
+def pslFindBlockByTarget(psl, tStart, tEnd):
     "range should be is positive coordinates"
     for blk in psl.blocks:
         if (blk.tStartPlus < tEnd) and (blk.tEndPlus > tStart):
@@ -57,7 +60,7 @@ def findBlockByTarget(psl, tStart, tEnd):
 def getTargetMatchBlock(psl, chrom, strand, tStart, tEnd, exactMatch):
     if not ((psl.tName == chrom) and (psl.qStrand == strand) and (psl.tStart < tEnd) and (psl.tEnd > tStart)):
         return None
-    blk = findBlockByTarget(psl, tStart, tEnd)
+    blk = pslFindBlockByTarget(psl, tStart, tEnd)
     if ((exactMatch and (blk.tStart == tStart) and (blk.tEnd == tEnd))
         or ((not exactMatch) and (blk.tStart <= tStart) and (blk.tEnd >= tEnd))):
         return blk
@@ -86,7 +89,7 @@ def gtfRecToMappingBlock(mappings, transId, gtfRec):
 
 def mappingBlkToSrcExon(annots, transId, mappingBlk):
     srcPsl = annots.getByQName(transId)[0]
-    srcExon = findBlockByQuery(srcPsl, mappingBlk.qStartPlus, mappingBlk.qEndPlus)
+    srcExon = pslFindBlockByQuery(srcPsl, mappingBlk.qStartPlus, mappingBlk.qEndPlus)
     return srcExon
 
 def getBlkSourceRange(mappingBlk, srcExon):
@@ -102,7 +105,7 @@ def getBlkSourceRange(mappingBlk, srcExon):
     return start, end
 
 def gtfRecAddAttrs(srcGenomeDb, mappings, annots, gtfRec):
-    transId = gtfRec.getTransId()
+    transId = dropQueryUniq(gtfRec.getTransId())
     mappingBlk = gtfRecToMappingBlock(mappings, transId, gtfRec)
     srcExon = mappingBlkToSrcExon(annots, transId, mappingBlk)
 
@@ -139,8 +142,9 @@ def processGtf(srcGenomeDb, mappings, annots, inGtf, outGtfFh):
 
 def main(opts):
     annots = PslTbl(opts.srcPsl, qNameIdx=True)
-    mappings = PslTbl(opts.mappedPsl, qNameIdx=True)
+    mappings = PslTbl(opts.mappedPsl, qNameIdx=True, qUniqDrop=True)
     with open(opts.outGtf, "w") as outGtfFh:
         processGtf(opts.srcGenomeDb, mappings, annots, opts.inGtf, outGtfFh)
+
 
 main(parseArgs())

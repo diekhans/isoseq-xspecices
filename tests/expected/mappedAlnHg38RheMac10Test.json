@@ -1,0 +1,2123 @@
+[
+    {
+        "srcTransId": "ENST00000497752.7_PAR_Y",
+        "mappedTransId": "ENST00000497752.7_PAR_Y",
+        "src": {
+            "start": 2719067,
+            "end": 2726268,
+            "chrom": "chrY",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 577,
+            "end": 15800,
+            "chrom": "chrY",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chrY:2719067-2719705",
+                "src": {
+                    "start": 2719067,
+                    "end": 2719705
+                },
+                "mapped": null,
+                "mappedBases": 0
+            },
+            {
+                "srcExonId": "hg38.chrY:2720355-2720424",
+                "src": {
+                    "start": 2720355,
+                    "end": 2720424
+                },
+                "mapped": {
+                    "start": 577,
+                    "end": 646
+                },
+                "mappedBases": 69
+            },
+            {
+                "srcExonId": "hg38.chrY:2722626-2722674",
+                "src": {
+                    "start": 2722626,
+                    "end": 2722674
+                },
+                "mapped": {
+                    "start": 11148,
+                    "end": 11196
+                },
+                "mappedBases": 48
+            },
+            {
+                "srcExonId": "hg38.chrY:2723313-2723364",
+                "src": {
+                    "start": 2723313,
+                    "end": 2723364
+                },
+                "mapped": {
+                    "start": 11954,
+                    "end": 12005
+                },
+                "mappedBases": 51
+            },
+            {
+                "srcExonId": "hg38.chrY:2726259-2726268",
+                "src": {
+                    "start": 2726259,
+                    "end": 2726268
+                },
+                "mapped": {
+                    "start": 15791,
+                    "end": 15800
+                },
+                "mappedBases": 9
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000564305.1",
+        "mappedTransId": "ENST00000564305.1-1",
+        "src": {
+            "start": 9355587,
+            "end": 9408093,
+            "chrom": "chr16",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 9382305,
+            "end": 9444215,
+            "chrom": "chr20",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr16:9355587-9355780",
+                "src": {
+                    "start": 9355587,
+                    "end": 9355780
+                },
+                "mapped": {
+                    "start": 9382305,
+                    "end": 9382492
+                },
+                "mappedBases": 187
+            },
+            {
+                "srcExonId": "hg38.chr16:9401729-9401783",
+                "src": {
+                    "start": 9401729,
+                    "end": 9401783
+                },
+                "mapped": {
+                    "start": 9437779,
+                    "end": 9437833
+                },
+                "mappedBases": 54
+            },
+            {
+                "srcExonId": "hg38.chr16:9403042-9408093",
+                "src": {
+                    "start": 9403042,
+                    "end": 9408093
+                },
+                "mapped": {
+                    "start": 9439085,
+                    "end": 9444215
+                },
+                "mappedBases": 4923
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000211314.5",
+        "mappedTransId": "ENST00000211314.5-1",
+        "src": {
+            "start": 52671112,
+            "end": 52686588,
+            "chrom": "chr6",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 116844838,
+            "end": 116860538,
+            "chrom": "chr4",
+            "strand": "-"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr6:52671112-52671245",
+                "src": {
+                    "start": 52671112,
+                    "end": 52671245
+                },
+                "mapped": {
+                    "start": 116860405,
+                    "end": 116860538
+                },
+                "mappedBases": 133
+            },
+            {
+                "srcExonId": "hg38.chr6:52677086-52677172",
+                "src": {
+                    "start": 52677086,
+                    "end": 52677172
+                },
+                "mapped": {
+                    "start": 116854363,
+                    "end": 116854449
+                },
+                "mappedBases": 86
+            },
+            {
+                "srcExonId": "hg38.chr6:52681812-52681914",
+                "src": {
+                    "start": 52681812,
+                    "end": 52681914
+                },
+                "mapped": {
+                    "start": 116849544,
+                    "end": 116849646
+                },
+                "mappedBases": 102
+            },
+            {
+                "srcExonId": "hg38.chr6:52684077-52684165",
+                "src": {
+                    "start": 52684077,
+                    "end": 52684165
+                },
+                "mapped": {
+                    "start": 116847316,
+                    "end": 116847404
+                },
+                "mappedBases": 88
+            },
+            {
+                "srcExonId": "hg38.chr6:52686009-52686588",
+                "src": {
+                    "start": 52686009,
+                    "end": 52686588
+                },
+                "mapped": {
+                    "start": 116844838,
+                    "end": 116845416
+                },
+                "mappedBases": 578
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000260102.9",
+        "mappedTransId": "ENST00000260102.9-1",
+        "src": {
+            "start": 54135240,
+            "end": 54148514,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 54758339,
+            "end": 54771662,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54135240-54135391",
+                "src": {
+                    "start": 54135240,
+                    "end": 54135391
+                },
+                "mapped": {
+                    "start": 54758339,
+                    "end": 54758490
+                },
+                "mappedBases": 151
+            },
+            {
+                "srcExonId": "hg38.chr8:54136510-54136665",
+                "src": {
+                    "start": 54136510,
+                    "end": 54136665
+                },
+                "mapped": {
+                    "start": 54759597,
+                    "end": 54759752
+                },
+                "mappedBases": 155
+            },
+            {
+                "srcExonId": "hg38.chr8:54137267-54137433",
+                "src": {
+                    "start": 54137267,
+                    "end": 54137433
+                },
+                "mapped": {
+                    "start": 54760354,
+                    "end": 54760520
+                },
+                "mappedBases": 166
+            },
+            {
+                "srcExonId": "hg38.chr8:54142662-54142786",
+                "src": {
+                    "start": 54142662,
+                    "end": 54142786
+                },
+                "mapped": {
+                    "start": 54765382,
+                    "end": 54765506
+                },
+                "mappedBases": 124
+            },
+            {
+                "srcExonId": "hg38.chr8:54147381-54148514",
+                "src": {
+                    "start": 54147381,
+                    "end": 54148514
+                },
+                "mapped": {
+                    "start": 54770533,
+                    "end": 54771662
+                },
+                "mappedBases": 1125
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000522521.2",
+        "mappedTransId": "ENST00000522521.2-1",
+        "src": {
+            "start": 54136507,
+            "end": 54147858,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 54759594,
+            "end": 54771008,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54136507-54136538",
+                "src": {
+                    "start": 54136507,
+                    "end": 54136538
+                },
+                "mapped": {
+                    "start": 54759594,
+                    "end": 54759625
+                },
+                "mappedBases": 31
+            },
+            {
+                "srcExonId": "hg38.chr8:54136610-54136665",
+                "src": {
+                    "start": 54136610,
+                    "end": 54136665
+                },
+                "mapped": {
+                    "start": 54759697,
+                    "end": 54759752
+                },
+                "mappedBases": 55
+            },
+            {
+                "srcExonId": "hg38.chr8:54137267-54137433",
+                "src": {
+                    "start": 54137267,
+                    "end": 54137433
+                },
+                "mapped": {
+                    "start": 54760354,
+                    "end": 54760520
+                },
+                "mappedBases": 166
+            },
+            {
+                "srcExonId": "hg38.chr8:54142662-54142786",
+                "src": {
+                    "start": 54142662,
+                    "end": 54142786
+                },
+                "mapped": {
+                    "start": 54765382,
+                    "end": 54765506
+                },
+                "mappedBases": 124
+            },
+            {
+                "srcExonId": "hg38.chr8:54147381-54147858",
+                "src": {
+                    "start": 54147381,
+                    "end": 54147858
+                },
+                "mapped": {
+                    "start": 54770533,
+                    "end": 54771008
+                },
+                "mappedBases": 475
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000660715.1",
+        "mappedTransId": "ENST00000660715.1-1",
+        "src": {
+            "start": 54381697,
+            "end": 54394870,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55002199,
+            "end": 55016256,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54381697-54381829",
+                "src": {
+                    "start": 54381697,
+                    "end": 54381829
+                },
+                "mapped": {
+                    "start": 55002199,
+                    "end": 55002330
+                },
+                "mappedBases": 131
+            },
+            {
+                "srcExonId": "hg38.chr8:54388790-54388866",
+                "src": {
+                    "start": 54388790,
+                    "end": 54388866
+                },
+                "mapped": {
+                    "start": 55009884,
+                    "end": 55009960
+                },
+                "mappedBases": 76
+            },
+            {
+                "srcExonId": "hg38.chr8:54392984-54394870",
+                "src": {
+                    "start": 54392984,
+                    "end": 54394870
+                },
+                "mapped": {
+                    "start": 55014374,
+                    "end": 55016256
+                },
+                "mappedBases": 1861
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000297316.5",
+        "mappedTransId": "ENST00000297316.5-1",
+        "src": {
+            "start": 54457934,
+            "end": 54460892,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55079285,
+            "end": 55082242,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54457934-54458445",
+                "src": {
+                    "start": 54457934,
+                    "end": 54458445
+                },
+                "mapped": {
+                    "start": 55079285,
+                    "end": 55079798
+                },
+                "mappedBases": 511
+            },
+            {
+                "srcExonId": "hg38.chr8:54459057-54460892",
+                "src": {
+                    "start": 54459057,
+                    "end": 54460892
+                },
+                "mapped": {
+                    "start": 55080393,
+                    "end": 55082242
+                },
+                "mappedBases": 1826
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000646684.1",
+        "mappedTransId": "ENST00000646684.1-1",
+        "src": {
+            "start": 54509421,
+            "end": 54560986,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55131627,
+            "end": 55182922,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54509421-54509548",
+                "src": {
+                    "start": 54509421,
+                    "end": 54509548
+                },
+                "mapped": {
+                    "start": 55131627,
+                    "end": 55131754
+                },
+                "mappedBases": 127
+            },
+            {
+                "srcExonId": "hg38.chr8:54532695-54532902",
+                "src": {
+                    "start": 54532695,
+                    "end": 54532902
+                },
+                "mapped": {
+                    "start": 55155278,
+                    "end": 55155485
+                },
+                "mappedBases": 207
+            },
+            {
+                "srcExonId": "hg38.chr8:54535295-54535349",
+                "src": {
+                    "start": 54535295,
+                    "end": 54535349
+                },
+                "mapped": {
+                    "start": 55157892,
+                    "end": 55157946
+                },
+                "mappedBases": 54
+            },
+            {
+                "srcExonId": "hg38.chr8:54547141-54547323",
+                "src": {
+                    "start": 54547141,
+                    "end": 54547323
+                },
+                "mapped": {
+                    "start": 55169655,
+                    "end": 55169836
+                },
+                "mappedBases": 181
+            },
+            {
+                "srcExonId": "hg38.chr8:54558759-54559320",
+                "src": {
+                    "start": 54558759,
+                    "end": 54559320
+                },
+                "mapped": {
+                    "start": 55180692,
+                    "end": 55181258
+                },
+                "mappedBases": 561
+            },
+            {
+                "srcExonId": "hg38.chr8:54560295-54560986",
+                "src": {
+                    "start": 54560295,
+                    "end": 54560986
+                },
+                "mapped": {
+                    "start": 55182238,
+                    "end": 55182922
+                },
+                "mappedBases": 683
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000522001.2",
+        "mappedTransId": "ENST00000522001.2-1",
+        "src": {
+            "start": 54554360,
+            "end": 54561927,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55176789,
+            "end": 55183849,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54554360-54554490",
+                "src": {
+                    "start": 54554360,
+                    "end": 54554490
+                },
+                "mapped": {
+                    "start": 55176789,
+                    "end": 55176919
+                },
+                "mappedBases": 130
+            },
+            {
+                "srcExonId": "hg38.chr8:54558759-54559320",
+                "src": {
+                    "start": 54558759,
+                    "end": 54559320
+                },
+                "mapped": {
+                    "start": 55180692,
+                    "end": 55181258
+                },
+                "mappedBases": 561
+            },
+            {
+                "srcExonId": "hg38.chr8:54560292-54560486",
+                "src": {
+                    "start": 54560292,
+                    "end": 54560486
+                },
+                "mapped": {
+                    "start": 55182235,
+                    "end": 55182428
+                },
+                "mappedBases": 193
+            },
+            {
+                "srcExonId": "hg38.chr8:54561703-54561927",
+                "src": {
+                    "start": 54561703,
+                    "end": 54561927
+                },
+                "mapped": {
+                    "start": 55183624,
+                    "end": 55183849
+                },
+                "mappedBases": 224
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000602362.2",
+        "mappedTransId": "ENST00000602362.2-1",
+        "src": {
+            "start": 54554582,
+            "end": 54577468,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55177011,
+            "end": 55199195,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54554582-54554662",
+                "src": {
+                    "start": 54554582,
+                    "end": 54554662
+                },
+                "mapped": {
+                    "start": 55177011,
+                    "end": 55177091
+                },
+                "mappedBases": 80
+            },
+            {
+                "srcExonId": "hg38.chr8:54558759-54559320",
+                "src": {
+                    "start": 54558759,
+                    "end": 54559320
+                },
+                "mapped": {
+                    "start": 55180692,
+                    "end": 55181258
+                },
+                "mappedBases": 561
+            },
+            {
+                "srcExonId": "hg38.chr8:54560292-54560486",
+                "src": {
+                    "start": 54560292,
+                    "end": 54560486
+                },
+                "mapped": {
+                    "start": 55182235,
+                    "end": 55182428
+                },
+                "mappedBases": 193
+            },
+            {
+                "srcExonId": "hg38.chr8:54577038-54577468",
+                "src": {
+                    "start": 54577038,
+                    "end": 54577468
+                },
+                "mapped": {
+                    "start": 55198762,
+                    "end": 55199195
+                },
+                "mappedBases": 428
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000518787.2",
+        "mappedTransId": "ENST00000518787.2-1",
+        "src": {
+            "start": 54558759,
+            "end": 54561907,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55180692,
+            "end": 55183829,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54558759-54558980",
+                "src": {
+                    "start": 54558759,
+                    "end": 54558980
+                },
+                "mapped": {
+                    "start": 55180692,
+                    "end": 55180916
+                },
+                "mappedBases": 221
+            },
+            {
+                "srcExonId": "hg38.chr8:54559152-54559320",
+                "src": {
+                    "start": 54559152,
+                    "end": 54559320
+                },
+                "mapped": {
+                    "start": 55181089,
+                    "end": 55181258
+                },
+                "mappedBases": 168
+            },
+            {
+                "srcExonId": "hg38.chr8:54560292-54560486",
+                "src": {
+                    "start": 54560292,
+                    "end": 54560486
+                },
+                "mapped": {
+                    "start": 55182235,
+                    "end": 55182428
+                },
+                "mappedBases": 193
+            },
+            {
+                "srcExonId": "hg38.chr8:54561703-54561907",
+                "src": {
+                    "start": 54561703,
+                    "end": 54561907
+                },
+                "mapped": {
+                    "start": 55183624,
+                    "end": 55183829
+                },
+                "mappedBases": 204
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000636932.1",
+        "mappedTransId": "ENST00000636932.1-1",
+        "src": {
+            "start": 54559168,
+            "end": 54769977,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55181106,
+            "end": 55389413,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54559168-54559320",
+                "src": {
+                    "start": 54559168,
+                    "end": 54559320
+                },
+                "mapped": {
+                    "start": 55181106,
+                    "end": 55181258
+                },
+                "mappedBases": 152
+            },
+            {
+                "srcExonId": "hg38.chr8:54620954-54621581",
+                "src": {
+                    "start": 54620954,
+                    "end": 54621581
+                },
+                "mapped": {
+                    "start": 55229372,
+                    "end": 55229999
+                },
+                "mappedBases": 627
+            },
+            {
+                "srcExonId": "hg38.chr8:54622116-54622288",
+                "src": {
+                    "start": 54622116,
+                    "end": 54622288
+                },
+                "mapped": {
+                    "start": 55230537,
+                    "end": 55230709
+                },
+                "mappedBases": 172
+            },
+            {
+                "srcExonId": "hg38.chr8:54648984-54649148",
+                "src": {
+                    "start": 54648984,
+                    "end": 54649148
+                },
+                "mapped": {
+                    "start": 55260213,
+                    "end": 55260377
+                },
+                "mappedBases": 164
+            },
+            {
+                "srcExonId": "hg38.chr8:54652779-54652866",
+                "src": {
+                    "start": 54652779,
+                    "end": 54652866
+                },
+                "mapped": {
+                    "start": 55264320,
+                    "end": 55264407
+                },
+                "mappedBases": 87
+            },
+            {
+                "srcExonId": "hg38.chr8:54656082-54656215",
+                "src": {
+                    "start": 54656082,
+                    "end": 54656215
+                },
+                "mapped": {
+                    "start": 55267629,
+                    "end": 55267762
+                },
+                "mappedBases": 133
+            },
+            {
+                "srcExonId": "hg38.chr8:54663698-54663850",
+                "src": {
+                    "start": 54663698,
+                    "end": 54663850
+                },
+                "mapped": {
+                    "start": 55275923,
+                    "end": 55276075
+                },
+                "mappedBases": 152
+            },
+            {
+                "srcExonId": "hg38.chr8:54673849-54673928",
+                "src": {
+                    "start": 54673849,
+                    "end": 54673928
+                },
+                "mapped": {
+                    "start": 55287393,
+                    "end": 55287472
+                },
+                "mappedBases": 79
+            },
+            {
+                "srcExonId": "hg38.chr8:54678460-54678536",
+                "src": {
+                    "start": 54678460,
+                    "end": 54678536
+                },
+                "mapped": {
+                    "start": 55291982,
+                    "end": 55292058
+                },
+                "mappedBases": 76
+            },
+            {
+                "srcExonId": "hg38.chr8:54679419-54679496",
+                "src": {
+                    "start": 54679419,
+                    "end": 54679496
+                },
+                "mapped": {
+                    "start": 55292929,
+                    "end": 55293006
+                },
+                "mappedBases": 77
+            },
+            {
+                "srcExonId": "hg38.chr8:54679595-54679627",
+                "src": {
+                    "start": 54679595,
+                    "end": 54679627
+                },
+                "mapped": {
+                    "start": 55293111,
+                    "end": 55293143
+                },
+                "mappedBases": 32
+            },
+            {
+                "srcExonId": "hg38.chr8:54679803-54679933",
+                "src": {
+                    "start": 54679803,
+                    "end": 54679933
+                },
+                "mapped": {
+                    "start": 55293314,
+                    "end": 55293444
+                },
+                "mappedBases": 130
+            },
+            {
+                "srcExonId": "hg38.chr8:54699466-54699570",
+                "src": {
+                    "start": 54699466,
+                    "end": 54699570
+                },
+                "mapped": {
+                    "start": 55318668,
+                    "end": 55318772
+                },
+                "mappedBases": 104
+            },
+            {
+                "srcExonId": "hg38.chr8:54701485-54701662",
+                "src": {
+                    "start": 54701485,
+                    "end": 54701662
+                },
+                "mapped": {
+                    "start": 55320693,
+                    "end": 55320870
+                },
+                "mappedBases": 177
+            },
+            {
+                "srcExonId": "hg38.chr8:54706442-54706655",
+                "src": {
+                    "start": 54706442,
+                    "end": 54706655
+                },
+                "mapped": {
+                    "start": 55325622,
+                    "end": 55325835
+                },
+                "mappedBases": 213
+            },
+            {
+                "srcExonId": "hg38.chr8:54720128-54720306",
+                "src": {
+                    "start": 54720128,
+                    "end": 54720306
+                },
+                "mapped": {
+                    "start": 55339393,
+                    "end": 55339571
+                },
+                "mappedBases": 178
+            },
+            {
+                "srcExonId": "hg38.chr8:54726344-54726476",
+                "src": {
+                    "start": 54726344,
+                    "end": 54726476
+                },
+                "mapped": {
+                    "start": 55345654,
+                    "end": 55345786
+                },
+                "mappedBases": 132
+            },
+            {
+                "srcExonId": "hg38.chr8:54734544-54734744",
+                "src": {
+                    "start": 54734544,
+                    "end": 54734744
+                },
+                "mapped": {
+                    "start": 55353782,
+                    "end": 55353982
+                },
+                "mappedBases": 200
+            },
+            {
+                "srcExonId": "hg38.chr8:54738942-54739029",
+                "src": {
+                    "start": 54738942,
+                    "end": 54739029
+                },
+                "mapped": {
+                    "start": 55358137,
+                    "end": 55358224
+                },
+                "mappedBases": 87
+            },
+            {
+                "srcExonId": "hg38.chr8:54754802-54754935",
+                "src": {
+                    "start": 54754802,
+                    "end": 54754935
+                },
+                "mapped": {
+                    "start": 55373873,
+                    "end": 55374006
+                },
+                "mappedBases": 133
+            },
+            {
+                "srcExonId": "hg38.chr8:54755618-54755770",
+                "src": {
+                    "start": 54755618,
+                    "end": 54755770
+                },
+                "mapped": {
+                    "start": 55374698,
+                    "end": 55374850
+                },
+                "mappedBases": 152
+            },
+            {
+                "srcExonId": "hg38.chr8:54758921-54759076",
+                "src": {
+                    "start": 54758921,
+                    "end": 54759076
+                },
+                "mapped": {
+                    "start": 55377953,
+                    "end": 55378108
+                },
+                "mappedBases": 155
+            },
+            {
+                "srcExonId": "hg38.chr8:54769740-54769977",
+                "src": {
+                    "start": 54769740,
+                    "end": 54769977
+                },
+                "mapped": {
+                    "start": 55389175,
+                    "end": 55389413
+                },
+                "mappedBases": 237
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000637698.1",
+        "mappedTransId": "ENST00000637698.1-1",
+        "src": {
+            "start": 54616066,
+            "end": 54871720,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55223951,
+            "end": 55504572,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54616066-54616202",
+                "src": {
+                    "start": 54616066,
+                    "end": 54616202
+                },
+                "mapped": {
+                    "start": 55223951,
+                    "end": 55224316
+                },
+                "mappedBases": 136
+            },
+            {
+                "srcExonId": "hg38.chr8:54620954-54621581",
+                "src": {
+                    "start": 54620954,
+                    "end": 54621581
+                },
+                "mapped": {
+                    "start": 55229372,
+                    "end": 55229999
+                },
+                "mappedBases": 627
+            },
+            {
+                "srcExonId": "hg38.chr8:54622116-54622288",
+                "src": {
+                    "start": 54622116,
+                    "end": 54622288
+                },
+                "mapped": {
+                    "start": 55230537,
+                    "end": 55230709
+                },
+                "mappedBases": 172
+            },
+            {
+                "srcExonId": "hg38.chr8:54648984-54649148",
+                "src": {
+                    "start": 54648984,
+                    "end": 54649148
+                },
+                "mapped": {
+                    "start": 55260213,
+                    "end": 55260377
+                },
+                "mappedBases": 164
+            },
+            {
+                "srcExonId": "hg38.chr8:54652779-54652866",
+                "src": {
+                    "start": 54652779,
+                    "end": 54652866
+                },
+                "mapped": {
+                    "start": 55264320,
+                    "end": 55264407
+                },
+                "mappedBases": 87
+            },
+            {
+                "srcExonId": "hg38.chr8:54656082-54656215",
+                "src": {
+                    "start": 54656082,
+                    "end": 54656215
+                },
+                "mapped": {
+                    "start": 55267629,
+                    "end": 55267762
+                },
+                "mappedBases": 133
+            },
+            {
+                "srcExonId": "hg38.chr8:54663698-54663850",
+                "src": {
+                    "start": 54663698,
+                    "end": 54663850
+                },
+                "mapped": {
+                    "start": 55275923,
+                    "end": 55276075
+                },
+                "mappedBases": 152
+            },
+            {
+                "srcExonId": "hg38.chr8:54673849-54673928",
+                "src": {
+                    "start": 54673849,
+                    "end": 54673928
+                },
+                "mapped": {
+                    "start": 55287393,
+                    "end": 55287472
+                },
+                "mappedBases": 79
+            },
+            {
+                "srcExonId": "hg38.chr8:54678460-54678536",
+                "src": {
+                    "start": 54678460,
+                    "end": 54678536
+                },
+                "mapped": {
+                    "start": 55291982,
+                    "end": 55292058
+                },
+                "mappedBases": 76
+            },
+            {
+                "srcExonId": "hg38.chr8:54679419-54679627",
+                "src": {
+                    "start": 54679419,
+                    "end": 54679627
+                },
+                "mapped": {
+                    "start": 55292929,
+                    "end": 55293143
+                },
+                "mappedBases": 207
+            },
+            {
+                "srcExonId": "hg38.chr8:54679803-54679933",
+                "src": {
+                    "start": 54679803,
+                    "end": 54679933
+                },
+                "mapped": {
+                    "start": 55293314,
+                    "end": 55293444
+                },
+                "mappedBases": 130
+            },
+            {
+                "srcExonId": "hg38.chr8:54699466-54699570",
+                "src": {
+                    "start": 54699466,
+                    "end": 54699570
+                },
+                "mapped": {
+                    "start": 55318668,
+                    "end": 55318772
+                },
+                "mappedBases": 104
+            },
+            {
+                "srcExonId": "hg38.chr8:54701485-54701662",
+                "src": {
+                    "start": 54701485,
+                    "end": 54701662
+                },
+                "mapped": {
+                    "start": 55320693,
+                    "end": 55320870
+                },
+                "mappedBases": 177
+            },
+            {
+                "srcExonId": "hg38.chr8:54706442-54706655",
+                "src": {
+                    "start": 54706442,
+                    "end": 54706655
+                },
+                "mapped": {
+                    "start": 55325622,
+                    "end": 55325835
+                },
+                "mappedBases": 213
+            },
+            {
+                "srcExonId": "hg38.chr8:54720128-54720306",
+                "src": {
+                    "start": 54720128,
+                    "end": 54720306
+                },
+                "mapped": {
+                    "start": 55339393,
+                    "end": 55339571
+                },
+                "mappedBases": 178
+            },
+            {
+                "srcExonId": "hg38.chr8:54726344-54726476",
+                "src": {
+                    "start": 54726344,
+                    "end": 54726476
+                },
+                "mapped": {
+                    "start": 55345654,
+                    "end": 55345786
+                },
+                "mappedBases": 132
+            },
+            {
+                "srcExonId": "hg38.chr8:54734544-54734744",
+                "src": {
+                    "start": 54734544,
+                    "end": 54734744
+                },
+                "mapped": {
+                    "start": 55353782,
+                    "end": 55353982
+                },
+                "mappedBases": 200
+            },
+            {
+                "srcExonId": "hg38.chr8:54738942-54739029",
+                "src": {
+                    "start": 54738942,
+                    "end": 54739029
+                },
+                "mapped": {
+                    "start": 55358137,
+                    "end": 55358224
+                },
+                "mappedBases": 87
+            },
+            {
+                "srcExonId": "hg38.chr8:54754802-54754935",
+                "src": {
+                    "start": 54754802,
+                    "end": 54754935
+                },
+                "mapped": {
+                    "start": 55373873,
+                    "end": 55374006
+                },
+                "mappedBases": 133
+            },
+            {
+                "srcExonId": "hg38.chr8:54755618-54755770",
+                "src": {
+                    "start": 54755618,
+                    "end": 54755770
+                },
+                "mapped": {
+                    "start": 55374698,
+                    "end": 55374850
+                },
+                "mappedBases": 152
+            },
+            {
+                "srcExonId": "hg38.chr8:54758921-54759076",
+                "src": {
+                    "start": 54758921,
+                    "end": 54759076
+                },
+                "mapped": {
+                    "start": 55377953,
+                    "end": 55378108
+                },
+                "mappedBases": 155
+            },
+            {
+                "srcExonId": "hg38.chr8:54769740-54769799",
+                "src": {
+                    "start": 54769740,
+                    "end": 54769799
+                },
+                "mapped": {
+                    "start": 55389175,
+                    "end": 55389234
+                },
+                "mappedBases": 59
+            },
+            {
+                "srcExonId": "hg38.chr8:54770122-54770167",
+                "src": {
+                    "start": 54770122,
+                    "end": 54770167
+                },
+                "mapped": {
+                    "start": 55389558,
+                    "end": 55389603
+                },
+                "mappedBases": 45
+            },
+            {
+                "srcExonId": "hg38.chr8:54783546-54783710",
+                "src": {
+                    "start": 54783546,
+                    "end": 54783710
+                },
+                "mapped": {
+                    "start": 55402563,
+                    "end": 55402727
+                },
+                "mappedBases": 164
+            },
+            {
+                "srcExonId": "hg38.chr8:54837449-54837669",
+                "src": {
+                    "start": 54837449,
+                    "end": 54837669
+                },
+                "mapped": {
+                    "start": 55470787,
+                    "end": 55471007
+                },
+                "mappedBases": 220
+            },
+            {
+                "srcExonId": "hg38.chr8:54852573-54852728",
+                "src": {
+                    "start": 54852573,
+                    "end": 54852728
+                },
+                "mapped": {
+                    "start": 55485904,
+                    "end": 55486059
+                },
+                "mappedBases": 155
+            },
+            {
+                "srcExonId": "hg38.chr8:54857027-54857106",
+                "src": {
+                    "start": 54857027,
+                    "end": 54857106
+                },
+                "mapped": {
+                    "start": 55490200,
+                    "end": 55490279
+                },
+                "mappedBases": 79
+            },
+            {
+                "srcExonId": "hg38.chr8:54865834-54865916",
+                "src": {
+                    "start": 54865834,
+                    "end": 54865916
+                },
+                "mapped": {
+                    "start": 55498701,
+                    "end": 55498783
+                },
+                "mappedBases": 82
+            },
+            {
+                "srcExonId": "hg38.chr8:54869842-54871720",
+                "src": {
+                    "start": 54869842,
+                    "end": 54871720
+                },
+                "mapped": {
+                    "start": 55502660,
+                    "end": 55504572
+                },
+                "mappedBases": 1871
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000220676.2",
+        "mappedTransId": "ENST00000220676.2-1",
+        "src": {
+            "start": 54616095,
+            "end": 54630834,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55223980,
+            "end": 55239201,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54616095-54616202",
+                "src": {
+                    "start": 54616095,
+                    "end": 54616202
+                },
+                "mapped": {
+                    "start": 55223980,
+                    "end": 55224316
+                },
+                "mappedBases": 107
+            },
+            {
+                "srcExonId": "hg38.chr8:54620954-54621581",
+                "src": {
+                    "start": 54620954,
+                    "end": 54621581
+                },
+                "mapped": {
+                    "start": 55229372,
+                    "end": 55229999
+                },
+                "mappedBases": 627
+            },
+            {
+                "srcExonId": "hg38.chr8:54622116-54622288",
+                "src": {
+                    "start": 54622116,
+                    "end": 54622288
+                },
+                "mapped": {
+                    "start": 55230537,
+                    "end": 55230709
+                },
+                "mappedBases": 172
+            },
+            {
+                "srcExonId": "hg38.chr8:54624669-54630834",
+                "src": {
+                    "start": 54624669,
+                    "end": 54630834
+                },
+                "mapped": {
+                    "start": 55233048,
+                    "end": 55239201
+                },
+                "mappedBases": 6142
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000650534.1",
+        "mappedTransId": "ENST00000650534.1-1",
+        "src": {
+            "start": 54796513,
+            "end": 54869985,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55421759,
+            "end": 55502803,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:54796513-54796757",
+                "src": {
+                    "start": 54796513,
+                    "end": 54796757
+                },
+                "mapped": {
+                    "start": 55421759,
+                    "end": 55422000
+                },
+                "mappedBases": 241
+            },
+            {
+                "srcExonId": "hg38.chr8:54801543-54801793",
+                "src": {
+                    "start": 54801543,
+                    "end": 54801793
+                },
+                "mapped": {
+                    "start": 55426762,
+                    "end": 55427013
+                },
+                "mappedBases": 250
+            },
+            {
+                "srcExonId": "hg38.chr8:54837449-54837669",
+                "src": {
+                    "start": 54837449,
+                    "end": 54837669
+                },
+                "mapped": {
+                    "start": 55470787,
+                    "end": 55471007
+                },
+                "mappedBases": 220
+            },
+            {
+                "srcExonId": "hg38.chr8:54852573-54852728",
+                "src": {
+                    "start": 54852573,
+                    "end": 54852728
+                },
+                "mapped": {
+                    "start": 55485904,
+                    "end": 55486059
+                },
+                "mappedBases": 155
+            },
+            {
+                "srcExonId": "hg38.chr8:54857027-54857106",
+                "src": {
+                    "start": 54857027,
+                    "end": 54857106
+                },
+                "mapped": {
+                    "start": 55490200,
+                    "end": 55490279
+                },
+                "mappedBases": 79
+            },
+            {
+                "srcExonId": "hg38.chr8:54865834-54865916",
+                "src": {
+                    "start": 54865834,
+                    "end": 54865916
+                },
+                "mapped": {
+                    "start": 55498701,
+                    "end": 55498783
+                },
+                "mappedBases": 82
+            },
+            {
+                "srcExonId": "hg38.chr8:54869842-54869985",
+                "src": {
+                    "start": 54869842,
+                    "end": 54869985
+                },
+                "mapped": {
+                    "start": 55502660,
+                    "end": 55502803
+                },
+                "mappedBases": 143
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000671242.1",
+        "mappedTransId": "ENST00000671242.1-1",
+        "src": {
+            "start": 55067584,
+            "end": 55081909,
+            "chrom": "chr8",
+            "strand": "-"
+        },
+        "mapped": {
+            "start": 55700985,
+            "end": 55714063,
+            "chrom": "chr8",
+            "strand": "-"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55067584-55070535",
+                "src": {
+                    "start": 55067584,
+                    "end": 55070535
+                },
+                "mapped": {
+                    "start": 55703468,
+                    "end": 55714063
+                },
+                "mappedBases": 3398
+            },
+            {
+                "srcExonId": "hg38.chr8:55075899-55077697",
+                "src": {
+                    "start": 55075899,
+                    "end": 55077697
+                },
+                "mapped": {
+                    "start": 55702090,
+                    "end": 55703975
+                },
+                "mappedBases": 1846
+            },
+            {
+                "srcExonId": "hg38.chr8:55080810-55081909",
+                "src": {
+                    "start": 55080810,
+                    "end": 55081909
+                },
+                "mapped": {
+                    "start": 55700985,
+                    "end": 55702332
+                },
+                "mappedBases": 1332
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000327381.7",
+        "mappedTransId": "ENST00000327381.7-1",
+        "src": {
+            "start": 55102027,
+            "end": 55542054,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55734186,
+            "end": 56162450,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55102027-55103294",
+                "src": {
+                    "start": 55102027,
+                    "end": 55103294
+                },
+                "mapped": {
+                    "start": 55734186,
+                    "end": 55735450
+                },
+                "mappedBases": 1264
+            },
+            {
+                "srcExonId": "hg38.chr8:55357677-55357877",
+                "src": {
+                    "start": 55357677,
+                    "end": 55357877
+                },
+                "mapped": {
+                    "start": 55988101,
+                    "end": 55988301
+                },
+                "mappedBases": 200
+            },
+            {
+                "srcExonId": "hg38.chr8:55523280-55542054",
+                "src": {
+                    "start": 55523280,
+                    "end": 55542054
+                },
+                "mapped": {
+                    "start": 56144168,
+                    "end": 56162450
+                },
+                "mappedBases": 18060
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000622811.1",
+        "mappedTransId": "ENST00000622811.1-1",
+        "src": {
+            "start": 55102456,
+            "end": 55526149,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55734615,
+            "end": 56147032,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55102456-55103291",
+                "src": {
+                    "start": 55102456,
+                    "end": 55103291
+                },
+                "mapped": {
+                    "start": 55734615,
+                    "end": 55735447
+                },
+                "mappedBases": 832
+            },
+            {
+                "srcExonId": "hg38.chr8:55272901-55272906",
+                "src": {
+                    "start": 55272901,
+                    "end": 55272906
+                },
+                "mapped": {
+                    "start": 55900995,
+                    "end": 55901000
+                },
+                "mappedBases": 5
+            },
+            {
+                "srcExonId": "hg38.chr8:55357679-55357877",
+                "src": {
+                    "start": 55357679,
+                    "end": 55357877
+                },
+                "mapped": {
+                    "start": 55988103,
+                    "end": 55988301
+                },
+                "mappedBases": 198
+            },
+            {
+                "srcExonId": "hg38.chr8:55523280-55526149",
+                "src": {
+                    "start": 55523280,
+                    "end": 55526149
+                },
+                "mapped": {
+                    "start": 56144168,
+                    "end": 56147032
+                },
+                "mappedBases": 2855
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000522186.1",
+        "mappedTransId": "ENST00000522186.1-1",
+        "src": {
+            "start": 55135202,
+            "end": 55142358,
+            "chrom": "chr8",
+            "strand": "-"
+        },
+        "mapped": {
+            "start": 55766732,
+            "end": 55774035,
+            "chrom": "chr8",
+            "strand": "-"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55135202-55135652",
+                "src": {
+                    "start": 55135202,
+                    "end": 55135652
+                },
+                "mapped": {
+                    "start": 55767075,
+                    "end": 55774035
+                },
+                "mappedBases": 545
+            },
+            {
+                "srcExonId": "hg38.chr8:55140089-55140216",
+                "src": {
+                    "start": 55140089,
+                    "end": 55140216
+                },
+                "mapped": {
+                    "start": 55766832,
+                    "end": 55767258
+                },
+                "mappedBases": 425
+            },
+            {
+                "srcExonId": "hg38.chr8:55142122-55142358",
+                "src": {
+                    "start": 55142122,
+                    "end": 55142358
+                },
+                "mapped": {
+                    "start": 55766732,
+                    "end": 55767074
+                },
+                "mappedBases": 267
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000668329.1",
+        "mappedTransId": "ENST00000668329.1-1",
+        "src": {
+            "start": 55161445,
+            "end": 55164447,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55793291,
+            "end": 55796301,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55161445-55161644",
+                "src": {
+                    "start": 55161445,
+                    "end": 55161644
+                },
+                "mapped": {
+                    "start": 55793291,
+                    "end": 55793490
+                },
+                "mappedBases": 199
+            },
+            {
+                "srcExonId": "hg38.chr8:55164114-55164447",
+                "src": {
+                    "start": 55164114,
+                    "end": 55164447
+                },
+                "mapped": {
+                    "start": 55795969,
+                    "end": 55796301
+                },
+                "mappedBases": 332
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000522559.1",
+        "mappedTransId": "ENST00000522559.1-1",
+        "src": {
+            "start": 55161482,
+            "end": 55164451,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55793328,
+            "end": 55796305,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55161482-55161644",
+                "src": {
+                    "start": 55161482,
+                    "end": 55161644
+                },
+                "mapped": {
+                    "start": 55793328,
+                    "end": 55793490
+                },
+                "mappedBases": 162
+            },
+            {
+                "srcExonId": "hg38.chr8:55164117-55164451",
+                "src": {
+                    "start": 55164117,
+                    "end": 55164451
+                },
+                "mapped": {
+                    "start": 55795972,
+                    "end": 55796305
+                },
+                "mappedBases": 333
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000520251.1",
+        "mappedTransId": "ENST00000520251.1-1",
+        "src": {
+            "start": 55164122,
+            "end": 55164727,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 55795977,
+            "end": 55796580,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55164122-55164183",
+                "src": {
+                    "start": 55164122,
+                    "end": 55164183
+                },
+                "mapped": {
+                    "start": 55795977,
+                    "end": 55796037
+                },
+                "mappedBases": 60
+            },
+            {
+                "srcExonId": "hg38.chr8:55164412-55164727",
+                "src": {
+                    "start": 55164412,
+                    "end": 55164727
+                },
+                "mapped": {
+                    "start": 55796266,
+                    "end": 55796580
+                },
+                "mappedBases": 313
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000518261.1",
+        "mappedTransId": "ENST00000518261.1-1",
+        "src": {
+            "start": 55526185,
+            "end": 55533952,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 56147069,
+            "end": 56154569,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55526185-55526750",
+                "src": {
+                    "start": 55526185,
+                    "end": 55526750
+                },
+                "mapped": {
+                    "start": 56147069,
+                    "end": 56147638
+                },
+                "mappedBases": 563
+            },
+            {
+                "srcExonId": "hg38.chr8:55533652-55533952",
+                "src": {
+                    "start": 55533652,
+                    "end": 55533952
+                },
+                "mapped": {
+                    "start": 56154269,
+                    "end": 56154569
+                },
+                "mappedBases": 300
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000523948.5",
+        "mappedTransId": "ENST00000523948.5-1",
+        "src": {
+            "start": 55773469,
+            "end": 55825448,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "mapped": {
+            "start": 56401415,
+            "end": 56452460,
+            "chrom": "chr8",
+            "strand": "+"
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr8:55773469-55773719",
+                "src": {
+                    "start": 55773469,
+                    "end": 55773719
+                },
+                "mapped": {
+                    "start": 56401415,
+                    "end": 56401665
+                },
+                "mappedBases": 250
+            },
+            {
+                "srcExonId": "hg38.chr8:55785718-55785891",
+                "src": {
+                    "start": 55785718,
+                    "end": 55785891
+                },
+                "mapped": {
+                    "start": 56414623,
+                    "end": 56414796
+                },
+                "mappedBases": 173
+            },
+            {
+                "srcExonId": "hg38.chr8:55786237-55787060",
+                "src": {
+                    "start": 55786237,
+                    "end": 55787060
+                },
+                "mapped": {
+                    "start": 56415136,
+                    "end": 56415965
+                },
+                "mappedBases": 823
+            },
+            {
+                "srcExonId": "hg38.chr8:55790181-55790299",
+                "src": {
+                    "start": 55790181,
+                    "end": 55790299
+                },
+                "mapped": {
+                    "start": 56419395,
+                    "end": 56419513
+                },
+                "mappedBases": 118
+            },
+            {
+                "srcExonId": "hg38.chr8:55792697-55792784",
+                "src": {
+                    "start": 55792697,
+                    "end": 55792784
+                },
+                "mapped": {
+                    "start": 56421800,
+                    "end": 56421887
+                },
+                "mappedBases": 87
+            },
+            {
+                "srcExonId": "hg38.chr8:55795977-55796152",
+                "src": {
+                    "start": 55795977,
+                    "end": 55796152
+                },
+                "mapped": {
+                    "start": 56425051,
+                    "end": 56425226
+                },
+                "mappedBases": 175
+            },
+            {
+                "srcExonId": "hg38.chr8:55798913-55799220",
+                "src": {
+                    "start": 55798913,
+                    "end": 55799220
+                },
+                "mapped": {
+                    "start": 56428004,
+                    "end": 56428311
+                },
+                "mappedBases": 307
+            },
+            {
+                "srcExonId": "hg38.chr8:55802456-55802606",
+                "src": {
+                    "start": 55802456,
+                    "end": 55802606
+                },
+                "mapped": {
+                    "start": 56430952,
+                    "end": 56431102
+                },
+                "mappedBases": 150
+            },
+            {
+                "srcExonId": "hg38.chr8:55804892-55805036",
+                "src": {
+                    "start": 55804892,
+                    "end": 55805036
+                },
+                "mapped": {
+                    "start": 56433346,
+                    "end": 56433490
+                },
+                "mappedBases": 144
+            },
+            {
+                "srcExonId": "hg38.chr8:55813054-55813118",
+                "src": {
+                    "start": 55813054,
+                    "end": 55813118
+                },
+                "mapped": {
+                    "start": 56441794,
+                    "end": 56441858
+                },
+                "mappedBases": 64
+            },
+            {
+                "srcExonId": "hg38.chr8:55824580-55825448",
+                "src": {
+                    "start": 55824580,
+                    "end": 55825448
+                },
+                "mapped": {
+                    "start": 56451568,
+                    "end": 56452460
+                },
+                "mappedBases": 867
+            }
+        ]
+    }
+]
