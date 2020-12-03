@@ -15,6 +15,17 @@ mm39_gtf = data/mm39/Mus_musculus.GRCm39.103.gtf.gz
 rheMac10_gtf = data/rheMac10/Macaca_mulatta.Mmul_10.101.chr.gtf.gz
 rn6_gtf = data/rn6/Rattus_norvegicus.Rnor_6.0.101.gtf.gz
 
+
+srcDir = data/${srcDb}
+srcGp = ${srcDir}/${srcDb}.src.gp.gz
+srcMeta = ${srcDir}/${srcDb}.src.tsv.gz
+srcGtf = ${${srcDb}_gtf}
+srcFa = ${srcDir}/${srcDb}.src.fa.gz
+srcPsl = ${srcDir}/${srcDb}.src.psl.gz
+srcCds = ${srcDir}/${srcDb}.src.cds.gz
+hubSrcBigPsl = ${hubRootDir}/${srcDb}/${srcDb}.src.bigPsl
+
+
 build: build_src
 
 
@@ -23,23 +34,12 @@ build_src: ${DBS:%=%_build_src}
 	${MAKE} build_dest srcDb=$*
 
 build_dest: ${DBS:%=%_build_dest}
-%_build_dest:
+%_build_dest: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${hubSrcBigPsl}
 	${MAKE} build_pair srcDb=${srcDb} destDb=$*
 
-ifeq (${srcDb},${destDb})
-build_pair:  # does nothing
-else
 ##
 # src data
 ##
-srcDir = data/${srcDb}
-srcGp = ${srcDir}/${srcDb}.src.gp.gz
-srcMeta = ${srcDir}/${srcDb}.src.tsv.gz
-srcGtf = ${${srcDb}_gtf}
-srcFa = ${srcDir}/${srcDb}.src.fa.gz
-srcPsl = ${srcDir}/${srcDb}.src.psl.gz
-srcCds = ${srcDir}/${srcDb}.src.cds.gz
-
 ${srcMeta}: ${srcGp}
 ${srcGp}: ${srcGff}
 	@mkdir -p $(dir $@)
@@ -56,6 +56,14 @@ ${srcPsl}: ${srcGp}
 	genePredToFakePsl ${srcDb} ${srcGp} /dev/stdout >(pigz -c >${srcCds}) | pigz -c > ${srcPsl}.${TMPEXT}
 	mv -f ${srcPsl}.${TMPEXT} ${srcPsl}
 
+srcChromSizes = /hive/data/genomes/${srcDb}/chrom.sizes
+${hubSrcBigPsl}: ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${srcChromSizes}
+	@mkdir -p $(dir $@)
+	buildAnnotBigPsl ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${srcChromSizes} ${hubSrcBigPsl}
+
+ifeq (${srcDb},${destDb})
+build_pair:  # does nothing
+else
 ##
 # mapping chains
 ##
@@ -115,17 +123,16 @@ ${destJsonDownload}: ${destJson}
 # hub files
 ##
 destChromSizes = /hive/data/genomes/${destDb}/chrom.sizes
-hubBigPsl = ${hubRootDir}/${destDb}/${srcDb}-${destDb}.bigPsl
+hubDestBigPsl = ${hubRootDir}/${destDb}/${srcDb}-${destDb}.bigPsl
 
-${hubBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
+${hubDestBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
 	@mkdir -p $(dir $@)
-	buildAnnotBigPsl ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes} ${hubBigPsl}
+	buildAnnotBigPsl ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes} ${hubDestBigPsl}
 
 
 ##
 # main target
 ##
-build_pair: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${synChains} \
-	${destRawPsl} ${destPsl} ${destGp} ${destGtf} ${hubBigPsl} ${destGtfDownload} ${destJson}
+build_pair: ${synChains} ${destRawPsl} ${destPsl} ${destGp} ${destGtf} ${hubDestBigPsl} ${destGtfDownload} ${destJson}
 
 endif

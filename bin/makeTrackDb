@@ -57,6 +57,15 @@ searchIndex name,geneSym,geneId
 
 """
 
+def addGeneSrc(fh, srcDb, priority):
+    t = annotPslTemplate.format(track="{}.src".format(srcDb),
+                                shortLabel="{} src genes".format(speciesNames[srcDb]),
+                                longLabel="{} {} source genes".format(speciesNames[srcDb], srcDb),
+                                priority=priority,
+                                color=annotColor[srcDb].toRgb8Str(),
+                                bigDataUrl="{}.src.bigPsl".format(srcDb))
+    print(t, file=fh)
+
 def addGeneMapping(fh, srcDb, destDb, priority):
     t = annotPslTemplate.format(track="{}-{}.annot".format(srcDb, destDb),
                                 shortLabel="{} genes".format(speciesNames[srcDb]),
@@ -67,7 +76,7 @@ def addGeneMapping(fh, srcDb, destDb, priority):
     print(t, file=fh)
 
 def addGeneMappings(fh, srcDbs, destDb):
-    priority = 1.0
+    priority = 2.0
     for srcDb in srcDbs:
         addGeneMapping(fh, srcDb, destDb, priority)
         priority += 1
@@ -114,6 +123,7 @@ def main(opts):
     otherDbs = tuple([d for d in allHgDb if d != opts.hgDb])
 
     with open(opts.trackDbFile, 'w') as fh:
+        addGeneSrc(fh, opts.hgDb, 1.0)
         addGeneMappings(fh, otherDbs, opts.hgDb)
         addIsoSeqTracks(fh, opts.hgDb, osp.dirname(opts.trackDbFile))
 
