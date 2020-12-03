@@ -1,16 +1,12 @@
 genome hg38
 trackDb hg38/trackDb.txt
-groups groups.txt
 
 genome rheMac10
 trackDb rheMac10/trackDb.txt
-groups groups.txt
 
 genome mm39
 trackDb mm39/trackDb.txt
-groups groups.txt
 
 genome rn6
 trackDb rn6/trackDb.txt
-groups groups.txt
 

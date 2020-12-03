@@ -12,7 +12,7 @@ from pycbio.sys import fileOps, loggingOps
 from pycbio.tsv import TsvTable, TabFileReader
 
 etcDir = osp.normpath(osp.join(osp.dirname(__file__), "../etc"))
-debug = True
+debug = False
 
 def parseArgs():
     usage = """ buildBig and add columns from TSV from bigPsl to make bigPslWithMeta"""
@@ -42,16 +42,19 @@ def editCds(idToUniqIds, srcCds):
     for row in fileOps.iterRows(srcCds):
         for uniqId in idToUniqIds.get(row[0], ()):
             fileOps.prRowv(cdsEditFh, uniqId, row[1])
+    cdsEditFh.flush()
     return cdsEditFh
 
 def editFasta(idToUniqIds, srcFa):
     faEditFh = tempfile.NamedTemporaryFile(mode='w', delete=not debug)
     if debug:
         print("editFa:", faEditFh.name, file=sys.stderr)
-    for rec in SeqIO.parse(srcFa, "fasta"):
-        for uniqId in idToUniqIds.get(rec.id, ()):
-            rec.id = uniqId
-            SeqIO.write(rec, faEditFh, "fasta")
+    with fileOps.opengz(srcFa) as srcFaFh:
+        for rec in SeqIO.parse(srcFaFh, "fasta"):
+            for uniqId in idToUniqIds.get(rec.id, ()):
+                rec.id = uniqId
+                SeqIO.write(rec, faEditFh, "fasta")
+    faEditFh.flush()
     return faEditFh
 
 def processRec(metaData, rec, outFh):

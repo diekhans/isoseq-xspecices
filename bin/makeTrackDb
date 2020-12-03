@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os.path as osp
 import argparse
 import shutil
 from pycbio.sys import fileOps
@@ -34,7 +35,6 @@ track {track}
 shortLabel {shortLabel}
 longLabel {longLabel}
 html ../empty.html
-group geneMappings
 type bigPsl
 priority {priority}
 color {color}
@@ -72,12 +72,50 @@ def addGeneMappings(fh, srcDbs, destDb):
         addGeneMapping(fh, srcDb, destDb, priority)
         priority += 1
 
+
+isoSeqBedTemplate = """
+track {track}
+shortLabel {shortLabel}
+longLabel {longLabel}
+html ../empty.html
+visibility hide
+type bigBed 12
+color {color}
+bigDataUrl {bigDataUrl}
+priority {priority}
+
+"""
+
+def addIsoSeqTrack(fh, track, label, color, priority):
+    t = isoSeqBedTemplate.format(track=track,
+                                 shortLabel=label,
+                                 longLabel=label,
+                                 color=color.toRgb8Str(),
+                                 bigDataUrl=track + ".bigBed",
+                                 priority=priority)
+    print(t, file=fh)
+
+def addIsoSeqTrackIfExists(fh, hgDbDir, track, label, color, priority):
+    bigBed = osp.join(hgDbDir, track + ".bigBed")
+    if not osp.exists(bigBed):
+        print("Warning: isoseq bigBed not found: " + bigBed, file=sys.stderr)
+    else:
+        addIsoSeqTrack(fh, track, label, color, priority)
+
+def addIsoSeqTracks(fh, hgDb, hgDbDir):
+    priority = 10
+    addIsoSeqTrack(fh, "isoseq.minimap2.2020-12-02",
+                   "IsoSeq minimap2 2020-12-02",
+                   SvgColors.tomato, priority)
+    priority += 1
+
 def main(opts):
     # keep order
     otherDbs = tuple([d for d in allHgDb if d != opts.hgDb])
 
     with open(opts.trackDbFile, 'w') as fh:
         addGeneMappings(fh, otherDbs, opts.hgDb)
+        addIsoSeqTracks(fh, opts.hgDb, osp.dirname(opts.trackDbFile))
 
 
 main(parseArgs())

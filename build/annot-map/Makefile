@@ -8,7 +8,7 @@ PPID = $(shell echo $${PPID})
 TMPEXT = ${HOSTNAME}.${PPID}.tmp
 
 DBS = hg38 mm39 rheMac10 rn6
-hubRootDir = ../hub
+hubRootDir =  ../../../hub
 
 hg38_gtf = data/hg38/gencode.v35.annotation.gtf.gz
 mm39_gtf = data/mm39/Mus_musculus.GRCm39.103.gtf.gz
@@ -77,7 +77,7 @@ destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
 destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
 destJson = ${mappedDir}/${srcDb}-${destDb}.json.gz
 
-destGtfDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.gtf.gz
+destJsonDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.json.gz
 
 ${destRawPsl}: ${srcPsl} ${srcFa} ${synChains}
 	@mkdir -p $(dir $@)
@@ -101,14 +101,15 @@ ${destGtf}: ${destGp}
 	    | pigz -c >${destGtf}.${TMPEXT}
 	mv -f ${destGtf}.${TMPEXT} ${destGtf}
 
-${destGtfDownload}: ${destGtf}
-	@mkdir -p $(dir $@)
-	ln -f $< $@
-
 ${destJson}: ${srcPsl} ${destPsl}
 	@mkdir -p $(dir $@)
 	mappedAlignToAnnot ${srcDb} ${srcPsl} ${destPsl} /dev/stdout| pigz -c >${destJson}.${TMPEXT}
 	mv -f ${destJson}.${TMPEXT} ${destJson}
+
+${destJsonDownload}: ${destJson}
+	@mkdir -p $(dir $@)
+	ln -f $< $@
+
 
 ##
 # hub files
