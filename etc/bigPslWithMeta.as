@@ -33,6 +33,7 @@ table bigBlatPsl
     string geneId;  "gene id"
     string geneSym;  "gene symbol"
     string geneType; "gene type"
+    string transcriptId; "transcript id"
     string transcriptName; "transcript name"
     string transcriptType; "transcript type"
     )

@@ -118,7 +118,7 @@ hubBigPsl = ${hubRootDir}/${destDb}/${srcDb}-${destDb}.bigPsl
 
 ${hubBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
 	@mkdir -p $(dir $@)
-	bigPslBuild ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes} ${hubBigPsl}
+	buildAnnotBigPsl ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes} ${hubBigPsl}
 
 
 ##

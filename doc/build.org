@@ -1,3 +1,16 @@
+* info
+
+** hg38 mm39 rheMac10 rn6
+http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+http://hgdownload.soe.ucsc.edu/goldenPath/mm39/bigZips/mm39.fa.gz
+http://hgdownload.soe.ucsc.edu/goldenPath/rheMac10/bigZips/rheMac10.fa.gz
+http://hgdownload.soe.ucsc.edu/goldenPath/rn6/bigZips/rn6.fa.gz
+
+** set path
+export PATH=/hive/users/markd/gencode/projs/isoseq-xspecies/isoseq-xspecies/bin:${PATH}
+** hub
+https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
+http://genome.ucsc.edu/cgi-bin/hgGateway?db=hg38&hubUrl=https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 
 * map annotations between all genomes:
 ** download below files to build/annot-map/data/${db}/
@@ -10,3 +23,15 @@ ftp://ftp.ensembl.org/pub/release-101/gtf/rattus_norvegicus/Rattus_norvegicus.Rn
 ** build mappings
 cd build/annot-map
 make -j 32
+
+* 2020-12-01 initial isoseq from Anoushka
+cd  ../tmp/SeparateSpeciesAlignment_Minimap2_UCSCrefGenome/
+human.bed
+macaque.bed
+mouse.bed
+rat.bed
+
+buildBigBed hg38 ../../hub/hg38/isoseq.minimap2.2020-12-02.bigBed human.bed 
+buildBigBed rheMac10 ../../hub/rheMac10/isoseq.minimap2.2020-12-02.bigBed macaque.bed 
+buildBigBed mm39 ../../hub/mm39/isoseq.minimap2.2020-12-02.bigBed mouse.bed
+buildBigBed rn6  ../../hub/rn6/isoseq.minimap2.2020-12-02.bigBed rat.bed 

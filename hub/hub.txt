@@ -1,0 +1,7 @@
+hub xspecies
+shortLabel xspecies
+longLabel xspecies
+genomesFile genomes.txt
+descriptionUrl empty.html
+email markd@ucsc.edu
+

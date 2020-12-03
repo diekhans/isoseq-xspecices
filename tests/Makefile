@@ -2,7 +2,7 @@
 
 input = input
 
-test: addGtfExonSourcesTests mappedAlignTests
+test: addGtfExonSourcesTests mappedAlignTests buildAnnotBigPslTests
 
 
 addGtfExonSourcesTests: addGtfHg38Mm39Test addGtfHg38RheMac10Test
@@ -26,6 +26,12 @@ mappedAlnHg38RheMac10Test: mkdirs
 	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38-rheMac10.psl output/$@.json
 	diff expected/$@.json output/$@.json
 
+buildAnnotBigPslTests: buildAnnotBigPslTest
+
+buildAnnotBigPslTest: mkdirs
+	buildAnnotBigPsl input/hg38.src.tsv input/hg38-mm39.psl input/hg38.src.cds input/hg38.src.fa /hive/data/genomes/mm39/chrom.sizes output/$@.bigPsl
+	bigBedToBed output/$@.bigPsl output/$@.bed
+	diff expected/$@.bed output/$@.bed
 
 mkdirs:
 	@mkdir -p output

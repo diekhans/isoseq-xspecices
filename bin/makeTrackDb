@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+import shutil
+from pycbio.sys import fileOps
+from pycbio.sys.svgcolors import SvgColors
+
+def parseArgs():
+    usage = """Create trackDb for an assembly, given a bunch of baked-in assumptions"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('hgDb')
+    parser.add_argument('trackDbFile')
+    return parser.parse_args()
+
+
+allHgDb = ("hg38", "rheMac10", "mm39", "rn6")
+
+speciesNames = {
+    "hg38": "human",
+    "rheMac10": "rhesus",
+    "mm39": "mouse",
+    "rn6": "rat",
+}
+annotColor = {
+    "hg38": SvgColors.midnightblue,
+    "rheMac10": SvgColors.mediumslateblue,
+    "mm39": SvgColors.mediumturquoise,
+    "rn6": SvgColors.mediumblue,
+}
+
+annotPslTemplate = """
+track {track}
+shortLabel {shortLabel}
+longLabel {longLabel}
+html ../empty.html
+group geneMappings
+type bigPsl
+priority {priority}
+color {color}
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType,transcriptType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl {bigDataUrl}
+searchIndex name,geneSym,geneId
+
+"""
+
+def addGeneMapping(fh, srcDb, destDb, priority):
+    t = annotPslTemplate.format(track="{}-{}.annot".format(srcDb, destDb),
+                                shortLabel="{} genes".format(speciesNames[srcDb]),
+                                longLabel="{} {} gene mappings".format(speciesNames[srcDb], srcDb),
+                                priority=priority,
+                                color=annotColor[srcDb].toRgb8Str(),
+                                bigDataUrl="{}-{}.bigPsl".format(srcDb, destDb))
+    print(t, file=fh)
+
+def addGeneMappings(fh, srcDbs, destDb):
+    priority = 1.0
+    for srcDb in srcDbs:
+        addGeneMapping(fh, srcDb, destDb, priority)
+        priority += 1
+
+def main(opts):
+    # keep order
+    otherDbs = tuple([d for d in allHgDb if d != opts.hgDb])
+
+    with open(opts.trackDbFile, 'w') as fh:
+        addGeneMappings(fh, otherDbs, opts.hgDb)
+
+
+main(parseArgs())
