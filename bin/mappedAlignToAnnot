@@ -6,17 +6,21 @@ import json
 sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
 
 from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
+from pycbio.hgdata.genePred import GenePredReader
+from pycbio.tsv import TsvReader
 from pycbio.sys import fileOps
 from xspecies.data import Range, Coords, MappedTranscript, MappedExon
 
-# GTF coords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
+# src tcoords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
 
 def parseArgs():
-    usage = """Edit the GTF for a mapping adding exon_source and block_source, both as source coordinates"""
+    usage = """Generate annotation JSON file for exchange"""
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('srcGenome')
     parser.add_argument('srcPsl')
+    parser.add_argument('srcMeta')
     parser.add_argument('mappedPsl')
+    parser.add_argument('mappedGenePred')
     parser.add_argument('annotJson')
     return parser.parse_args()
 
@@ -37,6 +41,12 @@ def pslToCoords(psl):
 def mkSrcExonCoords(srcGenome, srcExon):
     return "{}.{}:{}-{}".format(srcGenome, srcExon.psl.tName, srcExon.tStart, srcExon.tEnd)
 
+def loadMappedGp(mappedGpFile):
+    return {gp.name: gp for gp in GenePredReader(mappedGpFile)}
+
+def loadSrcMeta(srcMeta):
+    return {t.transId: t for t in TsvReader(srcMeta)}
+
 def buildMappedExon(srcGenome, srcExon, mappedBlks):
     mStart = mappedBlks[0].tStart
     mEnd = mappedBlks[-1].tEnd
@@ -52,21 +62,31 @@ def processExon(srcGenome, srcExon, mappedAln):
     else:
         return buildMappedExon(srcGenome, srcExon, mappedBlks)
 
-def processMapping(srcGenome, srcAlns, mappedAln):
+def getCds(mappedGp):
+    if mappedGp.txStart < mappedGp.txEnd:
+        return Range(mappedGp.txStart, mappedGp.txEnd)
+    else:
+        return None
+
+def processMapping(srcGenome, srcAlns, srcMeta, mappedAln, mappedGp):
     assert mappedAln.tStrand == '+'
     srcAln = srcAlns.getByQName(dropQueryUniq(mappedAln.qName))[0]
     exons = [processExon(srcGenome, srcExon, mappedAln) for srcExon in srcAln.blocks]
     mappedTrans = MappedTranscript(srcAln.qName, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
-                                   exons)
+                                   srcMeta.geneId, srcMeta.geneName, srcMeta.geneType, srcMeta.transcriptName, srcMeta.transcriptType,
+                                   getCds(mappedGp), exons)
     return mappedTrans
 
-def processMappings(srcGenome, srcAlns, mappedPslFile):
-    return [processMapping(srcGenome, srcAlns, ma)
+def processMappings(srcGenome, srcAlns, srcMetas, mappedPslFile, mappedGps):
+    return [processMapping(srcGenome, srcAlns, srcMetas[dropQueryUniq(ma.qName)],
+                           ma, mappedGps[ma.qName])
             for ma in PslReader(mappedPslFile)]
 
 def main(opts):
     srcAlns = PslTbl(opts.srcPsl, qNameIdx=True, qUniqDrop=True)
-    mappedAnnots = processMappings(opts.srcGenome, srcAlns, opts.mappedPsl)
+    srcMetas = loadSrcMeta(opts.srcMeta)
+    mappedGps = loadMappedGp(opts.mappedGenePred)
+    mappedAnnots = processMappings(opts.srcGenome, srcAlns, srcMetas, opts.mappedPsl, mappedGps)
 
     with fileOps.opengz(opts.annotJson, "w") as fh:
         json.dump(mappedAnnots, fh, indent=4)

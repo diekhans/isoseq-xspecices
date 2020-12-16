@@ -14,6 +14,15 @@
             "chrom": "chrY",
             "strand": "+"
         },
+        "geneId": "ENSG00000002586.20_PAR_Y",
+        "geneName": "CD99",
+        "geneType": "protein_coding",
+        "transcriptName": "CD99-209",
+        "transcriptTyope": "retained_intron",
+        "cds": {
+            "start": 577,
+            "end": 15800
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chrY:2719067-2719705",
@@ -89,6 +98,15 @@
             "chrom": "chr20",
             "strand": "+"
         },
+        "geneId": "ENSG00000261617.2",
+        "geneName": "LINC02177",
+        "geneType": "lncRNA",
+        "transcriptName": "LINC02177-201",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 9382305,
+            "end": 9444215
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr16:9355587-9355780",
@@ -142,6 +160,15 @@
             "end": 116860538,
             "chrom": "chr4",
             "strand": "-"
+        },
+        "geneId": "ENSG00000096092.6",
+        "geneName": "TMEM14A",
+        "geneType": "protein_coding",
+        "transcriptName": "TMEM14A-201",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 116844838,
+            "end": 116860538
         },
         "exons": [
             {
@@ -221,6 +248,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000137547.9",
+        "geneName": "MRPL15",
+        "geneType": "protein_coding",
+        "transcriptName": "MRPL15-201",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 54758339,
+            "end": 54771662
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54135240-54135391",
@@ -298,6 +334,15 @@
             "end": 54771008,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000137547.9",
+        "geneName": "MRPL15",
+        "geneType": "protein_coding",
+        "transcriptName": "MRPL15-203",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 54759594,
+            "end": 54771008
         },
         "exons": [
             {
@@ -377,6 +422,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000286471.1",
+        "geneName": "AC027250.2",
+        "geneType": "lncRNA",
+        "transcriptName": "AC027250.2-201",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55002199,
+            "end": 55016256
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54381697-54381829",
@@ -431,6 +485,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000164736.6",
+        "geneName": "SOX17",
+        "geneType": "protein_coding",
+        "transcriptName": "SOX17-201",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55079285,
+            "end": 55082242
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54457934-54458445",
@@ -472,6 +535,15 @@
             "end": 55182922,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-207",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 55131627,
+            "end": 55182922
         },
         "exons": [
             {
@@ -563,6 +635,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-203",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 55176789,
+            "end": 55183849
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54554360-54554490",
@@ -628,6 +709,15 @@
             "end": 55199195,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-204",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 55177011,
+            "end": 55199195
         },
         "exons": [
             {
@@ -695,6 +785,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-202",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 55180692,
+            "end": 55183829
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54558759-54558980",
@@ -760,6 +859,15 @@
             "end": 55389413,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-205",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55181106,
+            "end": 55389413
         },
         "exons": [
             {
@@ -1054,6 +1162,15 @@
             "end": 55504572,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-206",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55223951,
+            "end": 55504572
         },
         "exons": [
             {
@@ -1421,6 +1538,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-201",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55223980,
+            "end": 55239201
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:54616095-54616202",
@@ -1486,6 +1612,15 @@
             "end": 55502803,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000104237.11",
+        "geneName": "RP1",
+        "geneType": "protein_coding",
+        "transcriptName": "RP1-208",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 55421759,
+            "end": 55502803
         },
         "exons": [
             {
@@ -1589,6 +1724,15 @@
             "chrom": "chr8",
             "strand": "-"
         },
+        "geneId": "ENSG00000286348.1",
+        "geneName": "AC084834.1",
+        "geneType": "lncRNA",
+        "transcriptName": "AC084834.1-201",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55700985,
+            "end": 55714063
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55067584-55070535",
@@ -1643,6 +1787,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000206579.9",
+        "geneName": "XKR4",
+        "geneType": "protein_coding",
+        "transcriptName": "XKR4-201",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55734186,
+            "end": 56162450
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55102027-55103294",
@@ -1696,6 +1849,15 @@
             "end": 56147032,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000206579.9",
+        "geneName": "XKR4",
+        "geneType": "protein_coding",
+        "transcriptName": "XKR4-203",
+        "transcriptTyope": "protein_coding",
+        "cds": {
+            "start": 55734615,
+            "end": 56147032
         },
         "exons": [
             {
@@ -1763,6 +1925,15 @@
             "chrom": "chr8",
             "strand": "-"
         },
+        "geneId": "ENSG00000253976.1",
+        "geneName": "AC022679.2",
+        "geneType": "lncRNA",
+        "transcriptName": "AC022679.2-201",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55766732,
+            "end": 55774035
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55135202-55135652",
@@ -1817,6 +1988,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000253857.2",
+        "geneName": "AC022679.1",
+        "geneType": "lncRNA",
+        "transcriptName": "AC022679.1-203",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55793291,
+            "end": 55796301
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55161445-55161644",
@@ -1858,6 +2038,15 @@
             "end": 55796305,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000253857.2",
+        "geneName": "AC022679.1",
+        "geneType": "lncRNA",
+        "transcriptName": "AC022679.1-201",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55793328,
+            "end": 55796305
         },
         "exons": [
             {
@@ -1901,6 +2090,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000253857.2",
+        "geneName": "AC022679.1",
+        "geneType": "lncRNA",
+        "transcriptName": "AC022679.1-202",
+        "transcriptTyope": "lncRNA",
+        "cds": {
+            "start": 55795977,
+            "end": 55796580
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55164122-55164183",
@@ -1943,6 +2141,15 @@
             "chrom": "chr8",
             "strand": "+"
         },
+        "geneId": "ENSG00000206579.9",
+        "geneName": "XKR4",
+        "geneType": "protein_coding",
+        "transcriptName": "XKR4-202",
+        "transcriptTyope": "processed_transcript",
+        "cds": {
+            "start": 56147069,
+            "end": 56154569
+        },
         "exons": [
             {
                 "srcExonId": "hg38.chr8:55526185-55526750",
@@ -1984,6 +2191,15 @@
             "end": 56452460,
             "chrom": "chr8",
             "strand": "+"
+        },
+        "geneId": "ENSG00000137574.11",
+        "geneName": "TGS1",
+        "geneType": "protein_coding",
+        "transcriptName": "TGS1-203",
+        "transcriptTyope": "nonsense_mediated_decay",
+        "cds": {
+            "start": 56401415,
+            "end": 56452460
         },
         "exons": [
             {

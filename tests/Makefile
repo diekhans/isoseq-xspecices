@@ -19,19 +19,25 @@ addGtfHg38RheMac10Test: mkdirs
 mappedAlignTests: mappedAlnHg38Mm39Test mappedAlnHg38RheMac10Test
 
 mappedAlnHg38Mm39Test: mkdirs
-	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38-mm39.psl output/$@.json
+	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38.src.tsv ${input}/hg38-mm39.psl ${input}/hg38-mm39.gp output/$@.json
 	diff expected/$@.json output/$@.json
 
 mappedAlnHg38RheMac10Test: mkdirs
-	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38-rheMac10.psl output/$@.json
+	../bin/mappedAlignToAnnot hg38 ${input}/hg38.src.psl ${input}/hg38.src.tsv ${input}/hg38-rheMac10.psl ${input}/hg38-rheMac10.gp output/$@.json
 	diff expected/$@.json output/$@.json
 
-buildAnnotBigPslTests: buildAnnotBigPslTest
+buildAnnotBigPslTests: buildAnnotBigPslTest buildAnnotSrcTest
 
 buildAnnotBigPslTest: mkdirs
 	buildAnnotBigPsl input/hg38.src.tsv input/hg38-mm39.psl input/hg38.src.cds input/hg38.src.fa /hive/data/genomes/mm39/chrom.sizes output/$@.bigPsl
 	bigBedToBed output/$@.bigPsl output/$@.bed
 	diff expected/$@.bed output/$@.bed
+
+buildAnnotSrcTest: mkdirs
+	buildAnnotBigPsl input/hg38.src.tsv input/hg38.src.psl input/hg38.src.cds input/hg38.src.fa /hive/data/genomes/hg38/chrom.sizes output/$@.bigPsl
+	bigBedToBed output/$@.bigPsl output/$@.bed
+	diff expected/$@.bed output/$@.bed
+
 
 mkdirs:
 	@mkdir -p output
