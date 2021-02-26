@@ -1,0 +1,157 @@
+
+track hg38.src
+shortLabel human src genes
+longLabel human hg38 source genes
+html ../empty.html
+type bigPsl
+priority 1.0
+color 25,25,112
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType,transcriptType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl hg38.src.bigPsl
+searchIndex name,geneSym,geneId
+
+
+
+track rheMac10-hg38.annot
+shortLabel rhesus genes
+longLabel rhesus rheMac10 gene mappings
+html ../empty.html
+type bigPsl
+priority 2.0
+color 123,104,238
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType,transcriptType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl rheMac10-hg38.bigPsl
+searchIndex name,geneSym,geneId
+
+
+
+track mm39-hg38.annot
+shortLabel mouse genes
+longLabel mouse mm39 gene mappings
+html ../empty.html
+type bigPsl
+priority 3.0
+color 72,209,204
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType,transcriptType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl mm39-hg38.bigPsl
+searchIndex name,geneSym,geneId
+
+
+
+track rn6-hg38.annot
+shortLabel rat genes
+longLabel rat rn6 gene mappings
+html ../empty.html
+type bigPsl
+priority 4.0
+color 0,0,205
+canPack on
+visibility hide
+baseColorDefault diffCodons
+baseColorUseCds given
+baseColorUseSequence lfExtra
+indelDoubleInsert on
+indelQueryInsert on
+showDiffBasesAllScales .
+showDiffBasesMaxZoom 10000.0
+showCdsAllScales .
+showCdsMaxZoom 10000.0
+labelFields name,geneSym,geneId,geneType,transcriptType
+defaultLabelFields geneSym
+labelSeparator " "
+bigDataUrl rn6-hg38.bigPsl
+searchIndex name,geneSym,geneId
+
+track isoseq.minimap2.2020-12-02
+shortLabel IsoSeq minimap2 2020-12-02
+longLabel IsoSeq minimap2 2020-12-02
+html ../empty.html
+visibility hide
+type bigBed 12
+color 255,99,71
+bigDataUrl isoseq.minimap2.2020-12-02.bigBed
+priority 10
+
+
+track exon_conservation
+compositeTrack off
+shortLabel Exon conservation
+longLabel  Exon conservation
+visibility hide
+priority 30
+type bigBed 9
+group genes
+html exon_conservation.html
+
+    track exon_conservation_conserved
+    parent exon_conservation
+    shortLabel Conserved exons
+    longLabel Conserved exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/conserved.bigBed
+    priority 1
+    group genes
+
+    track exon_conservation_primate
+    parent exon_conservation
+    shortLabel Primate-only exons
+    longLabel Primate-only exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/onlyPrimates.bigBed
+    priority 2
+    group genes
+
+    track exon_conservation_human
+    parent exon_conservation
+    shortLabel Human-only exons
+    longLabel  Human-only exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/onlyHuman.bigBed
+    priority 3
+    group genes
+

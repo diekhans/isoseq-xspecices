@@ -39,10 +39,10 @@ build_dest: ${DBS:%=%_build_dest}
 %_build_dest: ${srcGp} ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${hubSrcBigPsl}
 	${MAKE} build_pair srcDb=${srcDb} destDb=$*
 
-annotDownloadTar = ${downloadDir}/annot-map.${isoDate}.tar.gz
+annotDownloadTar = ${downloadDir}/annot-map.${isoDate}.tar
 download:
 	@mkdir -p ${downloadDir}
-	tar -zcf ${annotDownloadTar}.tar.gz mapped/*/*.json.gz
+	tar -cf ${annotDownloadTar} mapped/*/*.json.gz
 
 
 ##

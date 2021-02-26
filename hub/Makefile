@@ -6,7 +6,7 @@ hubDir = ../../hub
 hgwdevUrl = https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 hgdevUdcDir = ${TMPDIR}/${USER}_xspecies_hgwdev_udc
 
-srcFiles = $(wildcard *.txt *.html)
+srcFiles = $(wildcard *.txt *.html */*.txt */*.html)
 
 all: hub
 

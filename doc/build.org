@@ -24,6 +24,12 @@ ftp://ftp.ensembl.org/pub/release-101/gtf/rattus_norvegicus/Rattus_norvegicus.Rn
 cd build/annot-map
 make -j 32
 
+# filter was:
+pslCDnaFilter -minCover=0.50 -bestOverlap -filterWeirdOverlapped
+
+** link to save version
+find chains data mapped |cpio -pduml versions/1.0/
+
 * 2020-12-01 initial isoseq from Anoushka
 cd  ../tmp/SeparateSpeciesAlignment_Minimap2_UCSCrefGenome/
 human.bed
@@ -35,3 +41,16 @@ buildBigBed hg38 ../../hub/hg38/isoseq.minimap2.2020-12-02.bigBed human.bed
 buildBigBed rheMac10 ../../hub/rheMac10/isoseq.minimap2.2020-12-02.bigBed macaque.bed 
 buildBigBed mm39 ../../hub/mm39/isoseq.minimap2.2020-12-02.bigBed mouse.bed
 buildBigBed rn6  ../../hub/rn6/isoseq.minimap2.2020-12-02.bigBed rat.bed 
+
+** 2021-01-26 remap annotations
+# avoid problems with losing fragments due to synteny break with having
+# a min cover filter. Change to:
+#  pslCDnaFilter -localNearBest=0.001 -bestOverlap -filterWeirdOverlapped
+
+cd build/annot-map
+nice make -j 64 >&log&
+find chains data mapped |cpio -pduml versions/1.1/
+* 2021-02-23 exon conservation status on hg38 from Anoushka
+cd hg38/exon_cons
+conserved.bed  onlyHuman.bed  onlyPrimates.bed
+for b in *.bed ; do bedToBigBed -type=bed9 $b /hive/data/genomes/hg38/chrom.sizes $(basename $b .bed).bigBed ; done

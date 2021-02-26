@@ -1,5 +1,6 @@
 build/annot-map/chains/
 build/annot-map/data/
 build/annot-map/mapped/
+build/annot-map/versions
 .emacs.bak/
 tests/output/

@@ -22,7 +22,7 @@ pslMap -chainMapFile $srcPsl $synChains /dev/stdout \
     | pslRecalcMatch /dev/stdin $destSeqs $srcFa /dev/stdout \
     | pslPosTarget /dev/stdin /dev/stdout \
     | sort -k10,10 \
-    | pslCDnaFilter -minCover=0.50 -bestOverlap -filterWeirdOverlapped /dev/stdin /dev/stdout \
+    | pslCDnaFilter -localNearBest=0.001 -bestOverlap -filterWeirdOverlapped /dev/stdin /dev/stdout \
     | sort -k14,14 -k16,16n -k17,17n \
     | pslQueryUniq \
     | pigz -c >$destRawPslTmp
