@@ -6,6 +6,7 @@ non_exist_in_awk==0 "exec" "gawk" "-f" "$0" "$@"
 #  - drop non-primary chroms
 #  - change to UCSC naming convention
 #  - only keep protein_coding, lncRNAs, polymorphic_pseudogene
+#  - drop retained introns
 
 BEGIN {
     FS="\t";
@@ -17,7 +18,7 @@ BEGIN {
     next
 }
 
-!(/gene_(bio)?type "protein_coding"/ || /gene_(bio)?type "lncRNA"/ || /gene_(bio)?type "polymorphic_pseudogene"/) {
+(!(/gene_(bio)?type "protein_coding"/ || /gene_(bio)?type "lncRNA"/ || /gene_(bio)?type "polymorphic_pseudogene"/)) || (/transcript_type "retained_intron"/) {
     next
 }
 

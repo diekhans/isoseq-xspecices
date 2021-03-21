@@ -1,4 +1,3 @@
-
 SHELL = /bin/bash
 export SHELLOPTS=pipefail
 .SECONDARY:
@@ -13,7 +12,7 @@ hubRootDir =  ../../../hub
 downloadDir = ${hubRootDir}/download
 
 hg38_gtf = data/hg38/gencode.v35.annotation.gtf.gz
-mm39_gtf = data/mm39/Mus_musculus.GRCm39.103.gtf.gz
+mm39_gtf = data/mm39/gencode.vM26.annotation.gtf.gz
 rheMac10_gtf = data/rheMac10/Macaca_mulatta.Mmul_10.101.chr.gtf.gz
 rn6_gtf = data/rn6/Rattus_norvegicus.Rnor_6.0.101.gtf.gz
 

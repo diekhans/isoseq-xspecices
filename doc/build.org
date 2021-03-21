@@ -13,6 +13,7 @@ https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 http://genome.ucsc.edu/cgi-bin/hgGateway?db=hg38&hubUrl=https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 
 * map annotations between all genomes:
+2021-01-26
 ** download below files to build/annot-map/data/${db}/
 
 ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz
@@ -54,3 +55,6 @@ find chains data mapped |cpio -pduml versions/1.1/
 cd hg38/exon_cons
 conserved.bed  onlyHuman.bed  onlyPrimates.bed
 for b in *.bed ; do bedToBigBed -type=bed9 $b /hive/data/genomes/hg38/chrom.sizes $(basename $b .bed).bigBed ; done
+* 2021-03-21: rebuild without retained introns (V3.1)
+** get official GRCm39
+ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M26/gencode.vM26.annotation.gtf.gz
