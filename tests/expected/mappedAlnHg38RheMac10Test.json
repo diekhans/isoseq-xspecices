@@ -18,7 +18,7 @@
         "geneName": "CD99",
         "geneType": "protein_coding",
         "transcriptName": "CD99-209",
-        "transcriptTyope": "retained_intron",
+        "transcriptType": "retained_intron",
         "cds": {
             "start": 577,
             "end": 15800
@@ -102,7 +102,7 @@
         "geneName": "LINC02177",
         "geneType": "lncRNA",
         "transcriptName": "LINC02177-201",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 9382305,
             "end": 9444215
@@ -165,7 +165,7 @@
         "geneName": "TMEM14A",
         "geneType": "protein_coding",
         "transcriptName": "TMEM14A-201",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 116844838,
             "end": 116860538
@@ -252,7 +252,7 @@
         "geneName": "MRPL15",
         "geneType": "protein_coding",
         "transcriptName": "MRPL15-201",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 54758339,
             "end": 54771662
@@ -339,7 +339,7 @@
         "geneName": "MRPL15",
         "geneType": "protein_coding",
         "transcriptName": "MRPL15-203",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 54759594,
             "end": 54771008
@@ -426,7 +426,7 @@
         "geneName": "AC027250.2",
         "geneType": "lncRNA",
         "transcriptName": "AC027250.2-201",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55002199,
             "end": 55016256
@@ -489,7 +489,7 @@
         "geneName": "SOX17",
         "geneType": "protein_coding",
         "transcriptName": "SOX17-201",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55079285,
             "end": 55082242
@@ -540,7 +540,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-207",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 55131627,
             "end": 55182922
@@ -639,7 +639,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-203",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 55176789,
             "end": 55183849
@@ -714,7 +714,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-204",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 55177011,
             "end": 55199195
@@ -789,7 +789,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-202",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 55180692,
             "end": 55183829
@@ -864,7 +864,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-205",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55181106,
             "end": 55389413
@@ -1167,7 +1167,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-206",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55223951,
             "end": 55504572
@@ -1542,7 +1542,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-201",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55223980,
             "end": 55239201
@@ -1617,7 +1617,7 @@
         "geneName": "RP1",
         "geneType": "protein_coding",
         "transcriptName": "RP1-208",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 55421759,
             "end": 55502803
@@ -1728,7 +1728,7 @@
         "geneName": "AC084834.1",
         "geneType": "lncRNA",
         "transcriptName": "AC084834.1-201",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55700985,
             "end": 55714063
@@ -1791,7 +1791,7 @@
         "geneName": "XKR4",
         "geneType": "protein_coding",
         "transcriptName": "XKR4-201",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55734186,
             "end": 56162450
@@ -1854,7 +1854,7 @@
         "geneName": "XKR4",
         "geneType": "protein_coding",
         "transcriptName": "XKR4-203",
-        "transcriptTyope": "protein_coding",
+        "transcriptType": "protein_coding",
         "cds": {
             "start": 55734615,
             "end": 56147032
@@ -1929,7 +1929,7 @@
         "geneName": "AC022679.2",
         "geneType": "lncRNA",
         "transcriptName": "AC022679.2-201",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55766732,
             "end": 55774035
@@ -1992,7 +1992,7 @@
         "geneName": "AC022679.1",
         "geneType": "lncRNA",
         "transcriptName": "AC022679.1-203",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55793291,
             "end": 55796301
@@ -2043,7 +2043,7 @@
         "geneName": "AC022679.1",
         "geneType": "lncRNA",
         "transcriptName": "AC022679.1-201",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55793328,
             "end": 55796305
@@ -2094,7 +2094,7 @@
         "geneName": "AC022679.1",
         "geneType": "lncRNA",
         "transcriptName": "AC022679.1-202",
-        "transcriptTyope": "lncRNA",
+        "transcriptType": "lncRNA",
         "cds": {
             "start": 55795977,
             "end": 55796580
@@ -2145,7 +2145,7 @@
         "geneName": "XKR4",
         "geneType": "protein_coding",
         "transcriptName": "XKR4-202",
-        "transcriptTyope": "processed_transcript",
+        "transcriptType": "processed_transcript",
         "cds": {
             "start": 56147069,
             "end": 56154569
@@ -2196,7 +2196,7 @@
         "geneName": "TGS1",
         "geneType": "protein_coding",
         "transcriptName": "TGS1-203",
-        "transcriptTyope": "nonsense_mediated_decay",
+        "transcriptType": "nonsense_mediated_decay",
         "cds": {
             "start": 56401415,
             "end": 56452460

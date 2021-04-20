@@ -9,13 +9,14 @@ from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
 from pycbio.hgdata.genePred import GenePredReader
 from pycbio.tsv import TsvReader
 from pycbio.sys import fileOps
-from xspecies.data import Range, Coords, MappedTranscript, MappedExon
+from xspecies.data import Range, Coords, MappedTranscript, MappedExon, mappedTranscriptToBed
 
 # src tcoords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
 
 def parseArgs():
     usage = """Generate annotation JSON file for exchange"""
     parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--annotBed')
     parser.add_argument('srcGenome')
     parser.add_argument('srcPsl')
     parser.add_argument('srcMeta')
@@ -82,6 +83,12 @@ def processMappings(srcGenome, srcAlns, srcMetas, mappedPslFile, mappedGps):
                            ma, mappedGps[ma.qName])
             for ma in PslReader(mappedPslFile)]
 
+def writeAnnotBed(mappedAnnots, bedFh):
+    for ma in mappedAnnots:
+        bed = mappedTranscriptToBed(ma)
+        if bed is not None:
+            bed.write(bedFh)
+
 def main(opts):
     srcAlns = PslTbl(opts.srcPsl, qNameIdx=True, qUniqDrop=True)
     srcMetas = loadSrcMeta(opts.srcMeta)
@@ -90,6 +97,10 @@ def main(opts):
 
     with fileOps.opengz(opts.annotJson, "w") as fh:
         json.dump(mappedAnnots, fh, indent=4)
+
+    if opts.annotBed is not None:
+        with fileOps.opengz(opts.annotBed, "w") as fh:
+            writeAnnotBed(mappedAnnots, fh)
 
 
 main(parseArgs())

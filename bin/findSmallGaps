@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import argparse
+from pycbio.hgdata.genePred import GenePredReader
+from pycbio.hgdata.bed import Bed
+
+def parseArgs():
+    usage = """Find small gaps in a genePred"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--maxGapSize', type=int, default=10)
+    parser.add_argument('srcGenePred')
+    parser.add_argument('gapBed')
+    return parser.parse_args()
+
+def findGaps(gp, maxGapSize):
+    gaps = []
+    pe = gp.exons[0]
+    for e in gp.exons[1:]:
+        if 0 < (e.start - pe.end) <= maxGapSize:
+            gaps.append(Bed.Block(pe.end, e.start))
+        pe = e
+    return gaps
+
+def makeBed(gp, gaps):
+    return Bed(gp.chrom, gp.txStart, gp.txEnd, gp.name, score=0, strand=gp.strand,
+               thickStart=gp.cdsStart, thickEnd=gp.cdsEnd, itemRgb=0, blocks=gaps)
+
+def processTrans(gp, maxGapSize, fh):
+    gaps = findGaps(gp, maxGapSize)
+    if gaps:
+        makeBed(gp, gaps).write(fh)
+
+def main(args):
+    with open(args.gapBed, 'w') as fh:
+        for gp in GenePredReader(args.srcGenePred):
+            processTrans(gp, args.maxGapSize, fh)
+
+
+main(parseArgs())

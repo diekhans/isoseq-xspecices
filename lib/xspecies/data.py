@@ -1,26 +1,5 @@
-class ObjDict(dict):
-    """Dict object where keys are field names.
-    This is useful for JSON by doing:
-       json.load(fh, object_hook=ObjDict):
-    or more efficiently in Python3:
-       json.load(fh, object_pairs_hook=ObjDict):
-    """
-
-    def __getattr__(self, name):
-        if name in self:
-            return self[name]
-        else:
-            raise AttributeError("No such attribute: " + name)
-
-    def __setattr__(self, name, value):
-        self[name] = value
-
-    def __delattr__(self, name):
-        if name in self:
-            del self[name]
-        else:
-            raise AttributeError("No such attribute: " + name)
-
+from pycbio.sys.objDict import ObjDict
+from pycbio.hgdata.bed import Bed
 
 class Range(ObjDict):
     def __init__(self, start, end):
@@ -59,6 +38,15 @@ class MappedTranscript(ObjDict):
         self.geneName = geneName
         self.geneType = geneType
         self.transcriptName = transcriptName
-        self.transcriptTyope = transcriptType
+        self.transcriptType = transcriptType
         self.cds = cds
         self.exons = exons
+
+def mappedTranscriptToBed(trans):
+    if trans.mapped is None:
+        return None
+    blocks = [Bed.Block(e.mapped.start, e.mapped.end)
+              for e in trans.exons if e.mapped is not None]
+    mt = trans.mapped
+    return Bed(mt.chrom, mt.start, mt.end, trans.mappedTransId, score=0, strand=mt.strand,
+               thickStart=trans.cds.start, thickEnd=trans.cds.end, itemRgb=0, blocks=blocks)
