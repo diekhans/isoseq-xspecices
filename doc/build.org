@@ -58,3 +58,11 @@ for b in *.bed ; do bedToBigBed -type=bed9 $b /hive/data/genomes/hg38/chrom.size
 * 2021-03-21: rebuild without retained introns (V3.1)
 ** get official GRCm39
 ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M26/gencode.vM26.annotation.gtf.gz
+* 2021-05-04 repeat maskers as BED
+in hub/download/repeat-master/
+
+/hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/hg38/bed/repeatMasker/hg38.sorted.fa.out ../hub/download/repeat-master/hg38.repeatMasker.bed&
+/hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/mm39/bed/repeatMasker/mm39.sorted.fa.out ../hub/download/repeat-master/mm39.repeatMasker.bed >&tmp/mm39.out&
+/hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/rheMac10/bed/repeatMasker/rheMac10.sorted.fa.out ../hub/download/repeat-master/rheMac10.repeatMasker.bed >&tmp/rheMac10.out&
+/hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/rn6/bed/repeatMasker/rn6.sorted.fa.out ../hub/download/repeat-master/rn6.repeatMasker.bed >&tmp/rn6.out&
+# should have sorted, as not all of these are actually sorted.

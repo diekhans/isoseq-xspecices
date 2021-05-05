@@ -53,13 +53,13 @@ def buildMappedExon(srcGenome, srcExon, mappedBlks):
     mEnd = mappedBlks[-1].tEnd
     mappedBases = sum([len(b) for b in mappedBlks])
     return MappedExon(mkSrcExonCoords(srcGenome, srcExon),
-                      pslBlkToRange(srcExon),
+                      pslBlkToRange(srcExon), len(srcExon),
                       Range(mStart, mEnd), mappedBases)
 
 def processExon(srcGenome, srcExon, mappedAln):
     mappedBlks = pslFindBlocksByQuery(mappedAln, srcExon.qStart, srcExon.qEnd)
     if len(mappedBlks) == 0:
-        return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon))
+        return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon), len(srcExon))
     else:
         return buildMappedExon(srcGenome, srcExon, mappedBlks)
 

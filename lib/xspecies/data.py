@@ -6,6 +6,9 @@ class Range(ObjDict):
         self.start = start
         self.end = end
 
+    def __len__(self):
+        return self.end - self.start
+
 class Coords(Range):
     def __init__(self, chrom, start, end, strand):
         super().__init__(start, end)
@@ -15,9 +18,10 @@ class Coords(Range):
 class MappedExon(ObjDict):
     """exon mapped to another assembly.  This will list all of the INDEL in
     source exon. start/end can be None if exon is not mapped"""
-    def __init__(self, srcExonId, src, mapped=None, mappedBases=0):
+    def __init__(self, srcExonId, src, srcBases, mapped=None, mappedBases=0):
         self.srcExonId = srcExonId
         self.src = src
+        self.srcBases = srcBases
         self.mapped = mapped
         self.mappedBases = mappedBases
 
