@@ -1,0 +1,19 @@
+* obtaining test data
+ENST00000649528.2
+
+# src
+zfgrep ENST00000649528.2  ../build/annot-map/data/hg38/hg38.src.gp.gz >debug/hg38.src.gp
+zfgrep ENST00000649528.2  ../build/annot-map/data/hg38/hg38.src.psl.gz >debug/hg38.src.psl
+zfgrep ENST00000649528.2  ../build/annot-map/data/hg38/hg38.src.cds >debug/hg38.src.cds
+zcat  ../build/annot-map/data/hg38/hg38.src.tsv.gz |tawk 'NR==1||/ENST00000649528.2/' >debug/hg38.src.tsv
+faOneRecord  ../build/annot-map/data/hg38/hg38.src.fa.gz ENST00000649528.2 > debug/hg38.src.fa
+
+# mapped
+
+zfgrep ENST00000649528.2  ../build/annot-map/mapped/rheMac10/hg38-rheMac10.psl.gz >debug/hg38-rheMac10.psl
+zfgrep ENST00000649528.2 ../build/annot-map/mapped/rheMac10/hg38-rheMac10.gp.gz >debug/hg38-rheMac10.gp
+
+genePredToGtf -utr -source=transMap file debug/hg38-rheMac10.gp debug/hg38-rheMac10.gtf
+
+* debug
+../bin/mappedAlignToAnnot hg38 debug/hg38.src.psl debug/hg38.src.tsv debug/hg38-rheMac10.psl debug/hg38-rheMac10.gp --annotBed=output/debug.bed output/debug.json

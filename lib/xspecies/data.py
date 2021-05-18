@@ -3,11 +3,15 @@ from pycbio.hgdata.bed import Bed
 
 class Range(ObjDict):
     def __init__(self, start, end):
+        assert start <= end, f"range: {start} > {end}"
         self.start = start
         self.end = end
 
     def __len__(self):
         return self.end - self.start
+
+    def overlaps(self, rng):
+        return (self.start < rng.end) and (self.end > rng.start)
 
 class Coords(Range):
     def __init__(self, chrom, start, end, strand):
@@ -24,6 +28,9 @@ class MappedExon(ObjDict):
         self.srcBases = srcBases
         self.mapped = mapped
         self.mappedBases = mappedBases
+
+    def __str__(self):
+        return f"{self.srcExonId} {self.src} => {self.mapped}"
 
 class MappedTranscript(ObjDict):
     """Mapping of a transcripts.
@@ -45,6 +52,18 @@ class MappedTranscript(ObjDict):
         self.transcriptType = transcriptType
         self.cds = cds
         self.exons = exons
+        self.validate()
+
+    def validate(self):
+        """sanity check that there are no overlaping exons."""
+        for iExon0 in range(len(self.exons)):
+            for iExon1 in range(iExon0 + 1, len(self.exons)):
+                me0 = self.exons[iExon0].mapped
+                me1 = self.exons[iExon1].mapped
+                if ((me0 is not None) and (me1 is not None) and
+                    me0.overlaps(me1)):
+                    raise Exception(f"{self.srcTransId} {me1} overlaps {me0}")
+
 
 def mappedTranscriptToBed(trans):
     if trans.mapped is None:

@@ -89,7 +89,6 @@ destRawPsl = ${mappedDir}/${srcDb}-${destDb}.raw.pal.gz
 destPsl = ${mappedDir}/${srcDb}-${destDb}.psl.gz
 filtStats = ${mappedDir}/${srcDb}-${destDb}.filtStats
 destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
-destFillGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
 destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
 destJson = ${mappedDir}/${srcDb}-${destDb}.json.gz
 
@@ -106,11 +105,6 @@ ${destPsl}: ${destRawPsl}
 	mv -f ${destPsl}.${TMPEXT} ${destPsl}
 
 ${destGp}: ${destPsl}
-	@mkdir -p $(dir $@)
-	transMapPslToGenePred -noBlockMerge ${srcGp} ${destPsl} /dev/stdout | pigz -c > ${destGp}.${TMPEXT}
-	mv -f ${destGp}.${TMPEXT} ${destGp}
-
-${destFillGp}: ${destPsl}
 	@mkdir -p $(dir $@)
 	transMapPslToGenePred -noBlockMerge ${srcGp} ${destPsl} /dev/stdout | pigz -c > ${destGp}.${TMPEXT}
 	mv -f ${destGp}.${TMPEXT} ${destGp}

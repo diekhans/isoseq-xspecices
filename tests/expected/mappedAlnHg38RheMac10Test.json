@@ -1851,10 +1851,10 @@
                 },
                 "srcBases": 2951,
                 "mapped": {
-                    "start": 55703468,
-                    "end": 55714063
+                    "start": 55700985,
+                    "end": 55703975
                 },
-                "mappedBases": 3398
+                "mappedBases": 2936
             },
             {
                 "srcExonId": "hg38.chr8:55075899-55077697",
@@ -1864,10 +1864,10 @@
                 },
                 "srcBases": 1798,
                 "mapped": {
-                    "start": 55702090,
-                    "end": 55703975
+                    "start": 55707942,
+                    "end": 55709801
                 },
-                "mappedBases": 1846
+                "mappedBases": 1793
             },
             {
                 "srcExonId": "hg38.chr8:55080810-55081909",
@@ -1877,10 +1877,10 @@
                 },
                 "srcBases": 1099,
                 "mapped": {
-                    "start": 55700985,
-                    "end": 55702332
+                    "start": 55712965,
+                    "end": 55714063
                 },
-                "mappedBases": 1332
+                "mappedBases": 1098
             }
         ]
     },
@@ -2062,10 +2062,10 @@
                 },
                 "srcBases": 450,
                 "mapped": {
-                    "start": 55767075,
-                    "end": 55774035
+                    "start": 55766732,
+                    "end": 55767258
                 },
-                "mappedBases": 545
+                "mappedBases": 450
             },
             {
                 "srcExonId": "hg38.chr8:55140089-55140216",
@@ -2075,10 +2075,10 @@
                 },
                 "srcBases": 127,
                 "mapped": {
-                    "start": 55766832,
-                    "end": 55767258
+                    "start": 55771704,
+                    "end": 55771831
                 },
-                "mappedBases": 425
+                "mappedBases": 127
             },
             {
                 "srcExonId": "hg38.chr8:55142122-55142358",
@@ -2088,10 +2088,10 @@
                 },
                 "srcBases": 236,
                 "mapped": {
-                    "start": 55766732,
-                    "end": 55767074
+                    "start": 55773795,
+                    "end": 55774035
                 },
-                "mappedBases": 267
+                "mappedBases": 235
             }
         ]
     },
@@ -2474,6 +2474,176 @@
                     "end": 56452460
                 },
                 "mappedBases": 867
+            }
+        ]
+    },
+    {
+        "srcTransId": "ENST00000366471.7",
+        "mappedTransId": "ENST00000366471.7-1",
+        "src": {
+            "start": 248850007,
+            "end": 248859085,
+            "chrom": "chr1",
+            "strand": "-"
+        },
+        "mapped": {
+            "start": 71587,
+            "end": 80804,
+            "chrom": "chr1",
+            "strand": "+"
+        },
+        "geneId": "ENSG00000171163.16",
+        "geneName": "ZNF692",
+        "geneType": "protein_coding",
+        "transcriptName": "ZNF692-202",
+        "transcriptType": "protein_coding",
+        "cds": {
+            "start": 71587,
+            "end": 80804
+        },
+        "exons": [
+            {
+                "srcExonId": "hg38.chr1:248850007-248850516",
+                "src": {
+                    "start": 248850007,
+                    "end": 248850516
+                },
+                "srcBases": 509,
+                "mapped": {
+                    "start": 80301,
+                    "end": 80804
+                },
+                "mappedBases": 501
+            },
+            {
+                "srcExonId": "hg38.chr1:248850681-248850781",
+                "src": {
+                    "start": 248850681,
+                    "end": 248850781
+                },
+                "srcBases": 100,
+                "mapped": {
+                    "start": 80038,
+                    "end": 80138
+                },
+                "mappedBases": 100
+            },
+            {
+                "srcExonId": "hg38.chr1:248853936-248854051",
+                "src": {
+                    "start": 248853936,
+                    "end": 248854051
+                },
+                "srcBases": 115,
+                "mapped": {
+                    "start": 76825,
+                    "end": 76940
+                },
+                "mappedBases": 115
+            },
+            {
+                "srcExonId": "hg38.chr1:248855379-248855458",
+                "src": {
+                    "start": 248855379,
+                    "end": 248855458
+                },
+                "srcBases": 79,
+                "mapped": {
+                    "start": 75240,
+                    "end": 75319
+                },
+                "mappedBases": 79
+            },
+            {
+                "srcExonId": "hg38.chr1:248855557-248855635",
+                "src": {
+                    "start": 248855557,
+                    "end": 248855635
+                },
+                "srcBases": 78,
+                "mapped": {
+                    "start": 75063,
+                    "end": 75141
+                },
+                "mappedBases": 78
+            },
+            {
+                "srcExonId": "hg38.chr1:248855724-248855946",
+                "src": {
+                    "start": 248855724,
+                    "end": 248855946
+                },
+                "srcBases": 222,
+                "mapped": {
+                    "start": 74752,
+                    "end": 74974
+                },
+                "mappedBases": 222
+            },
+            {
+                "srcExonId": "hg38.chr1:248856513-248856562",
+                "src": {
+                    "start": 248856513,
+                    "end": 248856562
+                },
+                "srcBases": 49,
+                "mapped": {
+                    "start": 74133,
+                    "end": 74182
+                },
+                "mappedBases": 49
+            },
+            {
+                "srcExonId": "hg38.chr1:248857233-248857497",
+                "src": {
+                    "start": 248857233,
+                    "end": 248857497
+                },
+                "srcBases": 264,
+                "mapped": {
+                    "start": 73188,
+                    "end": 73452
+                },
+                "mappedBases": 264
+            },
+            {
+                "srcExonId": "hg38.chr1:248857827-248857859",
+                "src": {
+                    "start": 248857827,
+                    "end": 248857859
+                },
+                "srcBases": 32,
+                "mapped": {
+                    "start": 72829,
+                    "end": 72861
+                },
+                "mappedBases": 32
+            },
+            {
+                "srcExonId": "hg38.chr1:248858130-248858321",
+                "src": {
+                    "start": 248858130,
+                    "end": 248858321
+                },
+                "srcBases": 191,
+                "mapped": {
+                    "start": 72368,
+                    "end": 72558
+                },
+                "mappedBases": 190
+            },
+            {
+                "srcExonId": "hg38.chr1:248859014-248859085",
+                "src": {
+                    "start": 248859014,
+                    "end": 248859085
+                },
+                "srcBases": 71,
+                "mapped": {
+                    "start": 71587,
+                    "end": 71658
+                },
+                "mappedBases": 71
             }
         ]
     }

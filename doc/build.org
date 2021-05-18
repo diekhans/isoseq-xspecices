@@ -55,7 +55,7 @@ find chains data mapped |cpio -pduml versions/1.1/
 cd hg38/exon_cons
 conserved.bed  onlyHuman.bed  onlyPrimates.bed
 for b in *.bed ; do bedToBigBed -type=bed9 $b /hive/data/genomes/hg38/chrom.sizes $(basename $b .bed).bigBed ; done
-* 2021-03-21: rebuild without retained introns (V3.1)
+* 2021-03-21 rebuild without retained introns (V3.1)
 ** get official GRCm39
 ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_mouse/release_M26/gencode.vM26.annotation.gtf.gz
 * 2021-05-04 repeat maskers as BED
@@ -66,3 +66,5 @@ in hub/download/repeat-master/
 /hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/rheMac10/bed/repeatMasker/rheMac10.sorted.fa.out ../hub/download/repeat-master/rheMac10.repeatMasker.bed >&tmp/rheMac10.out&
 /hive/users/markd/nanopore/projs/t2t-chm13/T2T-CHM13-hub/bin/RM2Bed.py /hive/data/genomes/rn6/bed/repeatMasker/rn6.sorted.fa.out ../hub/download/repeat-master/rn6.repeatMasker.bed >&tmp/rn6.out&
 # should have sorted, as not all of these are actually sorted.
+* 2021-05-18 rebuild for bug
+- bug fix for mapping multiple src exons to the same target exon

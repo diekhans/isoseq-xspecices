@@ -25,13 +25,22 @@ def parseArgs():
     parser.add_argument('annotJson')
     return parser.parse_args()
 
-def pslFindBlocksByQuery(psl, qStart, qEnd):
-    "range should be is positive coordinates, return a blocks overlapping"
-    blks = []
+def pslGetIntersectRanges(qStart, qEnd, psl):
+    "range should be is positive coordinates, returns blocks overlapping"
+    def _blkIntersect(blk):
+        bqStart = max(qStart, blk.qStartPlus)
+        bqEnd = min(qEnd, blk.qEndPlus)
+        if psl.qStrand ==  '-':
+            bqStart, bqEnd = psl.qSize - bqEnd, psl.qSize - bqStart
+        btStart = blk.tStart + (bqStart - blk.qStart)
+        rng = Range(btStart, btStart + (bqEnd - bqStart))
+        return rng
+
+    ranges = []
     for blk in psl.blocks:
         if (qStart < blk.qEndPlus) and (qEnd > blk.qStartPlus):
-            blks.append(blk)
-    return blks
+            ranges.append(_blkIntersect(blk))
+    return ranges
 
 def pslBlkToRange(blk):
     return Range(blk.tStart, blk.tEnd)
@@ -48,20 +57,20 @@ def loadMappedGp(mappedGpFile):
 def loadSrcMeta(srcMeta):
     return {t.transId: t for t in TsvReader(srcMeta)}
 
-def buildMappedExon(srcGenome, srcExon, mappedBlks):
-    mStart = mappedBlks[0].tStart
-    mEnd = mappedBlks[-1].tEnd
-    mappedBases = sum([len(b) for b in mappedBlks])
+def buildMappedExon(srcGenome, srcExon, mappedRanges):
+    mStart = mappedRanges[0].start
+    mEnd = mappedRanges[-1].end
+    mappedBases = sum([len(b) for b in mappedRanges])
     return MappedExon(mkSrcExonCoords(srcGenome, srcExon),
                       pslBlkToRange(srcExon), len(srcExon),
                       Range(mStart, mEnd), mappedBases)
 
 def processExon(srcGenome, srcExon, mappedAln):
-    mappedBlks = pslFindBlocksByQuery(mappedAln, srcExon.qStart, srcExon.qEnd)
-    if len(mappedBlks) == 0:
+    mappedRanges = pslGetIntersectRanges(srcExon.qStartPlus, srcExon.qEndPlus, mappedAln)
+    if len(mappedRanges) == 0:
         return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon), len(srcExon))
     else:
-        return buildMappedExon(srcGenome, srcExon, mappedBlks)
+        return buildMappedExon(srcGenome, srcExon, mappedRanges)
 
 def getCds(mappedGp):
     if mappedGp.txStart < mappedGp.txEnd:
