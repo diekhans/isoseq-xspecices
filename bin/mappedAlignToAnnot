@@ -18,6 +18,7 @@ def parseArgs():
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('--annotBed')
     parser.add_argument('srcGenome')
+    parser.add_argument('mappedGenome')
     parser.add_argument('srcPsl')
     parser.add_argument('srcMeta')
     parser.add_argument('mappedPsl')
@@ -78,17 +79,17 @@ def getCds(mappedGp):
     else:
         return None
 
-def processMapping(srcGenome, srcAlns, srcMeta, mappedAln, mappedGp):
+def processMapping(srcGenome, mappedGenome, srcAlns, srcMeta, mappedAln, mappedGp):
     assert mappedAln.tStrand == '+'
     srcAln = srcAlns.getByQName(dropQueryUniq(mappedAln.qName))[0]
     exons = [processExon(srcGenome, srcExon, mappedAln) for srcExon in srcAln.blocks]
-    mappedTrans = MappedTranscript(srcAln.qName, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
+    mappedTrans = MappedTranscript(srcGenome, srcAln.qName, mappedGenome, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
                                    srcMeta.geneId, srcMeta.geneName, srcMeta.geneType, srcMeta.transcriptName, srcMeta.transcriptType,
                                    getCds(mappedGp), exons)
     return mappedTrans
 
-def processMappings(srcGenome, srcAlns, srcMetas, mappedPslFile, mappedGps):
-    return [processMapping(srcGenome, srcAlns, srcMetas[dropQueryUniq(ma.qName)],
+def processMappings(srcGenome, mappedGenome, srcAlns, srcMetas, mappedPslFile, mappedGps):
+    return [processMapping(srcGenome, mappedGenome, srcAlns, srcMetas[dropQueryUniq(ma.qName)],
                            ma, mappedGps[ma.qName])
             for ma in PslReader(mappedPslFile)]
 
@@ -102,7 +103,7 @@ def main(opts):
     srcAlns = PslTbl(opts.srcPsl, qNameIdx=True, qUniqDrop=True)
     srcMetas = loadSrcMeta(opts.srcMeta)
     mappedGps = loadMappedGp(opts.mappedGenePred)
-    mappedAnnots = processMappings(opts.srcGenome, srcAlns, srcMetas, opts.mappedPsl, mappedGps)
+    mappedAnnots = processMappings(opts.srcGenome, opts.mappedGenome, srcAlns, srcMetas, opts.mappedPsl, mappedGps)
 
     with fileOps.opengz(opts.annotJson, "w") as fh:
         json.dump(mappedAnnots, fh, indent=4)

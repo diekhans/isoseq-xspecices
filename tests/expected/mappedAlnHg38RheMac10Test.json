@@ -1,6 +1,8 @@
 [
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000497752.7_PAR_Y",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000497752.7_PAR_Y",
         "src": {
             "start": 2719067,
@@ -89,7 +91,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000564305.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000564305.1-1",
         "src": {
             "start": 9355587,
@@ -155,7 +159,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000211314.5",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000211314.5-1",
         "src": {
             "start": 52671112,
@@ -247,7 +253,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000260102.9",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000260102.9-1",
         "src": {
             "start": 54135240,
@@ -339,7 +347,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000522521.2",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000522521.2-1",
         "src": {
             "start": 54136507,
@@ -431,7 +441,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000660715.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000660715.1-1",
         "src": {
             "start": 54381697,
@@ -497,7 +509,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000297316.5",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000297316.5-1",
         "src": {
             "start": 54457934,
@@ -550,7 +564,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000646684.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000646684.1-1",
         "src": {
             "start": 54509421,
@@ -655,7 +671,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000522001.2",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000522001.2-1",
         "src": {
             "start": 54554360,
@@ -734,7 +752,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000602362.2",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000602362.2-1",
         "src": {
             "start": 54554582,
@@ -813,7 +833,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000518787.2",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000518787.2-1",
         "src": {
             "start": 54558759,
@@ -892,7 +914,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000636932.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000636932.1-1",
         "src": {
             "start": 54559168,
@@ -1218,7 +1242,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000637698.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000637698.1-1",
         "src": {
             "start": 54616066,
@@ -1622,7 +1648,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000220676.2",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000220676.2-1",
         "src": {
             "start": 54616095,
@@ -1701,7 +1729,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000650534.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000650534.1-1",
         "src": {
             "start": 54796513,
@@ -1819,7 +1849,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000671242.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000671242.1-1",
         "src": {
             "start": 55067584,
@@ -1885,7 +1917,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000327381.7",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000327381.7-1",
         "src": {
             "start": 55102027,
@@ -1951,7 +1985,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000622811.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000622811.1-1",
         "src": {
             "start": 55102456,
@@ -2030,7 +2066,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000522186.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000522186.1-1",
         "src": {
             "start": 55135202,
@@ -2096,7 +2134,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000668329.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000668329.1-1",
         "src": {
             "start": 55161445,
@@ -2149,7 +2189,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000522559.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000522559.1-1",
         "src": {
             "start": 55161482,
@@ -2202,7 +2244,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000520251.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000520251.1-1",
         "src": {
             "start": 55164122,
@@ -2255,7 +2299,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000518261.1",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000518261.1-1",
         "src": {
             "start": 55526185,
@@ -2308,7 +2354,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000523948.5",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000523948.5-1",
         "src": {
             "start": 55773469,
@@ -2478,7 +2526,9 @@
         ]
     },
     {
+        "srcGenome": "hg38",
         "srcTransId": "ENST00000366471.7",
+        "mappedGenome": "mm39",
         "mappedTransId": "ENST00000366471.7-1",
         "src": {
             "start": 248850007,

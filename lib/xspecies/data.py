@@ -38,10 +38,12 @@ class MappedTranscript(ObjDict):
     srcTransId - e.g. ENST00000327381.7
     mappedTransId -  e.g. ENST00000327381.7-1, where -N is used to handle multiple mappings
     """
-    def __init__(self, srcTransId, mappedTransId, src, mapped,
+    def __init__(self, srcGenome, srcTransId, mappedGenome, mappedTransId, src, mapped,
                  geneId, geneName, geneType, transcriptName, transcriptType,
                  cds, exons):
+        self.srcGenome = srcGenome
         self.srcTransId = srcTransId
+        self.mappedGenome = mappedGenome
         self.mappedTransId = mappedTransId
         self.src = src
         self.mapped = mapped
