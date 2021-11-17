@@ -3,6 +3,7 @@ import sys
 from os import path as osp
 import argparse
 import json
+from collections import namedtuple
 sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
 
 from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
@@ -26,20 +27,24 @@ def parseArgs():
     parser.add_argument('annotJson')
     return parser.parse_args()
 
-def pslGetIntersectRanges(qStart, qEnd, psl):
-    "range should be is positive coordinates, returns blocks overlapping"
+class AlnBlk(namedtuple("AlnBlk", ("qStart", "qEnd", "tStart", "tEnd"))):
+    pass
+
+
+def pslGetIntersectRanges(srcBlk, mappedPsl):
+    "returns block intersection"
     def _blkIntersect(blk):
-        bqStart = max(qStart, blk.qStartPlus)
-        bqEnd = min(qEnd, blk.qEndPlus)
-        if psl.qStrand ==  '-':
-            bqStart, bqEnd = psl.qSize - bqEnd, psl.qSize - bqStart
+        bqStart = max(srcBlk.qStartPlus, blk.qStartPlus)
+        bqEnd = min(srcBlk.qEndPlus, blk.qEndPlus)
+        if mappedPsl.qStrand == '-':
+            bqStart, bqEnd = mappedPsl.qSize - bqEnd, mappedPsl.qSize - bqStart
         btStart = blk.tStart + (bqStart - blk.qStart)
         rng = Range(btStart, btStart + (bqEnd - bqStart))
         return rng
 
     ranges = []
-    for blk in psl.blocks:
-        if (qStart < blk.qEndPlus) and (qEnd > blk.qStartPlus):
+    for blk in mappedPsl.blocks:
+        if (srcBlk.qStartPlus < blk.qEndPlus) and (srcBlk.qEndPlus > blk.qStartPlus):
             ranges.append(_blkIntersect(blk))
     return ranges
 
@@ -67,7 +72,7 @@ def buildMappedExon(srcGenome, srcExon, mappedRanges):
                       Range(mStart, mEnd), mappedBases)
 
 def processExon(srcGenome, srcExon, mappedAln):
-    mappedRanges = pslGetIntersectRanges(srcExon.qStartPlus, srcExon.qEndPlus, mappedAln)
+    mappedRanges = pslGetIntersectRanges(srcExon, mappedAln)
     if len(mappedRanges) == 0:
         return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon), len(srcExon))
     else:

@@ -24,7 +24,7 @@ mappedAlnHg38Mm39Test: mkdirs
 	diff expected/$@.bed output/$@.bed
 
 mappedAlnHg38RheMac10Test: mkdirs
-	../bin/mappedAlignToAnnot hg38 mm39 ${input}/hg38.src.psl ${input}/hg38.src.tsv ${input}/hg38-rheMac10.psl ${input}/hg38-rheMac10.gp --annotBed=output/$@.bed output/$@.json
+	../bin/mappedAlignToAnnot hg38 rheMac10 ${input}/hg38.src.psl ${input}/hg38.src.tsv ${input}/hg38-rheMac10.psl ${input}/hg38-rheMac10.gp --annotBed=output/$@.bed output/$@.json
 	diff expected/$@.json output/$@.json
 	diff expected/$@.bed output/$@.bed
 
