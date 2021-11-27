@@ -89,7 +89,6 @@ destRawPsl = ${mappedDir}/${srcDb}-${destDb}.raw.pal.gz
 destPsl = ${mappedDir}/${srcDb}-${destDb}.psl.gz
 filtStats = ${mappedDir}/${srcDb}-${destDb}.filtStats
 destGp = ${mappedDir}/${srcDb}-${destDb}.gp.gz
-destGtf = ${mappedDir}/${srcDb}-${destDb}.gtf.gz
 destJson = ${mappedDir}/${srcDb}-${destDb}.json.gz
 
 destJsonDownload = ${hubRootDir}/downloads/annot/${srcDb}-${destDb}.json.gz
@@ -108,13 +107,6 @@ ${destGp}: ${destPsl}
 	@mkdir -p $(dir $@)
 	transMapPslToGenePred -noBlockMerge ${srcGp} ${destPsl} /dev/stdout | pigz -c > ${destGp}.${TMPEXT}
 	mv -f ${destGp}.${TMPEXT} ${destGp}
-
-${destGtf}: ${destGp}
-	@mkdir -p $(dir $@)
-	genePredToGtf -utr -source=transMap file ${destGp} /dev/stdout \
-	    | addGtfExonSources ${srcDb} ${srcPsl} ${destPsl} /dev/stdin /dev/stdout \
-	    | pigz -c >${destGtf}.${TMPEXT}
-	mv -f ${destGtf}.${TMPEXT} ${destGtf}
 
 ${destJson}: ${srcPsl} ${destPsl}
 	@mkdir -p $(dir $@)

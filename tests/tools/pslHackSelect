@@ -1,0 +1,81 @@
+#!/bin/sh
+# -*-awk-*-
+non_exist_in_awk==0 "exec" "gawk" "-f" "$0" "$@"
+
+#
+# pslFmt [-qrc]
+#  -qrc - reverse complement query blocks if on negative strand
+#
+BEGIN {
+    FS="\t";
+    OFS="\t";
+
+    qrc = 0;
+    i = 1;
+    while ((i <= ARGC) && (ARGV[i]~/^-.*/)) {
+        if (ARGV[i] == "-qrc") {
+            qrc = 1;
+            ARGV[i] = "";
+        } else {
+            print "Error: invalid option: " ARGV[i] >"/dev/stderr";
+            exit(1);
+        }
+        i++;
+    }
+
+}
+
+/^$/ || /^ +$/ || /^\#/ {
+    next;
+}
+{
+    strand=$9;
+    qName=$10;
+    qSize=$11;
+    qStart=$12;
+    qEnd=$13;
+    tName=$14;
+    tSize=$15;
+    tStart=$16;
+    tEnd=$17;
+    blkCnt=$18;
+
+    blockSizesStr=$19;
+    qStartsStr=$20;
+    tStartsStr=$21;
+
+    split(blockSizesStr, blockSizes, ",");
+    split(qStartsStr, qStarts, ",");
+    split(tStartsStr, tStarts, ",");
+
+    # handle sequences
+    haveSeqs = (NF > 21);
+    if (haveSeqs) {
+        qSeqStr=$22;
+        tSeqStr=$23;
+        split(qSeqStr, qSeqs, ",");
+        split(tSeqStr, tSeqs, ",");
+    }
+
+    isProt = 0;
+    if (length(strand) > 1) {
+        # remember, arrays are 1-based
+        isProt = (((substr(strand,2,1) == "+" ) && (tEnd == tStarts[blkCnt] + 3*blockSizes[blkCnt])) \
+            || ((substr(strand,2,1) == "-" ) && (tStart == (tSize-(tStarts[blkCnt] + 3*blockSizes[blkCnt])))));
+    }
+    type = ((isProt) ? "AA" : "NT");
+
+    qEndPrev = qStarts[1];
+    tEndPrev = tStarts[1];
+    for (i = 2; i <= blkCnt; i++) {
+        sz = blockSizes[i];
+        tStart = tStarts[i];
+        tEnd = tStart+sz;
+        if ((tStart - tEndPrev) < 10) {
+            print $0
+            break;
+        }
+        
+        tEndPrev = tEnd;
+    }
+}
