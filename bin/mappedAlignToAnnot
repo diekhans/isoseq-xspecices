@@ -10,7 +10,7 @@ from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
 from pycbio.hgdata.genePred import GenePredReader
 from pycbio.tsv import TsvReader
 from pycbio.sys import fileOps
-from xspecies.data import Range, Coords, MappedTranscript, MappedExon, mappedTranscriptToBed
+from xspecies.data import Range, Coords, MappedTranscript, MappedExon, mappedTranscriptToBed, getMappedExonFrame
 
 # src tcoords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
 
@@ -39,14 +39,14 @@ def pslGetIntersectRanges(srcBlk, mappedPsl):
         if mappedPsl.qStrand == '-':
             bqStart, bqEnd = mappedPsl.qSize - bqEnd, mappedPsl.qSize - bqStart
         btStart = blk.tStart + (bqStart - blk.qStart)
-        rng = Range(btStart, btStart + (bqEnd - bqStart))
-        return rng
+        alnBlk = AlnBlk(bqStart, bqEnd, btStart, btStart + (bqEnd - bqStart))
+        return alnBlk
 
-    ranges = []
+    alnBlks = []
     for blk in mappedPsl.blocks:
         if (srcBlk.qStartPlus < blk.qEndPlus) and (srcBlk.qEndPlus > blk.qStartPlus):
-            ranges.append(_blkIntersect(blk))
-    return ranges
+            alnBlks.append(_blkIntersect(blk))
+    return alnBlks
 
 def pslBlkToRange(blk):
     return Range(blk.tStart, blk.tEnd)
@@ -63,20 +63,21 @@ def loadMappedGp(mappedGpFile):
 def loadSrcMeta(srcMeta):
     return {t.transId: t for t in TsvReader(srcMeta)}
 
-def buildMappedExon(srcGenome, srcExon, mappedRanges):
-    mStart = mappedRanges[0].start
-    mEnd = mappedRanges[-1].end
-    mappedBases = sum([len(b) for b in mappedRanges])
+def buildMappedExon(srcGenome, srcExon, mappedRanges, mappedGp):
+    mappedRegion = Range(mappedRanges[0].tStart, mappedRanges[-1].tEnd)
+    mappedBases = sum([b.tEnd - b.tStart for b in mappedRanges])
+    cds, frame = getMappedExonFrame(mappedGp, mappedRegion)
     return MappedExon(mkSrcExonCoords(srcGenome, srcExon),
                       pslBlkToRange(srcExon), len(srcExon),
-                      Range(mStart, mEnd), mappedBases)
+                      mapped=mappedRegion, mappedBases=mappedBases,
+                      cds=cds, frame=frame)
 
-def processExon(srcGenome, srcExon, mappedAln):
+def processExon(srcGenome, srcExon, mappedAln, mappedGp):
     mappedRanges = pslGetIntersectRanges(srcExon, mappedAln)
     if len(mappedRanges) == 0:
         return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon), len(srcExon))
     else:
-        return buildMappedExon(srcGenome, srcExon, mappedRanges)
+        return buildMappedExon(srcGenome, srcExon, mappedRanges, mappedGp)
 
 def getCds(mappedGp):
     if mappedGp.txStart < mappedGp.txEnd:
@@ -87,7 +88,7 @@ def getCds(mappedGp):
 def processMapping(srcGenome, mappedGenome, srcAlns, srcMeta, mappedAln, mappedGp):
     assert mappedAln.tStrand == '+'
     srcAln = srcAlns.getByQName(dropQueryUniq(mappedAln.qName))[0]
-    exons = [processExon(srcGenome, srcExon, mappedAln) for srcExon in srcAln.blocks]
+    exons = [processExon(srcGenome, srcExon, mappedAln, mappedGp) for srcExon in srcAln.blocks]
     mappedTrans = MappedTranscript(srcGenome, srcAln.qName, mappedGenome, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
                                    srcMeta.geneId, srcMeta.geneName, srcMeta.geneType, srcMeta.transcriptName, srcMeta.transcriptType,
                                    getCds(mappedGp), exons)
