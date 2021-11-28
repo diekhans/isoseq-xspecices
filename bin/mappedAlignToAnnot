@@ -4,100 +4,150 @@ from os import path as osp
 import argparse
 import json
 from collections import namedtuple
+import twobitreader
 sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
 
 from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
-from pycbio.hgdata.genePred import GenePredReader
+from pycbio.hgdata.genePred import GenePredTbl
+from pycbio.hgdata import dnaOps
+from pycbio.hgdata.frame import Frame
 from pycbio.tsv import TsvReader
 from pycbio.sys import fileOps
-from xspecies.data import Range, Coords, MappedTranscript, MappedExon, mappedTranscriptToBed, getMappedExonFrame
+from xspecies.data import (Region, Coords, MappedTranscript, MappedExon, mappedTranscriptToBed,
+                           getMappedExonFrame, getGenomeTwoBit, ChromRegionSeq)
 
 # src tcoords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
 
 def parseArgs():
     usage = """Generate annotation JSON file for exchange"""
     parser = argparse.ArgumentParser(description=usage)
-    parser.add_argument('--annotBed')
     parser.add_argument('srcGenome')
-    parser.add_argument('mappedGenome')
     parser.add_argument('srcPsl')
+    parser.add_argument('srcGenePred')
     parser.add_argument('srcMeta')
+    parser.add_argument('mappedGenome')
     parser.add_argument('mappedPsl')
-    parser.add_argument('mappedGenePred')
+    parser.add_argument('mappedGenePred',
+                        help="produced by transMapPslToGenePred -noBlockMerge")
+    parser.add_argument('--annotBed')
     parser.add_argument('annotJson')
     return parser.parse_args()
 
-class AlnBlk(namedtuple("AlnBlk", ("qStart", "qEnd", "tStart", "tEnd"))):
+class MappedTrans:
+    def __init__(self, srcPsl, srcGp, srcMeta,
+                 mappedPsl, mappedGp):
+        assert srcPsl.qSize == mappedPsl.qSize
+        assert len(srcPsl.blocks) == len(srcGp.exons)
+        assert len(mappedPsl.blocks) == len(mappedGp.exons)
+        assert srcPsl.tStrand == '+'
+        assert mappedPsl.tStrand == '+'
+        self.srcPsl = srcPsl
+        self.srcGp = srcGp
+        self.srcMeta = srcMeta
+        self.mappedPsl = mappedPsl
+        self.mappedGp = mappedGp
+
+def loadSrcMeta(metaTsv):
+    return {t.transId: t for t in TsvReader(metaTsv)}
+
+def loadMappings(srcPslFile, srcGenePredFile, srcMetaTsv,
+                 mappedPslFile, mappedGenePredFile):
+    srcPsls = PslTbl(srcPslFile, qNameIdx=True)
+    srcGps = GenePredTbl(srcGenePredFile, buildUniqIdx=True)
+    srcMetas = loadSrcMeta(srcMetaTsv)
+    mappedGps = GenePredTbl(mappedGenePredFile, buildUniqIdx=True)
+
+    mappedTranses = []
+    for mappedPsl in PslReader(mappedPslFile):
+        srcName = dropQueryUniq(mappedPsl.qName)
+        mappedTranses.append(MappedTrans(srcPsls.qNameMap[srcName][0],
+                                         srcGps.names[srcName],
+                                         srcMetas[srcName],
+                                         mappedPsl,
+                                         mappedGps.names[mappedPsl.qName]))
+    return mappedTranses
+
+
+class AlnBlk(namedtuple("AlnBlk", ("src", "mapped",
+                                   "mappedFrame"))):
+    "genomic (target alignments) of exons"
     pass
 
+def getTSubRegion(blk, qStart, qEnd):
+    if blk.psl.qStrand == '-':
+        qStart, qEnd = dnaOps.reverseCoords(qStart, qEnd, blk.psl.qSize)
+    tStart = blk.tStart + (qStart - blk.qStart)
+    tEnd = tStart + (qEnd - qStart)
+    return Region(tStart, tEnd)
 
-def pslGetIntersectRanges(srcBlk, mappedPsl):
-    "returns block intersection"
-    def _blkIntersect(blk):
-        bqStart = max(srcBlk.qStartPlus, blk.qStartPlus)
-        bqEnd = min(srcBlk.qEndPlus, blk.qEndPlus)
-        if mappedPsl.qStrand == '-':
-            bqStart, bqEnd = mappedPsl.qSize - bqEnd, mappedPsl.qSize - bqStart
-        btStart = blk.tStart + (bqStart - blk.qStart)
-        alnBlk = AlnBlk(bqStart, bqEnd, btStart, btStart + (bqEnd - bqStart))
-        return alnBlk
+def _blkIntersect(mappedBlk, mappedExon, srcBlk):
+    srcRegion = getTSubRegion(srcBlk, mappedBlk.qStartPlus, mappedBlk.qEndPlus)
+    mappedRegion = Region(mappedBlk.tStart, mappedBlk.tEnd)
+    frame = Frame(mappedExon.frame) if mappedExon.frame >= 0 else None
+    return AlnBlk(srcRegion, mappedRegion, frame)
 
+def srcBlkToMappedBlks(srcBlk, mappedPsl, mappedGp):
+    "returns src block mappings as a list of AlnBlk objs"
     alnBlks = []
-    for blk in mappedPsl.blocks:
-        if (srcBlk.qStartPlus < blk.qEndPlus) and (srcBlk.qEndPlus > blk.qStartPlus):
-            alnBlks.append(_blkIntersect(blk))
+    for iMapped in range(len(mappedPsl.blocks)):
+        mappedBlk = mappedPsl.blocks[iMapped]
+        if (srcBlk.qStartPlus < mappedBlk.qEndPlus) and (srcBlk.qEndPlus > mappedBlk.qStartPlus):
+            alnBlks.append(_blkIntersect(mappedBlk, mappedGp.exons[iMapped], srcBlk))
     return alnBlks
 
-def pslBlkToRange(blk):
-    return Range(blk.tStart, blk.tEnd)
+def pslBlkToRegion(blk):
+    return Region(blk.tStart, blk.tEnd)
 
 def pslToCoords(psl):
     return Coords(psl.tName, psl.tStart, psl.tEnd, psl.qStrand)
 
 def mkSrcExonCoords(srcGenome, srcExon):
-    return "{}.{}:{}-{}".format(srcGenome, srcExon.psl.tName, srcExon.tStart, srcExon.tEnd)
+    return "{}.{}:{}-{}".format(srcGenome, srcExon.gene.chrom, srcExon.start, srcExon.end)
 
-def loadMappedGp(mappedGpFile):
-    return {gp.name: gp for gp in GenePredReader(mappedGpFile)}
-
-def loadSrcMeta(srcMeta):
-    return {t.transId: t for t in TsvReader(srcMeta)}
-
-def buildMappedExon(srcGenome, srcExon, mappedRanges, mappedGp):
-    mappedRegion = Range(mappedRanges[0].tStart, mappedRanges[-1].tEnd)
-    mappedBases = sum([b.tEnd - b.tStart for b in mappedRanges])
+def buildMappedExon(srcGenome, srcBlk, srcExon, alnBlks, mappedGp):
+    mappedRegion = Region(alnBlks[0].mapped.start, alnBlks[-1].mapped.end)
+    mappedBases = sum([len(b.mapped) for b in alnBlks])
     cds, frame = getMappedExonFrame(mappedGp, mappedRegion)
     return MappedExon(mkSrcExonCoords(srcGenome, srcExon),
-                      pslBlkToRange(srcExon), len(srcExon),
+                      pslBlkToRegion(srcBlk), len(srcExon),
                       mapped=mappedRegion, mappedBases=mappedBases,
                       cds=cds, frame=frame)
 
-def processExon(srcGenome, srcExon, mappedAln, mappedGp):
-    mappedRanges = pslGetIntersectRanges(srcExon, mappedAln)
-    if len(mappedRanges) == 0:
-        return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRange(srcExon), len(srcExon))
+def processExon(srcGenome, srcBlk, srcExon, mappedTrans):
+    alnBlks = srcBlkToMappedBlks(srcBlk, mappedTrans.mappedPsl, mappedTrans.mappedGp)
+    if len(alnBlks) == 0:
+        return MappedExon(mkSrcExonCoords(srcGenome, srcExon), pslBlkToRegion(srcBlk), len(srcExon))
     else:
-        return buildMappedExon(srcGenome, srcExon, mappedRanges, mappedGp)
+        return buildMappedExon(srcGenome, srcBlk, srcExon, alnBlks, mappedTrans.mappedGp)
 
 def getCds(mappedGp):
     if mappedGp.txStart < mappedGp.txEnd:
-        return Range(mappedGp.txStart, mappedGp.txEnd)
+        return Region(mappedGp.txStart, mappedGp.txEnd)
     else:
         return None
 
-def processMapping(srcGenome, mappedGenome, srcAlns, srcMeta, mappedAln, mappedGp):
-    assert mappedAln.tStrand == '+'
-    srcAln = srcAlns.getByQName(dropQueryUniq(mappedAln.qName))[0]
-    exons = [processExon(srcGenome, srcExon, mappedAln, mappedGp) for srcExon in srcAln.blocks]
-    mappedTrans = MappedTranscript(srcGenome, srcAln.qName, mappedGenome, mappedAln.qName, pslToCoords(srcAln), pslToCoords(mappedAln),
+def processTrans(srcGenome, srcGenomeSeqs, mappedGenome, mappedGenomeSeqs, mappedTrans):
+    exons = []
+    for iSrcExon in range(len(mappedTrans.srcPsl.blocks)):
+        exons.append(processExon(srcGenome, mappedTrans.srcPsl.blocks[iSrcExon],
+                                 mappedTrans.srcGp.exons[iSrcExon], mappedTrans))
+
+    srcMeta = mappedTrans.srcMeta
+    mappedTrans = MappedTranscript(srcGenome, mappedTrans.srcPsl.qName, mappedGenome, mappedTrans.mappedPsl.qName, pslToCoords(mappedTrans.srcPsl), pslToCoords(mappedTrans.mappedPsl),
                                    srcMeta.geneId, srcMeta.geneName, srcMeta.geneType, srcMeta.transcriptName, srcMeta.transcriptType,
-                                   getCds(mappedGp), exons)
+                                   getCds(mappedTrans.mappedGp), exons)
     return mappedTrans
 
-def processMappings(srcGenome, mappedGenome, srcAlns, srcMetas, mappedPslFile, mappedGps):
-    return [processMapping(srcGenome, mappedGenome, srcAlns, srcMetas[dropQueryUniq(ma.qName)],
-                           ma, mappedGps[ma.qName])
-            for ma in PslReader(mappedPslFile)]
+def mappedAlignToAnnot(srcGenome, mappedGenome, mappedTranses):
+    srcGenomeSeqs = twobitreader.TwoBitFile(getGenomeTwoBit(srcGenome))
+    mappedGenomeSeqs = twobitreader.TwoBitFile(getGenomeTwoBit(mappedGenome))
+
+    mappedAnnots = []
+    for mappedTrans in mappedTranses:
+        mappedAnnots.append(processTrans(srcGenome, srcGenomeSeqs,
+                                         mappedGenome, mappedGenomeSeqs,
+                                         mappedTrans))
+    return mappedAnnots
 
 def writeAnnotBed(mappedAnnots, bedFh):
     for ma in mappedAnnots:
@@ -106,10 +156,10 @@ def writeAnnotBed(mappedAnnots, bedFh):
             bed.write(bedFh)
 
 def main(opts):
-    srcAlns = PslTbl(opts.srcPsl, qNameIdx=True, qUniqDrop=True)
-    srcMetas = loadSrcMeta(opts.srcMeta)
-    mappedGps = loadMappedGp(opts.mappedGenePred)
-    mappedAnnots = processMappings(opts.srcGenome, opts.mappedGenome, srcAlns, srcMetas, opts.mappedPsl, mappedGps)
+    mappedTranses = loadMappings(opts.srcPsl, opts.srcGenePred, opts.srcMeta,
+                                 opts.mappedPsl, opts.mappedGenePred)
+    mappedAnnots = mappedAlignToAnnot(opts.srcGenome, opts.mappedGenome,
+                                      mappedTranses)
 
     with fileOps.opengz(opts.annotJson, "w") as fh:
         json.dump(mappedAnnots, fh, indent=4)

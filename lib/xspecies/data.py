@@ -1,10 +1,11 @@
 from pycbio.sys.objDict import ObjDict
 from pycbio.hgdata.bed import Bed
 from pycbio.hgdata.frame import Frame
+from pycbio.hgdata import dnaOps
 
-class Range(ObjDict):
+class Region(ObjDict):
     def __init__(self, start, end):
-        assert start <= end, f"range: {start} > {end}"
+        assert start <= end, f"region: {start} > {end}"
         self.start = start
         self.end = end
 
@@ -18,10 +19,10 @@ class Range(ObjDict):
         return (self.start >= rng.start) and (self.end <= rng.end)
 
     def intersect(self, rng):
-        return Range(max(self.start, rng.start),
-                     min(self.end, rng.end))
+        return Region(max(self.start, rng.start),
+                      min(self.end, rng.end))
 
-class Coords(Range):
+class Coords(Region):
     def __init__(self, chrom, start, end, strand):
         super().__init__(start, end)
         self.chrom = chrom
@@ -52,7 +53,7 @@ class MappedExon(ObjDict):
 class MappedTranscript(ObjDict):
     """Mapping of a transcripts.
 
-    srcTransId - e.g. ENST00000327381.7
+,    srcTransId - e.g. ENST00000327381.7
     mappedTransId -  e.g. ENST00000327381.7-1, where -N is used to handle multiple mappings
     """
     def __init__(self, srcGenome, srcTransId, mappedGenome, mappedTransId, src, mapped,
@@ -107,12 +108,28 @@ def _getFrame(strand, overExons):
     raise Exception(f"frame not found: {overExons}")
 
 def getMappedExonFrame(mappedGp, exonRegion):
-    """exonRange is the mapped range of the source exon, return cdsRange, frame,
+    """exonRegion is the mapped region of the source exon, return cdsRegion, frame,
      will all being None if no CDS overlap
     """
-    mappedCds = Range(mappedGp.cdsStart, mappedGp.cdsEnd)
+    mappedCds = Region(mappedGp.cdsStart, mappedGp.cdsEnd)
     if not exonRegion.overlaps(mappedCds):
         return (None, None)
     overExons = _getOverlappedExons(mappedGp, exonRegion)
     exonCds = mappedCds.intersect(exonRegion)
     return exonCds, _getFrame(mappedGp.strand, overExons)
+
+def getGenomeTwoBit(hgdb):
+    return "/hive/data/genomes/{asm}/{asm}.2bit".format(asm=hgdb)
+
+class ChromRegionSeq:
+    """used to store partial sequence"""
+    def __init__(self, coords, seqreader):
+        self.coords = coords
+        self.seq = seqreader[coords.chrom][coords.start, coords.end]
+        if coords.strand == '-':
+            self.seq = dnaOps.reverseComplement(self.seq)
+
+    def get(self, rng):
+        assert self.coords.contains(rng)
+        start = rng.start - self.coords.start
+        return self.seq[start: start + len(rng)]
