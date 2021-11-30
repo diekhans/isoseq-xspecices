@@ -1,7 +1,10 @@
 from pycbio.sys.objDict import ObjDict
+from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
+from pycbio.hgdata.genePred import GenePredTbl
 from pycbio.hgdata.bed import Bed
-from pycbio.hgdata.frame import Frame
 from pycbio.hgdata import dnaOps
+from pycbio.hgdata.frame import Frame
+from pycbio.tsv import TsvReader
 
 class Region(ObjDict):
     def __init__(self, start, end):
@@ -10,23 +13,29 @@ class Region(ObjDict):
         self.end = end
 
     def __len__(self):
-        return self.end - self.start
+        if self.end <= self.start:
+            return 0
+        else:
+            return self.end - self.start
 
     def overlaps(self, rng):
         return (self.start < rng.end) and (self.end > rng.start)
 
     def contains(self, rng):
-        return (self.start >= rng.start) and (self.end <= rng.end)
+        return (rng.start >= self.start) and (rng.end <= self.end)
 
     def intersect(self, rng):
-        return Region(max(self.start, rng.start),
-                      min(self.end, rng.end))
+        start = max(self.start, rng.start)
+        end = min(self.end, rng.end)
+        if end < start:
+            end = start
+        return Region(start, end)
 
-class Coords(Region):
+class RCoords(Region):
     def __init__(self, chrom, start, end, strand):
-        super().__init__(start, end)
-        self.chrom = chrom
+        self.chrom = chrom  # put first
         self.strand = strand
+        super().__init__(start, end)
 
     def intersect(self, rng):
         n = super().intersect(rng)
@@ -34,18 +43,59 @@ class Coords(Region):
         n.strand = self.strand
         return n
 
+    @classmethod
+    def fromRegion(cls, chrom, strand, region):
+        return RCoords(chrom, region.start, region.end, strand)
+
+class MappedTrans:
+    def __init__(self, srcPsl, srcGp, srcMeta,
+                 mappedPsl, mappedGp):
+        assert srcPsl.qSize == mappedPsl.qSize
+        assert len(srcPsl.blocks) == len(srcGp.exons)
+        assert len(mappedPsl.blocks) == len(mappedGp.exons)
+        assert srcPsl.tStrand == '+'
+        assert mappedPsl.tStrand == '+'
+        self.srcPsl = srcPsl
+        self.srcGp = srcGp
+        self.srcMeta = srcMeta
+        self.mappedPsl = mappedPsl
+        self.mappedGp = mappedGp
+
+def loadSrcMeta(metaTsv):
+    return {t.transId: t for t in TsvReader(metaTsv)}
+
+def loadMappings(srcPslFile, srcGenePredFile, srcMetaTsv,
+                 mappedPslFile, mappedGenePredFile):
+    srcPsls = PslTbl(srcPslFile, qNameIdx=True)
+    srcGps = GenePredTbl(srcGenePredFile, buildUniqIdx=True)
+    srcMetas = loadSrcMeta(srcMetaTsv)
+    mappedGps = GenePredTbl(mappedGenePredFile, buildUniqIdx=True)
+
+    mappedTranses = []
+    for mappedPsl in PslReader(mappedPslFile):
+        srcName = dropQueryUniq(mappedPsl.qName)
+        mappedTranses.append(MappedTrans(srcPsls.qNameMap[srcName][0],
+                                         srcGps.names[srcName],
+                                         srcMetas[srcName],
+                                         mappedPsl,
+                                         mappedGps.names[mappedPsl.qName]))
+    return mappedTranses
+
+
 class MappedExon(ObjDict):
-    """exon mapped to another assembly.  This will list all of the INDEL in
-    source exon. start/end can be None if exon is not mapped"""
-    def __init__(self, srcExonId, src, srcBases, *, mapped=None, mappedBases=0,
-                 cds=None, frame=None):
+    """Exon mapped to another assembly.  tart/end can be None if exon is not mapped.
+    This is saved to the JSON file """
+    def __init__(self, srcExonId, srcExonNum, src, srcBases, *, mapped=None, mappedBases=0,
+                 cds=None, frame=None, dnaAlign=None):
         self.srcExonId = srcExonId
+        self.srcExonNum = srcExonNum
         self.src = src
         self.srcBases = srcBases
         self.mapped = mapped
         self.mappedBases = mappedBases
         self.cds = cds
-        self.frame = frame
+        self.frame = Frame.fromFrame(frame)
+        self.dnaAlign = dnaAlign
 
     def __str__(self):
         return f"{self.srcExonId} {self.src} => {self.mapped}"
@@ -53,7 +103,7 @@ class MappedExon(ObjDict):
 class MappedTranscript(ObjDict):
     """Mapping of a transcripts.
 
-,    srcTransId - e.g. ENST00000327381.7
+    srcTransId - e.g. ENST00000327381.7
     mappedTransId -  e.g. ENST00000327381.7-1, where -N is used to handle multiple mappings
     """
     def __init__(self, srcGenome, srcTransId, mappedGenome, mappedTransId, src, mapped,
@@ -94,42 +144,21 @@ def mappedTranscriptToBed(trans):
     return Bed(mt.chrom, mt.start, mt.end, trans.mappedTransId, score=0, strand=mt.strand,
                thickStart=trans.cds.start, thickEnd=trans.cds.end, itemRgb=0, blocks=blocks)
 
-def _getOverlappedExons(mappedGp, exonRegion):
-    return [e for e in mappedGp.exons
-            if exonRegion.overlaps(e)]
-
-def _getFrame(strand, overExons):
-    # first from start or end with frame
-    if strand == '-':
-        overExons = reversed(overExons)
-    for exon in overExons:
-        if exon.frame >= 0:
-            return Frame(exon.frame)
-    raise Exception(f"frame not found: {overExons}")
-
-def getMappedExonFrame(mappedGp, exonRegion):
-    """exonRegion is the mapped region of the source exon, return cdsRegion, frame,
-     will all being None if no CDS overlap
-    """
-    mappedCds = Region(mappedGp.cdsStart, mappedGp.cdsEnd)
-    if not exonRegion.overlaps(mappedCds):
-        return (None, None)
-    overExons = _getOverlappedExons(mappedGp, exonRegion)
-    exonCds = mappedCds.intersect(exonRegion)
-    return exonCds, _getFrame(mappedGp.strand, overExons)
-
 def getGenomeTwoBit(hgdb):
     return "/hive/data/genomes/{asm}/{asm}.2bit".format(asm=hgdb)
 
-class ChromRegionSeq:
+class RegionSeq:
     """used to store partial sequence"""
-    def __init__(self, coords, seqreader):
+    def __init__(self, seqreader, coords):
         self.coords = coords
-        self.seq = seqreader[coords.chrom][coords.start, coords.end]
+        absCoords = coords.abs()
+        self.seq = seqreader[absCoords.name][absCoords.start:absCoords.end]
+        assert self.seq is not None
         if coords.strand == '-':
             self.seq = dnaOps.reverseComplement(self.seq)
 
     def get(self, rng):
-        assert self.coords.contains(rng)
+        assert rng.overlapsStrand(self.coords), f"range {rng} does not overlap coords {self.coords}"
+        assert ((rng.start >= self.coords.start) and (rng.end <= self.coords.end)), f"range {rng} not contained in coords {self.coords}"
         start = rng.start - self.coords.start
-        return self.seq[start: start + len(rng)]
+        return self.seq[start:start + len(rng)]

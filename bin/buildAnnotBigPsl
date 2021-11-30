@@ -31,7 +31,8 @@ def wackUniqSuffix(ident):
 def loadUniqIdMap(pslIn):
     idToUniqIds = defaultdict(list)
     for row in fileOps.iterRows(pslIn):
-        idToUniqIds[wackUniqSuffix(row[9])].append(row[9])
+        if (len(row) > 9) and (not row[0].startswith('#')):
+            idToUniqIds[wackUniqSuffix(row[9])].append(row[9])
     idToUniqIds.default_factory = None
     return idToUniqIds
 
@@ -75,7 +76,8 @@ def bigPslToPsl(inPsl, srcCds, srcFa, bigPslIn):
                   ["sort", "-k1,1", "-k2,2n"]], stdout=bigPslIn)
 
 def bedToBigBed(bigPslIn, asFile, chromSizes, bigPslOut):
-    pipettor.run(["bedToBigBed", "-type=bed12+13", "-tab", "-as=" + asFile, bigPslIn, chromSizes, bigPslOut])
+    indexes = "name,geneId,geneSym,transcriptId,transcriptName"
+    pipettor.run(["bedToBigBed", "-type=bed12+13", "-tab", "-extraIndex=" + indexes, "-as=" + asFile, bigPslIn, chromSizes, bigPslOut])
 
 def buildBigPsl(pslIn, metaData, cdsEditFh, faEditFh, chromSizes, bigPslOut):
     with tempfile.NamedTemporaryFile(delete=not debug) as bigPslInFh:

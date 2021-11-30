@@ -1,5 +1,5 @@
 
-track mm39.src
+track mm39_src
 shortLabel mouse src genes
 longLabel mouse mm39 source genes
 html ../empty.html
@@ -21,11 +21,11 @@ labelFields name,geneSym,geneId,geneType,transcriptType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl mm39.src.bigPsl
-searchIndex name,geneSym,geneId
+searchIndex name,geneSym,geneId,transcriptId,transcriptName
 
 
 
-track hg38-mm39.annot
+track hg38-mm39_annot
 shortLabel human genes
 longLabel human hg38 gene mappings
 html ../empty.html
@@ -47,11 +47,11 @@ labelFields name,geneSym,geneId,geneType,transcriptType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl hg38-mm39.bigPsl
-searchIndex name,geneSym,geneId
+searchIndex name,geneSym,geneId,transcriptId,transcriptName
 
 
 
-track rheMac10-mm39.annot
+track rheMac10-mm39_annot
 shortLabel rhesus genes
 longLabel rhesus rheMac10 gene mappings
 html ../empty.html
@@ -73,11 +73,11 @@ labelFields name,geneSym,geneId,geneType,transcriptType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl rheMac10-mm39.bigPsl
-searchIndex name,geneSym,geneId
+searchIndex name,geneSym,geneId,transcriptId,transcriptName
 
 
 
-track rn6-mm39.annot
+track rn6-mm39_annot
 shortLabel rat genes
 longLabel rat rn6 gene mappings
 html ../empty.html
@@ -99,11 +99,11 @@ labelFields name,geneSym,geneId,geneType,transcriptType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl rn6-mm39.bigPsl
-searchIndex name,geneSym,geneId
+searchIndex name,geneSym,geneId,transcriptId,transcriptName
 
 
 
-track isoseq.minimap2.2020-12-02
+track isoseq_minimap2_2020-12-02
 shortLabel IsoSeq minimap2 2020-12-02
 longLabel IsoSeq minimap2 2020-12-02
 html ../empty.html
