@@ -2,7 +2,6 @@ from pycbio.sys.objDict import ObjDict
 from pycbio.hgdata.psl import PslTbl, PslReader, dropQueryUniq
 from pycbio.hgdata.genePred import GenePredTbl
 from pycbio.hgdata.bed import Bed
-from pycbio.hgdata import dnaOps
 from pycbio.hgdata.frame import Frame
 from pycbio.tsv import TsvReader
 
@@ -31,6 +30,9 @@ class Region(ObjDict):
             end = start
         return Region(start, end)
 
+    def noneIfEmpty(self):
+        return self if len(self) > 0 else None
+
 class RCoords(Region):
     def __init__(self, chrom, start, end, strand):
         self.chrom = chrom  # put first
@@ -47,7 +49,7 @@ class RCoords(Region):
     def fromRegion(cls, chrom, strand, region):
         return RCoords(chrom, region.start, region.end, strand)
 
-class MappedTrans:
+class MappingsData:
     def __init__(self, srcPsl, srcGp, srcMeta,
                  mappedPsl, mappedGp):
         assert srcPsl.qSize == mappedPsl.qSize
@@ -71,31 +73,33 @@ def loadMappings(srcPslFile, srcGenePredFile, srcMetaTsv,
     srcMetas = loadSrcMeta(srcMetaTsv)
     mappedGps = GenePredTbl(mappedGenePredFile, buildUniqIdx=True)
 
-    mappedTranses = []
+    mappingData = []
     for mappedPsl in PslReader(mappedPslFile):
         srcName = dropQueryUniq(mappedPsl.qName)
-        mappedTranses.append(MappedTrans(srcPsls.qNameMap[srcName][0],
-                                         srcGps.names[srcName],
-                                         srcMetas[srcName],
-                                         mappedPsl,
-                                         mappedGps.names[mappedPsl.qName]))
-    return mappedTranses
+        mappingData.append(MappingsData(srcPsls.qNameMap[srcName][0],
+                                        srcGps.names[srcName],
+                                        srcMetas[srcName],
+                                        mappedPsl,
+                                        mappedGps.names[mappedPsl.qName]))
+    return mappingData
 
 
 class MappedExon(ObjDict):
     """Exon mapped to another assembly.  tart/end can be None if exon is not mapped.
     This is saved to the JSON file """
     def __init__(self, srcExonId, srcExonNum, src, srcBases, *, mapped=None, mappedBases=0,
-                 cds=None, frame=None, dnaAlign=None):
+                 srcCds=None, mappedCds=None, frame=None, dnaAlign=None, protAlign=None):
         self.srcExonId = srcExonId
         self.srcExonNum = srcExonNum
         self.src = src
         self.srcBases = srcBases
+        self.srcCds = srcCds
         self.mapped = mapped
         self.mappedBases = mappedBases
-        self.cds = cds
+        self.mappedCds = mappedCds
         self.frame = Frame.fromFrame(frame)
         self.dnaAlign = dnaAlign
+        self.protAlign = protAlign
 
     def __str__(self):
         return f"{self.srcExonId} {self.src} => {self.mapped}"
@@ -108,19 +112,20 @@ class MappedTranscript(ObjDict):
     """
     def __init__(self, srcGenome, srcTransId, mappedGenome, mappedTransId, src, mapped,
                  geneId, geneName, geneType, transcriptName, transcriptType,
-                 cds, exons):
+                 srcCds, mappedCds, exons):
         self.srcGenome = srcGenome
         self.srcTransId = srcTransId
+        self.src = src
+        self.srcCds = srcCds.noneIfEmpty()
         self.mappedGenome = mappedGenome
         self.mappedTransId = mappedTransId
-        self.src = src
         self.mapped = mapped
+        self.mappedCds = mappedCds.noneIfEmpty()
         self.geneId = geneId
         self.geneName = geneName
         self.geneType = geneType
         self.transcriptName = transcriptName
         self.transcriptType = transcriptType
-        self.cds = cds
         self.exons = exons
         self.validate()
 
@@ -141,24 +146,9 @@ def mappedTranscriptToBed(trans):
     blocks = [Bed.Block(e.mapped.start, e.mapped.end)
               for e in trans.exons if e.mapped is not None]
     mt = trans.mapped
+    cds = trans.mappedCds if trans.mappedCds is not None else Region(mt.end, mt.end)
     return Bed(mt.chrom, mt.start, mt.end, trans.mappedTransId, score=0, strand=mt.strand,
-               thickStart=trans.cds.start, thickEnd=trans.cds.end, itemRgb=0, blocks=blocks)
+               thickStart=cds.start, thickEnd=cds.end, itemRgb=0, blocks=blocks)
 
 def getGenomeTwoBit(hgdb):
     return "/hive/data/genomes/{asm}/{asm}.2bit".format(asm=hgdb)
-
-class RegionSeq:
-    """used to store partial sequence"""
-    def __init__(self, seqreader, coords):
-        self.coords = coords
-        absCoords = coords.abs()
-        self.seq = seqreader[absCoords.name][absCoords.start:absCoords.end]
-        assert self.seq is not None
-        if coords.strand == '-':
-            self.seq = dnaOps.reverseComplement(self.seq)
-
-    def get(self, rng):
-        assert rng.overlapsStrand(self.coords), f"range {rng} does not overlap coords {self.coords}"
-        assert ((rng.start >= self.coords.start) and (rng.end <= self.coords.end)), f"range {rng} not contained in coords {self.coords}"
-        start = rng.start - self.coords.start
-        return self.seq[start:start + len(rng)]
