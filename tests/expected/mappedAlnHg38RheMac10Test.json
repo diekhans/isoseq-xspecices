@@ -54,13 +54,13 @@
                     "end": 2720424
                 },
                 "srcBases": 69,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 577,
                     "end": 646
                 },
                 "mappedBases": 69,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ACGACCCACGACCAccgaacccacccaaaccgatgccaaatccaaaccccaaccACCCTAGTTCCTCCG",
@@ -78,13 +78,13 @@
                     "end": 2722674
                 },
                 "srcBases": 48,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 11148,
                     "end": 11196
                 },
                 "mappedBases": 48,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTAGCTTTTCAGATGCTGACCTTGCGGATGGCGTTTCAGGTGGAGAAG",
@@ -102,13 +102,13 @@
                     "end": 2723364
                 },
                 "srcBases": 51,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 11954,
                     "end": 12005
                 },
                 "mappedBases": 51,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GAAAAGGAGGCAGTGATGGTGGAGGCAGCCACAGGAAAGAAGGGGAAGAGG",
@@ -126,13 +126,13 @@
                     "end": 2726268
                 },
                 "srcBases": 9,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 15791,
                     "end": 15800
                 },
                 "mappedBases": 9,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CCGACGCCC",
@@ -183,13 +183,13 @@
                     "end": 9355780
                 },
                 "srcBases": 193,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 9382305,
                     "end": 9382492
                 },
                 "mappedBases": 187,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "tggaggtaattgaatcatgggggcagtttcccccatgctcttctctcgaaagtgagtgagtctcacaagatctgatggttttataaggggttcctcccccttggctcagcacttacccttcctgccgccctgtgaagaggtgccttccaccatgattgtaactttcctgaggactcccaagccatgcagaact",
@@ -207,13 +207,13 @@
                     "end": 9401783
                 },
                 "srcBases": 54,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 9437779,
                     "end": 9437833
                 },
                 "mappedBases": 54,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ggcttctatgaggctgtcttgtaggatgcccatgacgatcctccagacactaag",
@@ -231,13 +231,13 @@
                     "end": 9408093
                 },
                 "srcBases": 5051,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 9439085,
                     "end": 9444215
                 },
                 "mappedBases": 4923,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "atgagaaaactaaggcccaaagggacacctggctttcctaagacctgtaagtggaagagtcagcatttgaatggagaactcgcagctttcggagtctagacttgttttacctcaccagactgcttcTACTCCTAGTGATTCCTTCCCTTAGATTAAGCCTTGCTCTCTTCCCGTGCAATCATGAAGAGGATTATATTAGTAAATCCCTGAACATTCCCTGATTGGGGAGTGAGGGTCAAACCAAGGCAAATGGCAGGATTGACACTCACATCAAGGGCTGGCTCATTAAGGGCTCGGGACCTGGCGATCGAGTTGCATTGCAGAT-TTTGGAAGTATGCAAGACCACGCCAGCCACCTTTCCAGGGAGAGACCATGCAAAGAAGGCAGGTGATCCAAGGGCTGGGAGTGGTGAGGACTGCTCCAGCCCCTGAGCAGCTGTCATCCCAGCACAAAGTGTCAGAAGAGACctcaaagtgtggtctgcagacgaggcagcatctgcatcacctgggagcttgttagaaatgcagaatcttctgagagaaccagacctgctgcatcaaaatctgcattttaacaagattgtaacttagatacacagtaacacttaaaaagGATGGGGCAGAGAGGCTAAGTCAGCAGCTTCTCATCACACTCCAATCTGATGCTGCTAGTGCTCCAAAAAGCTCTCATATCCTCACTGACTAGCCTAGGGCTGTGTCTATCAATGCATTATATGACACAGATGAAGACTATTGTGTACCTTCCTCAATTTTTACCCCATTGTTTCAGCCTTTTGTACATCTTTAATGCAAACATCCATGCGAGAATTCTTGTGACATTAATTTTTTGGAACAACCTGTTTTGCAGAGCAAATTTCATTAAGCCATTTTAATCCAGAGTTTAATTTTTTATACAGCTCGACTCAATCATTTCCATTTTTTTTCCATTAGAATGTCTATTTGTAGTAACATTATTTTCATGGGATCAATTATTTTCTGTTTAAATTTACAACAGGCATTTGACTCATCAGTCTCTTTTTATATACCATCTTTTTGCTGATTCTGACTTCTGCTATTTGGAGAGGTTTTCTTGTTTGTGTGTTTGATTCTTTTGTGGCCATTCTTTCTATTAAGTGAAAATCGTCTGGATCAAATTTTGTAGATTTAAATTTTGTTATTAGTGATACCTG-TTTTTTTTCCCTGTCAATTTTAGCTCATTACACATTCTAGTCATTTTAACCCTGCTAGTTTTGTTAGTTGCTGATCACTTTTACCATACCAGTAATACGTGGTAGAAATAATcaccagaatgaaaactctgcaaaggcaggatttctgtccctttttttttttgtttttttttttttcctgccttatacttgagacttagtgcatggcacatagaaagtgctccataTggccaggcgcagtgactcacgcctgtaatccttgcactttgggaagccaaggcaggtggatcacttgaggtcaggagtttgagaccagcctggccaacatggtgaaaccccgtctgtactaaaaatacaaaacattagccaggcatggtggcgggcacctgtagtcccagctactcgggaggctgaggca-gagaatcacttgaacccaggaggcagaggttgtggtgaggtgaagtcacaccactgcactccagcctgggtgacagagcgaaactccatttaaaaaaaaaagaaagaaaGTACTCCATAAATATTTGTAGGTGGAAAGAATGATATTCACATATGATTTAATCAAAGACTGACAGTTTATCTATTTGATAAAAAGACTGTGAGAAGCAGAGATTGATGGAGACAGGAGAGAAAGTGGAGGAGA--AGAGAAGATGGAGacagcacacacacatgcac--agacttgaacatgcagacacacattgcacatg----------------------------------------------------------------------------------------------------------------------------------------------------------------------------cacatgcatgcacacagccacacacgtatacacaaacacacatgcgtgcacacagccacacg--tatacacaaacaca--tgcgtgcacaca-ccacacacatatatgtaagcacacatgcatgcacacaggcatacacatatacataaacac--gcatgcacacagccacacacatatacacacaagcatgcacatacacagaggcatatatacacatgcactaacatacgcatagtcacagatacacCTGTAGGTGCAAACACCTATATATGtgttcacattcatacacgggagttattatatttgtgctcacacatgtagagggtagaattgtggttattagatgctgggaagagtagaggaagagaagata--gggagaggctggttggtggatacaaagttacagctgaatgagag--ataattttgactgttctgtat-actgtaggatgaatatggttaacaataacttagtgtatattttcaaaaagccagaagagaggatcttgaatgttcacagcacaaataaatgataaatgtttgaggtgatggatatgctactctgatttgatcattacacattgtataaatgtattgaaaaatcactctgtatcccataaatatgtataattattatgcatcaactaaaaattaaaGACCACACATATATGCAcacatagacatgcacatgaacacacatactcatgcatatgTGTATACATGCAGAGTTACACAtatacacaaacacacatatatgcacacatagacatgcacatgaacacacagacatACTcatgcatatgcgtatacatgcacagttacacatacacacaca------tgcacacatagacatgcacatgaacacacagacatacacatgcatatgcgtataca--tgcagttacacatatacacaaacacacatatatgcacacatagacatgcacatgaagacact-atgcacatgtccacacatgcacacagccacacacatacatatatacacaaatacccataaatatgcacatgtagacagcatgcacacagagatacatatgcacacacacagccacatgtata--cacacttgtgcaaatgtatgcacacacagacacacatatgcccatacataggcatatacacgtacagattcagatataaacacatacaaacactcatgtacatatgcaaacacatgtacacacacaGTCTGCTGGCATAGTGATGGCTAAACCAATGCAGGGTAGGGTAAAATGTCT-CTGGTGCAAGGTCAGTAGGATAAAATCTGCAGGATCAAATGGAATGCTTAACAACACTCCTCTGTGGGGTATCAGTGTCTCCATTTTACAACCAGTGCTTAATCAAATGCACATTGAGTTGAACTGAATATTGGAAAATGAATTGCTACCTTTGAATGAATCTACTGAAAAATTATACTTGTCCTGGGTCAGACCGTGTGAAAAGCACTGGGTATTGGAGATGAAAAGTGGTTGGCCCTTTTTCTTTGAAAGCTTAGTCCAGTGGGGAAGATGGATGTGGAAGCTGAGCAATTAAAATGCAGCTTGATAAAAGCTGTGCTGAAAAACCCTCACTGAGCTGAGCAGTGGGGGCTGGGAGGGAGCAGGTCTTAAACTGAATGATCAGGTTTAGTGGGAGCTGTTTAAATTCTGAGCCATCAGGCATTTTTGCTGGATTCCTTTCGGTGCGCTTGTtaatcaattataaaataataataatGAACACTTCAGGAGAGAGGATGGAGGTTGAAAGAcagtggagggctggacttgaggttggaagatttgcagagacctggattgtgcattcgacctttacaaattgaagcgagaggctttgcatctctgaacatcaggattccactctataaaaaggagaatgaaagcattcagtttataggtttgctgtgagggctcaacgagaatgtggatccaaaaaagctttggaaacCAAAATACCGCTAGTTAGCTTGCTGCTTTATTATCCAAAAGAGGCTGCAAAGATTTGAGGTTTGTTTGTAGTTTGTTTGTAGattagtcagtgtctactaaaataacactgtgtaacaaccatgcccaaatcttggtggcttaataccttaaacgttatttttctcattcatgaggctgtaggtgggttggaatttggcagatgtaggctggaattagctggACCTGCCTCCAGGACCAGGGTTGGACCCAAGTCTTCTGTACGTGTCAC---CTTCTTTTGGTGCCAGTGCTACCTGGGATTTTAATTTCATGGTTTT-GCAGAAGCGTAAGAGGGCATGCCAACCACGTGAACACTTTTAAAGCCTAAcatcctataggccaaagccagccacaggtccaaactcaacttcaataggcagggaaagtcctccacctactttaccaggggagtactgcagagCAATGACCGAGGAAGGAAATGTTTAATCCTATTAGGGAGGGAGGGGGGGACCAGGAACACAAATCCCTCAAGGCAGGACGAGTAATGGTTGGCTGCCCAAGGTTgacagactgggtctcagttcctggcactgctcctctctagccatgagactttaggcaagtcaacatttcagagcctcagtttcctcatctgtaaagtgggtataataatagaattctcacagaatttcagtgaggattGCCTGATTCATGACAACAGCCTTATAAGTGGTCCCCTTCTTTTACCTCGCATCTTCTGTAATCTCTTCTCTATGCTTcatcctttaaatacaaaagtcacccgtaaagacagaaaacagattagtggtggccagaggtggtggagggagagagggggagaaatgagagaagtgctaaggggtatgaggtttccttttggggcgatgaaaatgttctaaaatcgatgtggttatggttgtacaactgcaaatatacAAtccctctgcctggaaccttttccccaagaaatctgcccccaccgtaaatcctcacttgcatactgtataatgaggcttttctggaccaccctatttaattacccactcctttctgtccatgcctctctctcgatatattttctctgaatgtttgtagcaacttgacatattttgcatgcttatacactatgtactttatattaaagcacagttatgtaattta",
@@ -288,13 +288,13 @@
                     "end": 52671245
                 },
                 "srcBases": 133,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 116860405,
                     "end": 116860538
                 },
                 "mappedBases": 133,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGCGCGAGACGGCTGGGCGCCGAGTGGGACAGCGCTGGTGCGGAGACTGCTTCCGGACTCCAGGTACCGCGCTTGGCGGCAGCTGGCCCCAGACTTCTGTCTTTTCAGCTGCAGTGAAGGCTCGGGGCTGCAG",
@@ -332,7 +332,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MDLIGFGYAALVTFGSIFGYKRR",
+                    "mapped": "MDLIGFGYAALVTFGSIFGYKRR",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr6:52681812-52681914",
@@ -362,7 +366,11 @@
                     "identity": 0.971,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GVPSLIAGLFVGCLAGYGAYRVSNDKRDVKVSL",
+                    "mapped": "GVLSLIAGLFVGCLAGYGAYRVSNDKRDVKVSL",
+                    "identity": 0.97
+                }
             },
             {
                 "srcExonId": "hg38.chr6:52684077-52684165",
@@ -392,7 +400,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TAFFLATIMGVRFKRSKKIMPAGLVAGL",
+                    "mapped": "TAFFLATIMGVRFKRSKKIMPAGLVAGL",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr6:52686009-52686588",
@@ -417,12 +429,16 @@
                 },
                 "frame": 2,
                 "dnaAlign": {
-                    "src": "GTATTTAAAAGATAAACTTCAATATGGAATGCTAGAAACACAAATAGCACTGTCACCTCTAATATGAACATTAGTTTGAGGTAGTTTTTTTCTAAAGCAAAAATTTTAACTGTTTTCTAATTGTCAAGCACTATTTTCATTAAAAGTGTCTAATGAATCATGATATACTCTTCCATTTGTTGTGTCTATTTTTTATATATTTGGTATTTTTTGAAAATTCCAAATACTCATGTCTCAAGTAAGCTTAAACTACAACTTGTCACATAAAGGAAGTCTTAAGTGGAGTTCACAGAATGATAATGTATCTATTTGTCATTTGTGTTATATTTGAAATTATTAGAAATTATGCTTTTTCCATTTTAATTGTATTGCTGCCAGTGCTATTTTTTTCTTTAAAAAATTTTATTCTTAGCACACTGTTATGTCCTAACTGAATGTATTCAGTATTCAAATAAAAGACATTTTGGTTCAAACCTCATGATGATCCTGAGACTTGTCTTGTTGCTGCTCTGAGCATCTGGAGGAACAGAAAACTAAGTTCATGTCATCCTGCTGTAATGGGCAGAGCATATTTTTTT",
-                    "mapped": "GTATTTAAAAGATAAACTTCAATATGGAATGCTAGAAACACAAATAGCACTGTCACCTCTAATATGAACATTAGTTTGAGGTAGTTTTTTCCTAAAGCAAAAGTTTTAACTGTTTTCTAATTGTCAAGCGCTGTTTTCATTAAAAGTGTCTAATGAATCATGATACGCTCTTCCATTTGCTGTGTCTATTTTCTATATATTTGGCATTTTTTGAAAATTCCAAATACTCATGTCTCAAGTAAGCTTAAACTACAACTTGTCACATAAAGCAGTTCTTAAGTGGAGTTCACAGAATGCTAATGTATCTATTTGTCATTTGTGTTATATTTGATATTATTAGAAATTATACTTTTTCCATTTTAATTGTATTGCTGCCAGTGCTATTTTTTCCTTTAAAACATTTTATTCTTAGCACACTCTTACGTCCTAACAGAATGTATTCAGTATTCAAATAAAAGACATTTTGGTTCAAACCTCATGATGATCCTGAGACTTGTCTTGTTGCTGCTCTGAGCATCTGGAGGAACAGAAAACTAAGTTCATGTCATCCTGCTGTAATGGGCAGAGCATATTTTTTT",
+                    "src": "CCTCATGATGATCCTGAGACTTGTCTTGTTGCTGCTCTGAGCATCTGGAGGAACAGAAAACTAAGTTCATGTCATCCTGCTGTAATGGGCAGAGCATATTTTTTTTGTATTTAAAAGATAAACTTCAATATGGAATGCTAGAAACACAAATAGCACTGTCACCTCTAATATGAACATTAGTTTGAGGTAGTTTTTTTCTAAAGCAAAAATTTTAACTGTTTTCTAATTGTCAAGCACTATTTTCATTAAAAGTGTCTAATGAATCATGATATACTCTTCCATTTGTTGTGTCTATTTTTTATATATTTGGTATTTTTTGAAAATTCCAAATACTCATGTCTCAAGTAAGCTTAAACTACAACTTGTCACATAAAGGAAGTCTTAAGTGGAGTTCACAGAATGATAATGTATCTATTTGTCATTTGTGTTATATTTGAAATTATTAGAAATTATGCTTTTTCCATTTTAATTGTATTGCTGCCAGTGCTATTTTTTTCTTTAAAAAATTTTATTCTTAGCACACTGTTATGTCCTAACTGAATGTATTCAGTATTCAAATAAAAGACATTTTGGTTCAAA",
+                    "mapped": "CCTCATGATGATCCTGAGACTTGTCTTGTTGCTGCTCTGAGCATCTGGAGGAACAGAAAACTAAGTTCATGTCATCCTGCTGTAATGGGCAGAGCATATTTTTTT-GTATTTAAAAGATAAACTTCAATATGGAATGCTAGAAACACAAATAGCACTGTCACCTCTAATATGAACATTAGTTTGAGGTAGTTTTTTCCTAAAGCAAAAGTTTTAACTGTTTTCTAATTGTCAAGCGCTGTTTTCATTAAAAGTGTCTAATGAATCATGATACGCTCTTCCATTTGCTGTGTCTATTTTCTATATATTTGGCATTTTTTGAAAATTCCAAATACTCATGTCTCAAGTAAGCTTAAACTACAACTTGTCACATAAAGCAGTTCTTAAGTGGAGTTCACAGAATGCTAATGTATCTATTTGTCATTTGTGTTATATTTGATATTATTAGAAATTATACTTTTTCCATTTTAATTGTATTGCTGCCAGTGCTATTTTTTCCTTTAAAACATTTTATTCTTAGCACACTCTTACGTCCTAACAGAATGTATTCAGTATTCAAATAAAAGACATTTTGGTTCAAA",
                     "identity": 0.965,
-                    "coverage": 1.0
+                    "coverage": 0.998
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "LMMILRLVLLLL*",
+                    "mapped": "LMMILRLVLLLL*",
+                    "identity": 1.0
+                }
             }
         ]
     },
@@ -485,7 +501,11 @@
                     "identity": 0.94,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MAGPLQGGGARALDLLRGLPRVSLANLKPNPGSKKP",
+                    "mapped": "MAGPLHGGRARALDLLRDLPRVSLANLKPNPGSKKP",
+                    "identity": 0.917
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54136510-54136665",
@@ -515,7 +535,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "ERRPRGRRRGRKCGRGHKGERQRGTRPRLGFEGGQTPFYIRIPKYGFNEGH",
+                    "mapped": "ERRPRGRRRGRKCGRGHKGERQRGTRPRLGFEGGQTPFYIRIPKYGFNEGH",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54137267-54137433",
@@ -545,7 +569,11 @@
                     "identity": 0.958,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "FRRQYKPLSLNRLQYLIDLGRVDPSQPIDLTQLVNGRGVTIQPLKRDYGVQLVEE",
+                    "mapped": "FRRQYKPLSLNRLQYLIDLGRVDPTQPIDLTQLVNGRGVSIQPLKRDYGVQLVEE",
+                    "identity": 0.964
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54142662-54142786",
@@ -575,7 +603,11 @@
                     "identity": 0.984,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GADTFTAKVNIEVQLASELAIAAIEKNGGVVTTAFYDPRSL",
+                    "mapped": "GADTFKAKVNIEVQLASELAIAAIEKNGGVVTTAFYDPRSL",
+                    "identity": 0.976
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54147381-54148514",
@@ -605,7 +637,11 @@
                     "identity": 0.962,
                     "coverage": 0.993
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IVCKPVPFFLRGQPIPKRMLPPEELVPYYTDAKNRGYLADPAKFPEARLELARKYGYILPDITKDELFKMLCTRKDPRQIFFGLAPGWVVNMADKKILKPTDENLLKYYTS*",
+                    "mapped": "IVCKPVPFFLRGQPIPKRMLPPEELVPYYTDAKNRGYLADPAKFPEARLELARKYGYILPDITKDELFKMLCTRKDPRQIFFGLAPGWVVNMTDKKILKPTDENLLKYYSS*",
+                    "identity": 0.982
+                }
             }
         ]
     },
@@ -668,7 +704,11 @@
                     "identity": 0.935,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "QERRPRGRRR",
+                    "mapped": "*ERRPRGRRR",
+                    "identity": 0.9
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54136610-54136665",
@@ -698,7 +738,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "QTPFYIRIPKYGFNEGH",
+                    "mapped": "QTPFYIRIPKYGFNEGH",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54137267-54137433",
@@ -728,7 +772,11 @@
                     "identity": 0.958,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "FRRQYKPLSLNRLQYLIDLGRVDPSQPIDLTQLVNGRGVTIQPLKRDYGVQLVEE",
+                    "mapped": "FRRQYKPLSLNRLQYLIDLGRVDPTQPIDLTQLVNGRGVSIQPLKRDYGVQLVEE",
+                    "identity": 0.964
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54142662-54142786",
@@ -758,7 +806,11 @@
                     "identity": 0.984,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GADTFTAKVNIEVQLASELAIAAIEKNGGVVTTAFYDPRSL",
+                    "mapped": "GADTFKAKVNIEVQLASELAIAAIEKNGGVVTTAFYDPRSL",
+                    "identity": 0.976
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54147381-54147858",
@@ -788,7 +840,11 @@
                     "identity": 0.973,
                     "coverage": 0.996
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IVCKPVPFFLRGQPIPKRMLPPEELVPYYTDAKNRGYLADPAKFPEARLELARKYGYILPDITKDELFKMLCTRKDPRQIFFGLAPGWVVNMADKKILKPTDENLLKYYTS*",
+                    "mapped": "IVCKPVPFFLRGQPIPKRMLPPEELVPYYTDAKNRGYLADPAKFPEARLELARKYGYILPDITKDELFKMLCTRKDPRQIFFGLAPGWVVNMTDKKILKPTDENLLKYYSS*",
+                    "identity": 0.982
+                }
             }
         ]
     },
@@ -827,17 +883,17 @@
                 "srcExonId": "hg38.chr8:54381697-54381829",
                 "srcExonNum": 1,
                 "src": {
-                    "start": 54381697,
+                    "start": 54381698,
                     "end": 54381829
                 },
                 "srcBases": 132,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55002199,
                     "end": 55002330
                 },
                 "mappedBases": 131,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ggtggcggacgaggggggATGGAGAAGAACAAAACCCAGTGGCCACATCCTTGAACTCTTTTGTGTGTTTAGAACAATGTCCAGTTAAAATCAAACAATATTGCTGCTAAATGCGTCTAAAATAGTCCTTG",
@@ -855,13 +911,13 @@
                     "end": 54388866
                 },
                 "srcBases": 76,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55009884,
                     "end": 55009960
                 },
                 "mappedBases": 76,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ctattcagatgggcatgaattggttctgattgctgttttTAAGATGTGGCCTGACTGTCAAGCCTTCAGAGAACAG",
@@ -879,13 +935,13 @@
                     "end": 54394870
                 },
                 "srcBases": 1886,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55014374,
                     "end": 55016256
                 },
                 "mappedBases": 1861,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GCAGCCTCTTCTGGGGGAAGCCTTCAACCCTGTGCATCCCACAATCTGGAGACACTGTTGGCTGACTGTGACTTACCACCAGACAAATGCCCACCAGAGGACAGTCTCCTTGGCATCTGTGTAACCTCAAAGCCCAGCACGGTGTCCAACACTCAGTGGTTTCTACAATGCATGTTTAACTGAGCAGAGCTGAACTAGTGCTCCCagggaactgactgatggaagtctgtcttaaaagctgagctctataattttgcagctgtttgcccttggagacgtcatttaacttctctgTCTGGGACTCTGGCAATATAAGGAAAGTGCCATAATATTAATCTG----------------AACAAGTGCCCAGGCAACTCTTAAGTTTAACAGCAGT-ATCATATCGCCATTTAGTGTGCACACTTCATTCTCTTATATACCTGAGAGAGATTATTTTAAAATCTCTCATGTTAATCAAACCACATTTCCTGATCTAGATAAAAAAGGTTTCAGAGTTTAATTACACAAAAAGTAGGTAATGTTGCATGAAGATTTACAAAGAAGCCAAGATTTTTTTTTTCTTTTTAAAGTATGACTAGGTAATAATAGATATAAGCATATTTTTCTCATTCCTAATACATGTTTTATTTGGATGGTGTGCTGTGATATTTGAGGATTTGGGACACACTCTTTTAGTGTAGGTTGCAAGAAAACTGTGAAACACAGACGCCAACAGTAGGTGAAGTCAGAAGATCTTCTGTGTTAATTTCTGAAATGTCTAGCAGTGGGCCATTCTTTGACGGTAGCCTGATATCTGATAAAGATAACATTCTGCCACTGGCCATGTGAGGAGCAATTCCCAGCCAGGGGAAGGACTCCAAGTCCCCAAATCTTTCTTAAAATTTTAGATTGAGAATTGACAGAAAACATATAAACTCAGATAAATAGGCAAAGGTATTGAACAGACTATTCATAACTGTACTTATGACCACAATAAAAATAGAAGCAATATAAATTTGGGTAAAATAATTAGATATGTATTTGGGGCCTATGAAATCACAAACTACATCTAAAATTTAATTAGAATGATAGGTGATTTTTGTTTTCTTATTTGCATTTGTCACATTTTAAAAAATACTGCATAGGTATTACTTTTATAACCACCCAATAGTATTTGAGAATATGCTCTAAAACAAATGAGCCCAGTTCATTTTATTCATGTTCAGGAAGCTAAAGTCAGCCAGTGGAAACAGTGCAGTGAGGTGGCTGTGACTGGTTTTATTTGTACTTGCCACTTACTCTGCAGATACCATGGATTGGCAGGCATAGCTCTTATTTTATCAGATAGAAGAGAAATGGGAAATGACACAGAATTCCCACACATGGGAAGGGGGCATTTTTTAATTGAGCAGATACTATATCCTGTATGTTATGCTCAGTACTTTACACCTATATCTCATGCCATCCTTAAATGACACAGAGTGGGGCCTTCCAACTGGAAAGAATGCTGCAGTACGATGGCTGATAAGCAGAAAACAACATACAACAAAGCTTGGCATTAAAATTACTTTCAGAAGATATGGTAAAACTGCTTTTTTTGGGTCTTGGATTGTTAGTAGAGCCTCAAAGTTTAATAACCAagacccaggtgcctaatttgccccactgggtcctgtcactgactcactggatgaccttagtgaaatcgttttccatctgtgagtgtgtttccttgctgtgaagatgaaactaaaaataaatactgccttcatcatgggttatggtaaggactagctgagtaatgtTTACTAAGAAATTGCAACTTTTTCAAGCAAAAGGGGGAGAAC----AAAATGCCTGTTTCATCATATAGGAAACCTGTTTGGGAGTTTTGTGACCCTAAAGTGATA",
@@ -956,7 +1012,11 @@
                     "identity": 0.975,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MSSPDAGYASDDQSQTQSALPAVMAGLGPCPWAESLSPIGDMKVKGEAPANSGAPAGAAGRAKGESRIRRPMNAFMVWAKDERKRLAQQNPDLHNAELSKML",
+                    "mapped": "MSSPDAGYASDDQSQTRSALPAVMAGLGPCPWAESLSPIGDMKVKGEAPASSGAPAGTAGRAKGESRIRRPMNAFMVWAKDERKRLAQQNPDLHNAELSKML",
+                    "identity": 0.971
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54459057-54460892",
@@ -986,7 +1046,11 @@
                     "identity": 0.965,
                     "coverage": 0.995
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "KSWKALTLAEKRPFVEEAERLRVQHMQDHPNYKYRPRRRKQVKRLKRVEGGFLHGLAEPQAAALGPEGGRVAMDGLGLQFPEQGFPAGPPLLPPHMGGHYRDCQSLGAPPLDGYPLPTPDTSPLDGVDPDPAFFAAPMPGDCPAAGTYSYAQVSDYAGPPEPPAGPMHPRLGPEPAGPSIPGLLAPPSALHVYYGAMGSPGAGGGRGFQMQPQHQHQHQHQHHPPGPGQPSPPPEALPCRDGTDPSQPAELLGEVDRTEFEQYLHFVCKPEMGLPYQGHDSGVNLPDSHGAISSVVSDASSAVYYCNYPDV*",
+                    "mapped": "KSWKALTLAEKRPFVEEAERLRVQHMQDHPNYKYRPRRRKQVKRLKRVEGGFLHGLAEPQAAALGPEGGRVAMDGLGLPFPEQGFPAGPPLLPPHMGGHYRDCQSLGAPPLDGYQLPTPDTSPLDGVDPDSAFFAAPMPGDCPAAGTYSYSQVSDYAGPPEPPAGPIHPRLGPEPAGPSMPGLLAPPSALHMYYGAMGSHGAGGGRGFQMQPQHQHQHQHQHQPPGPGQPSPPPEALPCRDGTDPNQPAELLGEVDRTEFEQYLHFVCKPEMGLPYQGHDSSVNLPDSHGAISSVVSDASSAVYYCNYPDV*",
+                    "identity": 0.965
+                }
             }
         ]
     },
@@ -1029,13 +1093,13 @@
                     "end": 54509548
                 },
                 "srcBases": 127,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55131627,
                     "end": 55131754
                 },
                 "mappedBases": 127,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "acagaccttgaagtccacagtgaaggcagattgagtgtctggtgagggcttgcttatggctcctgagtgggaccttcttgttatgtcctcgcgtggaaaaggaacactctggttgcttcggacactt",
@@ -1053,13 +1117,13 @@
                     "end": 54532902
                 },
                 "srcBases": 207,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55155278,
                     "end": 55155485
                 },
                 "mappedBases": 207,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GAAGAAAAGTGAAAACCATCTTGATAGGTTTTAGAATGAGATTTTCATGAGAGCCAATGCAATGTCCATGCTTGTTTATGACATATTTGAAGTGCTTAAAGGAAATATCCATGGATTATCAGGATTTTAAAAAGTCATTTGTGTTGTCAAACTCTCTAATGCACAATATTGGAGTGCCACCACAAAGTCAGCTAAAATATGCTAAAG",
@@ -1077,13 +1141,13 @@
                     "end": 54535349
                 },
                 "srcBases": 54,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55157892,
                     "end": 55157946
                 },
                 "mappedBases": 54,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "gtgtgaaaagacatactatagttttagtttacattttcctgatgaacaaataag",
@@ -1101,13 +1165,13 @@
                     "end": 54547323
                 },
                 "srcBases": 182,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55169655,
                     "end": 55169836
                 },
                 "mappedBases": 181,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "tgaagatcttctcagcctttgttgtagagttgaactgctgcaatcctcctctgtctgcagccccagggacttccaactctggttttatctccacactgggccttcagcaattcatcaaaaatttctagctgaatcttcttattggcttatatggcacctgatggcatctacatctgttccag",
@@ -1125,13 +1189,13 @@
                     "end": 54559320
                 },
                 "srcBases": 561,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55180692,
                     "end": 55181258
                 },
                 "mappedBases": 561,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTCATATTCTAAAGAGAGCAGGCACTGAGCAAATGTTTGTTGAACTGAACCAATCTGCTAGTTATGGGGACATGACCTCCACTTCATGGTGTTGAACTAAACAAACACATACTTCTCCAGACAAATATTAAAACTGGTGAACTTCAAAATAACGTGAAAAGCTCCTATGTTTCCATGCCTCATTATATGCCACAAAAAATCAAATGATAA---CGAGAACAAAGTAGGTTATTTTGTTTGCTATTTAACTT-GTGTGCAGGTCTTCACAGAATGAGAGGCATACCAACACTCATGACCCCAGGCTAGTTCTGTTCTTTGCCAGTGTGTGGTTTGGGAGTTCTGTGAAGTGTTTGCAGTCGCTACTAATAATCCAGGTGACACGGCAAACATTGCAGTTCC-TAGGTCCAGCACAATTAGAGGAGGGTTCACTCGTAGGCAGCATCTGAGCAACAGGCTCACCAGACTTCAGCCTCTTCACTCCGACTCTTCCACGCTCCAGCTCTCTTCATTAAGATATTCTAGAAGCAACTGAGGAGTTTCTACAAACATTTTGGAAATTACAG",
@@ -1149,13 +1213,13 @@
                     "end": 54560986
                 },
                 "srcBases": 691,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55182238,
                     "end": 55182922
                 },
                 "mappedBases": 683,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTCAAGTGGAAGTTTGTTTTCATTTCAGTTAAGGTACGAGTTGTTCTGACTGCTGTGCAGACATTCACACGCCCGCTGCTAGAAAGCTGGAGCTGGAAGGAGCATTGGGGCCCGCTGAGTCCTCCTTTCTCATGTATGGATGCGGATGTGGAGGCAGGCCCTAAGTCTTAGTGTAGGTGCCGATGGTGCAGGTGAGAAGCCCCCTGGTAACTCACTTAGTGCTCTATCTGCTCTTCCACACTCTCCAACATGACGTCACCGGTTTATAAGTGAGAAGCAGGTCACAGGTCCCTAAGGTTTCTGCGAGGGAGGCAAGCGTTGCGCAGTGGTTCAGAACACCTGCTGCACGGGTTCATCCCGTGCACCTTCTCTCACCTAAGTTTCTGTTTCTATATCTGTAGGTTGGGAATAATGCTGTGGCTGTGTAAGGCCACAACACACAGTGCTTAGCACATTGTGAGCACTCAACGTAGAAACAGATCTTATTTGCTCTAGGTCTGACAGGCCTAGAGCTTGTCATCCAAGCAG-GAGACCCACATGGCCTGCAGCACATTTAGGGCCATCTCTATGTCAATAGCATCCAATGGCTTTAGGTGGGGCCTGGACTGGAGCCTCCATGTTGGGGGTGCAGGCAGGGGGCATGTTCTCTCACTCCCCTCGGCATTGGAGACAGGTGCCACTTTGCAGGCTC",
@@ -1206,13 +1270,13 @@
                     "end": 54554490
                 },
                 "srcBases": 130,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55176789,
                     "end": 55176919
                 },
                 "mappedBases": 130,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CAGCTTCAAAGGGATTTGAAGGGTGGTGACAGGCTCCAGCCCAGACTGCGCCTCGGAATGCAGACGCTTCTCTGCCTAGAACCTGGCCCGGCCCTATGGGAAAGCCCCGGTTCTCGGCGGCACTGAACTG",
@@ -1230,13 +1294,13 @@
                     "end": 54559320
                 },
                 "srcBases": 561,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55180692,
                     "end": 55181258
                 },
                 "mappedBases": 561,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTCATATTCTAAAGAGAGCAGGCACTGAGCAAATGTTTGTTGAACTGAACCAATCTGCTAGTTATGGGGACATGACCTCCACTTCATGGTGTTGAACTAAACAAACACATACTTCTCCAGACAAATATTAAAACTGGTGAACTTCAAAATAACGTGAAAAGCTCCTATGTTTCCATGCCTCATTATATGCCACAAAAAATCAAATGATAA---CGAGAACAAAGTAGGTTATTTTGTTTGCTATTTAACTT-GTGTGCAGGTCTTCACAGAATGAGAGGCATACCAACACTCATGACCCCAGGCTAGTTCTGTTCTTTGCCAGTGTGTGGTTTGGGAGTTCTGTGAAGTGTTTGCAGTCGCTACTAATAATCCAGGTGACACGGCAAACATTGCAGTTCC-TAGGTCCAGCACAATTAGAGGAGGGTTCACTCGTAGGCAGCATCTGAGCAACAGGCTCACCAGACTTCAGCCTCTTCACTCCGACTCTTCCACGCTCCAGCTCTCTTCATTAAGATATTCTAGAAGCAACTGAGGAGTTTCTACAAACATTTTGGAAATTACAG",
@@ -1254,13 +1318,13 @@
                     "end": 54560486
                 },
                 "srcBases": 194,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55182235,
                     "end": 55182428
                 },
                 "mappedBases": 193,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CAGGTCAAGTGGAAGTTTGTTTTCATTTCAGTTAAGGTACGAGTTGTTCTGACTGCTGTGCAGACATTCACACGCCCGCTGCTAGAAAGCTGGAGCTGGAAGGAGCATTGGGGCCCGCTGAGTCCTCCTTTCTCATGTATGGATGCGGATGTGGAGGCAGGCCCTAAGTCTTAGTGTAGGTGCCGATGGTGCAG",
@@ -1278,13 +1342,13 @@
                     "end": 54561927
                 },
                 "srcBases": 224,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55183624,
                     "end": 55183849
                 },
                 "mappedBases": 224,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTGACTCACTTAAAGAAGAATTTGAATCATTATCTAACAGAAAAA-GATCAATAACAAGCATTATTGCTGGAACATTCTATGGATAGACTGCTTTCTATACATGATTGGTGAATATTGTATTTCAATTAATTATATATCCTGATAATATATGAATTAATACTGTGATATCCTGCatacaataacaataatcaatggaaatatagtaaaacagaaatgaaaataa",
@@ -1335,13 +1399,13 @@
                     "end": 54554662
                 },
                 "srcBases": 80,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55177011,
                     "end": 55177091
                 },
                 "mappedBases": 80,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CCTTTCCAGTTTTCCACGGGGGCCCCAAGGAACGCCTGCGGCTGGAATTCCCCGGGAGACAGGGAGCTGTAACAATAGAG",
@@ -1359,13 +1423,13 @@
                     "end": 54559320
                 },
                 "srcBases": 561,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55180692,
                     "end": 55181258
                 },
                 "mappedBases": 561,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTCATATTCTAAAGAGAGCAGGCACTGAGCAAATGTTTGTTGAACTGAACCAATCTGCTAGTTATGGGGACATGACCTCCACTTCATGGTGTTGAACTAAACAAACACATACTTCTCCAGACAAATATTAAAACTGGTGAACTTCAAAATAACGTGAAAAGCTCCTATGTTTCCATGCCTCATTATATGCCACAAAAAATCAAATGATAA---CGAGAACAAAGTAGGTTATTTTGTTTGCTATTTAACTT-GTGTGCAGGTCTTCACAGAATGAGAGGCATACCAACACTCATGACCCCAGGCTAGTTCTGTTCTTTGCCAGTGTGTGGTTTGGGAGTTCTGTGAAGTGTTTGCAGTCGCTACTAATAATCCAGGTGACACGGCAAACATTGCAGTTCC-TAGGTCCAGCACAATTAGAGGAGGGTTCACTCGTAGGCAGCATCTGAGCAACAGGCTCACCAGACTTCAGCCTCTTCACTCCGACTCTTCCACGCTCCAGCTCTCTTCATTAAGATATTCTAGAAGCAACTGAGGAGTTTCTACAAACATTTTGGAAATTACAG",
@@ -1383,13 +1447,13 @@
                     "end": 54560486
                 },
                 "srcBases": 194,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55182235,
                     "end": 55182428
                 },
                 "mappedBases": 193,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CAGGTCAAGTGGAAGTTTGTTTTCATTTCAGTTAAGGTACGAGTTGTTCTGACTGCTGTGCAGACATTCACACGCCCGCTGCTAGAAAGCTGGAGCTGGAAGGAGCATTGGGGCCCGCTGAGTCCTCCTTTCTCATGTATGGATGCGGATGTGGAGGCAGGCCCTAAGTCTTAGTGTAGGTGCCGATGGTGCAG",
@@ -1407,13 +1471,13 @@
                     "end": 54577468
                 },
                 "srcBases": 430,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55198762,
                     "end": 55199195
                 },
                 "mappedBases": 428,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "atggtgtttcacactgtcacccaggctggagtgcagtgg--caatctcagctcactgcaacctctgcttcccgggttcaagtgattctcctgcctcagcctcctgagtagctgggattacaggcacaagccaccatacccagctaatttttgtatttttagtagagatggtgtttcatcaagttggtcaacctggtctcgaactcctgacctcaagtgacctgcccacctcagcctcccggagtgctgggattacaggcgtgagctgccgcacctggcTGAAAA---CTTTAAATCAGTGAAAGCTATCTGAATAGATGGGAAACAACTGCCTATTTTTGGTGTAAAAAGTGTCAATCATTTATTTGTGATTTATATGTAAGAGGGAAAATGTTGCTGTCATATTTACTGAAAGATAAATGCTAAAAAAAGAATA",
@@ -1464,13 +1528,13 @@
                     "end": 54558980
                 },
                 "srcBases": 221,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55180692,
                     "end": 55180916
                 },
                 "mappedBases": 221,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTCATATTCTAAAGAGAGCAGGCACTGAGCAAATGTTTGTTGAACTGAACCAATCTGCTAGTTATGGGGACATGACCTCCACTTCATGGTGTTGAACTAAACAAACACATACTTCTCCAGACAAATATTAAAACTGGTGAACTTCAAAATAACGTGAAAAGCTCCTATGTTTCCATGCCTCATTATATGCCACAAAAAATCAAATGATAA---CGAGAACAAA",
@@ -1488,13 +1552,13 @@
                     "end": 54559320
                 },
                 "srcBases": 168,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55181089,
                     "end": 55181258
                 },
                 "mappedBases": 168,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "TTCC-TAGGTCCAGCACAATTAGAGGAGGGTTCACTCGTAGGCAGCATCTGAGCAACAGGCTCACCAGACTTCAGCCTCTTCACTCCGACTCTTCCACGCTCCAGCTCTCTTCATTAAGATATTCTAGAAGCAACTGAGGAGTTTCTACAAACATTTTGGAAATTACAG",
@@ -1512,13 +1576,13 @@
                     "end": 54560486
                 },
                 "srcBases": 194,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55182235,
                     "end": 55182428
                 },
                 "mappedBases": 193,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CAGGTCAAGTGGAAGTTTGTTTTCATTTCAGTTAAGGTACGAGTTGTTCTGACTGCTGTGCAGACATTCACACGCCCGCTGCTAGAAAGCTGGAGCTGGAAGGAGCATTGGGGCCCGCTGAGTCCTCCTTTCTCATGTATGGATGCGGATGTGGAGGCAGGCCCTAAGTCTTAGTGTAGGTGCCGATGGTGCAG",
@@ -1536,13 +1600,13 @@
                     "end": 54561907
                 },
                 "srcBases": 204,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55183624,
                     "end": 55183829
                 },
                 "mappedBases": 204,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTGACTCACTTAAAGAAGAATTTGAATCATTATCTAACAGAAAAA-GATCAATAACAAGCATTATTGCTGGAACATTCTATGGATAGACTGCTTTCTATACATGATTGGTGAATATTGTATTTCAATTAATTATATATCCTGATAATATATGAATTAATACTGTGATATCCTGCatacaataacaataatcaatggaaatatag",
@@ -1593,13 +1657,13 @@
                     "end": 54559320
                 },
                 "srcBases": 152,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55181106,
                     "end": 55181258
                 },
                 "mappedBases": 152,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AATTAGAGGAGGGTTCACTCGTAGGCAGCATCTGAGCAACAGGCTCACCAGACTTCAGCCTCTTCACTCCGACTCTTCCACGCTCCAGCTCTCTTCATTAAGATATTCTAGAAGCAACTGAGGAGTTTCTACAAACATTTTGGAAATTACAG",
@@ -1637,7 +1701,11 @@
                     "identity": 0.957,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MSDTPSTGFSIIHPTSSEGQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHSPPHPVAVAAPGMPRPPRSLVVFRNGDPKTRRAVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "mapped": "MSDTPSTGFSIIHPTSSEDQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHAPPHPVAVAAPGKPRAPRSLVVFRNGDPKTRRTVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "identity": 0.976
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54622116-54622288",
@@ -1667,7 +1735,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "mapped": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54648984-54649148",
@@ -1697,7 +1769,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "SNWKVFIITSDLPDAGTSSQIYIILYGQHRSSAPIYLYGTDGARFQVGHEDIFT",
+                    "mapped": "SNWKVFIITSDLPDAGTSSQIYIILYGQHRSSAPIYLYGTDGARFQDGHEDIFT",
+                    "identity": 0.981
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54652779-54652866",
@@ -1727,7 +1803,11 @@
                     "identity": 0.931,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "ITVGDIGALFKIRIGHTNSGSSPSWHCKE",
+                    "mapped": "ITVGDIGTLFKIRIGHTNSGHSPSWHCKE",
+                    "identity": 0.931
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54656082-54656215",
@@ -1757,7 +1837,11 @@
                     "identity": 0.947,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IQLHNMNSGKQFYVPVQRWLARDQEDGEICREFPLLSKGQPVLP",
+                    "mapped": "IQLHNMNSGKQFYVPVQRWFARDQEDGEICREFPVLSKGQPILP",
+                    "identity": 0.932
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54663698-54663850",
@@ -1787,7 +1871,11 @@
                     "identity": 0.98,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TIYEVNVATGELWNAGTVANVYISIHGEKGDTGSRQLFRSKSSFNFLRGQ",
+                    "mapped": "TIYEVNVATGELWNAGTVANVYISIHGEKGDTGSRQLFRSKNSFNFLRGQ",
+                    "identity": 0.98
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54673849-54673928",
@@ -1817,7 +1905,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TDTFFLEAVHLGDLCKIVIGHDGLGP",
+                    "mapped": "TDTFFLEAVHLGDLCKIVIGHDGLGP",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54678460-54678536",
@@ -1847,7 +1939,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "NGWFLDDVVIKDPTTNYEYAFFCH",
+                    "mapped": "NGWFLDDVVIKDPTTNYEYAFFCH",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54679419-54679496",
@@ -1877,7 +1973,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WLDQGEDDCKIVRELYARDNSIFSA",
+                    "mapped": "WLDQGEDDCKIVRELYARDNSIFFA",
+                    "identity": 0.96
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54679595-54679627",
@@ -1907,7 +2007,11 @@
                     "identity": 0.938,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "QKLELKRKET",
+                    "mapped": "QKLELKRKET",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54679803-54679933",
@@ -1937,7 +2041,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WTAESWKFTKGNTLQFYNKLTGGFVRLHPDGTVDAIGEKTDKY",
+                    "mapped": "WTAESWKFTKGNTLQFYNKLTGGFVRLHPDGTVDAIGEKTDKY",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54699466-54699570",
@@ -1967,7 +2075,11 @@
                     "identity": 0.981,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VFDVIFNKRNICIFQSHEMRHLSLALDNGIVTGM",
+                    "mapped": "VFDVIFNERNICIFQSHEIRHLSLALDNGIVTGM",
+                    "identity": 0.941
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54701485-54701662",
@@ -1997,7 +2109,11 @@
                     "identity": 0.972,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VSGEATTELRVLYQPNRCALLESALVPGHTVVFDRHGKIADASSAGYANLSKEFVIFVK",
+                    "mapped": "VSGEATTELRVLYQPNRCALLESALVPGHTVVFDRYGKIADASPAGYANLSKEFVIFVK",
+                    "identity": 0.966
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54706442-54706655",
@@ -2027,7 +2143,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GVFLNSAVVLLATSLCQALCLQPDGSCTGVGSQSEKSYWKVHKISSGICMFESVKNAQMYLRIKDGRCDGT",
+                    "mapped": "GVFLNSAVVLLATSLCQALCLQPDGSCTGVGSQSEKSYWKVHKISSGICMFESVKNAQMYLRIKDGRCDGM",
+                    "identity": 0.986
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54720128-54720306",
@@ -2057,7 +2177,11 @@
                     "identity": 0.989,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GTGDVDCHFKIKKNLKNASISLESTKSPGLFVGLQSDGQAKPMIYTKDENVCFYPQVIQ",
+                    "mapped": "GTGDVDCHFKIKKNLENASISLESTKSPGLFVGLQSDGQAKPMIYTKDENVCFYPQVIQ",
+                    "identity": 0.983
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54726344-54726476",
@@ -2087,7 +2211,11 @@
                     "identity": 0.992,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GRENPMGMSATPSQEEEKIHESKKQKKIPPESEARSPLPSSTA",
+                    "mapped": "GRENPMGMSATPSQEEEKIHESKKQKKIPPESEDRSPLPSSTA",
+                    "identity": 0.977
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54734544-54734744",
@@ -2117,7 +2245,11 @@
                     "identity": 0.965,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "EIRHFQSSETLLSEDEWKVLVLTGNTGTQANVTLWVYGDKGVTGPISLRKDSSEQLFLPGHEDEFQ",
+                    "mapped": "EIRRFQSGKTLLSEDEWKVLVLTGNTGTRANVTLWVYGDKGVTGPISLRKDSSEQLFLPGQEDEFQ",
+                    "identity": 0.924
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54738942-54739029",
@@ -2147,7 +2279,11 @@
                     "identity": 0.954,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VEIRNTGNIYKIRIGHDGTSEQPEWNLQR",
+                    "mapped": "VEIRSIGNIYKIRIGHDGTSEQPEWKLQR",
+                    "identity": 0.897
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54754802-54754935",
@@ -2177,7 +2313,11 @@
                     "identity": 0.962,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VTMQHMKSKKILDFAANVWLSRIQADGDVVCELPVVKGGQAIFP",
+                    "mapped": "VTMQHTKSKKILDFAANVRLSWIQADGDVVCELPVVKGGQAIFP",
+                    "identity": 0.932
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54755618-54755770",
@@ -2207,7 +2347,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VRYQVDVYTGQLKHAETESEVFLCLFGERGDSGLRQLYKSNMQVKFQRGQ",
+                    "mapped": "VRYQVDVYTGKLKHAETESEVFLCLFGERGDSGLRLLYKSNMQVKFQRGQ",
+                    "identity": 0.96
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54758921-54759076",
@@ -2237,7 +2381,11 @@
                     "identity": 0.981,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IDKFQVAAVSLGKLQKVLLRCEASDKSQYWYCEQVIVREPGTTSESIFTCQ",
+                    "mapped": "IDKFQVAAVSLGKLQKVLLRCEASDKSQYWYCEQVVVREPGTTSKSIFTCQ",
+                    "identity": 0.961
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54769740-54769977",
@@ -2267,7 +2415,11 @@
                     "identity": 0.975,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WLPFMSQGIIHSEIELYLQGEDY*",
+                    "mapped": "WLPFMSQGIIHSEIELYLQGEDY*",
+                    "identity": 1.0
+                }
             }
         ]
     },
@@ -2310,13 +2462,13 @@
                     "end": 54616202
                 },
                 "srcBases": 136,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55223951,
                     "end": 55224316
                 },
                 "mappedBases": 136,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GACATACTGAGAATAAATCCAAAGACATTAGTTTCTTTGCACGAAATGAGGTTACATATCCAGTGACATTTATTTGAGCTATTTAAACAACTTAAACAT-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------CTTTTTCTTTTCTTAATAAGGGACGTTTCAAGTTGTG",
@@ -2354,7 +2506,11 @@
                     "identity": 0.957,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MSDTPSTGFSIIHPTSSEGQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHSPPHPVAVAAPGMPRPPRSLVVFRNGDPKTRRAVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "mapped": "MSDTPSTGFSIIHPTSSEDQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHAPPHPVAVAAPGKPRAPRSLVVFRNGDPKTRRTVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "identity": 0.976
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54622116-54622288",
@@ -2384,7 +2540,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "mapped": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54648984-54649148",
@@ -2414,7 +2574,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "SNWKVFIITSDLPDAGTSSQIYIILYGQHRSSAPIYLYGTDGARFQVGHEDIFT",
+                    "mapped": "SNWKVFIITSDLPDAGTSSQIYIILYGQHRSSAPIYLYGTDGARFQDGHEDIFT",
+                    "identity": 0.981
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54652779-54652866",
@@ -2444,7 +2608,11 @@
                     "identity": 0.931,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "ITVGDIGALFKIRIGHTNSGSSPSWHCKE",
+                    "mapped": "ITVGDIGTLFKIRIGHTNSGHSPSWHCKE",
+                    "identity": 0.931
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54656082-54656215",
@@ -2474,7 +2642,11 @@
                     "identity": 0.947,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IQLHNMNSGKQFYVPVQRWLARDQEDGEICREFPLLSKGQPVLP",
+                    "mapped": "IQLHNMNSGKQFYVPVQRWFARDQEDGEICREFPVLSKGQPILP",
+                    "identity": 0.932
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54663698-54663850",
@@ -2504,7 +2676,11 @@
                     "identity": 0.98,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TIYEVNVATGELWNAGTVANVYISIHGEKGDTGSRQLFRSKSSFNFLRGQ",
+                    "mapped": "TIYEVNVATGELWNAGTVANVYISIHGEKGDTGSRQLFRSKNSFNFLRGQ",
+                    "identity": 0.98
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54673849-54673928",
@@ -2534,7 +2710,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TDTFFLEAVHLGDLCKIVIGHDGLGP",
+                    "mapped": "TDTFFLEAVHLGDLCKIVIGHDGLGP",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54678460-54678536",
@@ -2564,7 +2744,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "NGWFLDDVVIKDPTTNYEYAFFCH",
+                    "mapped": "NGWFLDDVVIKDPTTNYEYAFFCH",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54679419-54679627",
@@ -2594,7 +2778,11 @@
                     "identity": 0.961,
                     "coverage": 0.995
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WLDQGEDDCKIVRELYARDNSIFSASRYHVYTFPGKFYDDWRKHDTEINCPLFIFSGQKLELKRKET",
+                    "mapped": "WLDQGEDDCKIVRELYARDNSIFFASRCHVYTFPGKFYDDWRKHDTEINDPLFIFSGQKLELKRKET",
+                    "identity": 0.955
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54679803-54679933",
@@ -2624,7 +2812,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WTAESWKFTKGNTLQFYNKLTGGFVRLHPDGTVDAIGEKTDKY",
+                    "mapped": "WTAESWKFTKGNTLQFYNKLTGGFVRLHPDGTVDAIGEKTDKY",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54699466-54699570",
@@ -2654,7 +2846,11 @@
                     "identity": 0.981,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VFDVIFNKRNICIFQSHEMRHLSLALDNGIVTGM",
+                    "mapped": "VFDVIFNERNICIFQSHEIRHLSLALDNGIVTGM",
+                    "identity": 0.941
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54701485-54701662",
@@ -2684,7 +2880,11 @@
                     "identity": 0.972,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VSGEATTELRVLYQPNRCALLESALVPGHTVVFDRHGKIADASSAGYANLSKEFVIFVK",
+                    "mapped": "VSGEATTELRVLYQPNRCALLESALVPGHTVVFDRYGKIADASPAGYANLSKEFVIFVK",
+                    "identity": 0.966
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54706442-54706655",
@@ -2714,7 +2914,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GVFLNSAVVLLATSLCQALCLQPDGSCTGVGSQSEKSYWKVHKISSGICMFESVKNAQMYLRIKDGRCDGT",
+                    "mapped": "GVFLNSAVVLLATSLCQALCLQPDGSCTGVGSQSEKSYWKVHKISSGICMFESVKNAQMYLRIKDGRCDGM",
+                    "identity": 0.986
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54720128-54720306",
@@ -2744,7 +2948,11 @@
                     "identity": 0.989,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GTGDVDCHFKIKKNLKNASISLESTKSPGLFVGLQSDGQAKPMIYTKDENVCFYPQVIQ",
+                    "mapped": "GTGDVDCHFKIKKNLENASISLESTKSPGLFVGLQSDGQAKPMIYTKDENVCFYPQVIQ",
+                    "identity": 0.983
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54726344-54726476",
@@ -2774,7 +2982,11 @@
                     "identity": 0.992,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GRENPMGMSATPSQEEEKIHESKKQKKIPPESEARSPLPSSTA",
+                    "mapped": "GRENPMGMSATPSQEEEKIHESKKQKKIPPESEDRSPLPSSTA",
+                    "identity": 0.977
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54734544-54734744",
@@ -2804,7 +3016,11 @@
                     "identity": 0.965,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "EIRHFQSSETLLSEDEWKVLVLTGNTGTQANVTLWVYGDKGVTGPISLRKDSSEQLFLPGHEDEFQ",
+                    "mapped": "EIRRFQSGKTLLSEDEWKVLVLTGNTGTRANVTLWVYGDKGVTGPISLRKDSSEQLFLPGQEDEFQ",
+                    "identity": 0.924
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54738942-54739029",
@@ -2834,7 +3050,11 @@
                     "identity": 0.954,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VEIRNTGNIYKIRIGHDGTSEQPEWNLQR",
+                    "mapped": "VEIRSIGNIYKIRIGHDGTSEQPEWKLQR",
+                    "identity": 0.897
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54754802-54754935",
@@ -2864,7 +3084,11 @@
                     "identity": 0.962,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VTMQHMKSKKILDFAANVWLSRIQADGDVVCELPVVKGGQAIFP",
+                    "mapped": "VTMQHTKSKKILDFAANVRLSWIQADGDVVCELPVVKGGQAIFP",
+                    "identity": 0.932
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54755618-54755770",
@@ -2894,7 +3118,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VRYQVDVYTGQLKHAETESEVFLCLFGERGDSGLRQLYKSNMQVKFQRGQ",
+                    "mapped": "VRYQVDVYTGKLKHAETESEVFLCLFGERGDSGLRLLYKSNMQVKFQRGQ",
+                    "identity": 0.96
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54758921-54759076",
@@ -2924,7 +3152,11 @@
                     "identity": 0.981,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "IDKFQVAAVSLGKLQKVLLRCEASDKSQYWYCEQVIVREPGTTSESIFTCQ",
+                    "mapped": "IDKFQVAAVSLGKLQKVLLRCEASDKSQYWYCEQVVVREPGTTSKSIFTCQ",
+                    "identity": 0.961
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54769740-54769799",
@@ -2954,7 +3186,11 @@
                     "identity": 0.983,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WLPFMSQGIIHSEIELYLQ",
+                    "mapped": "WLPFMSQGIIHSEIELYLQ",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54770122-54770167",
@@ -2984,7 +3220,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MQINHQPKIQEEAN",
+                    "mapped": "MQINHQPKIQEEAN",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54783546-54783710",
@@ -3014,7 +3254,11 @@
                     "identity": 0.97,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "GDWKVTIVTGDLENAGTTATVFLYVYGETKCSGPIILGSGKHQLFNPNTADIFK",
+                    "mapped": "GDWKVTIVTGDPENAGTTATVFLYVYGETKCSGPIILGSGKYQLFNSNTADIFK",
+                    "identity": 0.944
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54837449-54837669",
@@ -3044,7 +3288,11 @@
                     "identity": 0.964,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "INLKDIGEIYKIRIGHDNTGKNPRWYLEEVRLENIATYELFCLPVDSWIAENENDGDLWKEIPIMGPKKAPLP",
+                    "mapped": "INLKDIGEIYKIRIGHHNTGKNPRWYLEEVRLGNIATNELFCLPVDSWIAENENDGDLWKEIPTMGTKKAPLP",
+                    "identity": 0.932
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54852573-54852728",
@@ -3074,7 +3322,11 @@
                     "identity": 0.955,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VLYEIRIYTGTMTGAETESNVFINLIGTRGDSGKRRLHQSKNNEIKFQRGQ",
+                    "mapped": "VLYEIRIYTGTMLGAETESNVFINLIGTRGDSGKRRLHQSKNNEIKFQRGQ",
+                    "identity": 0.98
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54857027-54857106",
@@ -3104,7 +3356,11 @@
                     "identity": 0.975,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VDIFSIKAVSLGKLKKVLISHDGTGP",
+                    "mapped": "VDIFSIKAVSLGKLKKVLISHDGTGP",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54865834-54865916",
@@ -3134,7 +3390,11 @@
                     "identity": 0.963,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "NGWFLGSIVVKSEDEDSSEEVLFLCN",
+                    "mapped": "NGWFLGSIVVKSEDEDSNEEVLFPCN",
+                    "identity": 0.923
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54869842-54871720",
@@ -3164,7 +3424,11 @@
                     "identity": 0.942,
                     "coverage": 0.996
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "WLDEYQDDGKTQRELLAESSPSAVGETGSTIS*",
+                    "mapped": "WLDEYQDDGETQRELLAESSPSTGGETGSIIS*",
+                    "identity": 0.879
+                }
             }
         ]
     },
@@ -3207,13 +3471,13 @@
                     "end": 54616202
                 },
                 "srcBases": 107,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55223980,
                     "end": 55224316
                 },
                 "mappedBases": 107,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGTTTCTTTGCACGAAATGAGGTTACATATCCAGTGACATTTATTTGAGCTATTTAAACAACTTAAACAT-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------CTTTTTCTTTTCTTAATAAGGGACGTTTCAAGTTGTG",
@@ -3251,7 +3515,11 @@
                     "identity": 0.957,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MSDTPSTGFSIIHPTSSEGQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHSPPHPVAVAAPGMPRPPRSLVVFRNGDPKTRRAVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "mapped": "MSDTPSTGFSIIHPTSSEDQVPPPRHLSLTHPVVAKRISFYKSGDPQFGGVRVVVNPRSFKSFDALLDNLSRKVPLPFGVRNISTPRGRHSITRLEELEDGESYLCSHGRKVQPVDLDKARRRPRPWLSSRAISAHAPPHPVAVAAPGKPRAPRSLVVFRNGDPKTRRTVLLSRRVTQSFEAFLQHLTEVMQRPVVKLYATDGRR",
+                    "identity": 0.976
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54622116-54622288",
@@ -3281,7 +3549,11 @@
                     "identity": 0.994,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "mapped": "VPSLQAVILSSGAVVAAGREPFKPGNYDIQKYLLPARLPGISQRVYPKGNAKSESRK",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:54624669-54630834",
@@ -3311,7 +3583,11 @@
                     "identity": 0.964,
                     "coverage": 0.996
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "STHMSSSSRSQIYSVSSEKTHNNDCYLDYSFVPEKYLALEKNDSQNLPIYPSEDDIEKSIIFNQDGTMTVEMKVRFRIKEEETIKWTTTVSKTGPSNNDEKSEMSFPGRTESRSSGLKLAACSFSADVSPMERSSNQEGSLAEEINIQMTDQVAETCSSASWENATVDTDIIQGTQDQAKHRFYRPPTPGLRRVRQKKSVIGSVTLVSETEVQEKMIGQFSYSEERESGENKSEYHMFTHSCSKMSSVSNKPVLVQINNNDQMEESSLERKKENSLLKSSAISAGVIEITSQKMLEMSHNNGLPSTISNNSIVEEDVVDCVVLDNKTGIKNFKTYGNTNDRFSPISADATHFSSNNSGTDKNISEAPASEASSTVTARIDRLINEFAQCGLTKLPKNEKKILSSVASKKKKKSRQQAINSRYQDGQLATKGILNKNERINTKGRITKEMIVQDSDSPLKGGILCEEDLQKSDTVIESNTFCSKSNLNSTISKNFHRNKLNTTQNSKVQGLLTKRKSRSLNKISLGAPKKREIGQRDKVFPHNESKYCKSTFENKSLFHVFNILEQKPKDFYAPQSQAEVASGYLRGMAKKSLVTDSHITLKSQKKRKGDKVKASAILSKQHATTRANSLASLKKPDFPEAIAHHSIQNYIQSWLQNINPYPTLKPIKSAPVCRNETSVVNCSNNSFSGNDPHTNSGKISNFVMESNKHITKIAGLTGDNLCKEGDKSFIANDTGEEDLHETQVGSLNDAYLVPLHEHCTLSQSAINDHNTKSHIAAEKSGPEKKLVYQEINLARKRQSVEAAIQVDPIEEETPKDLLPVLMLHQLQASVPGIHKTQNGVVQMPGSLAGVPFHSAICNSSTNLLLAWLLVLNLKGSMNSFCQVDAHKATNKSSETLALLEILKHIAITEEADDLKAAVANLVESTTSHFGLSEKEQDMVPIDLSANCSTVNIQSVPKCSENERTQGISSLDGGCSASEACAPEVCVLEVTCSPCEMCTVNKAYSPKETCNPSDTFFPSDGYGVDQTSMNKACFLGEVCSLTDTVFSDKACAQKENHTYEGACPIDETYVPVNVCNTIDFLNSKENTYTDNLDSTEELERGDDIQKDLNILTDPEYKNGFNTLVSHQNVSNLSSCGLCLSEKEAELDKKHSSLDDFENCSLRKFQDENAYTSFDMEEPRTSEEPGSITNSMTSSERNISELESFEELENHDTDIFNTVVNGGEQATEELIQEEVEASKTLELIDISSKNIMEEKRMNGIIYEIISKRLATPPSLDFCYDSKQNSEKETNEGETKMVKMMVKTMETGSYSESSPDLKKCIKSPVTSDWSDYRPDSDSEQPYKTSSDDPNDSGELTQEKEYNIGFVKRAIEKLYGKADIIKPSFFPGSTRKSQVCPYNSVEFQCSRKASLYDSEGQSFGSSEQVSSSSSMLQEFQEERQDKCDVSAVRDNYCRGDIVEPGTKQNDDSRILTDIEEGVLIDKGKWLLKENHLLRMSSENPGMCGNADTTSVDTLLDNNSSEVPYSHFGNLAPGPTMDELSSSELEELTQPLELKCNYFNMPHGSDSEPFHDVRNETCAKERIANHHTEEKSHQSERVCTSVTHSFISAGNKVYPVSDDAIKNQPLPGSNMIHGTLQEADSLDKLYALCGQHCPILTVIIQPMNEEDRGFAYRKESDIENFLGFYLWMKIHPYLLQTDKNVFREENNKASMRQNLIDNAIGDIFDQFYFSNTFDLMGKRRKQKRINFLGLEEEGNLKKFQPDLKERFCMNFLHTSLLVVGNVDSNTQDLSGQTNEIFKAVDENNNLLNNRFQGSRTNLNQVVRENINCHYFFEMLGQACLLDICQVETSLNISNRNIELCMFEGENLFIWEEEDILNLTDLESSREQEDL*",
+                    "mapped": "STHMSSSSRSQIYSVSSEKTHNNDCYLDYSFVPENYLALEKSDSQNLPIYPSEDDIEKSIIFNQDGTMTVEMKVRFRIKEEETIKWTTTVSKTGPSNNDEKSEMSFPGRTESRSSGLKLAACSFSADVSPMERSSNQEGSLPEEINIQTTDEEAETCSSASWENATVDTDITQGTQDQAKHRFYRPPTPGLRRVRQKKSVIGSVTLVSETEVQEKMIGQFSYSEERESGENKSEYHMFTHSCSKMSAVSNKPVLVQINNNDQMEESLLERKKENRLLKSSAISAGVIEITSQKMLEMSHNNGMPSTISDNSIVEEDVVDSMVSDNKTGIKNFKGYDNTNDRFSPISADAPHFSSTNSGTDKNISEATASEASSTVTARIDRLINEFAQCGLTKLPKNEKKILSSVSSKKKKKSLQQAINSRYQDGQLATKGILNKNERINTRGRIRKEMILQDSDSPLKGRILCKEDLQTSDTVIESNTFCSKSNLNSTISKNFHRNKLNTTQNSKVQGLLTKRKSKSLKKVSLGAPKKREICQGDKVFPHNESKYCKSTFENKSLFHVFNILEQKPKYFYAPQSQAEVASGYLRGMAKKSLVTDSHITLRSQKKQKGDKLKASAVVSKQHATTRANSLASLKKPDFPEDIAHHSVQNYIQSWLQNINPYPTLKPIKSAPVCRNEMSVVNCNNNSFPGNDPHKSSGKINNFVMESNKHITKIASLTGDNLCKEGDKSFIASDTGEEDLHETQVGSLNDAYLVSLHEHCTLSQSAINDCNTKRHIAAEKSGPEKKLVYQEINLARKRQSVEAAIQVDPIEEETPKDLLPVLMLHQLQASVPGIPKTQNGVVQMPGSLANVPFHSAICNSSTNLLLAWLLVLNLKGSMNSFCQVDAHKTINKSSETLALLEILKHIAITEEADDLKAAVANLVESTTSYFGLSEKEQDVVPLDLSANCSTVSIQSVPKCSENERTQRISSLDGDCSASEACAPEVCVLEVTCSPCETWTVNKTYPPKETCNPSDTHFPSDGYGVDQTSMNKACFLGEVCSLTDTVFSNKACAQKENHTYEGACPTVETYVPVSVCNTIDFFNSKENTYTDNLESTEELERGDDIQKDLNILTDPEYKNGFNTLVSHQNVSNLSSCGLCLSEKEAELDKKHSSLDDFKNCSLKKFQDENAYTSFDMEEPRTSEEPGSITNSMTSSERNISELESFEELENQDTDIFNTVVNGGEQATEELIQEELEASKTLELIDISGKNVMEEKRRNGIIYEIISKRLATPPSLVFCYDSKQNSEKETNEGETKMVKMMVKSMEAGSYSESSPDLKKCIRSPVTSDWSDYRPDSDSEQPYKTSSDDPNDSGELAQEKEYNIGFVKRAIEKLYGKADIIKPSFFPGSTRKSQVCPYNSVEFQCSRKASLYDSEGQSFGSSEQVSTSSPMLQEFQEERQDKCDVNGVRNDYYGGDIVEPGTKQNDHSRILTDIEEGVLIDKGKWLLKENHLLRMSSENPGMCGNADTTSVDTLLDNNSSEVPYSHFGNLAPGPVMDELSSSELEELTQPLELKCNYFNMPRGSDSEPFHDVHNETCAKERIANHHTEKKNHQSERVCTSVTHSFTSASNKVYPVSDDAIKNQPLPGSNMIHGTLQEADSLDKLYALCGQHCPILTVIIQPVNEEDRGFAYRKESDIENFLGFYLWMKIHPYLLQTDKKVFREENNKASMRQNHIDNAIGDIFDQFYFNNTFDLMGKRRKQKRINFLELEEEGNLKKFQPDLKERLCMNFLHTSLLVVSNMNSDTQDFSSQTNEMFKAVDENNNLLNNGFQGSRTNLNQIVRENTNCHYFFEMLGQACLLDICQVETSLNISNRNTELCMFEGENIFIWEEEDILNLTDFESSREQEDL*",
+                    "identity": 0.936
+                }
             }
         ]
     },
@@ -3354,13 +3630,13 @@
                     "end": 54796757
                 },
                 "srcBases": 244,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55421759,
                     "end": 55422000
                 },
                 "mappedBases": 241,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "agagtaggcagggccttgattcaatatgactggtggtgttataagagagaagagaagcatcgagagagaacactatttagtgacagaggcagagattagattggtgagctgtaagccaaaggatgccaaagattgacagccaccaccaggagctagaaagaggcaaggaaggattccacccagagtctcagagggagtatggcctcattgacgtcttgatttcagacttccaggatccagaatg",
@@ -3378,13 +3654,13 @@
                     "end": 54801793
                 },
                 "srcBases": 250,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55426762,
                     "end": 55427013
                 },
                 "mappedBases": 250,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GGGAGATAGAGGAGACAGATTCAGGACTTCCGCCTTGGCTGCCGTTACTAcccccagccagaaagag-aaggactctttctcggtgttcacctcaaccttccctgcaagtgcctggtggggttcttggaggaaaagtctgcaagagagtgcaaactcttatgcttcccatatccagcctttagcaatttgttggaaatttctaggtgcattctttactggtgtacaggacatctgtaggcatccactccag",
@@ -3402,13 +3678,13 @@
                     "end": 54837669
                 },
                 "srcBases": 220,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55470787,
                     "end": 55471007
                 },
                 "mappedBases": 220,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ATTAATCTCAAAGATATTGGTGAAATCTATAAAATACGTATTGGACATGACAACACTGGAAAGAATCCCAGGTGGTATCTGGAAGAAGTTAGACTTGAAAATATAGCCACATATGAGCTATTTTGTTTACCTGTTGATTCCTGGATAGCTGAGAATGAAAATGATGGCGATCTATGGAAGGAAATACCCATCATGGGACCAAAGAAAGCACCTTTGCCAG",
@@ -3426,13 +3702,13 @@
                     "end": 54852728
                 },
                 "srcBases": 155,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55485904,
                     "end": 55486059
                 },
                 "mappedBases": 155,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "TGGTGCTTTATGAGATTCGCATATACACAGGCACAATGACAGGTGCAGAAACAGAGTCTAATGTATTTATCAACCTCATCGGTACCAGAGGTGATTCAGGAAAACGAAGACTTCATCAGTCCAAAAACAATGAAATCAAGTTTCAGCGTGGACAG",
@@ -3450,13 +3726,13 @@
                     "end": 54857106
                 },
                 "srcBases": 79,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55490200,
                     "end": 55490279
                 },
                 "mappedBases": 79,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTTGATATTTTTTCCATTAAGGCTGTATCTCTCGGAAAATTGAAGAAAGTTCTGATTAGTCATGATGGAACAGGTCCAG",
@@ -3474,13 +3750,13 @@
                     "end": 54865916
                 },
                 "srcBases": 82,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55498701,
                     "end": 55498783
                 },
                 "mappedBases": 82,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTAATGGATGGTTTCTTGGGAGTATTGTTGTTAAGTCTGAAGATGAAGACAGCAGTGAAGAGGTGCTGTTTCTATGCAACAG",
@@ -3498,13 +3774,13 @@
                     "end": 54869985
                 },
                 "srcBases": 143,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55502660,
                     "end": 55502803
                 },
                 "mappedBases": 143,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ATGGCTAGATGAGTACCAAGATGATGGCAAGACCCAGCGGGAATTGCTCGCAGAAAGTAGTCCCAGTGCAGTAGGAGAGACTGGGTCTACCATCTCCTGAAAGGGCCCACTTGGGCCTGTCGCTCCAATATGCTTCAAAAGGC",
@@ -3555,17 +3831,17 @@
                     "end": 55081909
                 },
                 "srcBases": 1099,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55712965,
                     "end": 55714063
                 },
                 "mappedBases": 1098,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
-                    "src": "CAAGGAGAGCAGCTGAATTACCTGGAGGAACATTTTGGGTTTGAACAGCAGTTCATATTTTGTCTATGCAGAAAGCGCTATTGGAAAATTTTAAATTGAGTGGCATTATACAAAAGATCTCCTTCAGTTTTGAAGTCTCCATTTGAGTTCCCAAGTCTGCCTTTTTGGGTGCCAGGTCCTTCAGAAGTCATATGGATTCAAGCAGGAAACAGACTCTCAGGAGGgggaccgtctgTAGTGAGAAAGGAAGTAGAGGCTTCAACTGCAAGGCAGCAGAATGCCAAAAGCCTGCACAGAAGCATCTTGCCAAGGAGATGGAAAGCGGCCTCTCACAGGGGACCTTTAGTATCCCTGAAGGACCAAAATGCACTCCTAAGTCCTGGGAGTCTCAATGATAACGAGCAAATGATGGGTGAAGCTCCACAACCATCTCTCTCAGCCTTTGGATGAGGGAGATCTAATAAGCACTGTTCTGGCATCCTGACCTAGAGGAATTTTAAAGCTTTGCAAAGGCTTGTTAAGAGACTACAACCTATTTTGAGTGACTAAAATCCTGCCGATTTCAATGTTACAGGCTTCTGGGAAACAGCTCAGGTAGCAAAAATGCCGGCACATGatccctggtttcgcagctggcattctgactaaccagggattgttcagacaaacagctgcatctctctgagcctcagttttctcacctatGTATACCCATTATGGACACACTTTCTTTAGGGTTTCGGTAGTTCTACAACGAAATATGTATAAAGTGTGGTGGAGAGCAGGTGTTTGAAAAATGCTCATTCCCTTCCCTGTCCTGCTGTATATCATTCATACACAGATTAGTGTCTGATTCTGAGCTGGTTGTACCAGGATGAGACAATTGAGAAGTAAATCTGAAGATAAAAGCAAAGCGAAGAGCTCAAGTGAGAGATTTATTATTTCATCTTTTTGGATGGATTATTTGGATATTTCAGGACAAGAGAAAATCCCCACTTTATGTTTCCTATCAATGAGATGCTTCTTGAGCTATAGGCTTTCTTCCTGGTTCATAAACCTTTTGTATGACAGTCAATAAGGATTTGTGGACCACACTGGA",
-                    "mapped": "CAAGGAGAACAGCTGAATTACCTGGAGGAACATTTTGGGTTTGAACAGCAGTTCATATTTTGTCTATGCAGAAAGCACTACTGGAAAATTTTAAATTGAGCAGCATTATAAAAAAGATCCCTTTCAGTTTTGGAGCCTCCATGTGAATTCCCAAGTCTGCCTTTTTGGGTGCCAGGTCCCTCAGAAGTCATATGGATTCATGCAGGAAACAGACTCTCAGGAG-gggaccgtctgTAGTGAGAAAGGAAGTAGAGGCTTCAACTGCAAGGCAGCAGAATGCCAAAAGCCTGCACAGAAGCATCTTGCCAAGGAGAGGGAAAGCGGCCTCTCACGGGGGACCTTTACTATCCCTGAAGGACCAAAATGCACTCCTAAGTCCTGGGAGTCTCAATGATAATGAGCAAATGATGAGTGAAGCTCCACAACCATCTCTCTCAGCCTTTGGATGAGGGAGATCTAATAAGCACTGTTCTGGCATCCTGAGCTAGAGGAATTTTAAAGCTTTGCAAAGGCTTGTTAAGAGACTGCAACCTATTCTGAGTGACTAAAATCCTGCCGATTTCAATGTTACAGTCTTCTGGGAAACAGCTCAGGTagcataaatgccggcgcatgatccctggtttcgcagctggcattctgactaatcaggaattgttcagacaaacagctgcatctctctgagcctcagttttctcacctatGTGTACACACCATGGACACACTTTCTTTAGGGCTTCAGTAGTTCTACAACGAAATATGTATAAAGTGTGGTGGAGAGTAGGTGTTTGAAAAATGCTCATTCCCTTCCCTGTCCTACTGTATATCATTCATACACAGATTAGTGTCTGATTCTGAGCTGGTTGTACCAGGATTAGACAATTGAGAAATAAATCTGAAGATAAAAGCAAAGCAAAGAGCTCAAGTGAGAGATTTATTATTTCATTTTTTTGGATGGATTATTTGGATATTTCAGGACAAGAGAAAATCCCCACTTTATGTTTCCTATAAATGAGATGCTTCTTGAGCTATAGGCTTTCTTCCTGGTTCATAAACCTTTTGGATGACAGTCAATAAGGATTTGTGGACCACACTGGA",
+                    "src": "gggaccgtctgTAGTGAGAAAGGAAGTAGAGGCTTCAACTGCAAGGCAGCAGAATGCCAAAAGCCTGCACAGAAGCATCTTGCCAAGGAGATGGAAAGCGGCCTCTCACAGGGGACCTTTAGTATCCCTGAAGGACCAAAATGCACTCCTAAGTCCTGGGAGTCTCAATGATAACGAGCAAATGATGGGTGAAGCTCCACAACCATCTCTCTCAGCCTTTGGATGAGGGAGATCTAATAAGCACTGTTCTGGCATCCTGACCTAGAGGAATTTTAAAGCTTTGCAAAGGCTTGTTAAGAGACTACAACCTATTTTGAGTGACTAAAATCCTGCCGATTTCAATGTTACAGGCTTCTGGGAAACAGCTCAGGTAGCAAAAATGCCGGCACATGatccctggtttcgcagctggcattctgactaaccagggattgttcagacaaacagctgcatctctctgagcctcagttttctcacctatGTATACCCATTATGGACACACTTTCTTTAGGGTTTCGGTAGTTCTACAACGAAATATGTATAAAGTGTGGTGGAGAGCAGGTGTTTGAAAAATGCTCATTCCCTTCCCTGTCCTGCTGTATATCATTCATACACAGATTAGTGTCTGATTCTGAGCTGGTTGTACCAGGATGAGACAATTGAGAAGTAAATCTGAAGATAAAAGCAAAGCGAAGAGCTCAAGTGAGAGATTTATTATTTCATCTTTTTGGATGGATTATTTGGATATTTCAGGACAAGAGAAAATCCCCACTTTATGTTTCCTATCAATGAGATGCTTCTTGAGCTATAGGCTTTCTTCCTGGTTCATAAACCTTTTGTATGACAGTCAATAAGGATTTGTGGACCACACTGGAGCAAGGAGAGCAGCTGAATTACCTGGAGGAACATTTTGGGTTTGAACAGCAGTTCATATTTTGTCTATGCAGAAAGCGCTATTGGAAAATTTTAAATTGAGTGGCATTATACAAAAGATCTCCTTCAGTTTTGAAGTCTCCATTTGAGTTCCCAAGTCTGCCTTTTTGGGTGCCAGGTCCTTCAGAAGTCATATGGATTCAAGCAGGAAACAGACTCTCAGGAG",
+                    "mapped": "gggaccgtctgTAGTGAGAAAGGAAGTAGAGGCTTCAACTGCAAGGCAGCAGAATGCCAAAAGCCTGCACAGAAGCATCTTGCCAAGGAGAGGGAAAGCGGCCTCTCACGGGGGACCTTTACTATCCCTGAAGGACCAAAATGCACTCCTAAGTCCTGGGAGTCTCAATGATAATGAGCAAATGATGAGTGAAGCTCCACAACCATCTCTCTCAGCCTTTGGATGAGGGAGATCTAATAAGCACTGTTCTGGCATCCTGAGCTAGAGGAATTTTAAAGCTTTGCAAAGGCTTGTTAAGAGACTGCAACCTATTCTGAGTGACTAAAATCCTGCCGATTTCAATGTTACAGTCTTCTGGGAAACAGCTCAGGTagcataaatgccggcgcatgatccctggtttcgcagctggcattctgactaatcaggaattgttcagacaaacagctgcatctctctgagcctcagttttctcacctatGTGTACACACCATGGACACACTTTCTTTAGGGCTTCAGTAGTTCTACAACGAAATATGTATAAAGTGTGGTGGAGAGTAGGTGTTTGAAAAATGCTCATTCCCTTCCCTGTCCTACTGTATATCATTCATACACAGATTAGTGTCTGATTCTGAGCTGGTTGTACCAGGATTAGACAATTGAGAAATAAATCTGAAGATAAAAGCAAAGCAAAGAGCTCAAGTGAGAGATTTATTATTTCATTTTTTTGGATGGATTATTTGGATATTTCAGGACAAGAGAAAATCCCCACTTTATGTTTCCTATAAATGAGATGCTTCTTGAGCTATAGGCTTTCTTCCTGGTTCATAAACCTTTTGGATGACAGTCAATAAGGATTTGTGGACCACACTGGA-CAAGGAGAACAGCTGAATTACCTGGAGGAACATTTTGGGTTTGAACAGCAGTTCATATTTTGTCTATGCAGAAAGCACTACTGGAAAATTTTAAATTGAGCAGCATTATAAAAAAGATCCCTTTCAGTTTTGGAGCCTCCATGTGAATTCCCAAGTCTGCCTTTTTGGGTGCCAGGTCCCTCAGAAGTCATATGGATTCATGCAGGAAACAGACTCTCAGGAG",
                     "identity": 0.963,
                     "coverage": 0.999
                 },
@@ -3579,17 +3855,17 @@
                     "end": 55077697
                 },
                 "srcBases": 1798,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55707942,
                     "end": 55709801
                 },
                 "mappedBases": 1793,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
-                    "src": "caaagtgttttgagttgcacagactctaaaggacaaaattgtggaatatgattcttaaatggaacacagcattaaagtcacccatatgatcaatgaaggattaaaacctctgcagaaacactttgatgagttaaaaagagacaacaccttctgattacagtgttcttccagaaagtttcaaccaaaaaaccttctactattgaggattccccaccatcaacatcgcctgatcctgacattcatccattgacgttgtcaaggctcgaggaaccagaatcactcaaagcagaaggtcaacagtagcctaacactgcatcacaatgcctataacgctcacctcacttcatctcatcag-------ttgagtcctctgcagaggaaaaggaagataaagaagaactgaagctgaaccagcaatatgaaaattaccaaaatttgcttgcatcagagaaattaggaagaccattcgtgaagcaagacaagttggtgaagaaagatttgccaacatgcttggaagcatgaaagaacatattgaaggccactgagaagcattaacaaatgaagaattggaagaac---------------------ag--------------------------aaaaacaaaaattatgtctctgtgttctggcaacataatcagaaagtgtgggtgacagccatcttgtttatggaatggttccaccaatgcttcatcccagaaatgacaaaatacttggaagaggaagggttgaaatttaagtcctattaataatagacaacgcacttggccatcctgaatctgtttgctgtgaaaatgaaaagtcaaggtcatatttttacctccaaatacaatcttattgcttcagctcatttacctgggcatcatttgatttgtcaagtcaatatacaactgcctgatatttgatcacacatgatcagcaattaatgcaaacaccaatctgaacataatgcagtgctgatgcaacagcatttatcaaagctgcaatgaatggattacaaccagaagctgtaaatggctactggacagacttatggagtgctgacctgaataatttaaaaggctttctggggaaactggctcttctggaagaaaacgcctaagaggacctacaacagagacactggggcataaaacatggcaggacagatcaattctgctgctgtgtagcaatgatgcagggcatataacaaagccaagcatagtgtacagaacaagaaacccttgtgttctc-----------agttgattaagaagaaagactagcatccaaagcaaggcttc-cccatgacttggtatattgatttgccacgtgcatcgggcaatgggcctgttatggttgtaattttgagagtagaatacatgaagataaaacatgttccaattgatggcaatatgtgctccagaaagcactgagcctatgtgaagccttcagcaaggggtccttgaaaaggagtgacaccaagccatttattaaaagtaaggaatggttacatagagagtaagggatggttacacagattcaggaatgggcttaaactgaaaactataaaaattacaggaaagtctgtgtctgacaatgaagccaaaactgcgaatgccacccagtctgcagatccccacaaaggaaggaaacatcatgagcatacaatttcttcctctccctgtcccatgacttcaccctgtcctcttcggccagccaacaatctccacacttcagcccactccaaaatccttaacaaccctagtgccaaactcctcaggcagacggacttgaagttttctccaactcctcattcagtgaccctataattaaacttctttttctgcagcaa",
-                    "mapped": "caaagtgttttgagttgcacaaacgctgaaggacaaaattgtggaatatgattcttaaatggaacacagcattaaagtcacccatatgatcgacgaaggattaaaacctctgcagaaacactttgatgagtaaaaaagagacaacaatttctgattgtagtgttcttccaaaaagtttcaaccaaaaatccttctactattaaggattccccaccatcgacattgtctgatcctgacattcctccattgacattgtcaaggctcgaggaaccggaatcactcaaagcagaaagtcaacagtagcctaacactacatcgcgatgcctacaacactcacctcacttcatctcatcaccaaaactttgagtcctctacagaggaagaggaagataaaaaagaactgaagctgaaccagcaatgtgaaaattaccaaaatttgc---cattggagaaattaggaaaaccattcatggagcaagacaagttggtgaagaaagattttccaacatgcttggaggcatgaaagaacatattgaaggccattgagaagcattaacaaatgaagaattggaagaacccatggggaaaatggtttcccagctaactaaactcttgcttatgtcattaaaaacaaaaattatgtttctgtgttctggcaacataatcagaaagtgtgggtgacagccatcttgtttatggaatggttccaccaatgcttcatctcagaaatgaaaaaatacttggaagaggaagggttgaaatttgagtcctattaataatagacaatgcacctggccatcctgaatctgtttgctgtgaaaatgaaaagtcaaggtcatatttttaccttcaaatacaatcttattgcttcagttcatttacctgggtatcatttgatttgtcaagtcaatacacaaccgcctgatatttgatcacacatgatcggcaattaatgcaaacaccaatccaaacataatgcagtgctgatgcaacagcatttatcaaagctgcaatgaatgaattacaaccagaaactgtaaatggctactagacaaacttatggagtgctgacctgaataatttaaaaggctttctgggg-aactggctcttctggaagaaaatgcctaagagaacctacaacagaggcaccagggcataaaacatggcaggacagatcaattctgctgctatgtagcaatgatgcagggcatataacaaagccaagcatagtgtacagaacaggaaacccttgtgttctcagctgtgatgaagttgattaagaagaaagactagcatccaaagcaaggcttcacccatggcttggtgtattgatttaccatgtgcattgggcaatggacctgttatggCTGtaattttgaggctagcaaacataaacagaaaacatgttccaattgatggcaatatatgctccagaaagcactgagcctatatggagacgtcagcaatggatccttgaaaaggagtgacaccaagccatttattgaaagtaagggatggttacagagaaagtaagggatagttacacagattcaagaatgggcttaaactgaaaactataaaaattacaggacagtctgtgtctgccaatgaag-caaaactgcaaatgccacccagtctgtagatccccacaaaggaaggaagcatcacgagaatacaatttcttcctctccctgtcccatgacttcaccctgtcctcttcagccaatcaacaatctccacacttcagcccactccaaaattcttaacaaccctagccccaaactcctcaggcagatggacttgaagttttctccagctcctcgtttggtgaccctataattaaacttctttttctgcagcaa",
+                    "src": "caaaactgcgaatgccacccagtctgcagatccccacaaaggaaggaaacatcatgagcatacaatttcttcctctccctgtcccatgacttcaccctgtcctcttcggccagccaacaatctccacacttcagcccactccaaaatccttaacaaccctagtgccaaactcctcaggcagacggacttgaagttttctccaactcctcattcagtgaccctataattaaacttctttttctgcagcaaccccatgacttggtatattgatttgccacgtgcatcgggcaatgggcctgttatggttgtaattttgagagtagaatacatgaagataaaacatgttccaattgatggcaatatgtgctccagaaagcactgagcctatgtgaagccttcagcaaggggtccttgaaaaggagtgacaccaagccatttattaaaagtaaggaatggttacatagagagtaagggatggttacacagattcaggaatgggcttaaactgaaaactataaaaattacaggaaagtctgtgtctgacaatgaag-agttgattaagaagaaagactagcatccaaagcaaggcttc-----------aactggctcttctggaagaaaacgcctaagaggacctacaacagagacactggggcataaaacatggcaggacagatcaattctgctgctgtgtagcaatgatgcagggcatataacaaagccaagcatagtgtacagaacaagaaacccttgtgttctcaaaaaacaaaaattatgtctctgtgttctggcaacataatcagaaagtgtgggtgacagccatcttgtttatggaatggttccaccaatgcttcatcccagaaatgacaaaatacttggaagaggaagggttgaaatttaagtcctattaataatagacaacgcacttggccatcctgaatctgtttgctgtgaaaatgaaaagtcaaggtcatatttttacctccaaatacaatcttattgcttcagctcatttacctgggcatcatttgatttgtcaagtcaatatacaactgcctgatatttgatcacacatgatcagcaattaatgcaaacaccaatctgaacataatgcagtgctgatgcaacagcatttatcaaagctgcaatgaatggattacaaccagaagctgtaaatggctactggacagacttatggagtgctgacctgaataatttaaaaggctttctgggg--------------------------ag---------------------catcagagaaattaggaagaccattcgtgaagcaagacaagttggtgaagaaagatttgccaacatgcttggaagcatgaaagaacatattgaaggccactgagaagcattaacaaatgaagaattggaagaacttgttgagtcctctgcagaggaaaaggaagataaagaagaactgaagctgaaccagcaatatgaaaattaccaaaatttgc-------caaagtgttttgagttgcacagactctaaaggacaaaattgtggaatatgattcttaaatggaacacagcattaaagtcacccatatgatcaatgaaggattaaaacctctgcagaaacactttgatgagttaaaaagagacaacaccttctgattacagtgttcttccagaaagtttcaaccaaaaaaccttctactattgaggattccccaccatcaacatcgcctgatcctgacattcatccattgacgttgtcaaggctcgaggaaccagaatcactcaaagcagaaggtcaacagtagcctaacactgcatcacaatgcctataacgctcacctcacttcatctcatcag",
+                    "mapped": "caaaactgcaaatgccacccagtctgtagatccccacaaaggaaggaagcatcacgagaatacaatttcttcctctccctgtcccatgacttcaccctgtcctcttcagccaatcaacaatctccacacttcagcccactccaaaattcttaacaaccctagccccaaactcctcaggcagatggacttgaagttttctccagctcctcgtttggtgaccctataattaaacttctttttctgcagcaa-cccatggcttggtgtattgatttaccatgtgcattgggcaatggacctgttatggCTGtaattttgaggctagcaaacataaacagaaaacatgttccaattgatggcaatatatgctccagaaagcactgagcctatatggagacgtcagcaatggatccttgaaaaggagtgacaccaagccatttattgaaagtaagggatggttacagagaaagtaagggatagttacacagattcaagaatgggcttaaactgaaaactataaaaattacaggacagtctgtgtctgccaatgaagaagttgattaagaagaaagactagcatccaaagcaaggcttcagctgtgatgaaactggctcttctggaagaaaatgcctaagagaacctacaacagaggcaccagggcataaaacatggcaggacagatcaattctgctgctatgtagcaatgatgcagggcatataacaaagccaagcatagtgtacagaacaggaaacccttgtgttctc-aaaaacaaaaattatgtttctgtgttctggcaacataatcagaaagtgtgggtgacagccatcttgtttatggaatggttccaccaatgcttcatctcagaaatgaaaaaatacttggaagaggaagggttgaaatttgagtcctattaataatagacaatgcacctggccatcctgaatctgtttgctgtgaaaatgaaaagtcaaggtcatatttttaccttcaaatacaatcttattgcttcagttcatttacctgggtatcatttgatttgtcaagtcaatacacaaccgcctgatatttgatcacacatgatcggcaattaatgcaaacaccaatccaaacataatgcagtgctgatgcaacagcatttatcaaagctgcaatgaatgaattacaaccagaaactgtaaatggctactagacaaacttatggagtgctgacctgaataatttaaaaggctttctggggctaactaaactcttgcttatgtcattagccatggggaaaatggtttccccattggagaaattaggaaaaccattcatggagcaagacaagttggtgaagaaagattttccaacatgcttggaggcatgaaagaacatattgaaggccattgagaagcattaacaaatgaagaattggaagaac---ttgagtcctctacagaggaagaggaagataaaaaagaactgaagctgaaccagcaatgtgaaaattaccaaaatttgccaaaactcaaagtgttttgagttgcacaaacgctgaaggacaaaattgtggaatatgattcttaaatggaacacagcattaaagtcacccatatgatcgacgaaggattaaaacctctgcagaaacactttgatgagtaaaaaagagacaacaatttctgattgtagtgttcttccaaaaagtttcaaccaaaaatccttctactattaaggattccccaccatcgacattgtctgatcctgacattcctccattgacattgtcaaggctcgaggaaccggaatcactcaaagcagaaagtcaacagtagcctaacactacatcgcgatgcctacaacactcacctcacttcatctcatcac",
                     "identity": 0.94,
                     "coverage": 0.997
                 },
@@ -3603,17 +3879,17 @@
                     "end": 55070535
                 },
                 "srcBases": 2951,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55700985,
                     "end": 55703975
                 },
                 "mappedBases": 2936,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
-                    "src": "gagacagagttttgctcttgtcacccagtgtggagtgcaatggcgcaatctcggctcactgcaacctctgcctccttggtttaagtaattctcctgcctcagcctcccgcgta-------------TGAAGGTGAGTTTTGATCTCATTTAAAGTGCAGTCCAAACAGCAGCTTAGTGAATCACATCAAATTAGCAACATGAGGCAATGCAGGACCAATTTCTACATTTTAATTTTTCCTGCTTCTCCTACTGTGAAATGCTATTAAAGAATGTGAGTAAAGCCCAACAATGTAGATCTTGGTGCTCTGGCCAGGTAAGACAACCAGTCttttttttttttttttCACAAGCTGTAGGGGAAAAATACTCAAGTGACAAAATATTTTAATATGCTGCACATTCAGACATAGATAAAGATTCTCTGTTTTTCTTCTTACCGCTAGCTTGAGGTTTGTACAGAAATACTGCCTGAGAAGTATTTATTATCTTCCTCATACCCTATACCAAAAGCCATAACATAAACCATTCAGATCATTTTAGAAAGTTATTTAGTGGTGGGGGTTTTGAGGATAAGCCTGAAATCCCGCAAATATGTATTGCAAAGAAGGAACTGTGAACTGTGTTTTCTCCCTGGATATTTCTATAATTTCTACTTTAAAAAAGCAAACATC-GAGTTGAGCTAATATGAACTTATTATAAGTTAGAGTAAGTTCTTAGAATCAAAAGAATCTTCATTCAATTGATTTAATATAGTGATGAAAGATAGAAATCCCAGAGGTAGAAAGTGAAAGTATATCAATAGATGAAGACTATATAAATTATAAGATGGCTTCACTCCAAGACAAAAATgaaattataattgagagagagaaactgtccacattgtttcagtttgtagatccagccttgcttgagccacagtctacctctggctttcccataggcccaaaccaacaaatttccttttttT-tctcttcctaccagtgataccaagttggcatgtaaatctgaggttccaccttgcccttcatcctgctaaaatagagtaagcacatcttcacgaagaggtaatcaggccaacatgcagaagaaattatgaaaaaaaagagcttctgctttcggcactcccttttgtttgcagaactccttacccattccttgaggttctgatggaaataccagcgatggtgccccacttgcaacctctatctgaagggtgggcatgtgacccaggctgcatgtgtaacagtcacccatgcctttggcagcacatgttaatctactggggatctgactcaagaaggccattcagagcccattccctggactgctatttgtagaaaggaaagagttttGCCAAAGCTAAGTGTGCCGAACACGCCAGTTACtgttttgggtctgcctagcacattttcacctatc-TTGGTCACTAGCAGCAGTGTAGCATGCCTACTGGGGTCATGTGTCTCATCTTTAGGCCAACCCTGCTAAAAAAGCCCGTACTCCTGCAGAGAATAAAGTGGGAGCTTGTATAAGGGACAAGAGTAAAGAACACTTGAGGTGCTGAAGAAGGCGATGCCCCTCAGATGGTGG-----CACCTCAGCGGTCTACTTCCTGGCCCTTGGCAGGAAAGCTGC-tgtttcccAGCAGCCATTGTATCGCCTTTGGCA---ggactaaagcacagccgccatggaactctcacctccatggggttgcctcggaactttcatccatcaggagggctcatggaaagcatgcccgtgtgaacacttttacagcttccttctgcccaggaaggcaccacctcaactgcccagtagataagacaccaagctagcaggtgtacccctgtccttactcattttcttcgcaaccttatataagtgcctgctttctgctccagaggtggagtggcacatttaaaggcggaacattttgtgccccttccccaagctaacttcagaatgaattcacttattttgtatcagacctggctcttgttaattggactctcatgtggaaagcaactaacctgtttcttcgttacaatttgaatgtgtgtcctttctgataccaaagcctgtgctctgataactataca-----------------ttttttcctctccctcttcttttcgtattcctgggctccctgtttcctacttagcccttcagaaatgcaagtatagccttttacctgccccgtcacagacattccatacaggtcaagttctgtgtgctccaagacagatctcttctt---actgtttattaagagcttacctgtcaccaggtgctatgctatatgctttacaaataatatttcaaccagatctgacaactcaatgagatagaaactgaggctcagaaaaatcagtcacaaaattgctaaattgtcaagctggggttttgtaacgtagtgcccccattgttctagaggtggcttttt---------TCTTTGATaataatggtggctATAGTCACAGCTTGCCAGCTATTATCACCTTCTGGAACCATCCCTGGTAAAAGCGTTCAAAACCTTGGTGACCCAATGAGAATTCTCCAGGTCTTCTCGGGCCCTGTTCTTGCCCATTATGCCATCTGATTAGCAGGGCACACGCTGGGCTCTCAGAAAAATAGGTCTTTAcagtgtggtataattaagagagaacaaaatctggattcagaaagcctacgtttgaatcctgtctctgtgacttaccagttatgtgacctaataaaatcacagtcccactgggcgtcatcttcctcacctgaaaactagatattaatggcatccagctcagtgggggctttgaaggctaaatgagagaatacaaagctattgtatgaaaaagctttgtGCACCTATATCACATTGTGTATGTCATTGTACTAGGCAGCTCCTAATTCAAGAGGGCTCCATCATCCCAAATTGCTGCTCTTTATTCCTAGCTTGAGAAGTGGAAGGAGGGAAATAATAATA",
-                    "mapped": "gacacagagttttgttcttgtcacccaggctggagtgcaatggcacaatctcggctcactgcaacctccgcctccttggttcaaacaattctcctgcttcagcctcctgagtatttttttttttttTGAAAGTGAGTTTTGATCTCATTTAAAGTACAGTCCAAACAGCAGCTTAGTGAATCACATCAAATTAGCAACATGAGGCAATACACGACCAATTTCTACATTTTAATTTTTGCTTCTACTCCTACTATGAAATGCTATTAAAGAATGTAGGTAAAACCCAACAATGTAGATCTTGGTACTCTGGCCAGGTAAGACAACCAGtttttttttttttttttt-ACAAGCTGTAGGGGAAAAATACTCAAGTGGCAAAATATTTTAGCGTGCTGCACATTGAGATGTAGATAAAGATTCTCTGTTTTTCTTCTTACCACTAGCCTGAGGTTCATAGAGAAATACCGCCTGAGACGTATTTATTATCTTCCTCATACCCTACACCAAAAGCCATAGCATAAACCATTCAGATCATTTTAGAAAGTTTTTTAGTGGTGGGGGTTTTGAGGATAAGCCTGAAATC-CACAAATACCTATTGCAAAGAAGGAACTGTGAACTGTGTTTTCTCCTTGTATATTTCTATAATTTCTACTTTAAAAAAGCAAACATCAGAGTTGAGCTAATATGAACTTATTATAAGTTGGAATAAGTTCTTAGAATCAAAAGAATCTTCATTCAGTTGATTTAATATAGTGATGAAAGATAGAAATCCCAGAGATAGAAAGTGAAAGTATATCAATAGATTAAGACTATATAAATTATAAGATGGTTTCACTCCAAGAAAAAAA-gaaattgtaattgagagagagaaactgtccacattctttgagtttgtagatcaagccttgcctaagccacagtctacctctggccttcccacagacccaaaccaacaaattttcttttttTatctcttcctaccagtgatgccaagttggcatgtaaatttgaggttccaccttgcccttcatcctgctaaaatagagtaagcacatcttcaagatgaggtaatcaggccaacatacagaagaaattatgaaaaaaa----cttctgcttttggcactcccttctgtttgcagaactccttccccattccttgaggttctgatggaaataccagagatggtgccccacttccaacctctatctgaagggtggacatgtgacccaggctggatgtgtaacagtcacccatgcctttggcagcacatgttaatccgttggggatctgactcaagaaggccattcagagcccattccctggactgttgtttgtagaaaggaaagag----GCCAAAGCTAAGTGTGGCGAACACACcagctgctgtttttggtctgcctagcacattttcgcctatcATTGGTCACTAGCAGCAGTGTAGCATGCCTGTTGGGGTCATGTGTCTCGTCTTTAGGCCAACCCTGCTAAAAAA-CCCGTACTCCTGCAGAGAAGAAAGTGGGAGCTCATATAAGGGATGAGAGTAAAGAACACTTGTGGTGCTGAAGAAGGCAATGCCCCTCAGATGGTGGACCTACACCTCAGAGGTCTACTTCGTGGCCCTTGGCAGGAAAGCTGCGtgtttcccAGCAGCCATTGTGTCTCCTCTGGCAacaggaccaaagcacacccgccatggaactctcacccccatggggttgcctcagaactttcgtccaccaggagggcttacagaaagcatgcccacgtgaacacttttacaacttccttctgtccaggaagtcaccacctcaactgcccagtagataagacaccaagctagcaggggtacccctgtccttactcattttctttgcaaccttataaaagtgcctgctttctgctccagaggtgaagtggcacatttaaaagcagaacattttgtgccccttcccctagctaacttcagaataaattcatttatttcatatcagacctggctcttgttaattggactctcatgtggaaagcagctaacctgttttttcattacaatttgaatgtgtgtcctttctgataccaaagcctatgctctgataactatacaccgaactggcagtgtgcttttttcctctccctcttctttttgtattcctgggctccctgtttcctacttggcccttcagaaatgcaaatatagcctttcacctgccccatcacagacattccatagagggcaagttctgtgtgctccaagacagatctcttcttattGGTGtttattaagagcttacctgtcaccaggtgctatgctatatgctttataaataatatttcaaccagtcctgacaatccaatgagatagaaactgagggtcagaaaaatcaatcacaaaattgctaaattgtcaagctggggttttgtaacctagtacccccattgttctagaggtggcttattTTAAATGGTTCTTTGATAATAATGGTAGCT---GTCACAGCTTGCCAGCTATTATCACCTTCTGGAACAATCCCTGGTAAAAACGTTCAAAACCTTGGTGACCCAGTGAAAATTCTCCAGGTCTTCTCGGGCCCTGTTCTTGCCCATTATGCCATCTGATTAGCAGGGCACACGCTGGGCTCTCAGAAAAATAGGTCTTTAcagtgtggtataattaagagagaacaaaatctggattcagaaagcctacgtttgaatcctgtctctgtaacttaccagttatgtgacctaataaaatcacagtcccactgggcatcatcttcctcacctgaaagctagatattaatggcatccagctcagtgggggctttgaaggctaaatgaaagaacacaaagctgttgtatgaaagaggtttgtGCACCTATACCACATTGTGTATGTCATTGTACTAGTCAGCTCCTAATTCAAGAGGGTTCCATCATCCCAAATTGCTGCTCTTTATTCCTAGCTTGAGAAGTGGAAGGAGGGAAATAATAATA",
+                    "src": "GTCACAGCTTGCCAGCTATTATCACCTTCTGGAACCATCCCTGGTAAAAGCGTTCAAAACCTTGGTGACCCAATGAGAATTCTCCAGGTCTTCTCGGGCCCTGTTCTTGCCCATTATGCCATCTGATTAGCAGGGCACACGCTGGGCTCTCAGAAAAATAGGTCTTTAcagtgtggtataattaagagagaacaaaatctggattcagaaagcctacgtttgaatcctgtctctgtgacttaccagttatgtgacctaataaaatcacagtcccactgggcgtcatcttcctcacctgaaaactagatattaatggcatccagctcagtgggggctttgaaggctaaatgagagaatacaaagctattgtatgaaaaagctttgtGCACCTATATCACATTGTGTATGTCATTGTACTAGGCAGCTCCTAATTCAAGAGGGCTCCATCATCCCAAATTGCTGCTCTTTATTCCTAGCTTGAGAAGTGGAAGGAGGGAAATAATAATAATATCTTTGATaataatggtggct---------actgtttattaagagcttacctgtcaccaggtgctatgctatatgctttacaaataatatttcaaccagatctgacaactcaatgagatagaaactgaggctcagaaaaatcagtcacaaaattgctaaattgtcaagctggggttttgtaacgtagtgcccccattgttctagaggtggcttttt---ttttttcctctccctcttcttttcgtattcctgggctccctgtttcctacttagcccttcagaaatgcaagtatagccttttacctgccccgtcacagacattccatacaggtcaagttctgtgtgctccaagacagatctcttctt-----------------ggactaaagcacagccgccatggaactctcacctccatggggttgcctcggaactttcatccatcaggagggctcatggaaagcatgcccgtgtgaacacttttacagcttccttctgcccaggaaggcaccacctcaactgcccagtagataagacaccaagctagcaggtgtacccctgtccttactcattttcttcgcaaccttatataagtgcctgctttctgctccagaggtggagtggcacatttaaaggcggaacattttgtgccccttccccaagctaacttcagaatgaattcacttattttgtatcagacctggctcttgttaattggactctcatgtggaaagcaactaacctgtttcttcgttacaatttgaatgtgtgtcctttctgataccaaagcctgtgctctgataactataca---tgtttcccAGCAGCCATTGTATCGCCTTTGGCA-CACCTCAGCGGTCTACTTCCTGGCCCTTGGCAGGAAAGCTGC-----CCCGTACTCCTGCAGAGAATAAAGTGGGAGCTTGTATAAGGGACAAGAGTAAAGAACACTTGAGGTGCTGAAGAAGGCGATGCCCCTCAGATGGTGGGTTGGTCACTAGCAGCAGTGTAGCATGCCTACTGGGGTCATGTGTCTCATCTTTAGGCCAACCCTGCTAAAAAA-GCCAAAGCTAAGTGTGCCGAACACGCCAGTTACtgttttgggtctgcctagcacattttcacctatcttttcttctgctttcggcactcccttttgtttgcagaactccttacccattccttgaggttctgatggaaataccagcgatggtgccccacttgcaacctctatctgaagggtgggcatgtgacccaggctgcatgtgtaacagtcacccatgcctttggcagcacatgttaatctactggggatctgactcaagaaggccattcagagcccattccctggactgctatttgtagaaaggaaagagagagtctcttcctaccagtgataccaagttggcatgtaaatctgaggttccaccttgcccttcatcctgctaaaatagagtaagcacatcttcacgaagaggtaatcaggccaacatgcagaagaaattatgaaaaaaa-gaaattataattgagagagagaaactgtccacattgtttcagtttgtagatccagccttgcttgagccacagtctacctctggctttcccataggcccaaaccaacaaatttccttttttTTGAGTTGAGCTAATATGAACTTATTATAAGTTAGAGTAAGTTCTTAGAATCAAAAGAATCTTCATTCAATTGATTTAATATAGTGATGAAAGATAGAAATCCCAGAGGTAGAAAGTGAAAGTATATCAATAGATGAAGACTATATAAATTATAAGATGGCTTCACTCCAAGACAAAAA-CGCAAATATGTATTGCAAAGAAGGAACTGTGAACTGTGTTTTCTCCCTGGATATTTCTATAATTTCTACTTTAAAAAAGCAAACATCCACAAGCTGTAGGGGAAAAATACTCAAGTGACAAAATATTTTAATATGCTGCACATTCAGACATAGATAAAGATTCTCTGTTTTTCTTCTTACCGCTAGCTTGAGGTTTGTACAGAAATACTGCCTGAGAAGTATTTATTATCTTCCTCATACCCTATACCAAAAGCCATAACATAAACCATTCAGATCATTTTAGAAAGTTATTTAGTGGTGGGGGTTTTGAGGATAAGCCTGAAATCCTGAAGGTGAGTTTTGATCTCATTTAAAGTGCAGTCCAAACAGCAGCTTAGTGAATCACATCAAATTAGCAACATGAGGCAATGCAGGACCAATTTCTACATTTTAATTTTTCCTGCTTCTCCTACTGTGAAATGCTATTAAAGAATGTGAGTAAAGCCCAACAATGTAGATCTTGGTGCTCTGGCCAGGTAAGACAACCAGTCtttttttttttttttt-------------gagacagagttttgctcttgtcacccagtgtggagtgcaatggcgcaatctcggctcactgcaacctctgcctccttggtttaagtaattctcctgcctcagcctcccgcgta",
+                    "mapped": "GTCACAGCTTGCCAGCTATTATCACCTTCTGGAACAATCCCTGGTAAAAACGTTCAAAACCTTGGTGACCCAGTGAAAATTCTCCAGGTCTTCTCGGGCCCTGTTCTTGCCCATTATGCCATCTGATTAGCAGGGCACACGCTGGGCTCTCAGAAAAATAGGTCTTTAcagtgtggtataattaagagagaacaaaatctggattcagaaagcctacgtttgaatcctgtctctgtaacttaccagttatgtgacctaataaaatcacagtcccactgggcatcatcttcctcacctgaaagctagatattaatggcatccagctcagtgggggctttgaaggctaaatgaaagaacacaaagctgttgtatgaaagaggtttgtGCACCTATACCACATTGTGTATGTCATTGTACTAGTCAGCTCCTAATTCAAGAGGGTTCCATCATCCCAAATTGCTGCTCTTTATTCCTAGCTTGAGAAGTGGAAGGAGGGAAATAATAATA---TCTTTGATAATAATGGTAGCTTTAAATGGTGGTGtttattaagagcttacctgtcaccaggtgctatgctatatgctttataaataatatttcaaccagtcctgacaatccaatgagatagaaactgagggtcagaaaaatcaatcacaaaattgctaaattgtcaagctggggttttgtaacctagtacccccattgttctagaggtggcttattattttttttcctctccctcttctttttgtattcctgggctccctgtttcctacttggcccttcagaaatgcaaatatagcctttcacctgccccatcacagacattccatagagggcaagttctgtgtgctccaagacagatctcttcttccgaactggcagtgtgcggaccaaagcacacccgccatggaactctcacccccatggggttgcctcagaactttcgtccaccaggagggcttacagaaagcatgcccacgtgaacacttttacaacttccttctgtccaggaagtcaccacctcaactgcccagtagataagacaccaagctagcaggggtacccctgtccttactcattttctttgcaaccttataaaagtgcctgctttctgctccagaggtgaagtggcacatttaaaagcagaacattttgtgccccttcccctagctaacttcagaataaattcatttatttcatatcagacctggctcttgttaattggactctcatgtggaaagcagctaacctgttttttcattacaatttgaatgtgtgtcctttctgataccaaagcctatgctctgataactatacaacatgtttcccAGCAGCCATTGTGTCTCCTCTGGCAGCACCTCAGAGGTCTACTTCGTGGCCCTTGGCAGGAAAGCTGCACCTACCCGTACTCCTGCAGAGAAGAAAGTGGGAGCTCATATAAGGGATGAGAGTAAAGAACACTTGTGGTGCTGAAGAAGGCAATGCCCCTCAGATGGTGG-TTGGTCACTAGCAGCAGTGTAGCATGCCTGTTGGGGTCATGTGTCTCGTCTTTAGGCCAACCCTGCTAAAAAAAGCCAAAGCTAAGTGTGGCGAACACACcagctgctgtttttggtctgcctagcacattttcgcctatc----cttctgcttttggcactcccttctgtttgcagaactccttccccattccttgaggttctgatggaaataccagagatggtgccccacttccaacctctatctgaagggtggacatgtgacccaggctggatgtgtaacagtcacccatgcctttggcagcacatgttaatccgttggggatctgactcaagaaggccattcagagcccattccctggactgttgtttgtagaaaggaaagag----tctcttcctaccagtgatgccaagttggcatgtaaatttgaggttccaccttgcccttcatcctgctaaaatagagtaagcacatcttcaagatgaggtaatcaggccaacatacagaagaaattatgaaaaaaaagaaattgtaattgagagagagaaactgtccacattctttgagtttgtagatcaagccttgcctaagccacagtctacctctggccttcccacagacccaaaccaacaaattttcttttttT-GAGTTGAGCTAATATGAACTTATTATAAGTTGGAATAAGTTCTTAGAATCAAAAGAATCTTCATTCAGTTGATTTAATATAGTGATGAAAGATAGAAATCCCAGAGATAGAAAGTGAAAGTATATCAATAGATTAAGACTATATAAATTATAAGATGGTTTCACTCCAAGAAAAAAAACACAAATACCTATTGCAAAGAAGGAACTGTGAACTGTGTTTTCTCCTTGTATATTTCTATAATTTCTACTTTAAAAAAGCAAACATC-ACAAGCTGTAGGGGAAAAATACTCAAGTGGCAAAATATTTTAGCGTGCTGCACATTGAGATGTAGATAAAGATTCTCTGTTTTTCTTCTTACCACTAGCCTGAGGTTCATAGAGAAATACCGCCTGAGACGTATTTATTATCTTCCTCATACCCTACACCAAAAGCCATAGCATAAACCATTCAGATCATTTTAGAAAGTTTTTTAGTGGTGGGGGTTTTGAGGATAAGCCTGAAATC-TGAAAGTGAGTTTTGATCTCATTTAAAGTACAGTCCAAACAGCAGCTTAGTGAATCACATCAAATTAGCAACATGAGGCAATACACGACCAATTTCTACATTTTAATTTTTGCTTCTACTCCTACTATGAAATGCTATTAAAGAATGTAGGTAAAACCCAACAATGTAGATCTTGGTACTCTGGCCAGGTAAGACAACCAGtttttttttttttttttttttttttttttttgacacagagttttgttcttgtcacccaggctggagtgcaatggcacaatctcggctcactgcaacctccgcctccttggttcaaacaattctcctgcttcagcctcctgagta",
                     "identity": 0.943,
                     "coverage": 0.995
                 },
@@ -3680,7 +3956,11 @@
                     "identity": 0.981,
                     "coverage": 0.998
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MAAKSDGRLKMKKSSDVAFTPLQNSDHSGSVQGLAPGLPSGSGAEDEEAAGGGCCPDGGGCSRCCCCCAGSGGSAGSGGSGGVAGPGGGGAGSLCLRLGREQRRYSLWDCLWILAAVAVYFADVGTDVWLAVDYYLRGQRWWFGLTLFFVVLGSLSVQVFSFRWFVHDFSTEDSATAAAASSCPQPGADCKTVVGGGSAAGEGEARPSTPQRQASNASKSNIAAANSGSNSSGATRASGKHRSASCSFCIWLLQSLIHILQLGQIW",
+                    "mapped": "MAAKSDGRLKMKKSSDVAFTPLQNSDHSGSVQGLAPGLPSGSGAEDEEAAGGGCCPDGGGCSRCCCCCAGSGSSGGSGGSGGVAGPGSGGAGSLCLRLGREQRRYSLWDCLWILAAVAVYFADVGTDVWLAVDYYLRGQRWWFGLTLFFVVLGSLSVQVFSFRWFVHDFSTEDSATAAAASSCPQPGADCKTVVGGGSAAGEGEARPSTPQRQASNASKSNIAAANSGSNSSGATRASGKHRSASCSFCIWLLQSLIHILQLGQIW",
+                    "identity": 0.989
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55357677-55357877",
@@ -3710,7 +3990,11 @@
                     "identity": 0.995,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "YFHTIYLGIRSRQSGENDRWRFYWKMVYEYADVSMLHLLATFLESAPQLVLQLCIIVQTHSLQALQ",
+                    "mapped": "YFHTIYLGIRSRQSGENDRWRFYWKMVYEYADVSMLHLLATFLESAPQLVLQLCIIVQTHSLQALQ",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55523280-55542054",
@@ -3740,7 +4024,11 @@
                     "identity": 0.955,
                     "coverage": 0.962
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "FTAAASLVSLAWALASYQKALRDSRDDKKPISYMAVIIQFCWHFFTIAARVITFALFASVFQLYFGIFIVLHWCIMTFWIVHCETEFCITKWEEIVFDMVVGIIYIFSWFNVKEGRTRCRLFIYYFVILLENTALSALWYLYKAPQIADAFAIPALCVVFSSFLTGVVFMLMYYAFFHPNGPRFGQSPSCACEDPAAAFTLPPDVATSTLRSISNNRSVVSDRDQKFAERDGCVPVFQVRPTAPSTPSSRPPRIEESVIKIDLFRNRYPAWERHVLDRSLRKAILAFECSPSPPRLQYKDDALIQERLEYETTL*",
+                    "mapped": "FTAAASLVSLAWALASYQKALRDSRDDKKPISYMAVIIQFCWHFFTIAARVITFALFASVFQLYFGIFIVLHWCIMTFWIVHCETEFCITKWEEIVFDMVVGIIYIFSWFNVKEGRTRCRLFIYYFVILLENTALSALWYLYKAPQIADAFAIPALCVVFSSFLTGVVFMLMYYAFFHPNGPRFGQSPSCACEDPAAAFTLPPDVATSTLRSISNNRSVVSERDQKFAERDGCVPVFQVRPTAPSTPSSRPPRIEESVIKIDLFRNRYPAWERHVLDRSLRKAILAFECSPSPPRLQYKDDALIQERLEYETTL*",
+                    "identity": 0.997
+                }
             }
         ]
     },
@@ -3803,7 +4091,11 @@
                     "identity": 0.98,
                     "coverage": 0.996
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MAAKSDGRLKMKKSSDVAFTPLQNSDHSGSVQGLAPGLPSGSGAEDEEAAGGGCCPDGGGCSRCCCCCAGSGGSAGSGGSGGVAGPGGGGAGSLCLRLGREQRRYSLWDCLWILAAVAVYFADVGTDVWLAVDYYLRGQRWWFGLTLFFVVLGSLSVQVFSFRWFVHDFSTEDSATAAAASSCPQPGADCKTVVGGGSAAGEGEARPSTPQRQASNASKSNIAAANSGSNSSGATRASGKHRSASCSFCIWLLQSLIHILQLGQI",
+                    "mapped": "MAAKSDGRLKMKKSSDVAFTPLQNSDHSGSVQGLAPGLPSGSGAEDEEAAGGGCCPDGGGCSRCCCCCAGSGSSGGSGGSGGVAGPGSGGAGSLCLRLGREQRRYSLWDCLWILAAVAVYFADVGTDVWLAVDYYLRGQRWWFGLTLFFVVLGSLSVQVFSFRWFVHDFSTEDSATAAAASSCPQPGADCKTVVGGGSAAGEGEARPSTPQRQASNASKSNIAAANSGSNSSGATRASGKHRSASCSFCIWLLQSLIHILQLGQI",
+                    "identity": 0.989
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55272901-55272906",
@@ -3833,7 +4125,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "R",
+                    "mapped": "R",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55357679-55357877",
@@ -3863,7 +4159,11 @@
                     "identity": 0.995,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "FHTIYLGIRSRQSGENDRWRFYWKMVYEYADVSMLHLLATFLESAPQLVLQLCIIVQTHSLQALQ",
+                    "mapped": "FHTIYLGIRSRQSGENDRWRFYWKMVYEYADVSMLHLLATFLESAPQLVLQLCIIVQTHSLQALQ",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55523280-55526149",
@@ -3893,7 +4193,11 @@
                     "identity": 0.977,
                     "coverage": 0.995
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "FTAAASLVSLAWALASYQKALRDSRDDKKPISYMAVIIQFCWHFFTIAARVITFALFASVFQLYFGIFIVLHWCIMTFWIVHCETEFCITKWEEIVFDMVVGIIYIFSWFNVKEGRTRCRLFIYYFVILLENTALSALWYLYKAPQIADAFAIPALCVVFSSFLTGVVFMLMYYAFFHPNGPRFGQSPSCACEDPAAAFTLPPDVATSTLRSISNNRSVVSDRDQKFAERDGCVPVFQVRPTAPSTPSSRPPRIEESVIKIDLFRNRYPAWERHVLDRSLRKAILAFECSPSPPRLQYKDDALIQERLEYETTL*",
+                    "mapped": "FTAAASLVSLAWALASYQKALRDSRDDKKPISYMAVIIQFCWHFFTIAARVITFALFASVFQLYFGIFIVLHWCIMTFWIVHCETEFCITKWEEIVFDMVVGIIYIFSWFNVKEGRTRCRLFIYYFVILLENTALSALWYLYKAPQIADAFAIPALCVVFSSFLTGVVFMLMYYAFFHPNGPRFGQSPSCACEDPAAAFTLPPDVATSTLRSISNNRSVVSERDQKFAERDGCVPVFQVRPTAPSTPSSRPPRIEESVIKIDLFRNRYPAWERHVLDRSLRKAILAFECSPSPPRLQYKDDALIQERLEYETTL*",
+                    "identity": 0.997
+                }
             }
         ]
     },
@@ -3936,17 +4240,17 @@
                     "end": 55142358
                 },
                 "srcBases": 236,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55773795,
                     "end": 55774035
                 },
                 "mappedBases": 235,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
-                    "src": "GGCTCCCTGTGGGGGAAAGAATGGAG-----CTCAGGAGAGCAGCAGTGAGGCCAGTGGAATCAGGATGAGGAAGTAGGAAAGAGGGCAGGCAGCCAGTACTCTGAAGAGACCAGTGTGTACTATACCCTTTCCTTATCCAGGAGAATGGCAACTTCTCCTACGAGGAGAGGTCTAAGAGCAAGTTTCAATGACATGAAGTTCTGCCGTTTGACCAGCAGATCAGCAGGAGAAGACAAAGC",
-                    "mapped": "AGCTCCCTGTGGGGGAAGGAATGGAGCCCTGCTCAGGAGAGCAGCAGTGAGGCCAGTG-AATGAGGATGAGGAAGCAGGAAAGAGGGCAGGCAGCCAGTACTCTGAAGAGAGTAGTGTGTATTACACCCCTTCCTTTTCCAGGAGAATGGCAACTTCTCCTATGAGGAGAGGCCTAAGAGCAAGTTTCAATGACGTGAAGTTCTCCCATTTGACCAACAGATCAGCAGGAGAAGACAAAGT",
+                    "src": "AATCAGGATGAGGAAGTAGGAAAGAGGGCAGGCAGCCAGTACTCTGAAGAGACCAGTGTGTACTATACCCTTTCCTTATCCAGGAGAATGGCAACTTCTCCTACGAGGAGAGGTCTAAGAGCAAGTTTCAATGACATGAAGTTCTGCCGTTTGACCAGCAGATCAGCAGGAGAAGACAAAGCGCTCAGGAGAGCAGCAGTGAGGCCAGTG-----GGCTCCCTGTGGGGGAAAGAATGGAG",
+                    "mapped": "AATGAGGATGAGGAAGCAGGAAAGAGGGCAGGCAGCCAGTACTCTGAAGAGAGTAGTGTGTATTACACCCCTTCCTTTTCCAGGAGAATGGCAACTTCTCCTATGAGGAGAGGCCTAAGAGCAAGTTTCAATGACGTGAAGTTCTCCCATTTGACCAACAGATCAGCAGGAGAAGACAAAGT-CTCAGGAGAGCAGCAGTGAGGCCAGTGCCCTGAGCTCCCTGTGGGGGAAGGAATGGAG",
                     "identity": 0.928,
                     "coverage": 0.996
                 },
@@ -3960,13 +4264,13 @@
                     "end": 55140216
                 },
                 "srcBases": 127,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55771704,
                     "end": 55771831
                 },
                 "mappedBases": 127,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGTCTGCAGATGGAACTCACCTTTGAGATAAATAAAGAAGAAAAGACACTCAGTCAAGATACCAACCCAGGAATAACTGAGGGAGAATTTTCATCTAAAAGAAATTCACCTGGTAAACTCTTAAGAG",
@@ -3984,17 +4288,17 @@
                     "end": 55135652
                 },
                 "srcBases": 450,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55766732,
                     "end": 55767258
                 },
                 "mappedBases": 450,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
-                    "src": "ATATAttagggtgg----------------------------------------------AATATATTTGT-----------------------------TTTGGGGGGACCCTTAGATTTCATTCTTTCTGTCCCTATTCATACAAcatccaacaaatatatattgcatatctactatgtataaagatctgctctaaatagaaggattacaacaTAGTGGTTAAAGAGTGTAGGCTTTAGATAAGTGTTTTAAAAACTGTGCATCACAATTGATTTGTATAATCCATTTAGTATGTTATCATAAAAAAGAAATAATATAGAACAGAATATATTCAATTTAG-ACTCCTCTATCCAGGGAGCCATCTGTCCTTGGCTTTTCCTCAGTAGACAGCTCCGATGACAGAGAAAGCAGAAAGCAATACAGAAAGCAATGGACATGTTGGACTGTGCTCCTTGTCATCAACTGAGGGAAAAGAGTTAACATTACAGATGGACAAAGAGTGAAGCCACCGATTCAGATATGA",
-                    "mapped": "ATATAttaggttggggtttttggcattactttcaaACCACGCATGTGTGTATAGTTATACaatgtaattgtCATCTATTTACATATAttaggttggtgtaTTTGGGGGGACCCTTAGATTTCATTATTTCTGTCCCTATTCATACAAcatccaacaaatatttattgcatatctattatgtataaagatctgctctaaatagaaggattacaacaTAGCGGTTAAAGAGTGTAGGCTTTAGACTAGTGTTTTAAAAATTGTGCATCACAATTGATTTGTATAATCAATTTAGTATGTTATCATAAAAAAGAAATGATATAGAATGGAATATATTCAATTTAGCACTCCTCTATCCAGGGAGCCATCTGTCCCTGGCTTTTCCTCAGTAGACAGCTCCGATGACAGAGAAAGCAGAAAGCGATACAGAAAGCAATGGACATATTGGACTGTGCTTCGTGTCATCAACTGAGGGAAAAAAGTTAACATTACAGATGGACAAAGAGTGAAGCCACTGATTCAGATATGA",
+                    "src": "ACTCCTCTATCCAGGGAGCCATCTGTCCTTGGCTTTTCCTCAGTAGACAGCTCCGATGACAGAGAAAGCAGAAAGCAATACAGAAAGCAATGGACATGTTGGACTGTGCTCCTTGTCATCAACTGAGGGAAAAGAGTTAACATTACAGATGGACAAAGAGTGAAGCCACCGATTCAGATATGA-TTTGGGGGGACCCTTAGATTTCATTCTTTCTGTCCCTATTCATACAAcatccaacaaatatatattgcatatctactatgtataaagatctgctctaaatagaaggattacaacaTAGTGGTTAAAGAGTGTAGGCTTTAGATAAGTGTTTTAAAAACTGTGCATCACAATTGATTTGTATAATCCATTTAGTATGTTATCATAAAAAAGAAATAATATAGAACAGAATATATTCAATTTAG-----------------------------AATATATTTGT----------------------------------------------ATATAttagggtgg",
+                    "mapped": "ACTCCTCTATCCAGGGAGCCATCTGTCCCTGGCTTTTCCTCAGTAGACAGCTCCGATGACAGAGAAAGCAGAAAGCGATACAGAAAGCAATGGACATATTGGACTGTGCTTCGTGTCATCAACTGAGGGAAAAAAGTTAACATTACAGATGGACAAAGAGTGAAGCCACTGATTCAGATATGACTTTGGGGGGACCCTTAGATTTCATTATTTCTGTCCCTATTCATACAAcatccaacaaatatttattgcatatctattatgtataaagatctgctctaaatagaaggattacaacaTAGCGGTTAAAGAGTGTAGGCTTTAGACTAGTGTTTTAAAAATTGTGCATCACAATTGATTTGTATAATCAATTTAGTATGTTATCATAAAAAAGAAATGATATAGAATGGAATATATTCAATTTAGCATCTATTTACATATAttaggttggtgtaaatgtaattgtggtttttggcattactttcaaACCACGCATGTGTGTATAGTTATACATATAttaggttgg",
                     "identity": 0.953,
                     "coverage": 1.0
                 },
@@ -4041,13 +4345,13 @@
                     "end": 55161644
                 },
                 "srcBases": 199,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55793291,
                     "end": 55793490
                 },
                 "mappedBases": 199,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGAGTCTTTGAGCACCTGCTGGGCTGGGCAGTGATGGGTCCTTTATAGCCACCATCTGAAAAAACAGAAAAGGGCAGGATGAGCAGCGCTCAAAACCTCCCACTACTGCTGCTGTCTGTCCGGTCCTAGACAagttgtctgcatttgttagatgtggacgaatagtagtaccaacttctaatgttgcagtggggattgg",
@@ -4065,13 +4369,13 @@
                     "end": 55164447
                 },
                 "srcBases": 333,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55795969,
                     "end": 55796301
                 },
                 "mappedBases": 332,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CAGACCACAGCCCCAGACCAGCCCTACAGGAGTTTGCTCCAAGCGCCACTGGCCTGGCCCAGCACACAGGTTGCCTCGTCCGCCGCCTCCCCACAGCACCTTTCCTGAATTCTGTCGGCATTGAGACCCATCTCCTCTTTCTCTGTCTCTCTTTGCCTGACCCTCGTCCATTCTCCTAGTGGGCAGGATGCTGTCAGCTATTGCTATTTGGAGGGTGAGATGACCCCTGAGTAGAAATAACTCCTATAAGTTCAGAGGTTCAGCCTTTAACAAACTCACATTCCTGTTTGACTGACAGATCTCCCAGAAAGGAAAATAAAAGCACCTTGAGGA",
@@ -4122,13 +4426,13 @@
                     "end": 55161644
                 },
                 "srcBases": 162,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55793328,
                     "end": 55793490
                 },
                 "mappedBases": 162,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTCCTTTATAGCCACCATCTGAAAAAACAGAAAAGGGCAGGATGAGCAGCGCTCAAAACCTCCCACTACTGCTGCTGTCTGTCCGGTCCTAGACAagttgtctgcatttgttagatgtggacgaatagtagtaccaacttctaatgttgcagtggggattgg",
@@ -4146,13 +4450,13 @@
                     "end": 55164451
                 },
                 "srcBases": 334,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55795972,
                     "end": 55796305
                 },
                 "mappedBases": 333,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ACCACAGCCCCAGACCAGCCCTACAGGAGTTTGCTCCAAGCGCCACTGGCCTGGCCCAGCACACAGGTTGCCTCGTCCGCCGCCTCCCCACAGCACCTTTCCTGAATTCTGTCGGCATTGAGACCCATCTCCTCTTTCTCTGTCTCTCTTTGCCTGACCCTCGTCCATTCTCCTAGTGGGCAGGATGCTGTCAGCTATTGCTATTTGGAGGGTGAGATGACCCCTGAGTAGAAATAACTCCTATAAGTTCAGAGGTTCAGCCTTTAACAAACTCACATTCCTGTTTGACTGACAGATCTCCCAGAAAGGAAAATAAAAGCACCTTGAGGACAGA",
@@ -4203,13 +4507,13 @@
                     "end": 55164183
                 },
                 "srcBases": 61,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55795977,
                     "end": 55796037
                 },
                 "mappedBases": 60,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGCCCCAGACCAGCCCTACAGGAGTTTGCTCCAAGCGCCACTGGCCTGGCCCAGCACACAG",
@@ -4227,13 +4531,13 @@
                     "end": 55164727
                 },
                 "srcBases": 315,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 55796266,
                     "end": 55796580
                 },
                 "mappedBases": 313,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ATCTCCCAGAAAGGAAAATAAAAGCACCTTGAGGACAGAGCTGGAAGTAGTCTACCTGGGTATTCTCCACAGCTGCAAGCTCAATGTCCTGAGCTTGCTGGTACTCAGAAAATGTTTAGGAAC-TTCTTTTTACATTGAGGGTAGTGCTTATGGGCAAAATGAATGCCCATGGGCCTAGCCCTGAGATGGCTGGACAGCAAGAAAGGAGAAAGGACAGCATGGGCAATTTTCCACACATGTTTTAAGTTTACAGGGGGAAAGAGACCAAGAGAATAAGATCAAGTCAAATCAAACCCATGTATAATAATACCATTA",
@@ -4284,13 +4588,13 @@
                     "end": 55526750
                 },
                 "srcBases": 565,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56147069,
                     "end": 56147638
                 },
                 "mappedBases": 563,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GGTTATTTGGATCTAATTCACACAAAGTAGTCCAGTTCTCTAGCCACCACCTGTAATGGGTGTGTCATCCAGAGACTGTGTCCCCACGATGACATCCACAGGAAGTAACAGAGGGCTCAACCTAGGACTTCTTTTGGTACAAAGCCCCAAATCAATTTTTT-TAAAAAATAGACAATTTTTATAAGTAGACATACTTCCTAGTACTCCATGATTTGATCCTCCAAGCAAGATTTCCACTAAAAAATACTAATCTTTTGTTGGGATGTGGAAAGATTACCTAGTCACCAGTAAAGGCCCAGGAAAAGGCTCTTCTTGTCAGCACATGGTGAAAACATTCCA-TCCCCACTGGAGAAGGAAAAA----ACGATTTTGGCAAATTCTTCACTTTTGTGCAGAACCTTGAGTTATTAGCTTCATTGTTTCCAAGACAACTTTTAACTGATGATCTTTGGAAATTGAGTTTCTCAGTTGAACTGTACCTTTGATTCTATGAGTAAATCACAGATTACAGTCTAATAGAGTCAATCAATCAACACAAACCCAACAGGCCCCATCATGCTTCAATCAT",
@@ -4308,13 +4612,13 @@
                     "end": 55533952
                 },
                 "srcBases": 300,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56154269,
                     "end": 56154569
                 },
                 "mappedBases": 300,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AAACATCTTGGAGCTTGTCAAGCTTTACTGGAGGTGATTTGCAGTTAATTAATTCAACAGACACTTTAATCTTGCAAATTCTTGACTTGTAATATTGTAACCAAGCTCCTGCAAGGGAACATTAATCAGTTAGTGAAAAAGGAGCACTTCCGTTCAGCCGTAGTACCATGACGTGCACAGGCCTGAAGAGAAATACCTCTGTGAAGTGGAGCGCTAGTGAATTCCTGCTACCTGCTTCTTATGGCTCACGCTATGAATATTCACCTGCTTCATTTGTTTTTTCCAGTAAACGCTGTTTTG",
@@ -4385,7 +4689,11 @@
                     "identity": 0.916,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MCCEKWSRVAEMFLFIEEREDCKILCLCSRAFV",
+                    "mapped": "MCCEKWSRVAEMFLFIEEREDSKILCLCSRAFV",
+                    "identity": 0.97
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55785718-55785891",
@@ -4415,7 +4723,11 @@
                     "identity": 0.936,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "RPGDRRRGRWLFLWYCRIT*",
+                    "mapped": "RPGDRRGRRWLFLWYCGIT*",
+                    "identity": 0.85
+                }
             },
             {
                 "srcExonId": "hg38.chr8:55786237-55787060",
@@ -4425,13 +4737,13 @@
                     "end": 55787060
                 },
                 "srcBases": 823,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56415136,
                     "end": 56415965
                 },
                 "mappedBases": 823,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTATCTATGAATACTAGAAATAAAGTTAAAATAAAAAAGAAAAA------ACATCAAAAGAAATACTTAGATGAAATTGTGCAAGAATCTTGGAGAAAAGAATATGAAGAAGACGACATTTTGGCTTCAGATGATCCATCTTCAATTGAACAGTATGAGAACACCAGAACATATGAACTTCAAAGCAAAAAAGATACTGAGACAGAAAATCCTCCAGTTGAAAACACATTATCTCCAAAGCTAGAAATTACAGAGAAATGGGAAAAGTATTGGAATGAATATGGAGGAGGACTATTGTGGCAAAGTTGGCAAGAAAAACATCCGGGTCAAGCACTATCTTCTGAACCTTGGAACTTTCCTGATACAAAGGAAGAATGGGAGCAACATTATAGTCAACTTTATTGGTATTATTTGGAACAATTTCAGTATTGGGAAGCTCAGGGTTGGACTTTTGATGCCTCGCAAAGCTGTGATACAGATACTTACACATCTAAAACAGAAGCTGATGACAAGAACGATGAAAAATGCATGAAAGTTGACTTAGTATCTTTTCCATCTTCACCTATTATGGTTGATAATGATAGCTCTGGTACAAGTGATAAGGATCATAGTGAAATACTTGATGGAATTAGTAACATAAAACTGAATTCAGAGGAAGTAACACAGAGCCAATTAGATTCCTGTACAAGTCATGATGGTCATCAACAGCTAAGTGAAGTTAGTAGCAAAAGAGAGTGCCCTGCTTCCGGCCAAAGTGAACCACGTAATGGAGGAACCAATGAGGAAAGCAACTCATCGGGGAATACAAACACAGACCCACCAGCTGAGG",
@@ -4449,13 +4761,13 @@
                     "end": 55790299
                 },
                 "srcBases": 118,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56419395,
                     "end": 56419513
                 },
                 "mappedBases": 118,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ATTCACAGAAGTCTTCAGGAGCAAACACAAGCAAAGACAGACCACATGCCAGTGGTACTGATGGAGATGAAAGTGAGGAAGACCCACCTGAGCATAAGCCAAGCAAACTGAAGAGGAG",
@@ -4473,13 +4785,13 @@
                     "end": 55792784
                 },
                 "srcBases": 87,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56421800,
                     "end": 56421887
                 },
                 "mappedBases": 87,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CCATGAACTGGACATTGATGAAAACCCAGCTTCAGACTTTGATGACAGTGGTTCCCTTCTAGGATTCAAGTATGGCTCAGGACAAAA",
@@ -4497,13 +4809,13 @@
                     "end": 55796152
                 },
                 "srcBases": 175,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56425051,
                     "end": 56425226
                 },
                 "mappedBases": 175,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ATATGGTGGAATCCCAAATTTCAGTCATCGGCAGGTCAGGTATTTAGAGAAGAATGTGAAGCTTAAGTCTAAGTACCTAGACATGCGCAGACAAATAAAGATGAAAAACAAACACATCTTCTTTACCAAAGAGTCAGAAAAACCATTTTTCAAGAAAAGCAAAATTCTGAGTAAG",
@@ -4521,13 +4833,13 @@
                     "end": 55799220
                 },
                 "srcBases": 307,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56428004,
                     "end": 56428311
                 },
                 "mappedBases": 307,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTAGAAAAATTCCTCACATGGGTTAATAAACCAATGGATGAAGAAGCATCACAGGAATCATCTTCTCATGACAATGTGCACGACGCTTCCACAAGTAGTGATTCAGAGGAACAAGACATGTCTGTTAAAAAAGGTGATGACCTACTGGAGACTAATAATCCAGAACCTGAAAAGTGTCAGAGCGTATCTTCAGCTGGTGAACTTGAAACAGAAAACTATGAAAGAGACAGCTTGCTAGCAACTGTTCCAGATGAGCAGGATTGTGTTACTCAAGAAGTGCCAGACTCCCGCCAGGCAGAAACTGAAG",
@@ -4545,13 +4857,13 @@
                     "end": 55802606
                 },
                 "srcBases": 150,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56430952,
                     "end": 56431102
                 },
                 "mappedBases": 150,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "CTGAAGTgaaaaagaagaagaacaagaagaagaacaaaaagGTGAATGGTCTGCCTCCTGAAATAGCTGCTGTTCCTGAGCTGGCAAAATACTGGGCCCAGAGGTACAGGCTCTTCTCCCGTTTTGATGATGGGATTAAGTTGGACAGAG",
@@ -4569,13 +4881,13 @@
                     "end": 55805036
                 },
                 "srcBases": 144,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56433346,
                     "end": 56433490
                 },
                 "mappedBases": 144,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGGGCTGGTTTTCAGTTACACCCGAGAAGATTGCTGAACACATTGCTGGCCGTGTTAGTCAGTCCTTCAAGTGTGACGTTGTAGTAGACGCATTCTGTGGAGTTGGAGGAAATACCATTCAGTTTGCCTTAACAGGAATGAGAG",
@@ -4593,13 +4905,13 @@
                     "end": 55813118
                 },
                 "srcBases": 64,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56441794,
                     "end": 56441858
                 },
                 "mappedBases": 64,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "ACTTTCTAAGAAGATCACTAATAATATTGTTTATTTTCTTCCAAGAAATGCTGATATTGACCAG",
@@ -4617,13 +4929,13 @@
                     "end": 55825448
                 },
                 "srcBases": 868,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 56451568,
                     "end": 56452460
                 },
                 "mappedBases": 867,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "GTGGCATCCTTAGCTGGGCCTGGAGGGCAAGTGGAAATAGAACAGAACTTCCTTAACAACAAATTGAAGACAATCACTGCATATTTTGGTGACCTAATTCGAAGACCAGCCTCTGAAACCTAACTATGCAGCAGTGCGAGGACAAAAGATCATGGAGTGGTCAAAATATTCAGATGAGACATTTGGCATGTCTTCCTTTATTCACTGATATTTTCTACCCATGGTCTTATATCACCGTATGAAATGGAAACTTACAGGACTTAAATATCAGTGAAATATTTTGAGATCTTTGAATAATTCCTTTAGAGGAATTATACAAAATTAATATATATGAGTCCTTTGTA-----------------Atttatttttttttgagacaggatctcacttttaccgcccaggctggagtgcagtgccatgatcacagctcactgcaggttcagccttctgagttcaagcaatccttctgtctcagtctcctcagtagctggggctttaggtgggcactgccacaccgtactaatttttgtattttttgtagagacgaggtcccaccatgttgcccaggctggtgtcaaact-cctgggctc-agtcagtccccccatctcaccctccccaagtgctggaattacaggcgtgagctactgtgcccagccTTACGGACATCCTTTTGAATTATCTTTTTCACTCATAGAATATGAATACATTTATTTAGACTTTTTCTAGAACTTTCCTGTTTTCATGTCTTTGCTTCATCTGGAATTGG---CTTAACACCCTTTTATAAAGTTTGTGTTTGTAAAATTTCCATTGTGACATCAATACGCAATATATTTTGTAATATAGGAGTTTCTA---TTTTTTTATTAAAATGGCAATGAAAGCAAGA",
@@ -4674,13 +4986,13 @@
                     "end": 248859085
                 },
                 "srcBases": 71,
-                "srcCds": {},
+                "srcCds": null,
                 "mapped": {
                     "start": 71587,
                     "end": 71658
                 },
                 "mappedBases": 71,
-                "mappedCds": {},
+                "mappedCds": null,
                 "frame": null,
                 "dnaAlign": {
                     "src": "AGTTCCGGGCTACAGCAGCCGACGCCGAGAGGCACCGTTTCTTCTTAAAAGAGAAACGCTGCGCGCGCGAG",
@@ -4713,12 +5025,16 @@
                 },
                 "frame": 0,
                 "dnaAlign": {
-                    "src": "CCTCGGTGCACATGGCTTCCTCCCCGGCGGTGGACGTGTCCTGCAGGCGGCGGGAGAAGCGGCGGCAGCTGGACGCGCGCCGCAGCAAGTGCCGCATCCGCCTGGGCGGCCACATGGAGCAGTGGTGCCTCCTCAAGGAGCGGCTGGGCTTCTCCCTGCACTCGCAGCTCGCCAAGTTCCTGTTGGACCG",
-                    "mapped": "CCTCGGTGCACATGGCTTCCTCCCCGGCGGTGGACGTGTCCTGCAGGCGGCGGGAGAAGCGGCGGCAGCTGGACGCGCGCCGCAGCAAGTGCCGCATCCGCCTGGGCGGCCACATGGAGCAGTGGTGCCTCCTCAAGGAGCGGCTGGGCTTCTCCCTGCACTCGCAGCTCGCCAAGTTCCTGTTGGACCG",
+                    "src": "CCTCTGGTGCACATGGCTTCCTCCCCGGCGGTGGACGTGTCCTGCAGGCGGCGGGAGAAGCGGCGGCAGCTGGACGCGCGCCGCAGCAAGTGCCGCATCCGCCTGGGCGGCCACATGGAGCAGTGGTGCCTCCTCAAGGAGCGGCTGGGCTTCTCCCTGCACTCGCAGCTCGCCAAGTTCCTGTTGGACCG",
+                    "mapped": "CCTC-GGTGCACATGGCTTCCTCCCCGGCGGTGGACGTGTCCTGCAGGCGGCGGGAGAAGCGGCGGCAGCTGGACGCGCGCCGCAGCAAGTGCCGCATCCGCCTGGGCGGCCACATGGAGCAGTGGTGCCTCCTCAAGGAGCGGCTGGGCTTCTCCCTGCACTCGCAGCTCGCCAAGTTCCTGTTGGACCG",
                     "identity": 1.0,
-                    "coverage": 1.0
+                    "coverage": 0.995
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "MASSPAVDVSCRRREKRRQLDARRSKCRIRLGGHMEQWCLLKERLGFSLHSQLAKFLLD",
+                    "mapped": "MASSPAVDVSCRRREKRRQLDARRSKCRIRLGGHMEQWCLLKERLGFSLHSQLAKFLLD",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248857827-248857859",
@@ -4748,7 +5064,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "YTSSGCVLCA",
+                    "mapped": "YTSSGCVLCA",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248857233-248857497",
@@ -4778,7 +5098,11 @@
                     "identity": 0.977,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "PEPLPPKGLQYLVLLSHAHSRECSLVPGLRGPGGQDGGLVWECSAGHTFSWGPSLSPTPSEAPKPASLPHTTRRSWCSEATSGQELA",
+                    "mapped": "PEPLPPKRLQYLVLLSHAHSRECSLVPGLRGPGGQDGGLVWECSAGHTFSWGPSLSPTPSEAPKPASLPHTTRRSWCSEATSGQELA",
+                    "identity": 0.989
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248856513-248856562",
@@ -4808,7 +5132,11 @@
                     "identity": 0.98,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "LESEHDERTQEARLP",
+                    "mapped": "LESEHDERTQEARLP",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248855724-248855946",
@@ -4838,7 +5166,11 @@
                     "identity": 0.941,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "SEPDAPRLLPSPVTCTPKEGETPPAPAALSSPLAVPALSASSLSSRAPPPAEVRVQPQLSRTPQAAQQTEALA",
+                    "mapped": "SEPDAPRLLPSPVTCTPKEGETPPAPAALSPPLAVPSLSASSLGSRAPPLAEVGVQPELSRTPQAAQQTEALA",
+                    "identity": 0.918
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248855557-248855635",
@@ -4868,7 +5200,11 @@
                     "identity": 0.974,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TGSQAQSAPTPAWDEDTAQIGPKRI",
+                    "mapped": "TGSQAQSAPTPAWDEDTAQIGPKRI",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248855379-248855458",
@@ -4898,7 +5234,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "KAAKRELMPCDFPGCGRIFSNRQYLN",
+                    "mapped": "KAAKRELMPCDFPGCGRIFSNRQYLN",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248853936-248854051",
@@ -4928,7 +5268,11 @@
                     "identity": 0.991,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "HHKKYQHIHQKSFSCPEPACGKSFNFKKHLKEHMKLHS",
+                    "mapped": "HHKKYQHIHQKSFSCPEPACGKSFNFKKHLKEHMKLHS",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248850681-248850781",
@@ -4958,7 +5302,11 @@
                     "identity": 1.0,
                     "coverage": 1.0
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "TRDYICEFCARSFRTSSNLVIHRRIHTGEKPL",
+                    "mapped": "TRDYICEFCARSFRTSSNLVIHRRIHTGEKPL",
+                    "identity": 1.0
+                }
             },
             {
                 "srcExonId": "hg38.chr1:248850007-248850516",
@@ -4983,12 +5331,16 @@
                 },
                 "frame": 2,
                 "dnaAlign": {
-                    "src": "GTGTGAGATATGCGGGTTTACCTGCCGCCAGAAGGCTTCCCTGAACTGGCACCAGCGCAAGCATGCAGAGACGGTGGCTGCCTTGCGCTTCCCCTGTGAATTCTGCGGCAAGCGCTTTGAGAAGCCAGACAGTGTTGCAGCCCACCGTAGCAAAAGTCACCCAGCCCTGCTTCTAGCCCCTCAAGAGTCACCCAGTGGTCCCCTAGAGCCCTGTCCCAGCATCTCTGCCCCTGGGCCTCTGGGATCCAGCGAGGGGTCCAGGCCCTCTGCATCTCCTCAGGCTCCAACCCTGCTTCCTCAGCAATGAGCTCTCCAGCTTTGGCTTTGGGAAGCCAGACTCCAGGGACTGAAAAGGAGCAACAAGGAGAGGGTCTGCTTGAGAAATGCCAGATGCTTGGTCCCCAGGAACTAAGGCGACAGAGTGCAGGGTGGGGGCAAGACTGGGCTGTAGGGGAGCTGGACTAGTCTTCCTAAAGGACAAAATAAACAG--TATTTTATGCA",
-                    "mapped": "GTGTGAGATATGCGGGTTTACCTGCCGCCAGAAGGCCTCCCTGAACTGGCACCAGCGCAAGCATGCAGAGACGGTGGCTGCCTTGCGCTTCCCCTGCGAATTCTGCGGCAAGCGCTTTGAGAAGCCAGACAGTGTTGCAGCCCACCGTAGCAAAAGTCACCCAGTCCTGCTCCTGGCCCCTCAAGAGTCACCCAGTGGTTCCCTAGAGCCCTGTCCCAGCATCTCTGCCCCTGGGCCTCTGGGATCCAGCGAGGGGTCCAGGCCCTCTGCATCTCCTCAGGCTCCAATCCTGCTTCCTCAGCAATGAGCTCTCCAGCTTTGGCTTTGGGGAGCCAGACTCCAGGGACTGAAAAGGAGCAATGAGGAGAGGGTCTGCTTGAGAAACACCAGATGCTTGGTCCCCAGGAACTAAGGCGACAGAGTGTAGGGTGGGGACAAGACTGGGCTGTAGGAGAGCTGGCCTAGTCTTCCTAAAGGACAAAATAAACAGAGTATTTTATGCA",
+                    "src": "GTGTGAGATATGCGGGTTTACCTGCCGCCAGAAGGCTTCCCTGAACTGGCACCAGCGCAAGCATGCAGAGACGGTGGCTGCCTTGCGCTTCCCCTGTGAATTCTGCGGCAAGCGCTTTGAGAAGCCAGACAGTGTTGCAGCCCACCGTAGCAAAAGTCACCCAGCCCTGCTTCTAGCCCCTCAAGAGTCACCCAGTGGTCCCCTAGAGCCCTGTCCCAGCATCTCTGCCCCTGGGCCTCTGGGATCCAGCGAGGGGTCCAGGCCCTCTGCATCTCCTCAGGCTCCAACCCTGCTTCCTCAGCAATGAGCTCTCCTCCAGCTTTGGCTTTGGGAAGCCAGACTCCAGGGACTGAAAAGGAGCAACAAGGAGAGGGTCTGCTTGAGAAATGCCAGATGCTTGGTCCCCAGGAACTAAGGCGACAGAGTGCAGGGTGGGGGCAAGACTGGGCTGTAGGGGAGCTGGACTACTTTAGTCTTCCTAAAGGACAAAATAAACAG--TATTTTATGCA",
+                    "mapped": "GTGTGAGATATGCGGGTTTACCTGCCGCCAGAAGGCCTCCCTGAACTGGCACCAGCGCAAGCATGCAGAGACGGTGGCTGCCTTGCGCTTCCCCTGCGAATTCTGCGGCAAGCGCTTTGAGAAGCCAGACAGTGTTGCAGCCCACCGTAGCAAAAGTCACCCAGTCCTGCTCCTGGCCCCTCAAGAGTCACCCAGTGGTTCCCTAGAGCCCTGTCCCAGCATCTCTGCCCCTGGGCCTCTGGGATCCAGCGAGGGGTCCAGGCCCTCTGCATCTCCTCAGGCTCCAATCCTGCTTCCTCAGCAATGAGCTCTCC---AGCTTTGGCTTTGGGGAGCCAGACTCCAGGGACTGAAAAGGAGCAATGAGGAGAGGGTCTGCTTGAGAAACACCAGATGCTTGGTCCCCAGGAACTAAGGCGACAGAGTGTAGGGTGGGGACAAGACTGGGCTGTAGGAGAGCTGGCCTA-----GTCTTCCTAAAGGACAAAATAAACAGAGTATTTTATGCA",
                     "identity": 0.968,
-                    "coverage": 1.0
+                    "coverage": 0.984
                 },
-                "protAlign": null
+                "protAlign": {
+                    "src": "CEICGFTCRQKASLNWHQRKHAETVAALRFPCEFCGKRFEKPDSVAAHRSKSHPALLLAPQESPSGPLEPCPSISAPGPLGSSEGSRPSASPQAPTLLPQQ*",
+                    "mapped": "CEICGFTCRQKASLNWHQRKHAETVAALRFPCEFCGKRFEKPDSVAAHRSKSHPVLLLAPQESPSGSLEPCPSISAPGPLGSSEGSRPSASPQAPILLPQQ*",
+                    "identity": 0.971
+                }
             }
         ]
     }

@@ -33,6 +33,12 @@ class Region(ObjDict):
     def noneIfEmpty(self):
         return self if len(self) > 0 else None
 
+    @classmethod
+    def fromCoords(cls, coords):
+        if coords.strand == '-':
+            coords = coords.reverse()
+        return cls(coords.start, coords.end)
+
 class RCoords(Region):
     def __init__(self, chrom, start, end, strand):
         self.chrom = chrom  # put first

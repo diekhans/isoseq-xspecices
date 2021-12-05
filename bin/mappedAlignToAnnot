@@ -20,7 +20,6 @@ def prerr(*args, **kwargs):
     print(*args, **kwargs, file=sys.stderr)
 
 # src tcoords -> mapping tcoords -> mapping qcoords -> src qcoords -> src tcoords
-DEBUG_ME=False
 
 def parseArgs():
     usage = """Generate annotation JSON file for exchange"""
@@ -37,56 +36,90 @@ def parseArgs():
     parser.add_argument('annotJson')
     return parser.parse_args()
 
-class MappedAlnBlk(namedtuple("MappedAlnBlk", ("src", "mapped", "rna", "frame"))):
+class MappedAlnBlk(namedtuple("MappedAlnBlk", ("src", "srcCds", "mapped", "mappedCds", "rna", "frame"))):
     """coordinates exons blocks, in transcription order, which means genome
     might be negative strand coordinates"""
 
     @staticmethod
     def _fmt(c):
+        if c is None:
+            return "None"
         return f"{c.name}:{c.start}-{c.end}[{c.strand}]"
 
     def __str__(self):
         return ("alnBlk rna:  " + self._fmt(self.rna) + '\n'
                 "       src:  " + self._fmt(self.src) + '\n'
-                "       map:  " + self._fmt(self.mapped))
+                "    srcCds:  " + self._fmt(self.srcCds) + '\n'
+                "       map:  " + self._fmt(self.mapped) + '\n'
+                "    mapCds:  " + self._fmt(self.mappedCds))
 
 def pslCoords(psl):
     return Coords(psl.tName, psl.tStart, psl.tEnd, psl.qStrand, psl.tSize)
 
-def getCds(gp):
+def blkCoords(blk):
+    return Coords(blk.psl.tName, blk.tStart, blk.tEnd, blk.psl.tStrand, blk.psl.tSize)
+
+def getCdsRegion(gp):
     return Region(gp.txStart, gp.txEnd)
 
 def getCdsCoords(psl, gp):
-    return Coords(gp.chrom, gp.txStart, gp.txEnd, gp.strand, psl.tSize)
+    return qOrient(psl,
+                   Coords(gp.chrom, gp.cdsStart, gp.cdsEnd, gp.strand, psl.tSize))
+
+def qOrient(psl, coords):
+    if psl.qStrand == '-':
+        coords = coords.reverse()
+    return coords
 
 def getSubCoords(blk, qStart, qEnd):
     if blk.psl.qStrand == '-':
         qStart, qEnd = dnaOps.reverseCoords(qStart, qEnd, blk.psl.qSize)
     tStart = blk.tStart + (qStart - blk.qStart)
     tEnd = tStart + (qEnd - qStart)
-    return Coords(blk.psl.tName, tStart, tEnd, blk.psl.qStrand, blk.psl.tSize)
+    return blkCoords(blk).adjust(start=tStart, end=tEnd)
 
-def getSrcSubrangeFrame(srcBlk, srcExon, srcCoords):
-    if srcExon.frame < 0:
+def getSrcSubrangeCds(srcBlk, srcExon, srcCoords):
+    cds = getCdsCoords(srcBlk.psl, srcExon.gene).intersect(srcCoords)
+    if len(cds) == 0:
         return None
-    regionCds = getCdsCoords(srcBlk.psl, srcExon.gene).intersect(srcCoords)
-    if len(regionCds) == 0:
-        return None
-    elif srcExon.gene.strand == '+':
-        return Frame(srcExon.frame) + (regionCds.start - srcExon.start)
     else:
-        return Frame(srcExon.frame) + (srcExon.end - regionCds.end)
+        return cds
+
+def getMappedSubrangeCds(srcCoords, srcCdsCoords, mappedCoords):
+    # input is in transcription order
+    if srcCdsCoords is None:
+        return None
+    srcOff = srcCdsCoords.start - srcCoords.start
+    return mappedCoords.adjust(start=mappedCoords.start + srcOff,
+                               end=mappedCoords.start + srcOff + len(srcCdsCoords))
+
+def getMappedFrame(srcBlk, srcExon, srcCoords, srcCdsCoords, mappedCoords, mappedCdsCoords):
+    if srcCdsCoords is None:
+        return None
+    srcFullCds = getCdsCoords(srcBlk.psl, srcExon.gene)
+    srcExonCds = qOrient(srcBlk.psl, blkCoords(srcBlk)).intersect(srcFullCds)
+
+    if srcExon.gene.strand == '+':
+        return Frame(srcExon.frame) + (srcCdsCoords.start - srcExonCds.start)
+    else:
+        return Frame(srcExon.frame) + (srcExonCds.end - srcCdsCoords.end)
 
 def _blkIntersect(srcBlk, srcExon, mappedBlk, mappedExon):
     """overlap has been determine by query coords, src + mapped are converted to rna order  """
-
-    srcCoords = getSubCoords(srcBlk, mappedBlk.qStartPlus, mappedBlk.qEndPlus)
-    if DEBUG_ME:
-        prerr("@1", srcCoords, "<= getSubCoords(", srcBlk, mappedBlk.qStartPlus, mappedBlk.qEndPlus,')')
-    frame = getSrcSubrangeFrame(srcBlk, srcExon, srcCoords)
-    mappedCoords = Coords(mappedBlk.psl.tName, mappedBlk.tStart, mappedBlk.tEnd, mappedBlk.psl.qStrand, mappedBlk.psl.tSize)
-    rnaCoords = Coords(mappedBlk.psl.qName, mappedBlk.qStart, mappedBlk.qEnd, '+', mappedBlk.psl.qSize)
-    return MappedAlnBlk(srcCoords, mappedCoords, rnaCoords, frame)
+    srcCoords = qOrient(srcBlk.psl,
+                        getSubCoords(srcBlk, mappedBlk.qStartPlus, mappedBlk.qEndPlus))
+    srcCdsCoords = getSrcSubrangeCds(srcBlk, srcExon, srcCoords)
+    mappedCoords = qOrient(mappedBlk.psl,
+                           Coords(mappedBlk.psl.tName, mappedBlk.tStart, mappedBlk.tEnd, mappedBlk.psl.tStrand, mappedBlk.psl.tSize))
+    mappedCdsCoords = getMappedSubrangeCds(srcCoords, srcCdsCoords, mappedCoords)
+    rnaCoords = Coords(mappedBlk.psl.qName, mappedBlk.qStartPlus, mappedBlk.qEndPlus, '+', mappedBlk.psl.qSize)
+    frame = getMappedFrame(srcBlk, srcExon, srcCoords, srcCdsCoords, mappedCoords, mappedCdsCoords)
+    alnBlk = MappedAlnBlk(srcCoords, srcCdsCoords, mappedCoords, mappedCdsCoords, rnaCoords, frame)
+    if (srcCdsCoords is None) or (mappedCdsCoords is None):
+        assert (srcCdsCoords is None) and (mappedCdsCoords is None)
+    else:
+        assert len(alnBlk.srcCds) == len(alnBlk.mappedCds), f"{len(alnBlk.srcCds)} != {len(alnBlk.mappedCds)}, {repr(alnBlk.srcCds)} != {repr(alnBlk.mappedCds)}"
+    return alnBlk
 
 def srcBlkToMappedBlks(srcBlk, srcExon, mappedPsl, mappedGp):
     """returns src block mappings as a list of MappedAlnBlk objs.
@@ -135,7 +168,8 @@ class SeqAlign(ObjDict):
         return SeqAlign(srcAln, mappedAln, inclCover=inclCover)
 
 def getSeq(seqreader, coords):
-    seq = seqreader[coords.name][coords.start:coords.end]
+    acoords = coords if coords.strand == '+' else coords.reverse()
+    seq = seqreader[acoords.name][acoords.start:acoords.end]
     if coords.strand == '-':
         seq = dnaOps.reverseComplement(seq)
     return seq
@@ -143,7 +177,6 @@ def getSeq(seqreader, coords):
 def addDnaAlnBlock(srcGenomeSeqs, mappedGenomeSeqs, srcPrev, mappedPrev,
                    alnBlk, alnBlkSeqsMap, srcParts, mappedParts):
     # add unaligned on both sides
-    iStart = len(srcParts)#
     if (alnBlk.src.start > srcPrev):
         s = alnBlk.src.adjust(start=srcPrev, end=alnBlk.src.start)
         srcParts.append(getSeq(srcGenomeSeqs, s))
@@ -170,12 +203,10 @@ def buildDnaAln(srcGenomeSeqs, mappedGenomeSeqs, alnBlks):
         mappedPrev = alnBlk.mapped.end
     return SeqAlign.fromParts(srcParts, mappedParts), alnBlkSeqsMap
 
-def addProtAlnBlock(srcCds, alnBlk, alnBlkSeqs, srcParts, mappedParts):
-    blkCds = srcCds.intersect(alnBlk.src)
-    cdsOff = blkCds.start - alnBlk.src.start
+def addProtAlnBlock(alnBlk, alnBlkSeqs, srcParts, mappedParts):
     phase = alnBlk.frame.toPhase()
-    iAln = cdsOff + phase
-    nBases = len(blkCds) - phase
+    iAln = (alnBlk.srcCds.start - alnBlk.src.start) + phase
+    nBases = len(alnBlk.srcCds) - phase
     nBases -= nBases % 3
 
     srcParts.append(str(Seq(alnBlkSeqs.src[iAln:iAln + nBases]).translate()))
@@ -184,12 +215,11 @@ def addProtAlnBlock(srcCds, alnBlk, alnBlkSeqs, srcParts, mappedParts):
 
 def buildProtAln(srcExon, alnBlks, alnBlkSeqsMap):
     # for now, this drops codons split across gaps
-    srcCds = Coords(srcExon.gene.chrom, srcExon.gene.cdsStart, srcExon.gene.cdsEnd, srcExon.gene.strand, alnBlks[0].src.size)
     srcParts = []
     mappedParts = []
     for alnBlk in alnBlks:
-        if (len(alnBlk.src) == len(alnBlk.mapped)) and srcCds.overlaps(alnBlk.src):
-            addProtAlnBlock(srcCds, alnBlk, alnBlkSeqsMap[alnBlk], srcParts, mappedParts)
+        if (len(alnBlk.src) == len(alnBlk.mapped)) and (alnBlk.srcCds is not None):
+            addProtAlnBlock(alnBlk, alnBlkSeqsMap[alnBlk], srcParts, mappedParts)
 
     protAln = SeqAlign.fromParts(srcParts, mappedParts, inclCover=False)
     if len(protAln) == 0:
@@ -206,36 +236,35 @@ def pslToRCoords(psl):
 def mkSrcExonId(srcGenome, srcExon):
     return "{}.{}:{}-{}".format(srcGenome, srcExon.gene.chrom, srcExon.start, srcExon.end)
 
+def alnBlksToRegion(startLoc, endLoc):
+    if startLoc is None:
+        return None
+    return startLoc.adjust(start=startLoc.start, end=endLoc.end).abs()
+
 def buildMappedExon(srcGenome, srcGenomeSeqs, mappedGenomeSeqs, srcExonNum, srcBlk, srcExon, mappedPsl, mappedGp, alnBlks):
-    mappedRegion = Region(alnBlks[0].mapped.start, alnBlks[-1].mapped.end)
+    srcRegion = alnBlksToRegion(alnBlks[0].src, alnBlks[-1].src)
+    srcCds = Region(srcExon.gene.cdsStart, srcExon.gene.cdsEnd).intersect(Region(srcExon.start, srcExon.end)).noneIfEmpty()
+    mappedRegion = alnBlksToRegion(alnBlks[0].mapped, alnBlks[-1].mapped)
+    mappedCds = Region(mappedGp.cdsStart, mappedGp.cdsEnd).intersect(mappedRegion).noneIfEmpty()
     mappedBases = sum([len(b.mapped) for b in alnBlks])
     dnaAlign, alnBlkSeqsMap = buildDnaAln(srcGenomeSeqs, mappedGenomeSeqs, alnBlks)
-    #protAlign = None
     protAlign = buildProtAln(srcExon, alnBlks, alnBlkSeqsMap)
-    srcCds = Region(srcExon.gene.cdsStart, srcExon.gene.cdsEnd).intersect(Region(srcExon.start, srcExon.end)).noneIfEmpty()
-    mappedCds = Region(mappedGp.cdsStart, mappedGp.cdsEnd).intersect(mappedRegion).noneIfEmpty()
     return MappedExon(mkSrcExonId(srcGenome, srcExon), srcExonNum,
-                      pslBlkToRegion(srcBlk), len(srcExon),
-                      mapped=mappedRegion, mappedBases=mappedBases,
-                      srcCds=srcCds, mappedCds=mappedCds, frame=Frame.fromFrame(srcExon.frame),
+                      src=Region.fromCoords(srcRegion), srcCds=srcCds, srcBases=len(srcExon),
+                      mapped=Region.fromCoords(mappedRegion), mappedBases=mappedBases, mappedCds=mappedCds,
+                      frame=Frame.fromFrame(srcExon.frame),
                       dnaAlign=dnaAlign, protAlign=protAlign)
 
 def printAlnBlks(srcPsl, mappedPsl, alnBlks):
-    prerr(">>>>",
-          srcPsl.qName, repr(pslCoords(srcPsl)),
-          "\n     ->",
-          mappedPsl.qName, repr(pslCoords(mappedPsl)),
+    prerr(">>>>", srcPsl.qName, repr(pslCoords(srcPsl)), " ->", mappedPsl.qName, repr(pslCoords(mappedPsl)),
           "<<<<")
     for ab in alnBlks:
         prerr(repr(ab))
     prerr()
 
 def processExon(srcGenome, srcGenomeSeqs, mappedGenomeSeqs, srcExonNum, srcBlk, srcExon, mappedPsl, mappedGp):
-    global DEBUG_ME
-    DEBUG_ME= (srcExonNum >= 29)
     alnBlks = srcBlkToMappedBlks(srcBlk, srcExon, mappedPsl, mappedGp)
-    if DEBUG_ME:#fixme
-        printAlnBlks(srcBlk.psl, mappedPsl, alnBlks)
+    # printAlnBlks(srcBlk.psl, mappedPsl, alnBlks)
     if len(alnBlks) == 0:
         return MappedExon(mkSrcExonId(srcGenome, srcExon), srcExonNum, pslBlkToRegion(srcBlk), len(srcExon))
     else:
@@ -257,7 +286,7 @@ def processTrans(srcGenome, srcGenomeSeqs, mappedGenome, mappedGenomeSeqs, mappe
     srcMeta = mappedData.srcMeta
     mappedTrans = MappedTranscript(srcGenome, mappedData.srcPsl.qName, mappedGenome, mappedData.mappedPsl.qName, pslToRCoords(mappedData.srcPsl), pslToRCoords(mappedData.mappedPsl),
                                    srcMeta.geneId, srcMeta.geneName, srcMeta.geneType, srcMeta.transcriptName, srcMeta.transcriptType,
-                                   getCds(mappedData.srcGp), getCds(mappedData.mappedGp), exons)
+                                   getCdsRegion(mappedData.srcGp), getCdsRegion(mappedData.mappedGp), exons)
     return mappedTrans
 
 def mappedAlignToAnnot(srcGenome, mappedGenome, mappedDataSet):
