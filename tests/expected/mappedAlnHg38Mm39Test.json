@@ -4558,5 +4558,344 @@
                 }
             }
         ]
+    },
+    {
+        "srcGenome": "hg38",
+        "srcTransId": "ENST00000409364.3",
+        "src": {
+            "chrom": "chr2",
+            "strand": "-",
+            "start": 196780088,
+            "end": 196799659
+        },
+        "srcCds": {
+            "start": 196780088,
+            "end": 196799659
+        },
+        "mappedGenome": "mm39",
+        "mappedTransId": "ENST00000409364.3-1",
+        "mapped": {
+            "chrom": "chr1",
+            "strand": "-",
+            "start": 54459105,
+            "end": 54478112
+        },
+        "mappedCds": {
+            "start": 54459105,
+            "end": 54478112
+        },
+        "geneId": "ENSG00000119041.11",
+        "geneName": "GTF3C3",
+        "geneType": "protein_coding",
+        "transcriptName": "GTF3C3-202",
+        "transcriptType": "protein_coding",
+        "exons": [
+            {
+                "srcExonId": "hg38.chr2:196799509-196799659",
+                "srcExonNum": 1,
+                "src": {
+                    "start": 196799509,
+                    "end": 196799659
+                },
+                "srcBases": 150,
+                "srcCds": {
+                    "start": 196799509,
+                    "end": 196799611
+                },
+                "mapped": {
+                    "start": 54477971,
+                    "end": 54478112
+                },
+                "mappedBases": 141,
+                "mappedCds": {
+                    "start": 54477971,
+                    "end": 54478073
+                },
+                "frame": 0,
+                "dnaAlign": {
+                    "src": "CGGTTCTCTGTCCCGGTTCCTGGGGTTGCACAGACAGACCCTGTAAACATGTCAGGGTTCAGTCCGGAACTCATCGACTACTTGGAAGGGAAAATCTCCTTTGAGGAGTTCGAACGGCGGAGAGAAGAGAGAAAAACCCGCGAGAAGAAA",
+                    "mapped": "AGCTTCCCTGGCCCGCTGCGCAGCGTCG---------GCCCTGCAGACATGTCGGGGTTCAGCCCGGAACTTATCGACTACCTGGAAGGGAAAATCTCCTTTGAAGAGTTCGAAAGGCGGAGAGAAGAGAGAAAAACCCGAGAGAAGAAA",
+                    "identity": 0.851,
+                    "coverage": 0.94
+                },
+                "protAlign": {
+                    "src": "MSGFSPELIDYLEGKISFEEFERRREERKTREKK",
+                    "mapped": "MSGFSPELIDYLEGKISFEEFERRREERKTREKK",
+                    "identity": 1.0
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196797796-196797908",
+                "srcExonNum": 2,
+                "src": {
+                    "start": 196797796,
+                    "end": 196797908
+                },
+                "srcBases": 112,
+                "srcCds": {
+                    "start": 196797796,
+                    "end": 196797908
+                },
+                "mapped": {
+                    "start": 54476990,
+                    "end": 54477102
+                },
+                "mappedBases": 112,
+                "mappedCds": {
+                    "start": 54476990,
+                    "end": 54477102
+                },
+                "frame": 0,
+                "dnaAlign": {
+                    "src": "AGTCTTCAGGAAAAAGGCAAGTTATCAGCTGAAGAAAATCCCGATGACTCTGAAGTTCCATCATCATCAGGAATTAACTCTACCAAATCCCAAGACAAAGATGTCAATGAAG",
+                    "mapped": "AGTGTTCAGGAAAAAGGAAAATCATCACCCAAAGAAAACCCAGATGACTCCGAAGTTCCATCCTCATCAGGAATTGACTCTGCCAAATCCCAGGACAAAGACGCCAATGAAG",
+                    "identity": 0.857,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "SLQEKGKLSAEENPDDSEVPSSSGINSTKSQDKDVNE",
+                    "mapped": "SVQEKGKSSPKENPDDSEVPSSSGIDSAKSQDKDANE",
+                    "identity": 0.811
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196792955-196793152",
+                "srcExonNum": 3,
+                "src": {
+                    "start": 196792955,
+                    "end": 196793152
+                },
+                "srcBases": 197,
+                "srcCds": {
+                    "start": 196792955,
+                    "end": 196793152
+                },
+                "mapped": {
+                    "start": 54473212,
+                    "end": 54473397
+                },
+                "mappedBases": 185,
+                "mappedCds": {
+                    "start": 54473212,
+                    "end": 54473397
+                },
+                "frame": 1,
+                "dnaAlign": {
+                    "src": "GAGAAACATCAGATGGAGTGAGGAAGTCAGTTCACAAGGTCTTTGCTTCCATGCTTGGAGAGAATGAAGATGATgaggaggaagaggaagaagaggaggaggaggaggaggaggaAGAAACACCTGAGCAACCCACTGCGGGCGATGTATTTGTATTGGAGATGGTTCTCAATCGTGAAACCAAGAAAATGATGAAA",
+                    "mapped": "GAGAAACATCAGATGGGGTGAGTAAGTCAGTTCACAAAGTCTTTGCTTCCATGCTTGGAGAGACTgaagatgatgaagagga------------ggaagaagaggaggaggaggaagaaacagcagaGCAACCCACTGCAGGCGATGTATTTGTGTTGGAGATGGTTCTCAACCGTGAAACCAAGAAAATGATGAAA",
+                    "identity": 0.935,
+                    "coverage": 0.939
+                },
+                "protAlign": {
+                    "src": "RNIRWSEEVSSQGLCFHAWRE*R**GGRRRRRRKKHLSNPLRAMYLYWRWFSIVKPRK**",
+                    "mapped": "RNIRWGE*VSSQSLCFHAWRD*R**RGKKRRRRKKQQSNPLQAMYLCWRWFSTVKPRK**",
+                    "identity": 0.8
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196791336-196791460",
+                "srcExonNum": 4,
+                "src": {
+                    "start": 196791336,
+                    "end": 196791460
+                },
+                "srcBases": 124,
+                "srcCds": {
+                    "start": 196791336,
+                    "end": 196791460
+                },
+                "mapped": {
+                    "start": 54469657,
+                    "end": 54469781
+                },
+                "mappedBases": 124,
+                "mappedCds": {
+                    "start": 54469657,
+                    "end": 54469781
+                },
+                "frame": 0,
+                "dnaAlign": {
+                    "src": "GAGAAAAGGCCTCGGAGTAAACTTCCCAGAGCTCTGAGAGGTCTCATGGGTGAAGCCAACATTCGTTTTGCTCGAGGAGAACGTGAAGAGGCGATATTGATGTGCATGGAAATCATAAGACAAG",
+                    "mapped": "GAGAAGAGGCCTCGGAGTAAACTCCCCAGAGCCCTGAGAGGTCTCATGGGTGAAGCCAATATTCGCTTTGCTAGAGGAGAACATGAAGAAGCCATATTGATGTGCATGGAAATCATAAGACAAG",
+                    "identity": 0.927,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "EKRPRSKLPRALRGLMGEANIRFARGEREEAILMCMEIIRQ",
+                    "mapped": "EKRPRSKLPRALRGLMGEANIRFARGEHEEAILMCMEIIRQ",
+                    "identity": 0.976
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196789878-196790070",
+                "srcExonNum": 5,
+                "src": {
+                    "start": 196789878,
+                    "end": 196790070
+                },
+                "srcBases": 192,
+                "srcCds": {
+                    "start": 196789878,
+                    "end": 196790070
+                },
+                "mapped": {
+                    "start": 54467920,
+                    "end": 54468112
+                },
+                "mappedBases": 192,
+                "mappedCds": {
+                    "start": 54467920,
+                    "end": 54468112
+                },
+                "frame": 1,
+                "dnaAlign": {
+                    "src": "CTCCTCTGGCTTATGAGCCATTCTCTACTCTAGCCATGATATATGAGGACCAAGGTGACATGGAAAAATCATTGCAGTTTGAGTTGATTGCTGCGCATTTAAATCCCAGTGACACAGAAGAATGGGTTAGACTGGCAGAAATGTCTCTGGAACAAGACAATATTAAGCAGGCTATTTTTTGCTATACAAAAG",
+                    "mapped": "CTCCTTTGGCTTATGAGCCATTCTCTACACTTGCCATGATATACGAGGATCAAGGTGACATGGAGAAATCATTGCAGTTTGAGTTGATTGCTGCACATTTAAATCCCAGTGACACAGAAGAATGGGTTAGGCTGGCAGAAATGTCTCTGGAACAAGATAACATTAAGCAGGCTATTTTTTGCTATACAAAAG",
+                    "identity": 0.948,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "PLAYEPFSTLAMIYEDQGDMEKSLQFELIAAHLNPSDTEEWVRLAEMSLEQDNIKQAIFCYTK",
+                    "mapped": "PLAYEPFSTLAMIYEDQGDMEKSLQFELIAAHLNPSDTEEWVRLAEMSLEQDNIKQAIFCYTK",
+                    "identity": 1.0
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196789203-196789369",
+                "srcExonNum": 6,
+                "src": {
+                    "start": 196789203,
+                    "end": 196789369
+                },
+                "srcBases": 166,
+                "srcCds": {
+                    "start": 196789203,
+                    "end": 196789369
+                },
+                "mapped": {
+                    "start": 54466558,
+                    "end": 54466724
+                },
+                "mappedBases": 166,
+                "mappedCds": {
+                    "start": 54466558,
+                    "end": 54466724
+                },
+                "frame": 1,
+                "dnaAlign": {
+                    "src": "CTCTTAAATATGAACCTACTAATGTCCGTTATCTGTGGGAGCGATCAAGCCTTTATGAACAGATGGGTGATCATAAAATGGCCATGGATGGTTATAGGCGTATTTTAAACCTTTTGTCTCCATCTGATGGCGAACGTTTTATGCAGCTGGCTAGAGATATGGCAAA",
+                    "mapped": "CTCTTAAATATGAACCTACTAATGTCCGTTACCTGTGGGAGAGATCAAGCCTTTATGAACAGATGGGTGATCATAAAATGGCCATGGATGGCTATAGGCGCATTTTAAATCTTTTGTCTCCATCTGATGGAGAACGTTTTATGCAGTTGGCTAGAGATATGGCAAA",
+                    "identity": 0.958,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "LKYEPTNVRYLWERSSLYEQMGDHKMAMDGYRRILNLLSPSDGERFMQLARDMA",
+                    "mapped": "LKYEPTNVRYLWERSSLYEQMGDHKMAMDGYRRILNLLSPSDGERFMQLARDMA",
+                    "identity": 1.0
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196785440-196785588",
+                "srcExonNum": 7,
+                "src": {
+                    "start": 196785440,
+                    "end": 196785588
+                },
+                "srcBases": 148,
+                "srcCds": {
+                    "start": 196785440,
+                    "end": 196785588
+                },
+                "mapped": {
+                    "start": 54463167,
+                    "end": 54463315
+                },
+                "mappedBases": 148,
+                "mappedCds": {
+                    "start": 54463167,
+                    "end": 54463315
+                },
+                "frame": 2,
+                "dnaAlign": {
+                    "src": "GAGTTACTATGAAGCCAATGATGTTACTTCTGCTATTAACATAATTGATGAAGCTTTCTCAAAACACCAGGGCCTAGTCTCCATGGAAGATGTTAACATAGCAGCTGAACTATATATTTCTAACAAACAGTATGACAAAGCTTTGGAG",
+                    "mapped": "GAGTTACTATGAAGCCAATGACAGCGCTTCAGCTATAAACATAATTGAAGAAGCTTTCTCAAAACATCAAGGCTTAGTCTCCATGGAAGATGTTAACATAGCAGCTGAATTATATATTTCCAACAAGCAGTATGACAAAGCTTTGGAG",
+                    "identity": 0.905,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "SYYEANDVTSAINIIDEAFSKHQGLVSMEDVNIAAELYISNKQYDKALE",
+                    "mapped": "SYYEANDSASAINIIEEAFSKHQGLVSMEDVNIAAELYISNKQYDKALE",
+                    "identity": 0.939
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196784856-196784929",
+                "srcExonNum": 8,
+                "src": {
+                    "start": 196784856,
+                    "end": 196784929
+                },
+                "srcBases": 73,
+                "srcCds": {
+                    "start": 196784856,
+                    "end": 196784929
+                },
+                "mapped": {
+                    "start": 54462659,
+                    "end": 54462732
+                },
+                "mappedBases": 73,
+                "mappedCds": {
+                    "start": 54462659,
+                    "end": 54462732
+                },
+                "frame": 0,
+                "dnaAlign": {
+                    "src": "ATAATTACAGATTTTTCTGGAATTGTGCTGGAAAAAAAAACTTCAGAAGAAGGCACCTCAGAAGAGAATAAAG",
+                    "mapped": "GTAATTACAGATTTTTCTGGAATTATCCTAGAAAAGGAAACTTTGGAAGAAGGCACCTCAGAAGAGAATAAAG",
+                    "identity": 0.89,
+                    "coverage": 1.0
+                },
+                "protAlign": {
+                    "src": "IITDFSGIVLEKKTSEEGTSEENK",
+                    "mapped": "VITDFSGIILEKETLEEGTSEENK",
+                    "identity": 0.833
+                }
+            },
+            {
+                "srcExonId": "hg38.chr2:196780088-196780662",
+                "srcExonNum": 9,
+                "src": {
+                    "start": 196780088,
+                    "end": 196780662
+                },
+                "srcBases": 574,
+                "srcCds": {
+                    "start": 196780534,
+                    "end": 196780662
+                },
+                "mapped": {
+                    "start": 54459105,
+                    "end": 54459658
+                },
+                "mappedBases": 523,
+                "mappedCds": {
+                    "start": 54459514,
+                    "end": 54459658
+                },
+                "frame": 1,
+                "dnaAlign": {
+                    "src": "CTCCTGAGAATGTTACCTGCACTATACCTGATGGCGTGCCAATAGATATCACAGTGAAGTTGATGGTCTGCCTTGTACATCTCAACATTCTTGAACCACTTAATGTATGTAACA---AGATCTGCACTTG-------------AGATACTTCAGATCAAATGCACCATCTCTTTTCTTTAGATGTCAAGAAATTATAACTTGACCCTAGAGTTTCACATTTCTTAATAACCAAGGAGGTAACAATAAGCATCAAATAATTT-TGTATGAATATCTTATAAAAACTAAAATTGTTTTGCAATTGGGCTTACAGTAATTTATTTTTCTTTTAAAAT---AACAATCTAAAGATCATAATTTGAG-ATTGTCTTTAGACCATTTGAGATTGTCATTAGATAATTGGTAATAATTCTGACAGCTATTCTTTTTTGCGGAC---TTTGGACCAAGTATATTATT------GAAAAAAAAAAAGTACTTAGCATCTACTTTGTAAACcttaggataagatattgagtaaaatatacaaatccataccctcatgggttgggatgcttttttgttttaatgggattagataataaaataaatacataacata",
+                    "mapped": "CTGCTGAGACGGTTACCTGCTCTATACCTGACAGCGTGCCAATAGACATCACGGTGAAGCTGATGGTCTGCCTTGTACATCTCAACATCCTTGAGCCCCTCAATGTAAGTAGTACTGACAGCTGCACCTGTGGGAGAGCACTAAAACCCTTCCCATTAAGTGCATACTCTCCTTCCC----ATGACTAGAAATTATAACCCAACCTTAGATTTTTATATTTCTTAATAAT--GGGAGGACACAGTGAGCATCAAATTATTTCCATAGGAATGGCTCATAAAAGC--AAAGTGGTTTGGAATTGGGCTTG---------GCATTTACTTTAGAATGAGAACCATCCAAACATGAGAAGGTGGGAATTGCCTTCAGTCTATCAAAAATC-TCA-TAGCTACtcttttttttttct--------ttctttctttctgacttttttGGAACAAGTACTTCATTTAATAAAAAAAAAAAAAAATTTTGGAAATCTGCTTTGATGACCTTAGCATGAGGTATTGAGTaa-----acaaatcc-tcccttcacaga----------tctttggttctaggagatt--------aaataaattcataaaata",
+                    "identity": 0.759,
+                    "coverage": 0.911
+                },
+                "protAlign": {
+                    "src": "LLRMLPALYLMACQ*ISQ*S*WSALYISTFLNHLMYVTDLHL",
+                    "mapped": "LLRRLPALYLTACQ*TSR*S*WSALYISTSLSPSM*VVQLHL",
+                    "identity": 0.738
+                }
+            }
+        ]
     }
 ]

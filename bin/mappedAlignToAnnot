@@ -209,9 +209,9 @@ def addProtAlnBlock(alnBlk, alnBlkSeqs, srcParts, mappedParts):
     nBases = len(alnBlk.srcCds) - phase
     nBases -= nBases % 3
 
-    srcParts.append(str(Seq(alnBlkSeqs.src[iAln:iAln + nBases]).translate()))
-    mappedParts.append(str(Seq(alnBlkSeqs.mapped[iAln:iAln + nBases]).translate()))
-
+    if nBases >= 3:
+        srcParts.append(str(Seq(alnBlkSeqs.src[iAln:iAln + nBases]).translate()))
+        mappedParts.append(str(Seq(alnBlkSeqs.mapped[iAln:iAln + nBases]).translate()))
 
 def buildProtAln(srcExon, alnBlks, alnBlkSeqsMap):
     # for now, this drops codons split across gaps

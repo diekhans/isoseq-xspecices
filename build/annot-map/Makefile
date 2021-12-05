@@ -110,7 +110,7 @@ ${destGp}: ${destPsl}
 
 ${destJson}: ${srcPsl} ${destPsl}
 	@mkdir -p $(dir $@)
-	mappedAlignToAnnot ${srcDb} ${srcPsl} ${srcMeta} ${destPsl} ${destGp} /dev/stdout| pigz -c >${destJson}.${TMPEXT}
+	mappedAlignToAnnot ${srcDb} ${srcPsl} ${srcGp} ${srcMeta} ${destDb} ${destPsl} ${destGp} /dev/stdout| pigz -c >${destJson}.${TMPEXT}
 	mv -f ${destJson}.${TMPEXT} ${destJson}
 
 ${destJsonDownload}: ${destJson}
