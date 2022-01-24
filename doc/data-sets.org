@@ -35,3 +35,10 @@
 * URLs:
 ** downloads
 https://hgwdev.gi.ucsc.edu/~markd/gencode/xspace-sc/hub/downloads/annot/
+
+* CRG human and mouse tissue matched shorted read data
+
+** isoseq-xspecies/data/crg-short-read/precap
+fastqs/ from silvia
+bams/ mapped by Anoushka
+bams/merged - merge of replicates for each tissue

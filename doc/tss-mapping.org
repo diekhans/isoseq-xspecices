@@ -1,0 +1,29 @@
+* Anoushka 2022-01-14 
+
+Sending along some files (later than expected) that we discussed a while ago and were hoping that you could help with. Essentially, we want to see whether similarly to exons, we can map annotated TSS / PolyA sites between the species (starting with mouse and human). What I'm sending you is separate files for each species, where each line is a set of counts for a TSS (or polyA-site) on a per cell type basis. It looks like this:
+
+(base) ➜  endsites git:(master) ✗ head human/tssID_coord_cellType_count
+ENSG00000060069.17_0 chr18_79679776_79679861_+ ExciteDG 11
+ENSG00000081019.13_3 chr1_113812462_113812501_- OPCs 2
+ENSG00000161203.13_4 chr3_184180201_184180221_+ MFOLs 1
+ENSG00000213020.10_0 chr19_52735008_52735059_- AstrocytesProto 29
+ENSG00000129355.7_0 chr19_10568889_10568948_- MOLs 3
+ENSG00000166224.17_0 chr10_70815888_70815997_+ MOLs 13
+ENSG00000182621.18_6 chr20_8649410_8649413_+ AstrocytesFibrous 1
+
+where
+
+  *   column1 is the ID I have assigned (geneID"_"number) where number is the TSS ordered by frequency (0 being the most frequent)
+  *   column2 is the coordinates of the TSS
+  *   column3 is the assigned cell type
+  *   column4 is the # reads for this cell type assigned to the TSS.
+
+What I was thinking was some sort of matrix of gene X cell type for both species, wherein the "orthologous" TSS would have the maximum concordance between the species. Happy to talk more about this over zoom when you have
+the chance! Perhaps early next week?
+
+* Anoushka 2022-01-23
+Ah I see, sorry about the confusion. I use this BED file to assign the TSS: https://fantom.gsc.riken.jp/5/datafiles/reprocessed/hg38_latest/extra/CAGE_peaks/hg38_fair+new_CAGE_peaks_phase1and2.bed.gz
+
+
+* data in:
+build/tss-map/2022-01/data

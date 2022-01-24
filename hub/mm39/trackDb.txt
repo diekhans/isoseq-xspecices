@@ -114,3 +114,83 @@ bigDataUrl isoseq.minimap2.2020-12-02.bigBed
 priority 10
 
 
+track crg_short
+compositeTrack on
+shortLabel CRG short-read
+longLabel CRG short-read tissue-matched
+priority 40
+dragAndDrop subTracks
+visibility hide
+type bam
+indelDoubleInsert on
+indelQueryInsert on
+showNames off
+bamColorMode gray
+bamGrayMode aliQual
+pairEndsByName on
+html crg_short.html
+
+    track crg_A_Brain
+    parent crg_short
+    bigDataUrl crg/MM_A_Brain.merged.bam
+    shortLabel CRG Adult Brain
+    longLabel CRG Adult Brain
+    type bam
+    priority 1
+
+    track crg_A_Heart
+    parent crg_short
+    bigDataUrl crg/MM_A_Heart.merged.bam
+    shortLabel CRG Adult Heart
+    longLabel CRG Adult Heart
+    type bam
+    priority 2
+
+    track crg_A_Liver
+    parent crg_short
+    bigDataUrl crg/MM_A_Liver.merged.bam
+    shortLabel CRG Adult Liver
+    longLabel CRG Adult Liver
+    type bam
+    priority 3
+
+    track crg_A_WB
+    parent crg_short
+    bigDataUrl crg/MM_A_WB.merged.bam
+    shortLabel CRG Adult WB
+    longLabel CRG Adult WB
+    type bam
+    priority 4
+
+    track crg_E_Brain
+    parent crg_short
+    bigDataUrl crg/MM_E_Brain.merged.bam
+    shortLabel CRG Embryonic Brain
+    longLabel CRG Embryonic Brain
+    type bam
+    priority 5
+
+    track crg_E_ESC
+    parent crg_short
+    bigDataUrl crg/MM_E_ESC.merged.bam
+    shortLabel CRG Embryonic ESC
+    longLabel CRG Embryonic ESC
+    type bam
+    priority 6
+
+    track crg_E_Heart
+    parent crg_short
+    bigDataUrl crg/MM_E_Heart.merged.bam
+    shortLabel CRG Embryonic Heart
+    longLabel CRG Embryonic Heart
+    type bam
+    priority 7
+
+    track crg_E_Liver
+    parent crg_short
+    bigDataUrl crg/MM_E_Liver.merged.bam
+    shortLabel CRG Embryonic Liver
+    longLabel CRG Embryonic Liver
+    type bam
+    priority 8
+
