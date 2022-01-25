@@ -4,3 +4,4 @@ build/annot-map/mapped/
 build/annot-map/versions
 .emacs.bak/
 tests/output/
+__pycache__/

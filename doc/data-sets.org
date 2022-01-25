@@ -42,3 +42,18 @@ https://hgwdev.gi.ucsc.edu/~markd/gencode/xspace-sc/hub/downloads/annot/
 fastqs/ from silvia
 bams/ mapped by Anoushka
 bams/merged - merge of replicates for each tissue
+introns/merged - intron calls
+
+* intron calls
+
+$ip -C 1.0 -g $fa -S  --map-to-ucsc \
+    --intron-calls=$tsv.$tmpExt --junction-bed=$junc.$tmpExt --intron-bed=$bed.$tmpExt \
+    $bam
+
+for f in HS_*.introns.bed ; do selectById 1 /hive/data/genomes/hg38/chrom.sizes 1  $f >x.bed;  bedToBigBed -tab -type=bed9 x.bed /hive/data/genomes/hg38/chrom.sizes $(basename $f .bed).bigBed ; done
+for f in HS_*.juncs.bed ; do selectById 1 /hive/data/genomes/hg38/chrom.sizes 1  $f >x.bed;  bedToBigBed -tab -type=bed12 x.bed /hive/data/genomes/hg38/chrom.sizes $(basename $f .bed).bigBed ; done
+
+for f in MM_*.introns.bed ; do selectById 1 /hive/data/genomes/mm39/chrom.sizes 1  $f >x.bed;  bedToBigBed -tab -type=bed9 x.bed /hive/data/genomes/mm39/chrom.sizes $(basename $f .bed).bigBed ; done
+for f in MM_*.juncs.bed ; do selectById 1 /hive/data/genomes/mm39/chrom.sizes 1  $f >x.bed;  bedToBigBed -tab -type=bed12 x.bed /hive/data/genomes/mm39/chrom.sizes $(basename $f .bed).bigBed ; done
+
+https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt

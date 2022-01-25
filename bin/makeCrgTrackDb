@@ -1,0 +1,159 @@
+#!/usr/bin/env python3
+
+import argparse
+
+def parseArgs():
+    usage = """Create trackDb for CRG RNA-Seq data"""
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('hgDb')
+    parser.add_argument('priority', type=float)
+    parser.add_argument('trackDbFile')
+    return parser.parse_args()
+
+
+compositeTmpl = """
+track crg_short
+compositeTrack on
+shortLabel CRG short-read
+longLabel CRG short-read tissue-matched
+priority {priority}
+dragAndDrop subTracks
+visibility hide
+type bed
+html crg_short.html
+subGroup1 view Views reads=Reads juncs=Junctions introns=Introns
+"""
+
+readsViewTmpl = """
+    track crg_reads_view
+    parent crg_short
+    visibility hide
+    shortLabel Reads
+    view reads
+    viewUi on
+    configurable on
+    type bam
+    priority {priority}
+    indelDoubleInsert on
+    indelQueryInsert on
+    showNames off
+    bamColorMode gray
+    bamGrayMode aliQual
+    pairEndsByName on
+"""
+
+readsTrackTmpl = """
+        track crg_{name}_reads
+        parent crg_reads_view on
+        visibility hide
+        subGroups view=reads name=Reads
+        bigDataUrl crg/{name}.merged.bam
+        shortLabel {label} Reads
+        longLabel {label} Reads
+        type bam
+        configurable on
+        priority {priority}
+"""
+
+juncsViewTmpl = """
+    track crg_juncs_view
+    parent crg_short
+    visibility hide
+    shortLabel Junctions
+    view juncs
+    viewUi on
+    configurable on
+    type bigBed 12
+    priority {priority}
+"""
+
+juncsTrackTmpl = """
+        track crg_{name}_juncs
+        parent crg_juncs_view on
+        visibility hide
+        subGroups view=juncs name=Junctions
+        bigDataUrl crg/{name}.juncs.bigBed
+        shortLabel {label} Junctions
+        longLabel {label} Junctions
+        type bigBed 12
+        itemRgb on
+        priority {priority}
+"""
+
+intronsViewTmpl = """
+    track crg_introns_view
+    parent crg_short
+    visibility hide
+    shortLabel Introns
+    view juncs
+    viewUi on
+    configurable on
+    type bigBed 12
+    priority {priority}
+"""
+
+intronsTrackTmpl = """
+        track crg_{name}_introns
+        parent crg_introns_view
+        visibility hide
+        subGroups view=introns name=Introns
+        bigDataUrl crg/{name}.introns.bigBed
+        shortLabel {label} Introns
+        longLabel {label} Introns
+        type bigBed 9
+        itemRgb on
+        priority {priority}
+"""
+
+# HS_A_Brain.merged.bam
+dataSets = ["A_Brain", "A_Heart", "A_Liver", "A_WB",
+            "E_Brain", "E_Heart", "E_Liver", "E_ESC"]
+
+def dataSetToName(orgAbbrv, dataSet):
+    return orgAbbrv + "_" + dataSet
+
+def dataSetToLabel(dataSet):
+    stage, tissue = dataSet.split('_')
+    if dataSet.startswith('A_'):
+        return "Adult " + tissue
+    elif dataSet.startswith('E_'):
+        return "Embryonic " + tissue
+
+def addView(fh, priority, viewTmpl):
+    print(viewTmpl.format(priority=priority), file=fh)
+
+def addTracks(fh, orgAbbrv, trackTmpl):
+    for pri2, dataSet in enumerate(dataSets):
+        print(trackTmpl.format(priority=pri2,
+                               name=dataSetToName(orgAbbrv, dataSet),
+                               label=dataSetToLabel(dataSet)),
+              file=fh)
+
+
+def addReadsTracks(fh, priority, orgAbbrv):
+    addView(fh, priority, readsViewTmpl)
+    addTracks(fh, orgAbbrv, readsTrackTmpl)
+
+def addJunksTracks(fh, priority, orgAbbrv):
+    addView(fh, priority, juncsViewTmpl)
+    addTracks(fh, orgAbbrv, juncsTrackTmpl)
+
+def addIntronsTracks(fh, priority, orgAbbrv):
+    addView(fh, priority, intronsViewTmpl)
+    addTracks(fh, orgAbbrv, intronsTrackTmpl)
+
+def main(opts):
+    priority = opts.priority
+    if opts.hgDb == "hg38":
+        orgAbbrv = "HS"
+    elif opts.hgDb == "mm39":
+        orgAbbrv = "MM"
+
+    with open(opts.trackDbFile, 'w') as fh:
+        print(compositeTmpl.format(priority=priority), file=fh)
+        addReadsTracks(fh, 1.0, orgAbbrv)
+        addJunksTracks(fh, 2.0, orgAbbrv)
+        addIntronsTracks(fh, 3.0, orgAbbrv)
+
+
+main(parseArgs())

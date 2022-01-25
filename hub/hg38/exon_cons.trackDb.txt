@@ -1,0 +1,42 @@
+track exon_conservation
+compositeTrack off
+shortLabel Exon conservation
+longLabel  Exon conservation
+visibility hide
+priority 30
+type bigBed 9
+group genes
+html exon_conservation.html
+
+    track exon_conservation_conserved
+    parent exon_conservation
+    shortLabel Conserved exons
+    longLabel Conserved exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/conserved.bigBed
+    priority 1
+    group genes
+
+    track exon_conservation_primate
+    parent exon_conservation
+    shortLabel Primate-only exons
+    longLabel Primate-only exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/onlyPrimates.bigBed
+    priority 2
+    group genes
+
+    track exon_conservation_human
+    parent exon_conservation
+    shortLabel Human-only exons
+    longLabel  Human-only exons
+    type bigBed 9
+    itemRgb on
+    visibility hide
+    bigDataUrl exon_cons/onlyHuman.bigBed
+    priority 3
+    group genes

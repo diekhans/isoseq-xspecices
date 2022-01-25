@@ -6,9 +6,11 @@ import argparse
 from pycbio.sys.svgcolors import SvgColors
 
 def parseArgs():
-    usage = """Create trackDb for an assembly, given a bunch of baked-in assumptions"""
+    usage = """Create trackDb for an assembly annoations and mappings, given a bunch of
+    baked-in assumptions"""
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('hgDb')
+    parser.add_argument('priority', type=float)
     parser.add_argument('trackDbFile')
     return parser.parse_args()
 
@@ -51,33 +53,34 @@ labelFields name,geneSym,geneId,geneType,transcriptType
 defaultLabelFields geneSym
 labelSeparator " "
 bigDataUrl {bigDataUrl}
-searchIndex name,geneSym,geneId
+searchIndex name,geneSym,geneId,,transcriptId,transcriptName
 
 """
 
-def addGeneSrc(fh, srcDb, priority):
-    t = annotPslTemplate.format(track="{}.src".format(srcDb),
+def addGeneSrc(fh, priority, srcDb):
+    t = annotPslTemplate.format(track="{}_src".format(srcDb),
                                 shortLabel="{} src genes".format(speciesNames[srcDb]),
                                 longLabel="{} {} source genes".format(speciesNames[srcDb], srcDb),
                                 priority=priority,
                                 color=annotColor[srcDb].toRgb8Str(),
                                 bigDataUrl="{}.src.bigPsl".format(srcDb))
     print(t, file=fh)
+    return priority + 0.01
 
-def addGeneMapping(fh, srcDb, destDb, priority):
-    t = annotPslTemplate.format(track="{}-{}.annot".format(srcDb, destDb),
+def addGeneMapping(fh, priority, srcDb, destDb):
+    t = annotPslTemplate.format(track="{}-{}_annot".format(srcDb, destDb),
                                 shortLabel="{} genes".format(speciesNames[srcDb]),
                                 longLabel="{} {} gene mappings".format(speciesNames[srcDb], srcDb),
                                 priority=priority,
                                 color=annotColor[srcDb].toRgb8Str(),
                                 bigDataUrl="{}-{}.bigPsl".format(srcDb, destDb))
     print(t, file=fh)
+    return priority + 0.01
 
-def addGeneMappings(fh, srcDbs, destDb):
-    priority = 2.0
+def addGeneMappings(fh, priority, srcDbs, destDb):
     for srcDb in srcDbs:
-        addGeneMapping(fh, srcDb, destDb, priority)
-        priority += 1
+        priority = addGeneMapping(fh, priority, srcDb, destDb)
+    return priority
 
 
 isoSeqBedTemplate = """
@@ -93,7 +96,7 @@ priority {priority}
 
 """
 
-def addIsoSeqTrack(fh, track, label, color, priority):
+def addIsoSeqTrack(fh, priority, track, label, color):
     t = isoSeqBedTemplate.format(track=track,
                                  shortLabel=label,
                                  longLabel=label,
@@ -101,29 +104,30 @@ def addIsoSeqTrack(fh, track, label, color, priority):
                                  bigDataUrl=track + ".bigBed",
                                  priority=priority)
     print(t, file=fh)
+    return priority + 0.01
 
-def addIsoSeqTrackIfExists(fh, hgDbDir, track, label, color, priority):
+def addIsoSeqTrackIfExists(fh, priority, hgDbDir, track, label, color):
     bigBed = osp.join(hgDbDir, track + ".bigBed")
     if not osp.exists(bigBed):
         print("Warning: isoseq bigBed not found: " + bigBed, file=sys.stderr)
     else:
-        addIsoSeqTrack(fh, track, label, color, priority)
+        priority = addIsoSeqTrack(fh, track, label, color, priority)
+    return priority
 
-def addIsoSeqTracks(fh, hgDb, hgDbDir):
-    priority = 10
-    addIsoSeqTrack(fh, "isoseq.minimap2.2020-12-02",
-                   "IsoSeq minimap2 2020-12-02",
-                   SvgColors.tomato, priority)
-    priority += 1
+def addIsoSeqTracks(fh, priority, hgDb, hgDbDir):
+    priority = addIsoSeqTrack(fh, priority, "isoseq.minimap2.2020-12-02",
+                              "IsoSeq minimap2 2020-12-02",
+                              SvgColors.tomato)
+    return priority
 
 def main(opts):
     # keep order
     otherDbs = tuple([d for d in allHgDb if d != opts.hgDb])
-
+    priority = opts.priority
     with open(opts.trackDbFile, 'w') as fh:
-        addGeneSrc(fh, opts.hgDb, 1.0)
-        addGeneMappings(fh, otherDbs, opts.hgDb)
-        addIsoSeqTracks(fh, opts.hgDb, osp.dirname(opts.trackDbFile))
+        priority = addGeneSrc(fh, priority, opts.hgDb)
+        priority = addGeneMappings(fh, priority, otherDbs, opts.hgDb)
+        priority = addIsoSeqTracks(fh, priority, opts.hgDb, osp.dirname(opts.trackDbFile))
 
 
 main(parseArgs())
