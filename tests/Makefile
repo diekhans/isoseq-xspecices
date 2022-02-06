@@ -2,7 +2,7 @@
 
 input = input
 
-test: mappedAlignTests buildAnnotBigPslTests findSmallGapsTest
+test: mappedAlignTests buildAnnotBigPslTests findSmallGapsTest kmerConversationTest
 
 mappedAlignTests: mappedAlnHg38Mm39Test mappedAlnHg38RheMac10Test
 
@@ -32,6 +32,9 @@ findSmallGapsTest: mkdirs
 	../bin/findSmallGaps input/hg38-rheMac10.gp output/$@.bed
 	diff expected/$@.bed output/$@.bed
 
+kmerConversationTest: mkdirs
+	../bin/kmerConversation input/pentamer.hg38.bed hg38 multiz100way output/$@.tsv
+	diff expected/$@.tsv output/$@.tsv
 
 mkdirs:
 	@mkdir -p output

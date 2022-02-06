@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+import os
+import argparse
+import pipettor
+from dataclasses import dataclass
+from collections import defaultdict
+from Bio import AlignIO
+from pycbio.hgdata.bed import BedReader
+from pycbio.sys import fileOps
+
+def parseArgs():
+    usage = """Given a BED of kmers locations in a given species and the MAF, produce a
+    report of the conservation for each species. """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('kmerBed')
+    parser.add_argument('hgDb')
+    parser.add_argument('mafTable')
+    parser.add_argument('conservationTsv')
+    return parser.parse_args()
+
+@dataclass
+class ConsCounts:
+    match: int = 0
+    mismatch: int = 0
+
+def orgDb(seqId):
+    return seqId[0:seqId.index('.')]
+
+def getMafAlnsForRegion(hgDb, mafTable, regionBed):
+    tmpMaf = fileOps.tmpFileGet(prefix="maf")
+    tmpBed = fileOps.tmpFileGet(prefix="bed")
+    try:
+        with open(tmpBed, 'w') as fh:
+            regionBed.write(fh)
+        pipettor.run(["mafFetch", hgDb, mafTable, tmpBed, tmpMaf])
+        return [m for m in AlignIO.parse(tmpMaf, "maf")]
+    finally:
+        os.unlink(tmpMaf)
+        os.unlink(tmpBed)
+
+def countOrgColumn(iAln, tBase, qMafSeq, alignStats):
+    qBase = qMafSeq.seq[iAln]
+    cnts = alignStats[orgDb(qMafSeq.name)]
+    if qBase.upper() == tBase:
+        cnts.match += 1
+    else:
+        cnts.mismatch += 1
+
+def countColumn(mafAln, iAln, tBase, alignStats):
+    for qMafSeq in mafAln[1:]:
+        countOrgColumn(iAln, tBase, qMafSeq, alignStats)
+
+def findAlnPos(tMafSeq, tStart):
+    tSeq = tMafSeq.seq
+    tPos = tMafSeq.annotations['start']
+    iAln = 0
+    while tPos < tStart:
+        if tSeq[iAln] != '-':
+            tPos += 1
+        iAln += 1
+    return tPos, iAln
+
+def regionAlignStatsBlk(mafAln, tStart, tEnd, alignStats):
+    tMafSeq = mafAln[0]
+    tSeq = tMafSeq.seq
+    tStop = min(tEnd, tMafSeq.annotations['start'] + tMafSeq.annotations["size"])
+    tPos, iAln = findAlnPos(tMafSeq, tStart)
+
+    while tPos < tStop:
+        if tSeq[iAln] != '-':
+            countColumn(mafAln, iAln, tSeq[iAln].upper(), alignStats)
+            tPos += 1
+        iAln += 1
+    return tStop
+
+def regionAlignStats(mafAlns, regionBed):
+    alignStats = defaultdict(ConsCounts)
+    tStart = regionBed.chromStart
+    tEnd = regionBed.chromEnd
+    for mafAln in mafAlns:
+        tStart = regionAlignStatsBlk(mafAln, tStart, tEnd, alignStats)
+        if tStart >= tEnd:
+            break
+    return alignStats
+
+def writeOrgAlnStats(regionBed, org, orgStats, consFh):
+    # it alignment is split and organism maybe not be in all blocks, hence unaligned is calculated
+    fileOps.prRowv(consFh, regionBed.chrom, regionBed.chromStart, regionBed.chromEnd, regionBed.name,
+                   regionBed.score, regionBed.strand, regionBed.extraCols[0],
+                   org, orgStats.match, orgStats.mismatch,
+                   (regionBed.span - (orgStats.match + orgStats.mismatch)))
+
+def writeAlnStats(regionBed, alignStats, consFh):
+    for org in sorted(alignStats.keys()):
+        writeOrgAlnStats(regionBed, org, alignStats[org], consFh)
+
+def consForRegion(hgDb, mafTable, regionBed, consFh):
+    mafAlns = getMafAlnsForRegion(hgDb, mafTable, regionBed)
+    alignStats = regionAlignStats(mafAlns, regionBed)
+    writeAlnStats(regionBed, alignStats, consFh)
+
+def consForRegions(hgDb, mafTable, kmerBed, consFh):
+    fileOps.prRowv(consFh, "chrom", "chromStart", "chromEnd", "name", "score", "strand", "exon",
+                   "org", "match", "mismatch", "unaligned")
+    for regionBed in BedReader(kmerBed, numStdCols=6):
+        consForRegion(hgDb, mafTable, regionBed, consFh)
+
+def main(opts):
+    with open(opts.conservationTsv, 'w') as consFh:
+        consForRegions(opts.hgDb, opts.mafTable, opts.kmerBed, consFh)
+
+
+main(parseArgs())
