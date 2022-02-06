@@ -1,13 +1,17 @@
 * build track of human pentamers
-obtained pentamerList1.humanPositions.bed from Hagen
+
+obtained pentamerList1.ConstMouse_AltExons.humanPositions.tab from Hagen
+
 
 reformat name field
-% tawk '{split($4,p,"_");print $1,$2,$3,p[5],$5,$6,p[1]":"p[2]"-"p[3]}' data/pentamerList1.humanPositions.bed | sort -k 1,1 -k 2,2n >data/pentamer1.hg38.bed
+tawk '{split($4,p,"_");print $1,$2,$3,p[5],$5,$6,p[1]":"p[2]"-"p[3]}' data/pentamerList1.ConstMouse_AltExons.humanPositions.tab | sort -k 1,1 -k 2,2n >data/pentamer1.hg38.bed
 ../../bin/buildBigBed --as=../../etc/kmerBed.as --bedType=bed6+1 hg38  ../../../hub/hg38/pentamer1.hg38.bigBed  data/pentamer1.hg38.bed 
 
 bedToHtmlDir -context-bases 3 -loc-label-name -hub https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt -public-browser hg38 data/pentamer1.hg38.bed  ../../../hub/hg38/pentamer-index
 
-* get percent identity
-
-mafFetch hg38 multiz100way kmer.bed kmer-regions.maf
-
+* generate conservation data:
+hgsql hgcentraltest -e 'select name, organism, scientificName from dbDb' > conservation/assemblies.tsv
+(time ../../bin/kmerConversation data/pentamer1.hg38.bed  hg38 multiz100way  conservation/pentamer1.hg38.cons.tsv) >&log&
+real	2m55.483s
+pigz conservation/pentamer1.hg38.cons.tsv
+ln conservation/* ../../../data/kmers/

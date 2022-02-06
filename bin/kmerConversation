@@ -22,6 +22,7 @@ def parseArgs():
 class ConsCounts:
     match: int = 0
     mismatch: int = 0
+    unknown: int = 0
 
 def orgDb(seqId):
     return seqId[0:seqId.index('.')]
@@ -39,9 +40,11 @@ def getMafAlnsForRegion(hgDb, mafTable, regionBed):
         os.unlink(tmpBed)
 
 def countOrgColumn(iAln, tBase, qMafSeq, alignStats):
-    qBase = qMafSeq.seq[iAln]
+    qBase = qMafSeq.seq[iAln].upper()
     cnts = alignStats[orgDb(qMafSeq.name)]
-    if qBase.upper() == tBase:
+    if qBase == 'N':
+        cnts.unknown += 1
+    elif qBase == tBase:
         cnts.match += 1
     else:
         cnts.mismatch += 1
@@ -87,8 +90,8 @@ def writeOrgAlnStats(regionBed, org, orgStats, consFh):
     # it alignment is split and organism maybe not be in all blocks, hence unaligned is calculated
     fileOps.prRowv(consFh, regionBed.chrom, regionBed.chromStart, regionBed.chromEnd, regionBed.name,
                    regionBed.score, regionBed.strand, regionBed.extraCols[0],
-                   org, orgStats.match, orgStats.mismatch,
-                   (regionBed.span - (orgStats.match + orgStats.mismatch)))
+                   org, orgStats.match, orgStats.mismatch, orgStats.unknown,
+                   (regionBed.span - (orgStats.match + orgStats.mismatch + orgStats.unknown)))
 
 def writeAlnStats(regionBed, alignStats, consFh):
     for org in sorted(alignStats.keys()):
@@ -101,7 +104,7 @@ def consForRegion(hgDb, mafTable, regionBed, consFh):
 
 def consForRegions(hgDb, mafTable, kmerBed, consFh):
     fileOps.prRowv(consFh, "chrom", "chromStart", "chromEnd", "name", "score", "strand", "exon",
-                   "org", "match", "mismatch", "unaligned")
+                   "org", "match", "mismatch", "unknown", "unaligned")
     for regionBed in BedReader(kmerBed, numStdCols=6):
         consForRegion(hgDb, mafTable, regionBed, consFh)
 
