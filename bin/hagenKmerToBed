@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+import argparse
+import re
+from collections import deque, namedtuple, defaultdict
+from pycbio.hgdata.coords import Coords
+from pycbio.hgdata.rangeFinder import Binner, RangeFinder
+from pycbio.hgdata.bed import BedReader
+from pycbio.hgdata.genePred import GenePred
+from pycbio.hgdata import hgDb
+from pycbio.gencode.biotypes import BioType
+
+BUCKET_SIZE = 5000000
+ADJ_EXON_NONE_DIST = 100000000
+ADJ_EXON_NOT_AVAILABLE = (-1, -1)
+
+USE_BIOTYPES = (BioType.lncRNA, BioType.polymorphic_pseudogene, BioType.nonsense_mediated_decay,
+                BioType.transcribed_unprocessed_pseudogene, BioType.protein_coding)
+
+def parseArgs():
+    usage = """
+    Convert Hagen's BED file with kmers to a different BED, adding information
+ """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('--ucscDb')
+    parser.add_argument('--gencodeVersion')
+    parser.add_argument('hagenKmerBedFile')
+    parser.add_argument('kmerBedFile')
+    opts = parser.parse_args()
+    if (opts.gencodeVersion is not None) and (opts.ucscDb is None):
+        parser.error("--gencodeVersion requires --ucscDb")
+    return opts
+
+class GencodeQuery:
+    def __init__(self, ucscDb, gencodeVersion):
+        self.conn = hgDb.connect(ucscDb)
+        self.compTbl = f"wgEncodeGencodeComp{gencodeVersion}"
+        self.attrsTbl = f"wgEncodeGencodeAttrs{gencodeVersion}"
+
+    def _buildQuery(self, coords):
+        rangeWhere = Binner.getOverlappingSqlExpr("bin", "chrom", "txStart", "txEnd", coords.name, coords.start, coords.end)
+        typeWhere = "transcriptType IN ({})".format(','.join(['"' + str(bt) + '"' for bt in USE_BIOTYPES]))
+        return f"SELECT comp.* FROM {self.compTbl} comp, {self.attrsTbl} attr WHERE (name = transcriptId) AND ({rangeWhere}) AND {typeWhere}"
+
+    def query(self, coords):
+        sql = self._buildQuery(coords)
+        cur = self.conn.cursor()
+        try:
+            cur.execute(sql)
+            for row in cur:
+                yield GenePred(row[1:])
+        finally:
+            cur.close()
+
+
+def parseInputName(name):
+    # chr14_102011875_102012113_+_GGCGC
+    m = re.match("^(.+)_([0-9]+)_([0-9]+)_([+-])_([ATGC]+)$", name)
+    if m is None:
+        raise Exception(f"can't parse input name '{name}'")
+    return (Coords(m.group(1), int(m.group(2)) - 1, int(m.group(3)), strand=m.group(4)),
+            m.group(5))
+
+def shouldAddToGroup(exonCoords0, kmer):
+    if exonCoords0.name != kmer.chrom:
+        return False
+    return (kmer.chromEnd - exonCoords0.end) <= BUCKET_SIZE
+
+def popKmerGroup(kmerQueue):
+    kmer0 = kmerQueue.popleft()
+    exonCoords0, _ = parseInputName(kmer0.name)
+    kmerGroup = [kmer0]
+    while len(kmerQueue) > 0:
+        kmer = kmerQueue.popleft()
+        if not shouldAddToGroup(exonCoords0, kmer):
+            kmerQueue.insert(0, kmer)
+            break
+        else:
+            kmerGroup.append(kmer)
+    return kmerGroup
+
+def loadHeganBeds(hagenKmerBedFile):
+    """Returns list of list of BEDs, buckets by location of associate exon.  Want
+    to avoid load same genes over and over, so just group per-chrom and them
+    into rough buckets of some size.  While will still be some redundant.
+    queries, the number is greatly reduced.
+    """
+    kmerBeds = sorted((bed for bed in BedReader(hagenKmerBedFile, numStdCols=6)),
+                      key=lambda b: (b.chrom, b.start, -b.end))
+    kmerQueue = deque(kmerBeds)
+    kmerGroups = []
+
+    while len(kmerQueue) > 0:
+        kmerGroups.append(popKmerGroup(kmerQueue))
+    return kmerGroups
+
+class Exon(namedtuple("Exon", ("coords", "geneName"))):
+    __slots__ = ()
+
+class ExonMap:
+    def __init__(self, gencodeQuery, coords):
+        exons = self._buildExons(gencodeQuery, coords)
+        self.rmap = self._buildExonMap(exons)
+        self.geneExonsMaps = self._buildGeneExonsMap(exons)
+
+    def _buildExonMap(self, exons):
+        rmap = RangeFinder()
+        for exon in exons:
+            rmap.add(exon.coords.name, exon.coords.start, exon.coords.end, exon, exon.coords.strand)
+        return rmap
+
+    def _buildExons(self, gencodeQuery, coords):
+        # removes redundancy
+        exons = set()
+        for gene in gencodeQuery.query(coords):
+            exons |= self._getGeneExons(gene)
+        return exons
+
+    def _getGeneExons(self, gene):
+        exons = set()
+        for exon in gene.exons:
+            exons.add(Exon(Coords(gene.chrom, exon.start, exon.end, gene.strand), gene.name2))
+        return exons
+
+    def _buildGeneExonsMap(self, exons):
+        geMap = defaultdict(list)
+        for exon in exons:
+            geMap[exon.geneName].append(exon)
+        for exons in geMap.values():
+            exons.sort(key=lambda e: (e.coords.name, e.coords.start, e.coords.end))
+        geMap.default_factory = None
+        return geMap
+
+def buildExonMap(bedGroup, gencodeQuery):
+    coords = Coords(bedGroup[0].chrom, bedGroup[0].chromStart, bedGroup[-1].chromEnd)
+    return ExonMap(gencodeQuery, coords)
+
+def findExon(exonMap, exonCoords):
+    for oexon in exonMap.rmap.overlappingByCoords(exonCoords):
+        if oexon.coords == exonCoords:
+            return oexon
+    raise Exception(f"exon not found: {exonCoords}")
+
+def getAdjacentExons(exonMap, exonCoords):
+    "adjacent but not overlapping"
+
+    def findPrev(geneExons, iExon):
+        while iExon > 0:
+            iExon -= 1
+            if not geneExons[iExon].coords.overlaps(exonCoords):
+                return geneExons[iExon]
+        return None
+
+    def findNext(geneExons, iExon):
+        while iExon < len(geneExons) - 1:
+            iExon += 1
+            if not geneExons[iExon].coords.overlaps(exonCoords):
+                return geneExons[iExon]
+        return None
+
+    exon = findExon(exonMap, exonCoords)
+    geneExons = exonMap.geneExonsMaps[exon.geneName]
+    iExon = geneExons.index(exon)
+
+    return (findPrev(geneExons, iExon),
+            findNext(geneExons, iExon))
+
+def getAdjacentDistances(exonMap, exonCoords):
+    exon5, exon3 = getAdjacentExons(exonMap, exonCoords)
+    return ((exonCoords.start - exon5.coords.end) if exon5 is not None else ADJ_EXON_NONE_DIST,
+            (exon3.coords.start - exonCoords.end) if exon3 is not None else ADJ_EXON_NONE_DIST)
+
+
+def hagenKmerToBed(bed, exonMap, kmerBedFh):
+    # chr14	102011621	102011626	chr14_102011875_102012113_+_GGCGC	1	+
+    exonCoords, kmer = parseInputName(bed.name)
+    exon5dist, exon3dist = getAdjacentDistances(exonMap, exonCoords) if exonMap is not None else ADJ_EXON_NOT_AVAILABLE
+
+    bed.name = kmer
+    bed.extraCols = [str(exonCoords), str(exon5dist), str(exon3dist)]
+    bed.write(kmerBedFh)
+
+def processBedGroup(bedGroup, gencodeQuery, kmerBedFh):
+    exonMap = buildExonMap(bedGroup, gencodeQuery) if gencodeQuery is not None else None
+    for bed in bedGroup:
+        hagenKmerToBed(bed, exonMap, kmerBedFh)
+
+def main(opts):
+    gencodeQuery = None
+    if opts.gencodeVersion is not None:
+        gencodeQuery = GencodeQuery(opts.ucscDb, opts.gencodeVersion)
+
+    bedGroups = loadHeganBeds(opts.hagenKmerBedFile)
+    with open(opts.kmerBedFile, 'w') as kmerBedFh:
+        for bedGroup in bedGroups:
+            processBedGroup(bedGroup, gencodeQuery, kmerBedFh)
+
+
+main(parseArgs())

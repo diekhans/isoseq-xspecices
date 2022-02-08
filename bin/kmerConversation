@@ -89,7 +89,7 @@ def regionAlignStats(mafAlns, regionBed):
 def writeOrgAlnStats(regionBed, org, orgStats, consFh):
     # it alignment is split and organism maybe not be in all blocks, hence unaligned is calculated
     fileOps.prRowv(consFh, regionBed.chrom, regionBed.chromStart, regionBed.chromEnd, regionBed.name,
-                   regionBed.score, regionBed.strand, regionBed.extraCols[0],
+                   regionBed.score, regionBed.strand, *regionBed.extraCols,
                    org, orgStats.match, orgStats.mismatch, orgStats.unknown,
                    (regionBed.span - (orgStats.match + orgStats.mismatch + orgStats.unknown)))
 
@@ -104,6 +104,7 @@ def consForRegion(hgDb, mafTable, regionBed, consFh):
 
 def consForRegions(hgDb, mafTable, kmerBed, consFh):
     fileOps.prRowv(consFh, "chrom", "chromStart", "chromEnd", "name", "score", "strand", "exon",
+                   "exon5dist", "exon3dist",
                    "org", "match", "mismatch", "unknown", "unaligned")
     for regionBed in BedReader(kmerBed, numStdCols=6):
         consForRegion(hgDb, mafTable, regionBed, consFh)

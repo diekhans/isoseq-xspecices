@@ -2,7 +2,7 @@
 
 input = input
 
-test: mappedAlignTests buildAnnotBigPslTests findSmallGapsTest kmerConversationTest
+test: mappedAlignTests buildAnnotBigPslTests findSmallGapsTest kmerConversationTest hagenBedTests
 
 mappedAlignTests: mappedAlnHg38Mm39Test mappedAlnHg38RheMac10Test
 
@@ -33,8 +33,18 @@ findSmallGapsTest: mkdirs
 	diff expected/$@.bed output/$@.bed
 
 kmerConversationTest: mkdirs
-	../bin/kmerConversation input/pentamer.hg38.bed hg38 multiz100way output/$@.tsv
+	../bin/kmerConversation expected/hagenBedGeneTest.bed hg38 multiz100way output/$@.tsv
 	diff expected/$@.tsv output/$@.tsv
+
+hagenBedTests: hagenBedTest hagenBedGeneTest
+
+hagenBedTest: mkdirs
+	../bin/hagenKmerToBed input/pentamer.hg38.hagen output/$@.bed
+	diff expected/$@.bed output/$@.bed
+
+hagenBedGeneTest: mkdirs
+	../bin/hagenKmerToBed --ucscDb=hg38 --gencodeVersion=V38 input/pentamer.hg38.hagen output/$@.bed
+	diff expected/$@.bed output/$@.bed
 
 mkdirs:
 	@mkdir -p output

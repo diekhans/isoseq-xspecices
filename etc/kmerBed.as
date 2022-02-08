@@ -8,4 +8,6 @@ table kmerBed
     uint   score;      "Score from 0-1000"
     char[1] strand;    "+ or -"
     string exonCoords; "coordianates of exon"
+    int exon5dist;     "distance previous exon, or huge number if none, or -1 if not available"
+    int exon3dist;     "distance to next exon, or huge number if none, or -1 if not available"
     )
