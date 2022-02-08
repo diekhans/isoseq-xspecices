@@ -1,6 +1,7 @@
 * URLs
 https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/kmers/assemblies.tsv
 https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/kmers/pentamer1.hg38.cons.tsv.gz
+https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/kmers/pentamer1.hg38.bed
 https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 
 * build track of human pentamers
@@ -12,6 +13,9 @@ obtained pentamerList1.ConstMouse_AltExons.humanPositions.tab from Hagen
 
 ../../bin/buildBigBed --as=../../etc/kmerBed.as --bedType=bed6+1 hg38  ../../../hub/hg38/pentamer1.hg38.bigBed  data/pentamer1.hg38.bed 
 bedToHtmlDir -context-bases 3 -loc-label-name -hub https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt -public-browser hg38 data/pentamer1.hg38.bed  ../../../hub/hg38/pentamer-index
+
+ln -f data/pentamer1.hg38.bed ../../../data/kmers/
+
 
 * generate conservation data:
 hgsql hgcentraltest -e 'select name, organism, scientificName from dbDb' > conservation/assemblies.tsv
