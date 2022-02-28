@@ -1,13 +1,8 @@
-SHELL = /bin/bash
-export SHELLOPTS=pipefail
-.SECONDARY:
-
-export PATH := ../../bin:${PATH}
-PPID = $(shell echo $${PPID})
-TMPEXT = ${HOSTNAME}.${PPID}.tmp
+root = ..
+include ${root}/defs.mk
 
 isoDate = $(shell date +%Y-%m-%d)
-DBS = hg38 mm39 rheMac10 rn6
+
 hubRootDir =  ../../../hub
 downloadDir = ${hubRootDir}/download
 
@@ -71,16 +66,6 @@ ${hubSrcBigPsl}: ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${srcChromSizes}
 ifeq (${srcDb},${destDb})
 build_pair:  # does nothing
 else
-##
-# mapping chains
-##
-chainsDir = chains/${srcDb}
-synChains = ${chainsDir}/${srcDb}-${destDb}.chains.gz
-
-${synChains}:
-	@mkdir -p $(dir $@)
-	buildMappingChains ${srcDb} ${destDb} $@
-
 ##
 # make mappings
 ##

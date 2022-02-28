@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+import sys
+import re
+import argparse
+from pycbio.tsv import TsvReader
+from pycbio.sys import fileOps
+
+def parseArgs():
+    usage = """Convert TSS or ployA file with recods like
+ENSG00000111679.17_0	chr12_6961291_6961327_+	VascFibro	1
+to a BED """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('endSiteFile')
+    parser.add_argument('endSiteBed')
+    return parser.parse_args()
+
+def parseLoc(loc):
+    # chr10_70815888_70815997_+
+    parts = re.match("([^_]+)_([0-9]+)_([0-9]+)_([+-])$", loc)
+    if parts is None:
+        raise Exception(f"can't parse loc '{loc}'")
+    return parts.group(1), int(parts.group(2)), int(parts.group(3)), parts.group(4)
+
+def endSiteToBed(rec, endSiteBedFh):
+    chrom, start, end, strand = parseLoc(rec.position)
+    # there were some zero length ones, which break twoBitToFa
+    if start >= end:
+        print(f"warning: start > end: {rec}", file=sys.stderr)
+    else:
+        fileOps.prRowv(endSiteBedFh, chrom, start, end, rec.geneLocId, rec.cnt, strand, rec.tissue)
+
+def endSiteFileToBed(endSiteFile, endSiteBedFh):
+    for rec in TsvReader(endSiteFile, columns=("geneLocId", "position", "tissue", "cnt")):
+        endSiteToBed(rec, endSiteBedFh)
+
+
+def main(opts):
+    with open(opts.endSiteBed, 'w') as endSiteBedFh:
+        endSiteFileToBed(opts.endSiteFile, endSiteBedFh)
+
+
+main(parseArgs())

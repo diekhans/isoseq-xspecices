@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+import argparse
+import pipettor
+import re
+from collections import defaultdict
+from pycbio.hgdata.bed import BedReader
+
+def parseArgs():
+    usage = """Convert TSS or ployA file with recods like
+ENSG00000111679.17_0	chr12_6961291_6961327_+	VascFibro	1
+to a BED """
+    parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('endSiteSrcBed')
+    parser.add_argument('endSiteMappedPsl')
+    parser.add_argument('endSiteMappedBed')
+    return parser.parse_args()
+
+def loadSrcBeds(endSiteSrcBed):
+    srcBeds = defaultdict(list)
+    for bed in BedReader(endSiteSrcBed, numStdCols=6):
+        srcBeds[bed.name].append(bed)
+    srcBeds.default_factory = None
+    return srcBeds
+
+def endSiteAddCellInfo(srcBeds, inBed, outBedFh):
+    inBed.extraCols = [None]
+    # drop unique extension
+    m = re.match("(^.+)-[0-9]+$", inBed.name)
+    if m is None:
+        raise Exception(f"can't parts '{inBed.name}'")
+    name = m.group(1)
+    for srcBed in srcBeds[name]:
+        inBed.score = srcBed.score
+        inBed.extraCols[0] = srcBed.extraCols[0]
+        inBed.write(outBedFh)
+
+
+def endSitePslToBed(srcBeds, inBedFh, outBedFh):
+    for inBed in BedReader(inBedFh):
+        endSiteAddCellInfo(srcBeds, inBed, outBedFh)
+
+
+def main(opts):
+    srcBeds = loadSrcBeds(opts.endSiteSrcBed)
+
+    with pipettor.Popen(["pslToBed", opts.endSiteMappedPsl, "/dev/stdout"]) as inBedFh:
+        with open(opts.endSiteMappedBed, 'w') as outBedFh:
+            endSitePslToBed(srcBeds, inBedFh, outBedFh)
+
+
+main(parseArgs())
