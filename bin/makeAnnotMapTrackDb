@@ -16,6 +16,7 @@ def parseArgs():
 
 
 allHgDb = ("hg38", "rheMac10", "mm39", "rn6")
+endSiteSrcHgDb = ("hg38", "mm39")
 
 speciesNames = {
     "hg38": "human",
@@ -29,6 +30,30 @@ annotColor = {
     "mm39": SvgColors.mediumturquoise,
     "rn6": SvgColors.mediumblue,
 }
+
+bigBedTemplate = """
+track {track}
+shortLabel {shortLabel}
+longLabel {longLabel}
+html ../empty.html
+visibility hide
+type bigBed {bedType}
+color {color}
+bigDataUrl {bigDataUrl}
+priority {priority}
+
+"""
+
+def addBigBedTrack(fh, priority, track, bedType, label, color):
+    t = bigBedTemplate.format(track=track,
+                              shortLabel=label,
+                              longLabel=label,
+                              color=color.toRgb8Str(),
+                              bedType=bedType,
+                              bigDataUrl=track + ".bigBed",
+                              priority=priority)
+    print(t, file=fh)
+    return priority + 0.01
 
 annotPslTemplate = """
 track {track}
@@ -83,51 +108,47 @@ def addGeneMappings(fh, priority, srcDbs, destDb):
     return priority
 
 
-isoSeqBedTemplate = """
-track {track}
-shortLabel {shortLabel}
-longLabel {longLabel}
-html ../empty.html
-visibility hide
-type bigBed 12
-color {color}
-bigDataUrl {bigDataUrl}
-priority {priority}
-
-"""
-
-def addIsoSeqTrack(fh, priority, track, label, color):
-    t = isoSeqBedTemplate.format(track=track,
-                                 shortLabel=label,
-                                 longLabel=label,
-                                 color=color.toRgb8Str(),
-                                 bigDataUrl=track + ".bigBed",
-                                 priority=priority)
-    print(t, file=fh)
-    return priority + 0.01
-
 def addIsoSeqTrackIfExists(fh, priority, hgDbDir, track, label, color):
     bigBed = osp.join(hgDbDir, track + ".bigBed")
     if not osp.exists(bigBed):
         print("Warning: isoseq bigBed not found: " + bigBed, file=sys.stderr)
     else:
-        priority = addIsoSeqTrack(fh, track, label, color, priority)
+        priority = addBigBedTrack(fh, priority, track, 12, label, color)
     return priority
 
 def addIsoSeqTracks(fh, priority, hgDb, hgDbDir):
-    priority = addIsoSeqTrack(fh, priority, "isoseq.minimap2.2020-12-02",
-                              "IsoSeq minimap2 2020-12-02",
-                              SvgColors.tomato)
+    priority = addIsoSeqTrackIfExists(fh, priority, hgDbDir, "isoseq.minimap2.2020-12-02",
+                                      "IsoSeq minimap2 2020-12-02",
+                                      SvgColors.tomato)
+    return priority
+
+def addEndSiteSrcTracks(fh, priority, hgDb):
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.tss", 6, f"{hgDb} TSS src", annotColor[hgDb])
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.polya", 6, f"{hgDb} polyA src", annotColor[hgDb])
+    return priority
+
+def addEndSiteMappedTracks(fh, priority, srcHgDb, hgDb):
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.tss", 12, f"{srcHgDb} TSS mapped", annotColor[hgDb])
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.polya", 12, f"{srcHgDb} polyA mapped", annotColor[hgDb])
+    return priority
+
+def addEndSiteTracks(fh, priority, hgDb):
+    if hgDb in endSiteSrcHgDb:
+        priority = addEndSiteSrcTracks(fh, priority, hgDb)
+    for srcHgDb in endSiteSrcHgDb:
+        if srcHgDb != hgDb:
+            priority = addEndSiteMappedTracks(fh, priority, srcHgDb, hgDb)
     return priority
 
 def main(opts):
     # keep order
     otherDbs = tuple([d for d in allHgDb if d != opts.hgDb])
     priority = opts.priority
+    hgDbDir = osp.dirname(opts.trackDbFile)
     with open(opts.trackDbFile, 'w') as fh:
         priority = addGeneSrc(fh, priority, opts.hgDb)
         priority = addGeneMappings(fh, priority, otherDbs, opts.hgDb)
-        priority = addIsoSeqTracks(fh, priority, opts.hgDb, osp.dirname(opts.trackDbFile))
-
+        priority = addIsoSeqTracks(fh, priority, opts.hgDb, hgDbDir)
+        priority = addEndSiteTracks(fh, priority, opts.hgDb)
 
 main(parseArgs())

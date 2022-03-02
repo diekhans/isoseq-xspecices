@@ -1,7 +1,10 @@
 build/chains/
 build/annot-map/data/
 build/annot-map/mapped/
-build/annot-map/versions
+build/annot-map/versions/
+build/kmer-map/
+build/tss-map/2022-01/data/
+build/tss-map/2022-01/mapped/
 .emacs.bak/
 tests/output/
 __pycache__/

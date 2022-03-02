@@ -6,9 +6,7 @@ from collections import defaultdict
 from pycbio.hgdata.bed import BedReader
 
 def parseArgs():
-    usage = """Convert TSS or ployA file with recods like
-ENSG00000111679.17_0	chr12_6961291_6961327_+	VascFibro	1
-to a BED """
+    usage = """Convert mapped endsite PSL to a BED, adding back in src extra data"""
     parser = argparse.ArgumentParser(description=usage)
     parser.add_argument('endSiteSrcBed')
     parser.add_argument('endSiteMappedPsl')
@@ -23,15 +21,17 @@ def loadSrcBeds(endSiteSrcBed):
     return srcBeds
 
 def endSiteAddCellInfo(srcBeds, inBed, outBedFh):
-    inBed.extraCols = [None]
-    # drop unique extension
+    inBed.extraCols = [None, None]
+    # drop unique optionalk extension
     m = re.match("(^.+)-[0-9]+$", inBed.name)
-    if m is None:
-        raise Exception(f"can't parts '{inBed.name}'")
-    name = m.group(1)
+    if m is not None:
+        name = m.group(1)
+    else:
+        name = inBed.name
     for srcBed in srcBeds[name]:
         inBed.score = srcBed.score
         inBed.extraCols[0] = srcBed.extraCols[0]
+        inBed.extraCols[1] = srcBed.extraCols[1]
         inBed.write(outBedFh)
 
 

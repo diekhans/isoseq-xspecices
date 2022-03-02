@@ -1,4 +1,5 @@
-.SECONDARY:
+root = ..
+include ${root}/defs.mk
 
 input = input
 

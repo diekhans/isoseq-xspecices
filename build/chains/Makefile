@@ -1,4 +1,4 @@
-root = ..
+root = ../../
 include ${root}/defs.mk
 
 build: build_src

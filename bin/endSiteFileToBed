@@ -19,7 +19,7 @@ def parseLoc(loc):
     parts = re.match("([^_]+)_([0-9]+)_([0-9]+)_([+-])$", loc)
     if parts is None:
         raise Exception(f"can't parse loc '{loc}'")
-    return parts.group(1), int(parts.group(2)), int(parts.group(3)), parts.group(4)
+    return parts.group(1), int(parts.group(2)) - 1, int(parts.group(3)), parts.group(4)
 
 def endSiteToBed(rec, endSiteBedFh):
     chrom, start, end, strand = parseLoc(rec.position)
@@ -27,7 +27,7 @@ def endSiteToBed(rec, endSiteBedFh):
     if start >= end:
         print(f"warning: start > end: {rec}", file=sys.stderr)
     else:
-        fileOps.prRowv(endSiteBedFh, chrom, start, end, rec.geneLocId, rec.cnt, strand, rec.tissue)
+        fileOps.prRowv(endSiteBedFh, chrom, start, end, rec.geneLocId, 0, strand, rec.tissue, rec.cnt)
 
 def endSiteFileToBed(endSiteFile, endSiteBedFh):
     for rec in TsvReader(endSiteFile, columns=("geneLocId", "position", "tissue", "cnt")):

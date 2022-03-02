@@ -1,4 +1,4 @@
-root = ../..
+root = ../../..
 include ${root}/defs.mk
 
 srcDbs =  hg38 mm39
@@ -11,6 +11,7 @@ srcBed = ${srcPrefix}.bed
 srcLocBed = ${srcPrefix}.loc.bed
 srcFa = ${srcPrefix}.fa
 srcPsl = ${srcPrefix}.psl
+srcBigBed = ${hubSrcDir}/${srcDb}.${type}.bigBed
 
 
 types = tss polya
@@ -31,10 +32,10 @@ doSrcOrgType_%:
 	${MAKE} doSrcOrgType srcDb=${srcDb} type=$*
 
 # srcDb= type=
-doSrcOrgType: ${srcPsl} ${srcFa}
+doSrcOrgType: ${srcPsl} ${srcFa} ${srcBigBed}
 
 ${srcBed}: ${srcIdCoordFile}
-	endSiteFileToBed $< $@.${TMPEXT}
+	endSiteFileToBed $< /dev/stdout | ${bedSortCmd} > $@.${TMPEXT}
 	mv -f $@.${TMPEXT} $@
 
 ${srcLocBed}: ${srcBed}
@@ -47,6 +48,10 @@ ${srcPsl}: ${srcLocBed}
 
 ${srcFa}: ${srcLocBed}
 	twoBitToFa -bed=${srcLocBed} ${srcTwoBit} $@.${TMPEXT}
+	mv -f $@.${TMPEXT} $@
+
+${srcBigBed}: ${srcBed}
+	bedToBigBed -type=bed6+2 -as=${etcDir}/endsiteSrc.as ${srcBed} ${srcChromSizes} $@.${TMPEXT}
 	mv -f $@.${TMPEXT} $@
 
 # ================================================================
@@ -72,30 +77,30 @@ else
 # make mappings
 ##
 mappedDir = mapped/${destDb}
-destRawPsl = ${mappedDir}/${srcDb}-${destDb}.${type}.raw.pal.gz
 destPsl = ${mappedDir}/${srcDb}-${destDb}.${type}.psl.gz
 filtStats = ${mappedDir}/${srcDb}-${destDb}.${type}.filtStats
 destBed = ${mappedDir}/${srcDb}-${destDb}.${type}.bed
+destBigBed = ${hubDestDir}/${srcDb}-${destDb}.${type}.bigBed
 
-build_pair: ${destBed}
+build_pair: ${destBed} ${destBigBed}
 
-${destRawPsl}: ${srcPsl} ${srcFa} ${synChains}
+${destPsl}: ${srcPsl} ${srcFa} ${synChains}
 	@mkdir -p $(dir $@)
-	mapGenes ${srcPsl} ${srcFa} ${synChains} ${destDb} $@.${TMPEXT}
-	mv -f $@.${TMPEXT} $@
-
-${destPsl}: ${destRawPsl} 
-	@mkdir -p $(dir $@)
-	pslCDnaFilter -maxAligns=1 -statsOut=${filtStats} ${destRawPsl} /dev/stdout \
-	    | sort -k 14,14 -k 16,16n |pigz -9c >${destPsl}.${TMPEXT}
+	mapEndSites ${srcPsl} ${srcFa} ${synChains} ${destDb} $@.${TMPEXT}
 	mv -f $@.${TMPEXT} $@
 
 ${destBed}: ${destPsl} ${srcBed}
 	@mkdir -p $(dir $@)
-	endSitePslToBed ${srcBed} $<  $@.${TMPEXT}
+	endSitePslToBed ${srcBed} $< /dev/stdout | ${bedSortCmd} > $@.${TMPEXT}
 	mv -f $@.${TMPEXT} $@
+
+${destBigBed}: ${destBed}
+	bedToBigBed -type=bed12+2 -as=${etcDir}/endsiteMapped.as ${destBed} ${destChromSizes} $@.${TMPEXT}
+	mv -f $@.${TMPEXT} $@
+
 
 endif
 
 clean:
 	rm -f data/endsites/*/*.bed data/endsites/*/*.psl data/endsites/*/*.tmp
+	rm -rf mapped

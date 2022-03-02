@@ -1,10 +1,7 @@
-root = ..
+root = ../..
 include ${root}/defs.mk
 
 isoDate = $(shell date +%Y-%m-%d)
-
-hubRootDir =  ../../../hub
-downloadDir = ${hubRootDir}/download
 
 hg38_gtf = data/hg38/gencode.v35.annotation.gtf.gz
 mm39_gtf = data/mm39/gencode.vM26.annotation.gtf.gz
@@ -19,7 +16,7 @@ srcGtf = ${${srcDb}_gtf}
 srcFa = ${srcDir}/${srcDb}.src.fa.gz
 srcPsl = ${srcDir}/${srcDb}.src.psl.gz
 srcCds = ${srcDir}/${srcDb}.src.cds.gz
-hubSrcBigPsl = ${hubRootDir}/${srcDb}/${srcDb}.src.bigPsl
+hubSrcBigPsl = ${hubSrcDir}/${srcDb}.src.bigPsl
 
 
 build: build_src
@@ -58,7 +55,6 @@ ${srcPsl}: ${srcGp}
 	genePredToFakePsl ${srcDb} ${srcGp} /dev/stdout >(pigz -c >${srcCds}) | pigz -c > ${srcPsl}.${TMPEXT}
 	mv -f ${srcPsl}.${TMPEXT} ${srcPsl}
 
-srcChromSizes = /hive/data/genomes/${srcDb}/chrom.sizes
 ${hubSrcBigPsl}: ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${srcChromSizes}
 	@mkdir -p $(dir $@)
 	buildAnnotBigPsl ${srcMeta} ${srcPsl} ${srcCds} ${srcFa} ${srcChromSizes} ${hubSrcBigPsl}
@@ -106,8 +102,7 @@ ${destJsonDownload}: ${destJson}
 ##
 # hub files
 ##
-destChromSizes = /hive/data/genomes/${destDb}/chrom.sizes
-hubDestBigPsl = ${hubRootDir}/${destDb}/${srcDb}-${destDb}.bigPsl
+hubDestBigPsl = ${hubDestDir}/${srcDb}-${destDb}.bigPsl
 
 ${hubDestBigPsl}: ${srcMeta} ${destPsl} ${srcCds} ${srcFa} ${destChromSizes}
 	@mkdir -p $(dir $@)

@@ -1,4 +1,5 @@
-.SECONDARY:
+root = ..
+include ${root}/defs.mk
 
 hgDbs = hg38 rheMac10 mm39 rn6
 hubDir = ../../hub

@@ -1,4 +1,5 @@
 * info
+** hub https://hgwdev.gi.ucsc.edu/~markd/gencode/isoseq-xspecies/hub/hub.txt
 
 ** hg38 mm39 rheMac10 rn6
 http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
