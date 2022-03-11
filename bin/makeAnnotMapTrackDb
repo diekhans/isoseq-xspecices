@@ -38,22 +38,29 @@ longLabel {longLabel}
 html ../empty.html
 visibility hide
 type bigBed {bedType}
-color {color}
+{colorSpec}
 bigDataUrl {bigDataUrl}
 priority {priority}
+{extra}
 
 """
 
-def addBigBedTrack(fh, priority, track, bedType, label, color):
+def addBigBedTrack(fh, priority, track, bedType, label, color=None, mouseOver=None):
+    colorSpec = "itemRgb on" if color is None else "color {}".format(color.toRgb8Str())
+    extra = ""
+    if mouseOver is not None:
+        extra += "mouseOver " + mouseOver + "\n"
     t = bigBedTemplate.format(track=track,
                               shortLabel=label,
                               longLabel=label,
-                              color=color.toRgb8Str(),
+                              colorSpec=colorSpec,
                               bedType=bedType,
                               bigDataUrl=track + ".bigBed",
-                              priority=priority)
+                              priority=priority,
+                              extra=extra)
     print(t, file=fh)
     return priority + 0.01
+
 
 annotPslTemplate = """
 track {track}
@@ -122,14 +129,16 @@ def addIsoSeqTracks(fh, priority, hgDb, hgDbDir):
                                       SvgColors.tomato)
     return priority
 
+endSiteMouseOver = "$name [$cellType] ($count)"
+
 def addEndSiteSrcTracks(fh, priority, hgDb):
-    priority = addBigBedTrack(fh, priority, f"{hgDb}.tss", 6, f"{hgDb} TSS src", annotColor[hgDb])
-    priority = addBigBedTrack(fh, priority, f"{hgDb}.polya", 6, f"{hgDb} polyA src", annotColor[hgDb])
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.tss", 9, f"{hgDb} TSS src", mouseOver=endSiteMouseOver)
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.polya", 9, f"{hgDb} polyA src", mouseOver=endSiteMouseOver)
     return priority
 
 def addEndSiteMappedTracks(fh, priority, srcHgDb, hgDb):
-    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.tss", 12, f"{srcHgDb} TSS mapped", annotColor[hgDb])
-    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.polya", 12, f"{srcHgDb} polyA mapped", annotColor[hgDb])
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.tss", 12, f"{srcHgDb} TSS mapped", mouseOver=endSiteMouseOver)
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.polya", 12, f"{srcHgDb} polyA mapped", mouseOver=endSiteMouseOver)
     return priority
 
 def addEndSiteTracks(fh, priority, hgDb):
@@ -138,6 +147,24 @@ def addEndSiteTracks(fh, priority, hgDb):
     for srcHgDb in endSiteSrcHgDb:
         if srcHgDb != hgDb:
             priority = addEndSiteMappedTracks(fh, priority, srcHgDb, hgDb)
+    return priority
+
+def addEndSiteAllSrcTracks(fh, priority, hgDb):
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.alltss", 6, f"{hgDb} all TSS src", color=SvgColors.magenta)
+    priority = addBigBedTrack(fh, priority, f"{hgDb}.allpolya", 6, f"{hgDb} all polyA src", color=SvgColors.indigo)
+    return priority
+
+def addEndSiteAllMappedTracks(fh, priority, srcHgDb, hgDb):
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.alltss", 12, f"{srcHgDb} all TSS mapped", color=SvgColors.indianred)
+    priority = addBigBedTrack(fh, priority, f"{srcHgDb}-{hgDb}.allpolya", 12, f"{srcHgDb} all polyA mapped", color=SvgColors.lawngreen)
+    return priority
+
+def addEndSiteAllTracks(fh, priority, hgDb):
+    if hgDb in endSiteSrcHgDb:
+        priority = addEndSiteAllSrcTracks(fh, priority, hgDb)
+    for srcHgDb in endSiteSrcHgDb:
+        if srcHgDb != hgDb:
+            priority = addEndSiteAllMappedTracks(fh, priority, srcHgDb, hgDb)
     return priority
 
 def main(opts):
@@ -150,5 +177,7 @@ def main(opts):
         priority = addGeneMappings(fh, priority, otherDbs, opts.hgDb)
         priority = addIsoSeqTracks(fh, priority, opts.hgDb, hgDbDir)
         priority = addEndSiteTracks(fh, priority, opts.hgDb)
+        priority = addEndSiteAllTracks(fh, priority, opts.hgDb)
+
 
 main(parseArgs())

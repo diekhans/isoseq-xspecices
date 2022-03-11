@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 import sys
+from os import path as osp
 import re
 import argparse
 from pycbio.tsv import TsvReader
 from pycbio.sys import fileOps
+sys.path.insert(0, osp.normpath(osp.join(osp.dirname(__file__), "../lib")))
+from xspecies.endSiteColors import humanCellTypeToColor, mouseCellTypeToColor
 
 def parseArgs():
     usage = """Convert TSS or ployA file with recods like
 ENSG00000111679.17_0	chr12_6961291_6961327_+	VascFibro	1
 to a BED """
     parser = argparse.ArgumentParser(description=usage)
+    parser.add_argument('srcDb', choices=('hg38', 'mm39'))
     parser.add_argument('endSiteFile')
     parser.add_argument('endSiteBed')
     return parser.parse_args()
@@ -21,22 +25,24 @@ def parseLoc(loc):
         raise Exception(f"can't parse loc '{loc}'")
     return parts.group(1), int(parts.group(2)) - 1, int(parts.group(3)), parts.group(4)
 
-def endSiteToBed(rec, endSiteBedFh):
+def endSiteToBed(rec, ctColors, endSiteBedFh):
     chrom, start, end, strand = parseLoc(rec.position)
     # there were some zero length ones, which break twoBitToFa
     if start >= end:
         print(f"warning: start > end: {rec}", file=sys.stderr)
     else:
-        fileOps.prRowv(endSiteBedFh, chrom, start, end, rec.geneLocId, 0, strand, rec.tissue, rec.cnt)
+        fileOps.prRowv(endSiteBedFh, chrom, start, end, rec.geneLocId, 0, strand,
+                       start, end, ctColors[rec.tissue].rgb, rec.tissue, rec.cnt)
 
-def endSiteFileToBed(endSiteFile, endSiteBedFh):
+def endSiteFileToBed(endSiteFile, ctColors, endSiteBedFh):
     for rec in TsvReader(endSiteFile, columns=("geneLocId", "position", "tissue", "cnt")):
-        endSiteToBed(rec, endSiteBedFh)
+        endSiteToBed(rec, ctColors, endSiteBedFh)
 
 
 def main(opts):
-    with open(opts.endSiteBed, 'w') as endSiteBedFh:
-        endSiteFileToBed(opts.endSiteFile, endSiteBedFh)
+    ctColors = humanCellTypeToColor if opts.srcDb == 'hg38' else mouseCellTypeToColor
+    with fileOps.opengz(opts.endSiteBed, 'w') as endSiteBedFh:
+        endSiteFileToBed(opts.endSiteFile, ctColors, endSiteBedFh)
 
 
 main(parseArgs())

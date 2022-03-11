@@ -3,6 +3,7 @@ import argparse
 import pipettor
 import re
 from collections import defaultdict
+from pycbio.sys import fileOps
 from pycbio.hgdata.bed import BedReader
 
 def parseArgs():
@@ -15,7 +16,7 @@ def parseArgs():
 
 def loadSrcBeds(endSiteSrcBed):
     srcBeds = defaultdict(list)
-    for bed in BedReader(endSiteSrcBed, numStdCols=6):
+    for bed in BedReader(endSiteSrcBed, numStdCols=9):
         srcBeds[bed.name].append(bed)
     srcBeds.default_factory = None
     return srcBeds
@@ -30,6 +31,7 @@ def endSiteAddCellInfo(srcBeds, inBed, outBedFh):
         name = inBed.name
     for srcBed in srcBeds[name]:
         inBed.score = srcBed.score
+        inBed.itemRgb = srcBed.itemRgb
         inBed.extraCols[0] = srcBed.extraCols[0]
         inBed.extraCols[1] = srcBed.extraCols[1]
         inBed.write(outBedFh)
@@ -42,9 +44,8 @@ def endSitePslToBed(srcBeds, inBedFh, outBedFh):
 
 def main(opts):
     srcBeds = loadSrcBeds(opts.endSiteSrcBed)
-
     with pipettor.Popen(["pslToBed", opts.endSiteMappedPsl, "/dev/stdout"]) as inBedFh:
-        with open(opts.endSiteMappedBed, 'w') as outBedFh:
+        with fileOps.opengz(opts.endSiteMappedBed, 'w') as outBedFh:
             endSitePslToBed(srcBeds, inBedFh, outBedFh)
 
 

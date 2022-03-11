@@ -26,6 +26,13 @@ Ah I see, sorry about the confusion. I use this BED file to assign the TSS: http
 
 
 * data in:
-build/tss-map/2022-01/data
+build/tss-map/2022-01/data/
 
-* 
+tracks built with make
+
+** endsites/
+*** filtered for transcribed
+
+
+** annotatedPeakFiles_CAGE_PolyA/
+*** full dataset

@@ -2,7 +2,7 @@ track pentamers
 shortLabel Pentamers
 longLabel Exon Pentamers
 type bigBed 6 1
-visibility pack
+visibility hide
 bigDataUrl pentamer1.hg38.bigBed
 html ../empty.html
 

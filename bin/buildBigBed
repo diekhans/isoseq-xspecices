@@ -18,6 +18,7 @@ def parseArgs():
     parser.add_argument('--as', dest="asFile")
     parser.add_argument('--extraIndex')
     parser.add_argument('--bedType', default="bed12")
+    parser.add_argument('--cut', type=int)
     parser.add_argument('hgdb')
     parser.add_argument('bigBedOut')
     parser.add_argument('inBeds', nargs='+')
@@ -26,9 +27,13 @@ def parseArgs():
 
 bedSortCmd = ["bedSort", "/dev/stdin", "/dev/stdout"]
 
-def createInBed(inBeds, tmpBedFh):
-    with pipettor.Popen([bedSortCmd], "w", stdout=tmpBedFh) as outBedFh:
+def createInBed(inBeds, cut, tmpBedFh):
+    cmd = [bedSortCmd]
+    if cut is not None:
+        cmd.append(["cut", "-f1,{}".format(cut)])
+    with pipettor.Popen(cmd, "w", stdout=tmpBedFh) as outBedFh:
         for inBed in inBeds:
+            print(inBed)
             with fileOps.opengz(inBed) as inBedFh:
                 shutil.copyfileobj(inBedFh, outBedFh)
 
@@ -41,15 +46,15 @@ def bedToBigBed(tmpBed, bigBedOut, bedType, asFile, extraIndex, genomeTwoBit):
     cmd += [tmpBed, genomeTwoBit, bigBedOut]
     pipettor.run(cmd)
 
-def buildBigBed(inBeds, bigBedOut, keep, bedType, asFile, extraIndex, genomeTwoBit):
+def buildBigBed(inBeds, bigBedOut, keep, bedType, cut, asFile, extraIndex, genomeTwoBit):
     with tempfile.NamedTemporaryFile(delete=not keep) as tmpBedFh:
         if keep:
             print("keeping temporary bed:", tmpBedFh.name, file=sys.stderr)
-        createInBed(inBeds, tmpBedFh)
+        createInBed(inBeds, cut, tmpBedFh)
         bedToBigBed(tmpBedFh.name, bigBedOut, bedType, asFile, extraIndex, genomeTwoBit)
 
 def main(args):
-    buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.asFile, args.extraIndex,
+    buildBigBed(args.inBeds, args.bigBedOut, args.keep, args.bedType, args.cut, args.asFile, args.extraIndex,
                 getGenomeTwoBit(args.hgdb))
 
 
